@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import axios from 'axios';
+
 import { Button ,TabBar, Icon} from 'antd-mobile';
+import Drink_list from './pages/drink_list';
 
 
 
@@ -11,26 +12,19 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
-      hidden: false,
-      fullScreen: false,
+      selectedTab: 'blueTab',
     };
   }
 
-  componentDidMount(){
-      axios.get('/list').then((res)=>{
-        console.log(res);
-      })
-  }
+
   render() {
     return (
  
-       <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', bottom: 0 } : { height: 400 }}>
+       <div style={{ position: 'fixed', height: '100%', width: '100%', bottom: 0 }}>
            <TabBar
              unselectedTintColor="#949494"
              tintColor="#33A3F4"
              barTintColor="white"
-             hidden={this.state.hidden}
            >
              <TabBar.Item
                title="Life"
@@ -56,7 +50,11 @@ class App extends Component {
                }}
                data-seed="logId"
              >
+
+             <Drink_list></Drink_list>
+             
              </TabBar.Item>
+             
              <TabBar.Item
                icon={
                  <div style={{
