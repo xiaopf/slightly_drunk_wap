@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { List } from 'antd-mobile';
 import { Link } from 'react-router-dom';
+
+import LinesEllipsis from 'react-lines-ellipsis'
 import './drink_list.less';
 const Item = List.Item;
 
@@ -34,11 +36,20 @@ class Drink_list extends React.Component {
 
 		let lists = items.map(function(item){
 			return  <Item className="item" key = {item.id}>
-                       <a className="drink_img" to={`/items/${item.id}`}><img src={item.img_url} alt=""/></a>
+                       <Link className="drink_img" to={`/${item.id}`}><img src={item.img_url} alt=""/></Link>
                        <div className="text_wrap">
             	           <p className="name">{item.name}</p>
             	           <p className="nameEng">{item.nameEng}</p>
-            	           <p className="describes">{item.describes}</p>
+
+
+            	           <LinesEllipsis className="describes"
+            	             text={item.describes}
+            	             maxLine='3'
+            	             ellipsis='...'
+            	             trimRight
+            	             basedOn='letters'
+            	           />
+
                        </div>
 					</Item>
 		})
