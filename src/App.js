@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 import {
   BrowserRouter,
   Route
@@ -11,27 +12,38 @@ import Detail from './pages/detail';
 
 
 
+
+
+
 class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
 
-    };
   }
 
 
   render() {
-    return (
-       <BrowserRouter>
-          <div>
-            <Route exact path='/' component={ Index }></Route>
-            <Route path='/:id' component={ Detail }></Route>
-          </div>
 
-       </BrowserRouter>
+
+
+    return (
+      <BrowserRouter>
+         <div>
+           <Route exact path='/' component={ Index }></Route>
+           <Route path='/:id' component={ Detail }></Route>
+         </div>
+
+      </BrowserRouter>
     );
   }
+
 }
+
+
+
+
+
+
 
 export default App;

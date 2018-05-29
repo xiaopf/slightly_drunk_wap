@@ -1,9 +1,20 @@
 import React from 'react';
 import './detail.less';
-
-
-
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { addNum , getDataAsync } from '../redux';
+import { NavBar, Icon , WhiteSpace } from 'antd-mobile';
+
+const list_data = require('./drink.json')
+
+@connect(
+   (state)=>({listData : state}),
+   { addNum , getDataAsync }
+)
+
+
+
+
 
 
 
@@ -19,14 +30,14 @@ class Detail extends React.Component {
 	componentDidMount(){
 		window.scrollTo(0,0);
 
-	    axios.get('/list').then((res)=>{
-	      if(res.status == 200){
-	      	this.setState({
-	      		list_data : res.data
-	      	})
-	      }
-	    })
+		this.props.getDataAsync();
 	}
+
+	goBack () {
+		this.props.history.goBack()
+	}
+
+
 
 
 
@@ -34,35 +45,40 @@ class Detail extends React.Component {
 	render () {
 
 		let match=this.props.match.params;
-
-		let drink = this.state.list_data[`drink${match.item}`];
-
-		console.log(drink);
-
-
+		let drink = list_data[`drink0`];
 
 		return ( 
-			<div>
+	
 
-
+                 
 				<div className="detail_wrap">
-	                 <div>
-	                    <img className="detail_img" src={drink.img_url} alt=""/>
-	                    <div className="detail_text_wrap">
-	                        <p className="detail_name">{drink.name}</p>
-	                        <p className="detail_eng_name">{drink.nameEng}</p>
-	                    </div>
-	                 </div>
+                     <NavBar className="head_navbar"
+                       mode="light"
+                       icon={<Icon type="left" />}
+                       onLeftClick={() => this.goBack()}
+                       rightContent={[,
+                         <Icon key="1" type="ellipsis" />,
+                       ]}
+                     >{drink.name}</NavBar>
+
+
+
+                    <img className="detail_img" src={drink.img_url} alt=""/>
+                    <div className="detail_text_wrap">
+                        <p className="detail_name">{drink.name}</p>
+                        <p className="detail_eng_name">{drink.nameEng}</p>
+                    </div>
+                    <WhiteSpace></WhiteSpace>
 	                 <div className="detail_describe">
 		                 <h2>鸡尾酒介绍</h2>
 		                 <p>{drink.describes}</p>
 	                 </div>
-
+	                 <WhiteSpace></WhiteSpace>
 		              <div className="detail_stuffs">
 		 	               <h2>所需材料</h2>
 		 	               <p>{drink.describes}</p>
 		              </div>
-
+		              <WhiteSpace></WhiteSpace>
 	                 <div className="detail_steps">
 		                 <h2>操作步骤</h2>
 		                 <p>{drink.describes}</p>
@@ -72,9 +88,14 @@ class Detail extends React.Component {
 
 
 
-			</div>
+	
 		)
 	}
 }
 
 export default Detail;
+
+
+
+
+

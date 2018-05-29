@@ -1,11 +1,28 @@
 import React from 'react';
 import axios from 'axios';
 import { List } from 'antd-mobile';
+
+
 import { Link } from 'react-router-dom';
 
 import LinesEllipsis from 'react-lines-ellipsis'
 import './drink_list.less';
+
+
+
+
+import { connect } from 'react-redux';
+import { addNum, getDataAsync } from '../redux';
+
 const Item = List.Item;
+
+
+@connect(
+  (state) => ({ listData : state }),
+  { addNum, getDataAsync }
+)
+
+
 
 
 
@@ -13,25 +30,23 @@ const Item = List.Item;
 class Drink_list extends React.Component {
 	constructor(props){
 		super(props);
-		this.state = {
-			list_data:{}
-		}
 	}
 
 	componentDidMount(){
-	    axios.get('/list').then((res)=>{
-	      if(res.status == 200){
-	      	this.setState({
-	      		list_data : res.data
-	      	})
-	      }
-	    })
+
+		
+
+		this.props.getDataAsync();
+
+
+
 	}
 
 	render () {
 
+		const listData = this.props.listData;
 
-        let items = Object.values(this.state.list_data);
+        let items = Object.values(listData);
 
 
 		let lists = items.map(function(item){
