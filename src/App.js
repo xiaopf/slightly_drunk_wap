@@ -9,7 +9,8 @@ import {
 import './App.less';
 import Index from './pages/index';
 import Detail from './pages/detail';
-
+import SignIn from './pages/signIn';
+import SignUp from './pages/signUp';
 
 
 
@@ -30,8 +31,11 @@ class App extends Component {
     return (
       <BrowserRouter>
          <div>
-           <Route exact path='/' component={ Index }></Route>
-           <Route path='/:id' component={ Detail }></Route>
+           <Route exact path='/' component={ SignIn }></Route>
+           <Route path='/signup' component={ SignUp }></Route>
+           <Route  path='/signin' component={ Index }></Route>
+           <Route path='/drink/:id' component={ Detail }></Route>
+           
          </div>
 
       </BrowserRouter>

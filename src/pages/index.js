@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import './index.css';
 
 import { Button ,TabBar, Icon} from 'antd-mobile';
-import Drink_list from './drink_list';
-import My_page from './my_page';
+import DrinkList from './drinkList';
+import MyPage from './myPage';
+
+
+
 
 
 
@@ -51,7 +54,7 @@ class Index extends Component {
                data-seed="logId"
              >
 
-             <Drink_list></Drink_list>
+             <DrinkList></DrinkList>
              
              </TabBar.Item>
              
@@ -120,7 +123,7 @@ class Index extends Component {
                  });
                }}
              >
-             <My_page></My_page>
+             <MyPage></MyPage>
              </TabBar.Item>
            </TabBar>
           </div>
