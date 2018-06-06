@@ -12,14 +12,14 @@ import './drinkList.less';
 
 
 import { connect } from 'react-redux';
-import { addNum, getDataAsync } from '../redux';
+import { createGetData, getDataAsync } from '../redux';
 
 const Item = List.Item;
 
 
 @connect(
   (state) => ({ listData : state }),
-  { addNum, getDataAsync }
+  { createGetData, getDataAsync }
 )
 
 
@@ -34,12 +34,7 @@ class DrinkList extends React.Component {
 
 	componentDidMount(){
 
-		
-
 		this.props.getDataAsync();
-
-
-
 	}
 
 	render () {

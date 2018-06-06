@@ -2,14 +2,13 @@ import React from 'react';
 import './detail.less';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { addNum , getDataAsync } from '../redux';
+import { createGetData , getDataAsync } from '../redux';
 import { NavBar, Icon , WhiteSpace } from 'antd-mobile';
 
-const list_data = require('./drink.json')
 
 @connect(
    (state)=>({listData : state}),
-   { addNum , getDataAsync }
+   { createGetData , getDataAsync }
 )
 
 
@@ -22,9 +21,6 @@ class Detail extends React.Component {
 
 	constructor(props){
 		super(props);
-		this.state = {
-			list_data:{}
-		}
 	}
 
 	componentDidMount(){
@@ -45,7 +41,7 @@ class Detail extends React.Component {
 	render () {
 
 		let match=this.props.match.params;
-		let drink = list_data[`drink0`];
+		let drink = this.props.listData[`drink0`];
 
 		return ( 
 	

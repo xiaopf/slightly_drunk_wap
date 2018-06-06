@@ -6,6 +6,12 @@ app.get('/list',function(req,res){
 	res.json(drink_list);
 });
 
+
+app.post('/signin',function(req,res){
+
+})
+
+
 app.listen(8080,function(){
 	console.log("后端挂载8080端口");
 });
