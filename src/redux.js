@@ -1,12 +1,5 @@
 import axios from 'axios';
-
-
-
 const GET_DATA = 'GET_DATA';
-const SIGN_UP = 'SIGN_UP';
-
-
-
 
 export function getData (state = {},action){
 	switch (action.type){
@@ -19,28 +12,9 @@ export function getData (state = {},action){
 
 }
 
-export function signUp(state = {},action){
-	switch (action.type){
-	    case SIGN_UP: 
-		    return state;
-	    default:
-	        return state;
-	}
-
-}
-
-
-
-
 export function createGetData(data){
     return {type:GET_DATA,data:data}
 }
-export function CreateSignUp(data){
-    return {type:SIGN_UP}
-}
-
-
-
 
 export function getDataAsync() {
 	return dispatch => (
