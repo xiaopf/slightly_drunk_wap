@@ -2,7 +2,13 @@ var express = require('express');
 var app = express();
 var drink_list = require('../drink.json');
 var userRouter = require('./userRouter');
-var body-parser = require('body-parser');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+
+app.use(cookieParser());
+app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+
 
 var mongoose = require('mongoose');
 var dbUrl = 'mongodb://localhost/dk';
@@ -25,7 +31,6 @@ app.get('/list',function(req,res){
 
 app.use('/user',userRouter);
 
-app.use(body-parser);
 
 app.listen(8080,function(){
 	console.log("后端挂载8080端口");

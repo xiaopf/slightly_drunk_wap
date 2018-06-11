@@ -54,7 +54,7 @@ export function createSignUpAsync(user){
            axios.post('/user/signup',user).then((res) => {
                  if(res.status == 200){
                  	console.log(res.data);
-               		dispatch(createSignUp(user,res.data.code))
+               		dispatch(createSignUp(user,res.data))
                  }
            })
 	)

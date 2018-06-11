@@ -7,4 +7,4 @@ var userSchema = new mongoose.Schema({
 });
 
 
-default exports userSchema;
+module.exports = userSchema;
