@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore ,applyMiddleware,compose } from 'redux';
+import { createStore ,applyMiddleware,compose ,combineReducers} from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
@@ -9,17 +9,30 @@ import './reset.css';
 import App from './App';
 
 import { getData } from './redux';
+import { sign } from './redux/user.redux.js';
+
 
 import registerServiceWorker from './registerServiceWorker';
 
+const reducers = combineReducers({
+	userMsg:sign,
+	resData:getData
+})
+// const store = createStore(getData,compose(
+//       applyMiddleware(thunk),
+//       window.devToolsExtension ? window.devToolsExtension():f=>f
+ 
+// ));
 
-const store = createStore(getData,compose(
+
+
+const store = createStore(reducers,compose(
       applyMiddleware(thunk),
       window.devToolsExtension ? window.devToolsExtension():f=>f
  
 ));
 
-
+// console.log(store.getState());
 
 ReactDOM.render(
 	<Provider store={store}>

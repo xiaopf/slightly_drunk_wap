@@ -11,6 +11,7 @@ import Index from './pages/index';
 import Detail from './pages/detail';
 import SignIn from './pages/signIn';
 import SignUp from './pages/signUp';
+import editerWine from './pages/signUp';
 
 
 
@@ -31,11 +32,11 @@ class App extends Component {
     return (
       <BrowserRouter>
          <div>
-           <Route exact path='/' component={ SignIn }></Route>
+           <Route exact path='/signin' component={ SignIn }></Route>
            <Route path='/signup' component={ SignUp }></Route>
-           <Route  path='/signin' component={ Index }></Route>
+           <Route  path='/index' component={ Index }></Route>
            <Route path='/drink/:id' component={ Detail }></Route>
-           
+           <Route path='/edite/:id' component={ editerWine }></Route>
          </div>
 
       </BrowserRouter>

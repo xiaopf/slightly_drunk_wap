@@ -1,9 +1,14 @@
 var express = require('express');
 var app = express();
 var drink_list = require('../drink.json');
+
 var userRouter = require('./userRouter');
+var drinkRouter = require('./drinkRouter');
+
+
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
+var utility = require('utility');
 
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -30,6 +35,7 @@ app.get('/list',function(req,res){
 
 
 app.use('/user',userRouter);
+app.use('/user',drinkRouter);
 
 
 app.listen(8080,function(){

@@ -2,7 +2,14 @@ import React from 'react';
 import {List, InputItem, WhiteSpace, WingBlank,Button } from 'antd-mobile';
 import { Link } from 'react-router-dom';
 import './signIn.less'
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createSignInAsync } from '../redux/user.redux.js';
 
+@connect(
+	state => state,
+	{ createSignInAsync }
+)
 
 class SignIn extends React.Component {
 	constructor (props) {
@@ -27,12 +34,14 @@ class SignIn extends React.Component {
     }
 
     signIn () {
-    	console.log(this.state)
+    	let { userName,password } = this.state;
+    	this.props.createSignInAsync({ userName,password })
     }
    
 	render () {
 		return (
             <div>
+            { this.props.userMsg.redirectTo ? <Redirect to={ this.props.userMsg.redirectTo }></Redirect> : null }
             <WhiteSpace></WhiteSpace>
             <WhiteSpace></WhiteSpace>
             <WhiteSpace></WhiteSpace>

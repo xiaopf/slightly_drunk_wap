@@ -1,19 +1,24 @@
 import axios from 'axios';
 const GET_DATA = 'GET_DATA';
 
-export function getData (state = {},action){
+
+var initState = {
+	code:0,
+	drinkList:{}
+}
+
+export function getData (state = initState ,action){
 	switch (action.type){
 	    case GET_DATA: 
-	        state = action.data;
-		    return state;
+		    return {code:6,drinkList:action.payload};
 	    default:
 	        return state;
 	}
 
 }
 
-export function createGetData(data){
-    return {type:GET_DATA,data:data}
+export function createGetData(payload){
+    return {type:GET_DATA,payload}
 }
 
 export function getDataAsync() {

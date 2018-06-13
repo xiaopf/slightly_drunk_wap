@@ -4,12 +4,13 @@ import './signIn.less';
 import axios from 'axios';
 
 import { connect } from 'react-redux';
-import { signUp, createSignUp ,createSignUpAsync} from  '../redux/user.redux.js';
+import { Redirect } from 'react-router-dom';
+import { createSignUpAsync} from  '../redux/user.redux.js';
 
 
 @connect(
-   (state) => ({ userMsg : state }),
-   { createSignUp ,createSignUpAsync}
+   state => state,
+   {createSignUpAsync}
 )
 
 
@@ -41,14 +42,15 @@ class SignIn extends React.Component {
     }
 
     signUp () {
-    	this.props.createSignUpAsync(this.state)
+    	var {userName,password} = this.state;
+    	this.props.createSignUpAsync({userName,password,image:''})
     }
 
 
 	render () {
 		return (
             <div>
-
+            { this.props.userMsg.redirectTo ? <Redirect to={ this.props.userMsg.redirectTo }></Redirect> : null }
             <WhiteSpace></WhiteSpace>
             <WhiteSpace></WhiteSpace>
             <WingBlank>

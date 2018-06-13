@@ -1,8 +1,9 @@
 var express = require('express');
 var UserController = require('./controller/user.controller.js');
 
-var Router = express.Router();
+var userRouter = express.Router();
 
-Router.post('/signup',UserController.signUp)
+userRouter.post('/signup',UserController.signUp)
+userRouter.post('/signin',UserController.signIn)
 
-module.exports = Router;
+module.exports = userRouter;

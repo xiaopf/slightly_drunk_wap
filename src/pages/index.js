@@ -5,6 +5,13 @@ import { Button ,TabBar, Icon} from 'antd-mobile';
 import DrinkList from './drinkList';
 import MyPage from './myPage';
 
+import { connect } from 'react-redux';
+import { createGetData, getDataAsync } from '../redux';
+
+@connect(
+  state => state,
+  { getDataAsync }
+)
 
 
 
@@ -16,7 +23,12 @@ class Index extends Component {
     super(props);
     this.state = {
       selectedTab: 'blueTab',
+      showList:false
     };
+  }
+
+  componentDidMount(){
+    this.props.getDataAsync();
   }
 
 
@@ -54,7 +66,8 @@ class Index extends Component {
                data-seed="logId"
              >
 
-             <DrinkList></DrinkList>
+              { this.props.resData.code ? <DrinkList drinkList = {this.props.resData.drinkList}></DrinkList> : null }  
+
              
              </TabBar.Item>
              

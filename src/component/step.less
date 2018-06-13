@@ -1,0 +1,33 @@
+
+@height : 36px;
+
+.single_step{
+	width:100%;
+	height:@height;
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+	margin:10px 0;
+
+	.step_msg{
+		width:80px;
+		font-size: 20px;
+	}
+	.step_text{
+		flex:auto;
+		border: 1px solid #000;
+		margin:0 20px;
+		height:@height;
+	}
+	.delete_step{
+		height:@height;
+		width:@height;
+		border-radius: 50%;
+		background-color: red;
+		line-height: @height;
+		text-align: center;
+		cursor:pointer;
+		font-size: 30px;
+		color:#fff;
+	}
+}
