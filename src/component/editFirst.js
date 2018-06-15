@@ -1,6 +1,6 @@
 import React from 'react';
 import './editFirst.less';
-import EditBanner from '../components/editBanner';
+import EditBanner from './editBanner';
 
 
 

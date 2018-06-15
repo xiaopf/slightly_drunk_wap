@@ -1,12 +1,12 @@
 import React from 'react';
 import './backPage.less';
 
-import EditWine from '../components/editWine';
-import EditFirst from '../components/editFirst';
+import EditWine from '../component/editWine';
+import EditFirst from '../component/editFirst';
 
 
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route,
   Link,
   Switch,
@@ -18,6 +18,7 @@ import {
 class BackPage extends React.Component {
 	constructor(props){
 		super(props);
+
 	}
 
 
@@ -27,7 +28,7 @@ class BackPage extends React.Component {
 	render () {
 		return ( 
 
-			<Router>
+			<BrowserRouter>
 				<div>
 					<ul className="back_nav">
 					   <li><NavLink activeClassName="selected" to="/edit/editBanner">编辑banner</NavLink></li>
@@ -42,7 +43,7 @@ class BackPage extends React.Component {
 				    </div>
 
 				</div>
-			</Router> 
+			</BrowserRouter> 
 
 
 

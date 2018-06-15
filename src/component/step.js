@@ -8,17 +8,17 @@ class Step extends React.Component {
 			this.state={value:''}
 
 			this.stepReduce = this.stepReduce.bind(this);
-			this.inputChange = this.inputChange.bind(this);
+			this.handleChange = this.handleChange.bind(this);
 		}
 
 		stepReduce(index,e){
             this.props.onStepReduce(index);
 		}
 
-		inputChange(e){
-			this.setState({
-				value:e.target.value
-			})
+		handleChange(index,e){
+         
+			this.props.onHandleStepChange(index,e.target.value);
+			
 		}
 
 		render () {
@@ -29,7 +29,7 @@ class Step extends React.Component {
 
 				<div className="single_step">
 		        	<label className="step_msg" htmlFor={'step_'+(index+1)}>步骤 {index + 1} :</label>
-	        		<input name="step_text" className="step_text" id={'step_'+(index+1)} type="text" onChange = { this.inputChange }/>
+	        		<input name={'step_text_'+(index+1)} className="step_text" id={'step_'+(index+1)} type="text" onBlur = { e => this.handleChange(index,e) }/>
 	        		<div className="delete_step" onClick = {(e) => this.stepReduce(index,e)}>X</div>
 				</div>
 

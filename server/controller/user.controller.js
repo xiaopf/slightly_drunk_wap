@@ -16,6 +16,7 @@ exports.signUp = function(req,res,next){
     		var user = new userModel({userName,password,image});
     		user.save(function(err,data){
 		    	if(err){console.log(err);}
+                res.cookie('userId',data._id);
 		    	res.json({ code:6, msg:'恭喜您注册成功！', data})
     		});
     	}else{
@@ -42,6 +43,7 @@ exports.signIn = function(req,res,next){
     	if(!data){
             res.json({ code:1, msg:'用户不存在！'})
     	}else{
+            res.cookie('userId',data._id);
     		res.json({ code:6, msg:'', data})
     	}
     	

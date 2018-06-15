@@ -18,12 +18,6 @@ const reducers = combineReducers({
 	userMsg:sign,
 	resData:getData
 })
-// const store = createStore(getData,compose(
-//       applyMiddleware(thunk),
-//       window.devToolsExtension ? window.devToolsExtension():f=>f
- 
-// ));
-
 
 
 const store = createStore(reducers,compose(
@@ -32,7 +26,6 @@ const store = createStore(reducers,compose(
  
 ));
 
-// console.log(store.getState());
 
 ReactDOM.render(
 	<Provider store={store}>

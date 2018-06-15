@@ -11,7 +11,7 @@ import Index from './pages/index';
 import Detail from './pages/detail';
 import SignIn from './pages/signIn';
 import SignUp from './pages/signUp';
-import editerWine from './pages/signUp';
+import backPage from './pages/backPage';
 
 
 
@@ -36,7 +36,7 @@ class App extends Component {
            <Route path='/signup' component={ SignUp }></Route>
            <Route  path='/index' component={ Index }></Route>
            <Route path='/drink/:id' component={ Detail }></Route>
-           <Route path='/edite/:id' component={ editerWine }></Route>
+           <Route path='/edit' component={ backPage }></Route>
          </div>
 
       </BrowserRouter>

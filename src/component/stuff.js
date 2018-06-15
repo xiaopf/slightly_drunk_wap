@@ -5,27 +5,34 @@ class Stuff extends React.Component {
 		constructor(props){
 			super(props);
 
-			this.state={value:'',value2:''}
 
 			this.stuffReduce = this.stuffReduce.bind(this);
-			this.inputChange = this.inputChange.bind(this);
-			this.inputChange2 = this.inputChange2.bind(this);
+			this.handleChange1 = this.handleChange1.bind(this);
+			this.handleChange2 = this.handleChange2.bind(this);
+			this.handleChange3 = this.handleChange3.bind(this);
+
 		}
 
 		stuffReduce(index,e){
             this.props.onStuffReduce(index);
 		}
 
-		inputChange(e){
-			this.setState({
-				value:e.target.value
-			})
+		handleChange1(index,e){
+
+	        this.props.onHandleStuffChange(index,e.target.name,e.target.value,19)
+
 		}
-		inputChange2(e){
-			this.setState({
-				value2:e.target.value
-			})
+		handleChange2(index,e){
+
+	        this.props.onHandleStuffChange(index,e.target.name,e.target.value,10)
+
 		}
+		handleChange3(index,e){
+
+	        this.props.onHandleStuffChange(index,e.target.name,e.target.value,9)
+
+		}
+
 
 		render () {
 
@@ -37,8 +44,8 @@ class Stuff extends React.Component {
 		        	<label className="stuff_f_title" htmlFor={'stuff_img_'+(index+1)}>材料 {index + 1} :</label>
 
 		        	<div className="stuff_img_wrap">
-			        	<img className="stuff_img" src="../../static/images/mainbg.png" alt="" />
-			        	<input name="stuff_input_msg" className="file_input stuff_input_msg" id={'stuff_img_'+(index+1)} type="file"/>
+			        	<img className="stuff_img" src="https://img.tthunbohui.cn/zhuanti/20631/mainbg.png" alt="" />
+			        	<input name={'stuff_img_local_url_'+(index+1)} onBlur = { e => this.handleChange1(index,e) }  className="file_input stuff_input_msg" id={'stuff_img_'+(index+1)} type="file"/>
 		        	</div>
 
                     
@@ -46,12 +53,12 @@ class Stuff extends React.Component {
 
                         <div className="stuff_text_input_s">
             	        	<label className="stuff_s_title" htmlFor={'stuff_msg_'+(index+1)}>名称 : </label>
-                    		<input name={'stuff_msg_'+(index+1)} id={'stuff_msg_'+(index+1)} type="text" onChange = { this.inputChange }/>
+                    		<input name={'stuff_name_'+(index+1)} id={'stuff_msg_'+(index+1)} type="text" onBlur = { e => this.handleChange2(index,e) }/>
                         </div>
 
                 		<div className="stuff_text_input_s">
     			        	<label className="stuff_s_title" htmlFor={'stuff_link_'+(index+1)}>链接 : </label>
-    		        		<input name={'stuff_link_'+(index+1)} id={'stuff_link_'+(index+1)} type="text" onChange = { this.inputChange2 }/>
+    		        		<input name={'stuff_url_'+(index+1)} id={'stuff_link_'+(index+1)} type="text" onBlur = { e => this.handleChange3(index,e) }/>
                 		</div>
 
                     </div>

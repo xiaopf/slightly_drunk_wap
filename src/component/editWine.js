@@ -1,7 +1,16 @@
 import React from 'react';
 import './editWine.less';
-import Step from '../components/step';
-import Stuff from '../components/stuff';
+import Step from './step';
+import Stuff from './stuff';
+
+import { connect } from 'react-redux';
+import { createAddItemAsync } from '../redux/drink.redux.js';
+
+@connect(
+   state => state,
+   { createAddItemAsync }
+)
+
 
 
 class EditWine extends React.Component {
@@ -9,8 +18,12 @@ class EditWine extends React.Component {
 		super(props);
 
 		this.state = {
-			step : [0],
-            stuff : [0]
+			drinkName : '',
+			engName : '',
+			img_local_url : '',
+			describes : '',
+			steps : [0],
+            stuffs : [{stuff_img_local_url:'',stuff_name:'',stuff_url:''}]
 		};
 
 		this.stepPlus = this.stepPlus.bind(this);
@@ -18,72 +31,117 @@ class EditWine extends React.Component {
 
 		this.stuffPlus = this.stuffPlus.bind(this);
 		this.onStuffReduce = this.onStuffReduce.bind(this);
+		this.saveData = this.saveData.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 
-
+		 this.handleStepChange = this.handleStepChange.bind(this)
+		 this.handleStuffChange = this.handleStuffChange.bind(this)
+		 // this.handleStuffChange2 = this.handleStuffChange2.bind(this)
+		 // this.handleStuffChange3 = this.handleStuffChange3.bind(this)
 	}
 
 	stepPlus () {
-		let step = this.state.step;
+		let steps = this.state.steps;
 
-		let max = Math.max.apply(null,step);
+		let max = Math.max.apply(null,steps);
 
-		step.push(max + 1);
+		steps.push(max + 1);
 
-		console.log(step);
+		console.log(steps);
 
 		this.setState({
-			step : step
+			steps : steps
 		})
 	}
 
 	onStepReduce(index){
-		let step = this.state.step;
+		let steps = this.state.steps;
 
-		if(step.length > 1){
-			step.splice(index,1);
+		if(steps.length > 1){
+			steps.splice(index,1);
 			this.setState({
-				step : step
+				steps : steps
 			})
 		}
 	}
 
 	stuffPlus () {
-		let stuff = this.state.stuff;
+		let stuffs = this.state.stuffs;
 
-		let max = Math.max.apply(null,stuff);
+		let max = Math.max.apply(null,stuffs);
 
-		stuff.push(max + 1);
+		stuffs.push(max + 1);
 
-		console.log(stuff);
+		console.log(stuffs);
 
 		this.setState({
-			stuff : stuff
+			stuffs : stuffs
 		})
 	}
 
 	onStuffReduce(index){
-		let stuff = this.state.stuff;
+		let stuffs = this.state.stuffs;
 
-		if(stuff.length > 1){
-			stuff.splice(index,1);
+		if(stuffs.length > 1){
+			stuffs.splice(index,1);
 			this.setState({
-				stuff : stuff
+				stuffs : stuffs
 			})
 		}
 
 	}
 
+	saveData(){
+		this.props.createAddItemAsync(this.state)
+	}
+
+	handleChange(e){
+
+        let name = e.target.name;
+        let value = e.target.value;
+        this.setState({
+        	[name]:value
+        })
+	}
+
+    handleStepChange (index,step) {
+
+    	let steps = this.state.steps;
+    	steps[index] = step;
+    	this.setState({
+    		steps:steps
+    	})
+
+    	console.log(this.state)
+    }
+
+    handleStuffChange (index,name,value,str_len) {
+    	let stuffs = this.state.stuffs;
+
+    	stuffs[index][name.slice(0, str_len)] = value;
+
+    	this.setState({
+    		stuffs:stuffs
+    	})
+
+    	console.log(this.state)
+    }
+  
   
 
 	render () {
         
         let that = this;
-        const steps  =  this.state.step.map(function(step,index){
-                            return <Step key={step} index = {index} onStepReduce = {that.onStepReduce}></Step>
+        const steps  =  this.state.steps.map(function(step,index){
+                            return <Step key={step} index = {index} onStepReduce = {that.onStepReduce}  onHandleStepChange = { that.handleStepChange }></Step>
 			        	});
 
-        const stuffs  =  this.state.stuff.map(function(stuff,index){
-                            return <Stuff key={stuff} index = {index} onStuffReduce = {that.onStuffReduce}></Stuff>
+        const stuffs  =  this.state.stuffs.map(function(stuff,index){
+                            return <Stuff key={stuff} index = {index} 
+			                            onStuffReduce = {that.onStuffReduce}  
+			                            onHandleStuffChange = { that.handleStuffChange }
+
+		                            ></Stuff>
 			        	});
 
 
@@ -92,15 +150,41 @@ class EditWine extends React.Component {
           
 
 		return (
-           <form className="edit_wrap" action="/add_list" method="post" >
+				<div className="edit_wrap">
+		            <label className="bTitle" htmlFor="">主图</label>
 
-                <input name="test" type="text"/>
+	                <img className="main_img" src="https://img.tthunbohui.cn/zhuanti/20631/mainbg.png" alt="" />
+	                <input name="img_local_url" onChange = { this.handleChange } className="file_input main_img_input" type="file"/>
 
-                <button type="submit"  value="Submit" className="submit">确认提交</button>
+				    <br/>
+	                <label className="bTitle" htmlFor="">中文名</label>
+	                <input name="drinkName" onChange = { this.handleChange } className="nameCn" type="text"/>
+					<br/>
+	                <label className="bTitle" htmlFor="">英文名</label>
+	                <input name="engName" onChange = { this.handleChange } className="nameEn" type="text"/>
+			        <br />
+
+					<br/>
+	                <label className="bTitle" htmlFor="describes">介绍</label>
+	                <textarea className="describes" onChange = { this.handleChange } name="describes" id="describes"></textarea>
 
 
+	                <div className="steps">
+		               <p className="bTitle">制作步骤</p>
+		               {steps}
+		               <button className="add_input" onClick = { this.stepPlus }>添加步骤</button>
+	                </div>
 
-           </form>
+
+	                <div className="stuffs">
+		                <p className="bTitle">所需材料</p>
+		                {stuffs}
+		                <button className="add_input" onClick = { this.stuffPlus }>添加材料</button>
+	                </div>
+
+	                <button className="saveData" onClick={ this.saveData }>保存设置</button>
+				</div>
+
 		)
 	}
 }

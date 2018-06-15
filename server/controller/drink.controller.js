@@ -1,7 +1,9 @@
 var drinkModel = require('../model/drink.model.js');
 
-exports function addDrink () = function(req,res,next){
+exports.addDrink = function(req,res,next){
 	var { drinkName } = req.body;
+
+	console.log(req.body)
 
 	drinkModel.findOne({drinkName},function(err,drink){
 		if(err){console.log(err)}

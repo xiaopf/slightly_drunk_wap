@@ -37,7 +37,7 @@ class EditBanner extends React.Component {
 		        	<label className="editBanner_f_title" htmlFor={'stuff_img_'+(index+1)}>banner {index + 1} :</label>
 
 		        	<div className="editBanner_img_wrap">
-			        	<img className="editBanner_img" src="../../static/images/mainbg.png" alt="" />
+			        	<img className="editBanner_img" src="https://img.tthunbohui.cn/zhuanti/20631/mainbg.png" alt="" />
 			        	<input className="file_input editBanner_input_msg" id={'stuff_img_'+(index+1)} type="file"/>
 		        	</div>
 

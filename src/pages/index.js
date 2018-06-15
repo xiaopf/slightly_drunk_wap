@@ -36,6 +36,7 @@ class Index extends Component {
     return (
  
        <div style={{ position: 'fixed', height: '100%', width: '100%', bottom: 0 }}>
+           
            <TabBar
              unselectedTintColor="#949494"
              tintColor="#33A3F4"
