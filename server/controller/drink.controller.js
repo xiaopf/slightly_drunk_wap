@@ -5,17 +5,19 @@ let path = require('path');
 
 exports.getList = function (req,res,next){
     
-    var cookies = req.cookies;
-	if(cookies){
+  var cookies = req.cookies;
+
+
+	if(cookies.userId){
 		drinkModel.find({},function(err,data){
 			if(err){console.log(err);}
 	        if(data){
-	        	res.json(data)
+	        	res.json({code:6,msg:'拉取成功！',drinkList:data})
 	        }
 			
 		})
 	}else{
-		res.json({code:0,msg:'未登录！'})
+		res.json({code:0,msg:'未登录！',drinkList:[]})
 	}
 
 }
@@ -23,7 +25,7 @@ exports.getList = function (req,res,next){
 
 
 
-// var drinkList = require('../drink.json');
+// var drinkList = require('./drink.json');
 
 
 
@@ -44,7 +46,7 @@ exports.addDrink = function(req,res,next){
  //    var timer = setInterval(function(){
 
  //    	let img_url = values[i].img_url;
- //    	let drinkName = values[i].name;
+ //    	let drinkName = values[i].nameCn;
  //    	let engName = values[i].nameEng;
  //    	let describes = values[i].describes;
 

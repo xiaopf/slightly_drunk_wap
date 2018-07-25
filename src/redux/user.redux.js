@@ -3,11 +3,12 @@ import axios from 'axios';
 
 const SIGN_UP = 'SIGN_UP';
 const SIGN_IN = 'SIGN_IN';
+const SIGN_OUT = 'SIGN_OUT';
 const ERROR_MSG = 'ERROR_MSG';
 
 
 var initState = {
-	isSignIn:'',
+	isSignIn:false,
 	userName:'',
 	password:'',
 	msg:''
@@ -17,16 +18,20 @@ var initState = {
 export function sign(state = initState,action){
 	switch (action.type){
 	    case SIGN_UP: 
-		    return {...state,isSignIn:true,...action.payload,redirectTo:redirectTo(action.payload.code)};
+		    return {...state,isSignIn:true,...action.payload.data,'code':action.payload.code,'msg':action.payload.msg,redirectTo:redirectTo(action.payload.code)};
 		break;
 
-        case SIGN_IN: 
-    	    return {...state,isSignIn:true,...action.payload,redirectTo:redirectTo(action.payload.code)};;
+      case SIGN_IN: 
+    	    return {...state,isSignIn:true,...action.payload.data,'code':action.payload.code,'msg':action.payload.msg,redirectTo:redirectTo(action.payload.code)};;
     	break;
 
 	    case ERROR_MSG: 
 		    return {...state,isSignIn:false,...action.payload};;
-		break;
+			break;
+
+	    case SIGN_OUT: 
+			    return {...initState,redirectTo:redirectTo(0)};;
+			break;
 
 	    default:
 	        return state;
@@ -67,6 +72,10 @@ export function createSignIn(payload){
     return {type:SIGN_IN,payload}
 }
 
+export function createSignOut(){
+    return {type:SIGN_OUT}
+}
+
 export function createErrorMsg(payload){
     return {type:ERROR_MSG,payload}
 }
@@ -103,10 +112,12 @@ export function createSignInAsync(user){
 	return dispatch => (
            axios.post('/user/signin',user).then((res) => {
                  if(res.status == 200){
-                 	console.log(res.data);
                		dispatch(createSignIn(res.data))
                  }
            })
 	)
 }
 
+export function createSignOutAsync(){
+	return createSignOut()
+}

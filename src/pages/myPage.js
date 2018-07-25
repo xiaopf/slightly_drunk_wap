@@ -1,18 +1,22 @@
 import React from 'react';
 import axios from 'axios';
 import { WhiteSpace, Button , WingBlank , Modal, Toast} from 'antd-mobile';
-import { Link } from 'react-router-dom';
+import { Link , Redirect} from 'react-router-dom';
 import browserCookies from 'browser-cookies';
 
 
-
+import { createSignOutAsync } from '../redux/user.redux.js';
+import { connect } from 'react-redux';
 
 
 
 import './myPage.less';
 
 
-
+@connect(
+	state => state,
+	{createSignOutAsync}
+)
 
 
 class MyPage extends React.Component {
@@ -25,7 +29,7 @@ class MyPage extends React.Component {
 	}
 
 	componentDidMount(){
-
+      console.log(this.props)
 	}
 
 	signOut(){
@@ -35,7 +39,7 @@ class MyPage extends React.Component {
 		  { text: '取消', onPress: () => console.log('取消') },
 		  { text: '确定', onPress: () => {
              browserCookies.erase('userId');
-             window.location.href = window.location.href;
+             this.props.createSignOutAsync()
 		  } },
 		])
 	}
@@ -44,9 +48,12 @@ class MyPage extends React.Component {
 
 		return (
 			<div>
+
+				{ this.props.userMsg.isSignIn ?  null  : <Redirect to={ this.props.userMsg.redirectTo }></Redirect>}
+
 				<Link className="img_name" to="">
-				   <img className="head_img" src="http://img1.mukewang.com/57e8a02700011bae06400640-100-100.jpg" alt=""/>
-				   <p className="head_name">xiaopf</p>
+				   <img className="head_img" src={this.props.userMsg.image} alt=""/>
+				   <p className="head_name">{this.props.userMsg.userName}</p>
 				</Link>
 				<WhiteSpace></WhiteSpace>
 				<WingBlank>

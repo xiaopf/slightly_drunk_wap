@@ -48,6 +48,7 @@ exports.signIn = function(req,res,next){
     	}else if(data.password === password){
             res.cookie('userId',data._id);
             data.password = " ";
+            console.log(data)
     		res.json({ code:6, msg:'', data})
     	}else{
             res.json({ code:1, msg:'密码错误！'})
