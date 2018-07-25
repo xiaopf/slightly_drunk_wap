@@ -29,11 +29,11 @@ class DrinkList extends React.Component {
 
 		let lists = items.map(function(item){
 
-			return  <Item className="item" key = {item.id}>
+			return  <Item className="item" key = {item._id}>
                        <Link className="drink_img" to={`/drink/${item.id}`}><img src={item.img_url} alt=""/></Link>
                        <div className="text_wrap">
-            	           <p className="name">{item.name}</p>
-            	           <p className="nameEng">{item.nameEng}</p>
+            	           <p className="name">{item.drinkName}</p>
+            	           <p className="nameEng">{item.engName}</p>
 
 
             	           <LinesEllipsis className="describes"

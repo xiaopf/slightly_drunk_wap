@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const SIGN_UP = 'SIGN_UP';
 const SIGN_IN = 'SIGN_IN';
+const ERROR_MSG = 'ERROR_MSG';
 
 
 var initState = {
@@ -16,12 +17,16 @@ var initState = {
 export function sign(state = initState,action){
 	switch (action.type){
 	    case SIGN_UP: 
-		    return {...state,...action.payload,redirectTo:redirectTo(action.payload.code)};
+		    return {...state,isSignIn:true,...action.payload,redirectTo:redirectTo(action.payload.code)};
 		break;
 
         case SIGN_IN: 
-    	    return {...state,...action.payload,redirectTo:redirectTo(action.payload.code)};;
+    	    return {...state,isSignIn:true,...action.payload,redirectTo:redirectTo(action.payload.code)};;
     	break;
+
+	    case ERROR_MSG: 
+		    return {...state,isSignIn:false,...action.payload};;
+		break;
 
 	    default:
 	        return state;
@@ -35,7 +40,7 @@ export function sign(state = initState,action){
 function redirectTo(code){
 	switch (code){
 		case 0:
-			return '';
+			return '/signin';
 		break;
 		case 1:
 			return '';
@@ -62,20 +67,39 @@ export function createSignIn(payload){
     return {type:SIGN_IN,payload}
 }
 
+export function createErrorMsg(payload){
+    return {type:ERROR_MSG,payload}
+}
 
 
 export function createSignUpAsync(user){
+
+	if(!user.userName || !user.password ||!user.comfirmPassword){
+	   return createErrorMsg({msg:'用户名和密码不可以为空！'});
+	}else if(user.password !== user.comfirmPassword){
+	   return createErrorMsg({msg:'两次密码不相同！'}) ;
+	}
+
 	return dispatch => (
-           axios.post('/user/signup',user).then((res) => {
-                 if(res.status == 200){
-                 	console.log(res.data);
-               		dispatch(createSignUp(res.data))
-                 }
-           })
+
+       axios.post('/user/signup',user).then((res) => {
+             if(res.status == 200){
+             	console.log(res.data);
+           		dispatch(createSignUp(res.data))
+             }
+       })
 	)
 }
 
+
+
 export function createSignInAsync(user){
+
+	if(!user.userName || !user.password){
+	   return createErrorMsg({msg:'用户名和密码不可以为空！'});
+	}
+
+
 	return dispatch => (
            axios.post('/user/signin',user).then((res) => {
                  if(res.status == 200){

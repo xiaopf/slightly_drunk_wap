@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var drink_list = require('../drink.json');
+
 
 var userRouter = require('./route/userRouter');
 var drinkRouter = require('./route/drinkRouter');
@@ -26,10 +26,9 @@ db.once('open', function() {console.log('数据库连接成功！')});
 
 
 
+var UserController = require('./controller/drink.controller.js');
 
-app.get('/list',function(req,res){
-	res.json(drink_list);
-});
+app.get('/list',UserController.getList);
 
 
 

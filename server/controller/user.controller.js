@@ -26,26 +26,32 @@ exports.signUp = function(req,res,next){
     })
 }
 
+
+
 function addSalt(password){
 	var salt = 'xiaopfaddsomesalt！'
 	return utility.md5(utility.md5(password + salt))
 }
 
+
 exports.signIn = function(req,res,next){
 
 	var {userName,password} = req.body;
+    password = addSalt(password);//哈希加盐
 
-	console.log(req.body)
 
     userModel.findOne({userName},function(err,data){
     	if(err){console.log(err);}
 
     	if(!data){
             res.json({ code:1, msg:'用户不存在！'})
-    	}else{
+    	}else if(data.password === password){
             res.cookie('userId',data._id);
+            data.password = " ";
     		res.json({ code:6, msg:'', data})
-    	}
+    	}else{
+            res.json({ code:1, msg:'密码错误！'})
+        }
     	
     })
 }

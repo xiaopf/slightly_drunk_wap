@@ -2,13 +2,13 @@ import React from 'react';
 import './detail.less';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { createGetData , getDataAsync } from '../redux';
+import { getDataAsync } from '../redux/list.redux.js';
 import { NavBar, Icon , WhiteSpace } from 'antd-mobile';
 
 
 @connect(
    (state)=>({listData : state}),
-   { createGetData , getDataAsync }
+   { getDataAsync }
 )
 
 

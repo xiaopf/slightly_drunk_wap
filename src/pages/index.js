@@ -6,7 +6,7 @@ import DrinkList from './drinkList';
 import MyPage from './myPage';
 
 import { connect } from 'react-redux';
-import { createGetData, getDataAsync } from '../redux';
+import { getDataAsync } from '../redux/list.redux.js';
 
 @connect(
   state => state,
@@ -35,6 +35,8 @@ class Index extends Component {
   render() {
     return (
  
+
+       { this.}
        <div style={{ position: 'fixed', height: '100%', width: '100%', bottom: 0 }}>
            
            <TabBar

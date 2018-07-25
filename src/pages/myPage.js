@@ -1,7 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-import { WhiteSpace } from 'antd-mobile';
+import { WhiteSpace, Button , WingBlank , Modal, Toast} from 'antd-mobile';
 import { Link } from 'react-router-dom';
+import browserCookies from 'browser-cookies';
+
+
+
+
 
 
 import './myPage.less';
@@ -13,10 +18,26 @@ import './myPage.less';
 class MyPage extends React.Component {
 	constructor(props){
 		super(props);
+
+		this.signOut = this.signOut.bind(this)
+
+
 	}
 
 	componentDidMount(){
 
+	}
+
+	signOut(){
+
+		const alert = Modal.alert;
+		alert('注销', '确认退出登录？', [
+		  { text: '取消', onPress: () => console.log('取消') },
+		  { text: '确定', onPress: () => {
+             browserCookies.erase('userId');
+             window.location.href = window.location.href;
+		  } },
+		])
 	}
 
 	render () {
@@ -28,10 +49,11 @@ class MyPage extends React.Component {
 				   <p className="head_name">xiaopf</p>
 				</Link>
 				<WhiteSpace></WhiteSpace>
+				<WingBlank>
+					<Button type="warning" onClick = { this.signOut }>退出登录</Button>
+				</WingBlank>
 
-				<Link to=""></Link>
-				<WhiteSpace></WhiteSpace>
-				<Link to=""></Link>
+				
 
 			</div>
 

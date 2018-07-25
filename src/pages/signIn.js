@@ -47,6 +47,10 @@ class SignIn extends React.Component {
             <WhiteSpace></WhiteSpace>
             <WhiteSpace></WhiteSpace>
 	            <p className="sign_in_title">登陆账号</p>
+	            
+	            { this.props.userMsg.msg ? <div className="signUp_msg am-wingblank am-wingblank-lg">{this.props.userMsg.msg }</div> : null }
+
+	            <WhiteSpace></WhiteSpace>
 	            <WingBlank>
 	            	<List>
 	            	   <InputItem name="userName" onChange = { v => this.handleChange('userName',v) } placeholder="请输入账户名">昵称</InputItem>

@@ -5,27 +5,54 @@ class EditBanner extends React.Component {
 		constructor(props){
 			super(props);
 
-			this.state={value:'',value2:''}
+			this.state = {
+				banner_link : '',
+				banner_text : ''
+			}
 
 			this.stuffReduce = this.stuffReduce.bind(this);
-			this.inputChange = this.inputChange.bind(this);
-			this.inputChange2 = this.inputChange2.bind(this);
+			this.handleChange = this.handleChange.bind(this);
+			this.handleChange1 = this.handleChange1.bind(this);
+
 		}
+
+
+		componentDidMount () {
+			
+			let banner_link = this.props.banner.banner_link;
+			let banner_text = this.props.banner.banner_text;
+
+			this.setState({
+				banner_link : banner_link,
+				banner_text : banner_text
+			})
+		}
+
+
+
 
 		stuffReduce(index,e){
             this.props.onBannerReduce(index);
 		}
 
-		inputChange(e){
+		handleChange(index,e){
 			this.setState({
-				value:e.target.value
+				banner_link : e.target.value
 			})
-		}
-		inputChange2(e){
+
+            this.props.onHandleBannerChange(index,e.target.name,e.target.value,11);
+
+		}		
+
+		handleChange1(index,e){
 			this.setState({
-				value2:e.target.value
+				banner_text : e.target.value
 			})
+
+            this.props.onHandleBannerChange(index,e.target.name,e.target.value,11);
+
 		}
+
 
 		render () {
 
@@ -45,8 +72,12 @@ class EditBanner extends React.Component {
                     <div className="editBanner_text_wrap">
 
                         <div className="editBanner_text_input_s">
-            	        	<label className="editBanner_s_title" htmlFor={'editBanner_msg_'+(index+1)}>链接 : </label>
-                    		<input className='editBanner_msg_input' id={'editBanner_msg_'+(index+1)} type="text" onChange = { this.inputChange }/>
+            	        	<label className="editBanner_s_title" htmlFor={'banner_link_'+(index+1)}>链接 : </label>
+                    		<input className='editBanner_link_input' value = { this.state.banner_link } name = {'banner_link' +(index+1)} id={'banner_link_'+(index+1)} type="text" onChange = { e => this.handleChange (index,e)}/>
+                        </div>
+                        <div className="editBanner_text_input_s">
+            	        	<label className="editBanner_s_title" htmlFor={'banner_msg_'+(index+1)}>文字说明 : </label>
+                    		<input className='editBanner_msg_input' value = { this.state.banner_text } name = {'banner_text' +(index+1)} id={'banner_text_'+(index+1)} type="text" onChange = { e => this.handleChange1(index,e) }/>
                         </div>
 
 

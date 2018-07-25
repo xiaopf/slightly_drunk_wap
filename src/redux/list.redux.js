@@ -10,7 +10,7 @@ var initState = {
 export function getData (state = initState ,action){
 	switch (action.type){
 	    case GET_DATA: 
-		    return {code:6,drinkList:action.payload};
+		    return {code:6,drinkList:action.payload,redirectTo:redirectTo(action.payload.code)};
 	    default:
 	        return state;
 	}
@@ -31,3 +31,22 @@ export function getDataAsync() {
 	)
 }
 
+
+
+
+function redirectTo(code){
+	switch (code){
+		case 0:
+			return '/signin';
+		break;
+		case 1:
+			return '';
+		break;
+		case 6:
+			return '/index';
+		break;
+		default :
+			return '';
+		break;
+	}
+}
