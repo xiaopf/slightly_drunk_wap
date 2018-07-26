@@ -1,9 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import { WhiteSpace, Button , WingBlank , Modal, Toast} from 'antd-mobile';
+import { WhiteSpace, Button , WingBlank , Modal, Result, Icon,Toast, NavBar} from 'antd-mobile';
 import { Link , Redirect} from 'react-router-dom';
 import browserCookies from 'browser-cookies';
-
 
 import { createSignOutAsync } from '../redux/user.redux.js';
 import { connect } from 'react-redux';
@@ -44,17 +43,44 @@ class MyPage extends React.Component {
 		])
 	}
 
+
+
+
+
+
+
+
+
+
 	render () {
+		const myImg = src => <img src={src} className="spe am-icon am-icon-lg" alt="" />;
+
+		const ResultExample = () => (<div className="result-example">
+		  <Result
+		    img={myImg(this.props.userMsg.image || this.props.resData.image)}
+		    title={this.props.userMsg.userName || this.props.resData.userName}
+		  />
+		</div>);
+
+
 
 		return (
 			<div>
 
 				{ this.props.userMsg.isSignIn ?  null  : <Redirect to={ this.props.userMsg.redirectTo }></Redirect>}
 
-				<Link className="img_name" to="">
-				   <img className="head_img" src={this.props.userMsg.image} alt=""/>
-				   <p className="head_name">{this.props.userMsg.userName}</p>
-				</Link>
+				<NavBar
+				  mode="light"
+				  icon={<Icon type="left" />}
+				  onLeftClick={() => console.log('onLeftClick')}
+				  rightContent={[
+				    <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
+				    <Icon key="1" type="ellipsis" />,
+				  ]}
+				>NavBar</NavBar>
+
+
+				<ResultExample></ResultExample>
 				<WhiteSpace></WhiteSpace>
 				<WingBlank>
 					<Button type="warning" onClick = { this.signOut }>退出登录</Button>

@@ -1,8 +1,10 @@
 import React from 'react';
 import './backPage.less';
 
-import EditWine from '../component/editWine';
-import EditFirst from '../component/editFirst';
+import editDrinkList from '../component/editDrinkList';
+import editFirst from '../component/editFirst';
+
+
 
 
 import {
@@ -37,8 +39,8 @@ class BackPage extends React.Component {
 				    
 				    <div className="back_edit_area">
 				
-					    	<Route exact path="/edit/editWine" component={EditWine}/>
-					    	<Route path="/edit/editBanner" component={EditFirst}/>
+					    	<Route exact path="/edit/editBanner" component={editFirst}/>
+					    	
 				
 				    </div>
 

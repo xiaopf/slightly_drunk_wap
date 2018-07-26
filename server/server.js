@@ -29,6 +29,7 @@ db.once('open', function() {console.log('数据库连接成功！')});
 var UserController = require('./controller/drink.controller.js');
 
 app.get('/list',UserController.getList);
+app.get('/detail/:id',UserController.getOne);
 
 
 

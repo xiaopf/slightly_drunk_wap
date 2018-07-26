@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import './index.css';
 
 import {Redirect} from 'react-router-dom'
-import { Button ,TabBar, Icon} from 'antd-mobile';
+import { Button ,TabBar, Icon, Carousel} from 'antd-mobile';
 import DrinkList from './drinkList';
 import MyPage from './myPage';
 
 import { connect } from 'react-redux';
-import { getDataAsync } from '../redux/list.redux.js';
+import { getDataAsync} from '../redux/list.redux.js';
 
 @connect(
   state => state,
-  { getDataAsync }
+  { getDataAsync}
 )
 
 
@@ -29,7 +29,9 @@ class Index extends Component {
   }
 
   componentDidMount(){
-    this.props.getDataAsync();
+    if(!this.props.resData.drinkList[0]){
+      this.props.getDataAsync();
+    } 
   }
 
 
@@ -70,7 +72,7 @@ class Index extends Component {
                data-seed="logId"
              >
 
-              { this.props.resData.code ? <DrinkList drinkList = {this.props.resData.drinkList}></DrinkList> : null }  
+              { this.props.resData.code ? <DrinkList drinkList = {this.props.resData.drinkList} banners = {this.props.resData.banners}></DrinkList> : null }  
 
              
              </TabBar.Item>

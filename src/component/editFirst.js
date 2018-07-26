@@ -1,23 +1,31 @@
 import React from 'react';
 import './editFirst.less';
 import EditBanner from './editBanner';
-import { createAddBannerAsync } from '../redux/banner.redux.js'
+import { createUpdateBannerAsync } from '../redux/banner.redux.js'
+import { getDataAsync} from '../redux/list.redux.js';
+
 import { connect } from 'react-redux';
 
 
+
+
 @connect(
-	state => state,
-	{createAddBannerAsync}
+  state => state,
+  { createUpdateBannerAsync,getDataAsync}
 )
 
 
 
-class EditWine extends React.Component {
+
+
+
+
+class EditFirst extends React.Component {
 	constructor(props){
 		super(props);
 
 		this.state = {
-			banner : [{banner_img_url:'',banner_link:'',banner_text:''}],
+			banners : [{banner_link:'',banner_image:''}],
 		};
 
 
@@ -28,51 +36,71 @@ class EditWine extends React.Component {
 
 	}
 
+	componentDidMount(){
+		if(!this.props.resData.drinkList[0]){
+		  this.props.getDataAsync();
+		} 
+
+		let that = this;
+		let timer = setInterval(function(){
+			console.log("1");
+			if(that.props.resData.code){
+				let banners = that.props.resData.banners;
+				that.setState({
+					banners : banners
+				})
+			    clearInterval(timer);
+			}
+		},100);
+
+
+	}
+
 	
 
 	bannerPlus () {
-		let banner = this.state.banner;
+		let banners = this.state.banners;
 
 
 
-		banner.push({banner_img_url:'',banner_link:'',banner_text:''});
+		banners.push({banner_link:'',banner_image:''});
 
 
 
 		this.setState({
-			banner : banner
+			banners : banners
 		})
 	}
 
 	onBannerReduce(index){
-		let banner = this.state.banner;
+		let banners = this.state.banners;
 
-		if(banner.length > 1){
-			banner.splice(index,1);
+		if(banners.length > 1){
+			banners.splice(index,1);
 			this.setState({
-				banner : banner
+				banners : banners
 			})
 		}
 
 	}
 
 	saveBanner () {
-		this.props.createAddBannerAsync(this.state)
+		console.log(this.state);
+		this.props.createUpdateBannerAsync(this.state)
 	}
   
 	handleBannerChange (index,name,value,str_len) {
-		let banner = this.state.banner;
+		let banners = this.state.banners;
 
-		banner[index][name.slice(0, str_len)] = value;
+		banners[index][name.slice(0, str_len)] = value;
 	}
 
 	render () {
         
         let that = this;
 
-
-        const banners  =  this.state.banner.map(function(banner,index){
-                            return <EditBanner key={banner.banner_link + banner.banner_text + index} index = {index} banner = {banner} onHandleBannerChange = {that.handleBannerChange} onBannerReduce = {that.onBannerReduce}></EditBanner>
+        const bannerList  =  this.state.banners.map(function(banner,index){
+                            return <EditBanner key={banner.banner_link  + index} index = {index} banner = {banner} onHandleBannerChange = {that.handleBannerChange} onBannerReduce = {that.onBannerReduce}></EditBanner>
 			        	});
 
 
@@ -85,7 +113,7 @@ class EditWine extends React.Component {
 
                 <div className="stuffs">
 	                <p className="bTitle">编辑banner</p>
-	                {banners}
+	                {bannerList}
 	                <button className="add_input" onClick = { this.bannerPlus }>添加材料</button>
                 </div>
                 <button className="submit" onClick = { this.saveBanner }>确认提交</button>
@@ -95,4 +123,4 @@ class EditWine extends React.Component {
 	}
 }
 
-export default EditWine;
+export default EditFirst;

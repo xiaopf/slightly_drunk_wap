@@ -2,13 +2,14 @@ import React from 'react';
 import './detail.less';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { getDataAsync } from '../redux/list.redux.js';
+import { getOneAsync } from '../redux/list.redux.js';
 import { NavBar, Icon , WhiteSpace } from 'antd-mobile';
 
 
+
 @connect(
-   (state)=>({listData : state}),
-   { getDataAsync }
+   state => state,
+   { getOneAsync }
 )
 
 
@@ -21,12 +22,21 @@ class Detail extends React.Component {
 
 	constructor(props){
 		super(props);
+		this.state = {
+			drink:{}
+		}
 	}
 
 	componentDidMount(){
-		window.scrollTo(0,0);
 
-		this.props.getDataAsync();
+		let idx = this.props.match.params.id;
+        let drink = this.props.resData.drinkList[idx];
+
+        this.setState({
+        	drink:drink
+        })
+
+		window.scrollTo(0,0);
 	}
 
 	goBack () {
@@ -37,12 +47,9 @@ class Detail extends React.Component {
 
 
 
-
 	render () {
 
-		let match=this.props.match.params;
-		let drink = this.props.listData[`drink0`];
-
+		let drink = this.state.drink;
 		return ( 
 	
 

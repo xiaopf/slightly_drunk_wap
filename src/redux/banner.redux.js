@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const ADD_BANNER = 'ADD_BANNER';
+const UPDATA_BANNER = 'UPDATA_BANNER';
 
 
 
@@ -12,8 +12,8 @@ var initState = {
 
 export function banner(state = initState,action){
 	switch (action.type){
-	    case ADD_BANNER: 
-		    return {...state,...action.payload};
+	    case UPDATA_BANNER: 
+		    return {...initState,...action.payload};
 		break;
 
 	    default:
@@ -26,16 +26,18 @@ export function banner(state = initState,action){
 
 
 
-export function createAddBanner(payload){
-	return {type:ADD_BANNER ,payload}
+export function createUpdateBanner(payload){
+	return {type:UPDATA_BANNER ,payload}
 }
 
-export function createAddBannerAsync(banner){
+export function createUpdateBannerAsync(banner){
+	console.log(banner);
     return dispatch => (
-                         axios.post('/edit/addBanner',banner).then((res) => {
-                              if(res.status == 200){
-                              	createAddBanner(res.data)
-                              }
-                         })
+	         axios.post('/edit/updateBanner',banner).then((res) => {
+	              if(res.status == 200){
+	              	console.log(res.data);
+	              	createUpdateBanner(res.data)
+	              }
+	         })
     )
 }

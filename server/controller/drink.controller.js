@@ -1,4 +1,6 @@
 let drinkModel = require('../model/drink.model.js');
+var userModel = require('../model/user.model.js');
+var bannerModel = require('../model/banner.model.js');
 let fs =  require('fs');
 let path = require('path');
 
@@ -9,18 +11,53 @@ exports.getList = function (req,res,next){
 
 
 	if(cookies.userId){
-		drinkModel.find({},function(err,data){
+
+		drinkModel.find({}).limit(10).exec(function(err,data){
 			if(err){console.log(err);}
-	        if(data){
-	        	res.json({code:6,msg:'拉取成功！',drinkList:data})
-	        }
-			
+			userModel.findOne({_id:cookies.userId},function(err,user){
+				if(err){console.log(err);}
+
+				bannerModel.find({},function(err,banners){
+					if(err){console.log(err);}
+					if(data && user && banners){
+						user.password = ' ';
+						res.json({code:6,msg:'拉取成功！','drinkList':data,'user':user,'banners':banners})
+					}
+
+				})
+			})	
 		})
+
+
 	}else{
 		res.json({code:0,msg:'未登录！',drinkList:[]})
 	}
 
 }
+
+exports.getOne = function (req,res,next){
+    
+  var _id = req.params.id;
+
+	if(_id){
+
+		drinkModel.find({_id},function(err,drink){
+			if(err){console.log(err);}
+			
+			if(drink){
+				user.password = ' ';
+				res.json({code:6,msg:'详情页拉取成功！','drink':drink})
+			}
+
+		})
+
+
+	}else{
+		res.json({code:0,msg:'未拉取成功！','drink':[]})
+	}
+
+}
+
 
 
 
@@ -71,8 +108,52 @@ exports.addDrink = function(req,res,next){
 
  //    },100)
 
+    
+  //   let banner = [
+	 //    {
+	 //    	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/82948278366846233585.jpg',
+	 //    	'banner_link' : 'http://localhost:3000/drink/11'
+	 //    },
+	 //    {
+	 //    	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/02085761131675905627.jpg',
+	 //    	'banner_link' : 'http://localhost:3000/drink/11'
+	 //    },
+	 //    {
+	 //    	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/16619379388884103244.jpg',
+	 //    	'banner_link' : 'http://localhost:3000/drink/11'
+	 //    }
+  //   ];
+
+ 	// let values = Object.values(banner);
+     
+  //    var i = 0;
+
+  //    var timer = setInterval(function(){
+
+  //    	let banner_image = values[i].banner_image;
+  //    	let banner_link = values[i].banner_link;
 
 
+
+  //    	bannerModel.findOne({banner_image},function(err,banner){
+  //    		if(err){console.log(err)}
+
+  //    		if(!banner){
+  //    			let banner = new bannerModel( {banner_image,banner_link});
+
+  //    			banner.save(function(err){
+  //    				if(err){console.log(err)};
+  //    			})
+  //    		}
+  //    	})
+
+  //        i++;
+
+  //        if(i == 3){
+  //        	clearInterval(timer);
+  //        }
+
+  //    },100)
 
 
 
@@ -85,7 +166,4 @@ exports.addDrink = function(req,res,next){
 
 
 
-exports.addBanner = function(req,res,next){
-     
-     console.log(req.body)
-}
+
