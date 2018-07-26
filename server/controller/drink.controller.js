@@ -109,20 +109,20 @@ exports.addDrink = function(req,res,next){
  //    },100)
 
     
-  //   let banner = [
-	 //    {
-	 //    	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/82948278366846233585.jpg',
-	 //    	'banner_link' : 'http://localhost:3000/drink/11'
-	 //    },
-	 //    {
-	 //    	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/02085761131675905627.jpg',
-	 //    	'banner_link' : 'http://localhost:3000/drink/11'
-	 //    },
-	 //    {
-	 //    	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/16619379388884103244.jpg',
-	 //    	'banner_link' : 'http://localhost:3000/drink/11'
-	 //    }
-  //   ];
+    // let banner = [
+	   //  {
+	   //  	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/82948278366846233585.jpg',
+	   //  	'banner_link' : 'http://localhost:3000/drink/11'
+	   //  },
+	   //  {
+	   //  	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/02085761131675905627.jpg',
+	   //  	'banner_link' : 'http://localhost:3000/drink/11'
+	   //  },
+	   //  {
+	   //  	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/16619379388884103244.jpg',
+	   //  	'banner_link' : 'http://localhost:3000/drink/11'
+	   //  }
+    // ];
 
  	// let values = Object.values(banner);
      

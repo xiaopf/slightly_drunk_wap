@@ -1,5 +1,9 @@
 import React from 'react';
 import './editBanner.less';
+import { Redirect ,WithRouter} from 'react-router-dom';
+
+
+// @WithRouter
 
 class EditBanner extends React.Component {
 		constructor(props){
@@ -65,6 +69,10 @@ class EditBanner extends React.Component {
 			return (
 
 				<div className="editBanner_wrap">
+
+
+				      { this.props.banner.redirectTo ? <Redirect to={ this.props.banner.redirectTo }></Redirect> : null }
+
 		        	<label className="editBanner_f_title" htmlFor={'stuff_img_'+(index+1)}>banner {index + 1} :</label>
 
 		        	<div className="editBanner_img_wrap">

@@ -29,6 +29,18 @@ exports.updateBanner = function(req,res,next){
 
 			banner.save(function(err){
 				if(err){console.log(err)};
+
+                if(i == len){
+
+                    bannerModel.find({},function(err,banners){
+                        if(err){console.log(err)};
+                        res.json({code:6,'msg':'更新成功！',banners})
+                    })
+
+                }
+
+
+                
 			})
 
 
@@ -72,9 +84,7 @@ exports.updateBanner = function(req,res,next){
     }
 
 
-    if(i == len){
-    	res.json({code:6,'msg':'更新成功！'})
-    }
+
 
 }
 
