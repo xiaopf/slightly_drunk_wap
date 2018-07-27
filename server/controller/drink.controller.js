@@ -64,17 +64,97 @@ exports.getOne = function (req,res,next){
 
 // var drinkList = require('./drink.json');
 
+// deleteItem
+// addItem
+
+
+
+exports.deleteDrink = function(req,res,next){
+
+
+    let { _id }  = req.body;
+    
+    console.log(_id);
+  
+    if(_id){
+
+   	    drinkModel.remove({_id},function(err,data){
+			if(err){console.log(err)};
+			res.json({code:6,msg:"酒单删除成功！"})
+		})
+
+    }
+}
 
 
 
 exports.addDrink = function(req,res,next){
-	// let { drinkName } = req.body;
 
+
+    let item = req.body;
+    delete item._id;
+
+    if(item){
+
+   	    let drink = new drinkModel(item);
+
+   	    drink.save(function(err){
+			if(err){console.log(err)};
+			res.json({code:6,msg:"酒单添加成功！"})
+		})
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.updateDrink = function(req,res,next){
+
+
+
+    let drink = req.body;
+    console.log(drink)
+    let { _id } = req.body;
+    
+    delete drink._id;
+
+    console.log(drink);
+    if(_id){
+
+   	    drinkModel.update({_id},drink,function(err,data){
+			if(err){console.log(err)};
+			res.json({code:6,msg:"酒单更新成功！"})
+		})
+
+    }
+
+
+
+
+
+
+
+
+
+
+	// let { drinkName } = req.body;
 	// let img_local_url = req.body.img_local_url;
     
-
-
-
 
 	// let values = Object.values(drinkList)
     
@@ -109,20 +189,20 @@ exports.addDrink = function(req,res,next){
  //    },100)
 
     
-    // let banner = [
-	   //  {
-	   //  	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/82948278366846233585.jpg',
-	   //  	'banner_link' : 'http://localhost:3000/drink/11'
-	   //  },
-	   //  {
-	   //  	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/02085761131675905627.jpg',
-	   //  	'banner_link' : 'http://localhost:3000/drink/11'
-	   //  },
-	   //  {
-	   //  	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/16619379388884103244.jpg',
-	   //  	'banner_link' : 'http://localhost:3000/drink/11'
-	   //  }
-    // ];
+  //   let banner = [
+	 //    {
+	 //    	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/82948278366846233585.jpg',
+	 //    	'banner_link' : 'http://localhost:3000/drink/11'
+	 //    },
+	 //    {
+	 //    	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/02085761131675905627.jpg',
+	 //    	'banner_link' : 'http://localhost:3000/drink/11'
+	 //    },
+	 //    {
+	 //    	'banner_image' : 'http://www.legacy.com.tw/uploads/banner/16619379388884103244.jpg',
+	 //    	'banner_link' : 'http://localhost:3000/drink/11'
+	 //    }
+  //   ];
 
  	// let values = Object.values(banner);
      

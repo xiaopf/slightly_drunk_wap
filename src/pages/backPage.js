@@ -3,10 +3,11 @@ import './backPage.less';
 
 
 import editDrinkList from '../component/editDrinkList';
-
-import editEditWine from '../component/editWine';
 import editFirst from '../component/editFirst';
+import editStuffList from '../component/editStuffList';
 
+
+import editWine from '../component/editWine';
 
 
 
@@ -36,15 +37,20 @@ class BackPage extends React.Component {
 			<BrowserRouter>
 				<div>
 					<ul className="back_nav">
-					   <li><NavLink activeClassName="selected" to="/edit/editBanner">编辑banner</NavLink></li>
-					   <li><NavLink activeClassName="selected" to="/edit/editDrinkList">添加数据</NavLink></li>
+					   <li><NavLink activeClassName="selected" to="/edit/editBanner">banner</NavLink></li>
+					   <li><NavLink activeClassName="selected" to="/edit/editDrinkList">鸡尾酒单</NavLink></li>
+					   <li><NavLink activeClassName="selected" to="/edit/editStuffList">原料清单</NavLink></li>
 					</ul>
 				    
 				    <div className="back_edit_area">
-				
+			
+						<Switch>
 					    	<Route exact path="/edit/editBanner" component={editFirst}/>
 					    	<Route  path="/edit/editDrinkList" component={editDrinkList}/>
-					    	
+					    	<Route  path="/edit/editStuffList" component={editStuffList}/>
+					    	<Route  path="/edit/:id" component={editWine}/>
+					    	<Route  path="/addDrink" component={editWine}/>
+						</Switch>			    	
 				
 				    </div>
 

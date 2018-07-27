@@ -3,7 +3,11 @@ import './index.css';
 
 import {Redirect} from 'react-router-dom'
 import { Button ,TabBar, Icon, Carousel} from 'antd-mobile';
+
 import DrinkList from './drinkList';
+import StuffList from './stuffList';
+
+
 import MyPage from './myPage';
 
 import { connect } from 'react-redux';
@@ -103,7 +107,11 @@ class Index extends Component {
                }}
                data-seed="logId1"
              >
+
+             
              </TabBar.Item>
+
+
              <TabBar.Item
                icon={
                  <div style={{
@@ -129,6 +137,10 @@ class Index extends Component {
                  });
                }}
              >
+
+
+             { this.props.resData.code ? <StuffList drinkList = {this.props.resData.drinkList} banners = {this.props.resData.banners}></StuffList> : null }  
+
              </TabBar.Item>
              <TabBar.Item
                icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
@@ -142,7 +154,13 @@ class Index extends Component {
                  });
                }}
              >
+
+
              <MyPage></MyPage>
+
+
+
+
              </TabBar.Item>
            </TabBar>
           </div>

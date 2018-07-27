@@ -62,14 +62,14 @@ class Detail extends React.Component {
                        rightContent={[,
                          <Icon key="1" type="ellipsis" />,
                        ]}
-                     >{drink.name}</NavBar>
+                     >{drink.drinkName}</NavBar>
 
 
 
                     <img className="detail_img" src={drink.img_url} alt=""/>
                     <div className="detail_text_wrap">
-                        <p className="detail_name">{drink.name}</p>
-                        <p className="detail_eng_name">{drink.nameEng}</p>
+                        <p className="detail_name">{drink.drinkName}</p>
+                        <p className="detail_eng_name">{drink.engName}</p>
                     </div>
                     <WhiteSpace></WhiteSpace>
 	                 <div className="detail_describe">

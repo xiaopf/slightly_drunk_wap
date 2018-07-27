@@ -5,11 +5,11 @@ import Stuff from './stuff';
 
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { createAddItemAsync } from '../redux/drink.redux.js';
+import { createUpdateItemAsync ,createAddItemAsync} from '../redux/drink.redux.js';
 
 @connect(
    state => state,
-   { createAddItemAsync }
+   { createUpdateItemAsync ,createAddItemAsync}
 )
 
 
@@ -19,9 +19,10 @@ class EditWine extends React.Component {
 		super(props);
 
 		this.state = {
+			_id:'',
 			drinkName : '',
 			engName : '',
-			img_local_url : '',
+			img_url : '',
 			describes : '',
 			steps : [''],
             stuffs : [{stuff_img_local_url:'',stuff_name:'',stuff_url:''}]
@@ -37,6 +38,37 @@ class EditWine extends React.Component {
 		this.handleStuffChange = this.handleStuffChange.bind(this)
 
 	}
+
+
+	componentDidMount(){
+
+		if(this.props.match.path !== '/addDrink'){
+
+	        let id = this.props.match.params.id;
+	        let drink = this.props.resData.drinkList[id];
+
+	        
+
+			this.setState({
+				_id: drink._id,
+				drinkName : drink.drinkName,
+				engName : drink.engName,
+				img_url : drink.img_url,
+				describes : drink.describes,
+				steps : drink.steps,
+	            stuffs : drink.stuffs
+			})
+
+	        let that = this;
+	        setTimeout(function(){
+	        	console.log(that.state)
+	        },1000)
+		}
+
+
+
+	}
+
 
 	stepPlus () {
 		let steps = this.state.steps;
@@ -77,9 +109,13 @@ class EditWine extends React.Component {
 	}
 
 	saveData(){
-
-		console.log(this.state);
-		this.props.createAddItemAsync(this.state)
+		if(this.props.match.path !== '/addDrink'){
+			this.props.createUpdateItemAsync(this.state)
+		}else{
+			this.props.createAddItemAsync(this.state)
+		}
+		
+		
 	}
 
 	handleChange(e){
@@ -146,22 +182,23 @@ class EditWine extends React.Component {
 					{ this.props.drinks.payload ? <Redirect to = 'edit/editWine'></Redirect> : null}
 		            <label className="bTitle" htmlFor="">主图</label>
 
-	                <img className="main_img" src="https://img.tthunbohui.cn/zhuanti/20631/mainbg.png" alt="" />
+	                <img className="main_img" src={this.state.img_url ? this.state.img_url : "https://img.tthunbohui.cn/zhuanti/20631/mainbg.png"} alt="" />
 
 	                <label className="bTitle" htmlFor="">主图链接</label>
-	                <input name="img_local_url" onChange = { this.handleChange } className=" main_img_input" type="text"/>
+	                <input name="img_url" onChange = { this.handleChange } className=" main_img_input" value={this.state.img_url} type="text"/>
 
 				    <br/>
 	                <label className="bTitle" htmlFor="">中文名</label>
-	                <input name="drinkName" onChange = { this.handleChange } className="nameCn" type="text"/>
+	                <input name="drinkName" onChange = { this.handleChange } className="nameCn" type="text" value={this.state.drinkName}/ >
 					<br/>
 	                <label className="bTitle" htmlFor="">英文名</label>
-	                <input name="engName" onChange = { this.handleChange } className="nameEn" type="text"/>
+	                <input name="engName" onChange = { this.handleChange } className="nameEn" type="text" value={this.state.engName}/ >
 			        <br />
+
 
 					<br/>
 	                <label className="bTitle" htmlFor="describes">介绍</label>
-	                <textarea className="describes" onChange = { this.handleChange } name="describes" id="describes"></textarea>
+	                <textarea className="describes" onChange = { this.handleChange } name="describes" id="describes" value={this.state.describes}></textarea>
 
 
 	                <div className="steps">
