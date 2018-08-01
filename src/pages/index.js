@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import './index.css';
 
 import {Redirect} from 'react-router-dom'
-import { Button ,TabBar, Icon, Carousel} from 'antd-mobile';
+import { SearchBar,Button ,TabBar, Icon, Carousel} from 'antd-mobile';
+
 
 import DrinkList from './drinkList';
-import StuffList from './stuffList';
+import ShopCart from './ShopCart';
+
+import MyAddress from './MyAddress';
 
 
 import MyPage from './myPage';
+import Shop from './Shop';
 
 import { connect } from 'react-redux';
 import { getDataAsync} from '../redux/list.redux.js';
@@ -27,7 +31,7 @@ class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'blueTab',
+      selectedTab: 'greenTab',
       showList:false
     };
   }
@@ -52,8 +56,8 @@ class Index extends Component {
              barTintColor="white"
            >
              <TabBar.Item
-               title="Life"
-               key="Life"
+               title="酒单"
+               key="酒单"
                icon={<div style={{
                  width: '22px',
                  height: '22px',
@@ -96,8 +100,8 @@ class Index extends Component {
                    background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
                  />
                }
-               title="Koubei"
-               key="Koubei"
+               title="清单"
+               key="清单"
                badge={'new'}
                selected={this.state.selectedTab === 'redTab'}
                onPress={() => {
@@ -127,8 +131,8 @@ class Index extends Component {
                    background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
                  />
                }
-               title="Friend"
-               key="Friend"
+               title="商城"
+               key="商城"
                dot
                selected={this.state.selectedTab === 'greenTab'}
                onPress={() => {
@@ -137,16 +141,23 @@ class Index extends Component {
                  });
                }}
              >
+             {/* < SearchBar placeholder = "Search"
+             maxLength = {
+               8
+             }
+             />
+                < Shop ></Shop> */}
 
-
-             { this.props.resData.code ? <StuffList drinkList = {this.props.resData.drinkList} banners = {this.props.resData.banners}></StuffList> : null }  
+                <ShopCart/>
+            {/* <AddAddress /> */}
+                {/* <MyAddress/> */}
 
              </TabBar.Item>
              <TabBar.Item
                icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
                selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
-               title="My"
-               key="my"
+               title="我的"
+               key="我的"
                selected={this.state.selectedTab === 'yellowTab'}
                onPress={() => {
                  this.setState({

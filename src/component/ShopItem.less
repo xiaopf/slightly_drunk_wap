@@ -1,0 +1,107 @@
+
+@shopItemFooterH : 26px;
+@wineImgW:125px;
+@gapW:10px;
+@moreFS:12px;
+@wineNameFS:@moreFS;
+@priceFS:@moreFS+2px;
+@buyCarFS:@moreFS+4px;
+@itemTite:@buyCarFS;
+
+
+.singleWrap{
+   display: flex;
+   width: auto;
+   flex-wrap: nowrap;
+//    justify-content: space-around;
+   overflow-y: auto;
+
+
+    .toDetail{
+        margin:0 0 0 @gapW;
+        height:20%;
+        background-color: #fff;
+
+
+        .linkToDetail{
+            display: block;
+            width: 100%;
+            height:100%;
+
+            .wineImg{
+                width: @wineImgW;
+                margin : @gapW/2 0;
+            }
+
+            .wineName{
+                width: 100%;
+                text-align:center;
+                font-size: @wineNameFS;
+                line-height:@buyCarFS;
+            }
+        }
+
+
+        .shopItemFooter{
+            width:100%;
+            height: @shopItemFooterH;
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+
+            span:first-child{
+                font-size: @priceFS;
+                color:red;
+                padding: @gapW/2;
+
+
+            }
+
+            span:last-child{
+                color:red;
+                font-size: @buyCarFS;
+                padding: @gapW/2 @gapW;
+            }
+        }
+    }
+
+
+}
+
+.gapAdd{
+    width: @gapW;
+    margin-left: 3-@gapW;
+    color:transparent;
+}
+
+
+.singleWrap::-webkit-scrollbar {display: none;}
+
+
+.shopItemTiteWrap{
+    width:100%;
+    height:40px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+
+    .shopItemTite{
+        display: flex;
+        font-size: @itemTite;
+        color: #404040;
+        height: auto;
+        align-items:center;
+        margin:0 @gapW;
+        padding: 0 @gapW/2;
+        border-left:2px solid red;
+    }
+
+    .linkToMore{
+        display: flex;
+        font-size: @moreFS;
+        height: auto;
+        align-items:center;
+        padding: 0 @gapW;
+    }
+}
+

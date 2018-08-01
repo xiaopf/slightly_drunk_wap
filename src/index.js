@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 
 import './index.css';
 import './reset.css';
+
 import App from './App';
 
 import { getData } from './redux/list.redux.js';
