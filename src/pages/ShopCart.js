@@ -1,26 +1,76 @@
 import React from 'react';
 import './ShopCart.less';
+import CartItem from '../component/CartItem';
 
 
-
+import {WhiteSpace,NavBar, Icon} from 'antd-mobile';
+import {Link} from 'react-router-dom';
 
 
 class ShopCart extends React.Component {
 	constructor(props){
 		super(props);
+        this.state={
+			calculate:0,
+			money:0
+		}
+		this.payFor = this.payFor.bind(this)
+		this.goBack = this.goBack.bind(this);
+	}
+    
+	payFor() {
 
 	}
 
-
-
-
+	goBack() {
+		this.props.history.goBack()
+	}
 
 	render () {
-		return ( 
 
-           <div>
-			   
-		   </div>
+		let wines = this.props.wines;
+
+        let CartItems = this.props.carts.map(function(cart,idx){
+			return (
+				<CartItem {...cart} wines={wines}></CartItem>
+			)
+		})
+
+		
+
+
+		return ( 
+			<div>
+				<NavBar
+					mode="light"
+					icon={<Icon type="left" />}
+					onLeftClick={this.goBack}
+					rightContent={[
+						<Icon key="1" type="ellipsis" />,
+					]}
+				>我的购物车</NavBar>
+				<WhiteSpace></WhiteSpace>	
+
+
+				<div className='cart_address'>
+					<p>{this.props.addr.address + this.props.addr.detail_add}</p>
+					<p><span>{this.props.addr.receive_name}</span><span>{this.props.addr.receive_tel}</span></p>
+					<Link to={'/address/myAddress'} className="toAddAddr">请添加地址</Link>
+				</div>
+
+
+				<div className="cartItems">
+					{CartItems}
+				</div>
+				<div className="calculate"><span>商品总计</span><span>{this.state.calculate}</span></div>
+
+				<div className="footerPay">
+					<p className="waitPay"><span>需要支付</span><span>{this.state.money}</span></p>
+					<p className="payActive" onClick={this.payFor}>确认支付</p>
+				</div>
+
+			</div>
+
 
 
 		)
@@ -28,15 +78,15 @@ class ShopCart extends React.Component {
 }
 
 ShopCart.defaultProps = {
-	addrs: [
+	addr: 
 		{
 			receive_name: 'xiaopf',
 			receive_tel: '18522856492',
 			address: '天津市 天津市 河西区',
 			detail_add: '富力中心写字楼A座2006'
 		}
-	],
-	cart:[
+	,
+	carts:[
 		{
 			choose_id:'001',
 			count:3

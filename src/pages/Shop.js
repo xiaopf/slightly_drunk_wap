@@ -1,6 +1,7 @@
 import React from 'react';
 import './Shop.less';
-
+import { SearchBar} from 'antd-mobile';
+import {Link} from 'react-router-dom';
 
 
 
@@ -22,6 +23,11 @@ class Shop extends React.Component {
 
 		return ( 
 			<div>
+				<div className="searchWrap">
+					< SearchBar placeholder="Search" maxLength={ 8 }/>
+					<Link to={'/shopCart'} className="fa fa-shopping-cart"></Link>
+				</div>
+				
 				{ShopItems}
 			</div>
 

@@ -36,3 +36,92 @@
 	left:140px;
 }
 
+.cart_address{
+	padding: 6px 10px;
+	height:auto;
+	background: aliceblue;
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+
+	p{
+	   font-size: 16px;
+	   line-height: 25px;
+	   display: flex;
+	   align-items: center;
+	}
+
+	p:first-child{
+		span{
+			margin-right: 15px;
+		}
+	}
+	.toAddAddr{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 16px;
+		margin: 8px 0;
+	}
+}
+
+.cartItems{
+	background-color: aliceblue;
+	padding: 10px 0;
+}
+
+.calculate{
+	height: 35px;
+	width:100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		font-size: 16px;
+
+		span:first-child{
+			color:#000;
+			margin-right: 10px;
+		}
+		span:last-child{
+			color:red;
+			margin-right: 15px;
+		}
+}
+
+.footerPay{
+	height:45px;
+	width:100%;
+	background-color:#fff;
+	display: flex;
+	flex-direction: row;
+	position: fixed;
+	left:0;
+	bottom:0;
+	flex:9;
+	
+	.waitPay{
+		width:80%;
+		display: flex;
+		align-items: center;
+		font-size: 18px;
+
+		span:first-child{
+			color:#000;
+			margin-left: 15px;
+		}
+		span:last-child{
+			color:red;
+			margin-left: 10px;
+		}
+	}
+
+	.payActive{
+		width: 20%;
+		background-color: red;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color:#fff;
+		height: 100%;
+	}
+}

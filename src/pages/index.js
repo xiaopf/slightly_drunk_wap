@@ -6,13 +6,14 @@ import { SearchBar,Button ,TabBar, Icon, Carousel} from 'antd-mobile';
 
 
 import DrinkList from './drinkList';
-import ShopCart from './ShopCart';
+import Shop from './Shop';
+import Material from './Material';
 
-import MyAddress from './MyAddress';
+
 
 
 import MyPage from './myPage';
-import Shop from './Shop';
+
 
 import { connect } from 'react-redux';
 import { getDataAsync} from '../redux/list.redux.js';
@@ -31,7 +32,7 @@ class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'greenTab',
+      selectedTab: 'redTab',
       showList:false
     };
   }
@@ -112,7 +113,7 @@ class Index extends Component {
                data-seed="logId1"
              >
 
-             
+            <Material></Material> 
              </TabBar.Item>
 
 
@@ -141,14 +142,11 @@ class Index extends Component {
                  });
                }}
              >
-             {/* < SearchBar placeholder = "Search"
-             maxLength = {
-               8
-             }
-             />
-                < Shop ></Shop> */}
+             {/* 
+             />*/}
+                < Shop ></Shop> 
 
-                <ShopCart/>
+                {/* <ShopCart/> */}
             {/* <AddAddress /> */}
                 {/* <MyAddress/> */}
 

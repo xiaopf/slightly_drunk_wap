@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 class MyAddress extends React.Component {
 	constructor(props){
 		super(props);
-
+		this.goBack = this.goBack.bind(this);
 	}
 
 	
@@ -18,7 +18,9 @@ class MyAddress extends React.Component {
 		console.log(this.props)
 	}
 
-
+	goBack() {
+		this.props.history.goBack()
+	}
 
 	render () {
 
@@ -45,7 +47,7 @@ class MyAddress extends React.Component {
 				<NavBar
 					mode="light"
 					icon={<Icon type="left" />}
-					onLeftClick={() => console.log('onLeftClick')}
+					onLeftClick={this.goBack}
 					rightContent={[
 						<Icon key="1" type="ellipsis" />,
 					]}
