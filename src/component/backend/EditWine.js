@@ -1,11 +1,11 @@
 import React from 'react';
-import './editWine.less';
-import Step from './step';
-import Stuff from './stuff';
+import './EditWine.less';
+import Step from './Step';
+import Stuff from './Stuff';
 
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { createUpdateItemAsync ,createAddItemAsync} from '../redux/drink.redux.js';
+import { createUpdateItemAsync ,createAddItemAsync} from '../../redux/drink.redux.js';
 
 @connect(
    state => state,

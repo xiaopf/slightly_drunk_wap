@@ -33,7 +33,7 @@ class ShopItem extends React.Component {
 						wine._id
 					}>
 						< Link className="linkToDetail" to = {
-							`/drink/${wine._id}`
+							`/goods/${wine._id}`
 						}>
 
 						< img className = "wineImg"
@@ -56,9 +56,7 @@ class ShopItem extends React.Component {
 						</Link >
 						<p className="shopItemFooter">
 							<span>{`￥${wine.price}元`}</span>
-							<span onClick = {
-                                e => that.buy('11',e)
-							} className="fa fa-shopping-cart"></span>
+							<span onClick = { e => that.buy('11',e) } className="fa fa-shopping-cart"></span>
 						</p>
 					</div>
 				)

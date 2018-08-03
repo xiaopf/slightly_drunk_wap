@@ -1,6 +1,6 @@
 import React from 'react';
 import './ShopCart.less';
-import CartItem from '../component/CartItem';
+import CartItem from '../../component/frontend/CartItem';
 
 
 import {WhiteSpace,NavBar, Icon} from 'antd-mobile';
@@ -45,9 +45,6 @@ class ShopCart extends React.Component {
 					mode="light"
 					icon={<Icon type="left" />}
 					onLeftClick={this.goBack}
-					rightContent={[
-						<Icon key="1" type="ellipsis" />,
-					]}
 				>我的购物车</NavBar>
 				<WhiteSpace></WhiteSpace>	
 

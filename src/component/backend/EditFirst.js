@@ -1,8 +1,8 @@
 import React from 'react';
-import './editFirst.less';
-import EditBanner from './editBanner';
-import { createUpdateBannerAsync } from '../redux/banner.redux.js'
-import { getDataAsync} from '../redux/list.redux.js';
+import './EditFirst.less';
+import EditBanner from './EditBanner';
+import { createUpdateBannerAsync } from '../../redux/banner.redux.js'
+import { getDataAsync} from '../../redux/list.redux.js';
 
 import { connect } from 'react-redux';
 

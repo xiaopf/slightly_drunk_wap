@@ -6,7 +6,7 @@ import { List ,Carousel, WingBlank ,SearchBar, Button, WhiteSpace} from 'antd-mo
 import { Link } from 'react-router-dom';
 
 import LinesEllipsis from 'react-lines-ellipsis'
-import './drinkList.less';
+import './DrinkList.less';
 
 const Item = List.Item;
 

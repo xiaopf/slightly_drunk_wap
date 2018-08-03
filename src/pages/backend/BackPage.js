@@ -1,13 +1,11 @@
 import React from 'react';
-import './backPage.less';
+import './BackPage.less';
 
 
-import editDrinkList from '../component/editDrinkList';
-import editFirst from '../component/editFirst';
-import editStuffList from '../component/editStuffList';
-
-
-import editWine from '../component/editWine';
+import EditDrinkList from '../../component/backend/EditDrinkList';
+import EditFirst from '../../component/backend/EditFirst';
+import EditStuffList from '../../component/backend/EditStuffList';
+import EditWine from '../../component/backend/EditWine';
 
 
 
@@ -45,11 +43,11 @@ class BackPage extends React.Component {
 				    <div className="back_edit_area">
 			
 						<Switch>
-					    	<Route exact path="/edit/editBanner" component={editFirst}/>
-					    	<Route  path="/edit/editDrinkList" component={editDrinkList}/>
-					    	<Route  path="/edit/editStuffList" component={editStuffList}/>
-					    	<Route  path="/edit/:id" component={editWine}/>
-					    	<Route  path="/addDrink" component={editWine}/>
+					    	<Route exact path="/edit/editBanner" component={EditFirst}/>
+					    	<Route  path="/edit/editDrinkList" component={EditDrinkList}/>
+					    	<Route  path="/edit/editStuffList" component={EditStuffList}/>
+					    	<Route  path="/edit/:id" component={EditWine}/>
+					    	<Route  path="/addDrink" component={EditWine}/>
 						</Switch>			    	
 				
 				    </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './step.less';
+import './Step.less';
 
 class Step extends React.Component {
 		constructor(props){

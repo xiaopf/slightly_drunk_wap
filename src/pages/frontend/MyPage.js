@@ -4,12 +4,12 @@ import { WhiteSpace, Button , WingBlank , Modal, Result, Icon,Toast, NavBar} fro
 import { Link , Redirect} from 'react-router-dom';
 import browserCookies from 'browser-cookies';
 
-import { createSignOutAsync } from '../redux/user.redux.js';
+import { createSignOutAsync } from '../../redux/user.redux.js';
 import { connect } from 'react-redux';
 
 
 
-import './myPage.less';
+import './MyPage.less';
 
 
 @connect(

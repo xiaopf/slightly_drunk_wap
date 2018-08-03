@@ -1,8 +1,8 @@
 import React from 'react';
-import './detail.less';
+import './Detail.less';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { getOneAsync } from '../redux/list.redux.js';
+import { getOneAsync } from '../../redux/list.redux.js';
 import { NavBar, Icon , WhiteSpace } from 'antd-mobile';
 
 

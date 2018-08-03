@@ -1,10 +1,10 @@
 import React from 'react';
 import {List, InputItem, WhiteSpace, WingBlank,Button } from 'antd-mobile';
 import { Link } from 'react-router-dom';
-import './signIn.less'
+import './SignIn.less'
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { createSignInAsync } from '../redux/user.redux.js';
+import { createSignInAsync } from '../../redux/user.redux.js';
 
 @connect(
 	state => state,

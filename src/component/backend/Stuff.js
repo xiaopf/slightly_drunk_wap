@@ -1,5 +1,5 @@
 import React from 'react';
-import './stuff.less';
+import './Stuff.less';
 
 class Stuff extends React.Component {
 		constructor(props){

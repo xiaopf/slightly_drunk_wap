@@ -1,11 +1,11 @@
 import React from 'react';
 import { List, InputItem, WhiteSpace, WingBlank,Button ,Icon } from 'antd-mobile';
-import './signUp.less';
+import './SignUp.less';
 import axios from 'axios';
 
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { createSignUpAsync } from  '../redux/user.redux.js';
+import { createSignUpAsync } from  '../../redux/user.redux.js';
 
 
 @connect(

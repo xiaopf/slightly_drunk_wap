@@ -5,14 +5,10 @@ import {Redirect} from 'react-router-dom'
 import { SearchBar,Button ,TabBar, Icon, Carousel} from 'antd-mobile';
 
 
-import DrinkList from './drinkList';
-import Shop from './Shop';
-import Material from './Material';
-
-
-
-
-import MyPage from './myPage';
+import DrinkList from './frontend/DrinkList';
+import Shop from './frontend/Shop';
+import Material from './frontend/Material';
+import MyPage from './frontend/MyPage';
 
 
 import { connect } from 'react-redux';

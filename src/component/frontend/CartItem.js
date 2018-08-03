@@ -5,7 +5,6 @@ import { WingBlank } from 'antd-mobile';
 
 
 
-// @WithRouter
 
 class CartItem extends React.Component {
 		constructor(props){

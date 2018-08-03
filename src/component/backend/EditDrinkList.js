@@ -1,12 +1,12 @@
 import React from 'react';
-import './editDrinkList.less';
+import './EditDrinkList.less';
 
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 
 
-import { createUpdateItemAsync ,createDeleteItemAsync ,createAddItemAsync } from '../redux/drink.redux.js'
-import { getDataAsync} from '../redux/list.redux.js';
+import { createUpdateItemAsync ,createDeleteItemAsync ,createAddItemAsync } from '../../redux/drink.redux.js'
+import { getDataAsync} from '../../redux/list.redux.js';
 
 import { connect } from 'react-redux';
 
@@ -132,21 +132,26 @@ class EditDrinkList extends React.Component {
           
 
 		return (	
-			<table className="table_d_list">
-				<thead>
-				  <tr>
-				    <td>中文名</td>
-				    <td>英文名</td>
-				    <td>图片</td>
+		<div>
 
-				    <td>操作</td>
-				  </tr>
-				</thead>
-				<tbody>
-                    {body}
-				</tbody>
+		    <Link className="add_link" to={`/addDrink`}>添加新鸡尾酒 +</Link> 
 
-			</table>
+ 			<table className="table_d_list">
+ 				<thead>
+ 				  <tr>
+ 				    <td>中文名</td>
+ 				    <td>英文名</td>
+ 				    <td>图片</td>
+ 				    <td>操作</td>
+ 				  </tr>
+ 				</thead>
+ 				<tbody>
+                     {body}
+ 				</tbody>
+
+ 			</table>   
+		</div>
+
 			
 		)
 	}
