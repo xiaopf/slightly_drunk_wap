@@ -59,9 +59,6 @@ class Detail extends React.Component {
                        mode="light"
                        icon={<Icon type="left" />}
                        onLeftClick={() => this.goBack()}
-                       rightContent={[,
-                         <Icon key="1" type="ellipsis" />,
-                       ]}
                      >{drink.drinkName}</NavBar>
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Grid, NavBar,Icon} from 'antd-mobile';
+import { Grid, NavBar, Icon,WhiteSpace} from 'antd-mobile';
 import { Link , Redirect} from 'react-router-dom';
 
 
@@ -73,9 +73,13 @@ class WineCatagory extends React.Component {
 
 		
 		return (
-			<div>
+			<div className="wineCatagoryPage">
 
-
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
 
 				<NavBar
 					mode="light"

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Grid, SearchBar} from 'antd-mobile';
+import { Grid, SearchBar,WhiteSpace} from 'antd-mobile';
 import { Link , Redirect} from 'react-router-dom';
 
 
@@ -69,8 +69,13 @@ class Material extends React.Component {
 
 		
 		return (
-			<div>
+			<div className="materialPage">
 
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
 
 
 				<SearchBar placeholder="Search" maxLength={8} />

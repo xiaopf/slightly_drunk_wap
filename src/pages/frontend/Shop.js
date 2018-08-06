@@ -23,7 +23,7 @@ class Shop extends React.Component {
 		})
 
 		return ( 
-			<div>
+			<div className="shopPage">
 				<div className="searchWrap">
 					<SearchBar placeholder="Search" maxLength={ 8 }/>
 					<Cart></Cart>

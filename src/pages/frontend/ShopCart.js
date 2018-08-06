@@ -40,7 +40,13 @@ class ShopCart extends React.Component {
 
 
 		return ( 
-			<div>
+			<div className="shopCartPage">
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+
 				<NavBar
 					mode="light"
 					icon={<Icon type="left" />}

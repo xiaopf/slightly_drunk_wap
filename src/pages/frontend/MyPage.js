@@ -65,7 +65,7 @@ class MyPage extends React.Component {
 
 
 		return (
-			<div>
+			<div className="myPage">
 
 				{ this.props.userMsg.isSignIn ?  null  : <Redirect to={ this.props.userMsg.redirectTo }></Redirect>}
 
@@ -78,7 +78,11 @@ class MyPage extends React.Component {
 				    <Icon key="1" type="ellipsis" />,
 				  ]}
 				>NavBar</NavBar>
-
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
 
 				<ResultExample></ResultExample>
 				<WhiteSpace></WhiteSpace>

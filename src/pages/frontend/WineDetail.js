@@ -42,6 +42,11 @@ class WineDetail extends React.Component {
 
                  
 				<div className="wineDetailWrap">
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
 					<NavBar
 						mode="light"
 						icon={<Icon type="left" />}

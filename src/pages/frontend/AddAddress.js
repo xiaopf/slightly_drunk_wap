@@ -25,7 +25,13 @@ class AddAddress extends React.Component {
 		return (
 
 
-			<div className="addAddWrap">
+			<div className="addAddPage">
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>	
+				<WhiteSpace></WhiteSpace>	
 				<NavBar
 					mode="light"
 					icon={<Icon type="left" />}
