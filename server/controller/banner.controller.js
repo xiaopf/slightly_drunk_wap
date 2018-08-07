@@ -1,7 +1,55 @@
 
 var bannerModel = require('../model/banner.model.js');
-let fs =  require('fs');
-let path = require('path');
+var userModel = require('../model/user.model.js');
+
+
+
+
+
+
+
+
+
+
+
+exports.getIndexBannerList = function (req, res, next) {
+
+	var cookies = req.cookies;
+
+	if (cookies.userId) {
+
+		userModel.findOne({ _id: cookies.userId }, function (err, user) {
+			if (err) { console.log(err); }
+			bannerModel.find({}, function (err, banners) {
+				if (err) { console.log(err); }
+				if (user && banners) {
+					user = user.toObject();//修改mongoose返回值问题
+					res.json({ code: 6, msg: '拉取indexBannerList成功！', 'indexBannerList': banners, ...user, password: '', _v: '' })
+				}
+
+			})
+		})
+
+	}else{
+		res.json({ code: 0, msg: '未登录！' })
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

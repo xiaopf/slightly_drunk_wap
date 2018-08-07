@@ -1,15 +1,18 @@
 import React from 'react';
-import axios from 'axios';
-import { List ,Carousel, WingBlank ,SearchBar, Button, WhiteSpace} from 'antd-mobile';
-
-
+import { List ,Carousel, WingBlank ,SearchBar, WhiteSpace} from 'antd-mobile';
 import { Link } from 'react-router-dom';
-
-import LinesEllipsis from 'react-lines-ellipsis'
+import LinesEllipsis from 'react-lines-ellipsis';
 import './DrinkList.less';
-
+import { connect } from 'react-redux';
+import { getDrinkListAsync , searchDrinkAsync } from '../../redux/drink.redux.js';
+import { getIndexBannerAsync } from '../../redux/banner.redux.js';
 const Item = List.Item;
 
+
+@connect(
+  state => state,
+  { getDrinkListAsync, searchDrinkAsync, getIndexBannerAsync }
+)
 
 
 class DrinkList extends React.Component {
@@ -18,21 +21,41 @@ class DrinkList extends React.Component {
     this.state={
       data: [],
       imgHeight: 176,
+      search:''
     }
-	}
+
+    this.handleChange = this.handleChange.bind(this);
+    this.submit = this.submit.bind(this);
+  }
+  
+  handleChange(value) {
+
+     this.setState({
+       search: value
+     })
+  
+  }
+
+  submit () {
+    this.props.searchDrinkAsync(this.state.search);
+  }
 
   componentDidMount() {
-    let banners = this.props.banners;
+    
+    if (!this.props.drink.drinkList[0]) {
+      this.props.getDrinkListAsync();
+    }
 
-    this.setState({
-      data: banners,
-    });
+    if (!this.props.banner.indexBannerList[0]) {
+      this.props.getIndexBannerAsync();
+    }
 
   }
 
 	render () {
 
-		const drinkList = this.props.drinkList;
+    const drinkList = this.props.drink.drinkList;
+    const banners = this.props.banner.indexBannerList;
 
 
     let items = Object.values(drinkList);
@@ -62,18 +85,16 @@ class DrinkList extends React.Component {
 		return (
       <div>
         <div className="top_search">
-          <SearchBar placeholder="Search" maxLength={8} />
+          <SearchBar placeholder="搜索鸡尾酒" maxLength={8} value={this.state.search} onChange={this.handleChange} onSubmit={this.submit} />
         </div>
         
         <WingBlank>
             <Carousel
               autoplay
               infinite
-              beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-              afterChange={index => console.log('slide to', index)}
               style={{paddingTop:'50px',height: '`${this.state.imgHeight + 50 }px`'}}
             >
-              {this.state.data.map(val => (
+              {banners.map(val => (
                 <a
                   key={val}
                   href={val.banner_link}

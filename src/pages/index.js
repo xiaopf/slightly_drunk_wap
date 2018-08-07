@@ -2,26 +2,13 @@ import React, { Component } from 'react';
 import './index.css';
 
 import {Redirect} from 'react-router-dom'
-import { SearchBar,Button ,TabBar, Icon, Carousel} from 'antd-mobile';
+import { TabBar } from 'antd-mobile';
 
 
 import DrinkList from './frontend/DrinkList';
-import Shop from './frontend/Shop';
 import Material from './frontend/Material';
+import Shop from './frontend/Shop';
 import MyPage from './frontend/MyPage';
-
-
-import { connect } from 'react-redux';
-import { getDataAsync} from '../redux/list.redux.js';
-
-@connect(
-  state => state,
-  { getDataAsync}
-)
-
-
-
-
 
 class Index extends Component {
 
@@ -33,20 +20,12 @@ class Index extends Component {
     };
   }
 
-  componentDidMount(){
-    if(!this.props.resData.drinkList[0]){
-      this.props.getDataAsync();
-    } 
-  }
-
-
   render() {
+
     return (
  
-      
-   
        <div style={{ position: 'fixed', height: '100%', width: '100%', bottom: 0 }}>
-           { this.props.resData.redirectTo ? <Redirect to={ this.props.resData.redirectTo }></Redirect> : null }
+           {/* { this.props.resData.redirectTo ? <Redirect to={ this.props.resData.redirectTo }></Redirect> : null } */}
            <TabBar
              unselectedTintColor="#949494"
              tintColor="#33A3F4"
@@ -76,8 +55,8 @@ class Index extends Component {
                }}
                data-seed="logId"
              >
-
-              { this.props.resData.code ? <DrinkList drinkList = {this.props.resData.drinkList} banners = {this.props.resData.banners}></DrinkList> : null }  
+{/* 酒单首页 */}
+             <DrinkList></DrinkList> 
 
              
              </TabBar.Item>
@@ -109,7 +88,9 @@ class Index extends Component {
                data-seed="logId1"
              >
 
-            <Material></Material> 
+{/* 清单第二页 */}
+            {/* <Material></Material>  */}
+
              </TabBar.Item>
 
 
@@ -138,13 +119,9 @@ class Index extends Component {
                  });
                }}
              >
-             {/* 
-             />*/}
-                < Shop ></Shop> 
 
-                {/* <ShopCart/> */}
-            {/* <AddAddress /> */}
-                {/* <MyAddress/> */}
+{/* 商店第三页 */}
+                {/* < Shop ></Shop>  */}
 
              </TabBar.Item>
              <TabBar.Item
@@ -159,12 +136,9 @@ class Index extends Component {
                  });
                }}
              >
+{/* 我的第四页 */}
 
-
-             <MyPage></MyPage>
-
-
-
+             {/* <MyPage></MyPage> */}
 
              </TabBar.Item>
            </TabBar>

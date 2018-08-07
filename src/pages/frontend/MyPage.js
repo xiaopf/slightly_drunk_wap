@@ -23,12 +23,13 @@ class MyPage extends React.Component {
 		super(props);
 
 		this.signOut = this.signOut.bind(this)
+		this.entering = this.entering.bind(this)
 
 
 	}
 
 	componentDidMount(){
-      console.log(this.props)
+
 	}
 
 	signOut(){
@@ -41,6 +42,15 @@ class MyPage extends React.Component {
              this.props.createSignOutAsync()
 		  } },
 		])
+	}
+
+
+	entering(){
+		axios.post('/entering').then(function (res) {
+			if (res.status === 200) {
+				console.log(res.data)
+			}
+		})
 	}
 
 
@@ -87,7 +97,9 @@ class MyPage extends React.Component {
 				<ResultExample></ResultExample>
 				<WhiteSpace></WhiteSpace>
 				<WingBlank>
-					<Button type="warning" onClick = { this.signOut }>退出登录</Button>
+					<Button type="warning" onClick={this.signOut}>退出登录</Button>
+					<WhiteSpace></WhiteSpace>
+					<Button type="primary" onClick = { this.entering }>录入数据</Button>
 				</WingBlank>
 
 				

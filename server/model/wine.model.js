@@ -1,9 +1,9 @@
 
 var mongoose = require('mongoose');
 
-var drinkSchema = require('../schema/drink.schema.js');
+var wineSchema = require('../schema/wine.schema.js');
 
-var drinkModel = mongoose.model('drinkModel',drinkSchema)
+var wineModel = mongoose.model('wineModel',wineSchema)
 
 
-module.exports = drinkModel;
+module.exports = wineModel;

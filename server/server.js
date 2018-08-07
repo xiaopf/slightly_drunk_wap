@@ -2,9 +2,7 @@ var express = require('express');
 var app = express();
 
 
-var userRouter = require('./route/userRouter');
-var drinkRouter = require('./route/drinkRouter');
-var pageRouter = require('./route/pageRouter');
+
 
 
 var bodyParser = require('body-parser');
@@ -26,10 +24,25 @@ db.once('open', function() {console.log('数据库连接成功！')});
 
 
 
-var UserController = require('./controller/drink.controller.js');
 
-app.get('/list',UserController.getList);
-app.get('/detail/:id',UserController.getOne);
+
+
+
+// //////////////////////
+var userRouter = require('./route/userRouter');
+var drinkRouter = require('./route/drinkRouter');
+var pageRouter = require('./route/pageRouter');
+
+
+var DrinkController = require('./controller/drink.controller.js');
+var BannerController = require('./controller/banner.controller.js');
+
+app.get('/api/indexBannerList', BannerController.getIndexBannerList);
+
+app.get('/api/drinkList', DrinkController.getDrinkList);
+
+
+// app.get('/detail/:id',DrinkController.getOne);
 
 
 
@@ -37,7 +50,21 @@ app.get('/detail/:id',UserController.getOne);
 
 app.use('/user',userRouter);
 app.use('/edit',drinkRouter);
-app.use('/',pageRouter);
+app.use('/', pageRouter);
+
+// 录入数据
+var allRouter = require('./route/allRouter');
+app.use('/', allRouter);
+
+
+
+// /////////////////////
+
+
+
+
+
+
 
 
 

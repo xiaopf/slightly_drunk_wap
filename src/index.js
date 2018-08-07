@@ -11,7 +11,7 @@ import App from './App';
 
 import { getData } from './redux/list.redux.js';
 import { sign } from './redux/user.redux.js';
-import { drinks } from './redux/drink.redux.js';
+import { drink } from './redux/drink.redux.js';
 import { banner } from './redux/banner.redux.js';
 
 
@@ -23,8 +23,8 @@ import registerServiceWorker from './registerServiceWorker';
 const reducers = combineReducers({
 	userMsg : sign,
 	resData : getData,
-	drinks : drinks,
-	banner : banner
+	drink,
+	banner,
 })
 
 
