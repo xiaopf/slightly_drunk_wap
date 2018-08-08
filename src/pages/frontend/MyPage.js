@@ -25,7 +25,6 @@ class MyPage extends React.Component {
 		this.signOut = this.signOut.bind(this)
 		this.entering = this.entering.bind(this)
 
-
 	}
 
 	componentDidMount(){
@@ -67,8 +66,8 @@ class MyPage extends React.Component {
 
 		const ResultExample = () => (<div className="result-example">
 		  <Result
-		    img={myImg(this.props.userMsg.image || this.props.resData.image)}
-		    title={this.props.userMsg.userName || this.props.resData.userName}
+		    img={myImg(this.props.sign.image || this.props.drink.image)}
+		    title={this.props.sign.userName || this.props.drink.userName}
 		  />
 		</div>);
 
@@ -77,7 +76,7 @@ class MyPage extends React.Component {
 		return (
 			<div className="myPage">
 
-				{ this.props.userMsg.isSignIn ?  null  : <Redirect to={ this.props.userMsg.redirectTo }></Redirect>}
+				{ this.props.sign.isSignIn ?  null  : <Redirect to={ this.props.sign.redirectTo }></Redirect>}
 
 				<NavBar
 				  mode="light"

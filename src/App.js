@@ -8,7 +8,7 @@ import {
 
 import './App.less';
 import Index from './pages/index';
-import Detail from './pages/frontend/Detail';
+import DrinkDetail from './pages/frontend/DrinkDetail';
 import GoodsDetail from './pages/frontend/GoodsDetail';
 import WineCatagory from './pages/frontend/WineCatagory';
 import WineDetail from './pages/frontend/WineDetail';
@@ -24,11 +24,6 @@ import MyAddress from './pages/frontend/MyAddress';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-
-  }
-
 
   render() {
 
@@ -37,10 +32,15 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
+
           <Route exact path='/signin' component={ SignIn }></Route>
           <Route path='/signup' component={ SignUp }></Route>
+
           <Route  path='/index' component={ Index }></Route>
-          <Route path='/drink/:id' component={ Detail }></Route>
+          <Route  path='/drink/:id' component={ DrinkDetail }></Route>
+
+
+
 
           <Route path='/goods/:id' component={ GoodsDetail }></Route>
           <Route path='/wine/catagory/:id' component={WineCatagory}></Route>

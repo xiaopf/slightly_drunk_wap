@@ -11,12 +11,17 @@ var initState = {
 	isSignIn:false,
 	userName:'',
 	password:'',
-	msg:''
+	msg:'',
+	code:0
 }
 
 
 export function sign(state = initState,action){
 	switch (action.type){
+
+
+
+		
 	    case SIGN_UP: 
 		    return {...state,isSignIn:true,...action.payload.data,'code':action.payload.code,'msg':action.payload.msg,redirectTo:redirectTo(action.payload.code)};
 		break;

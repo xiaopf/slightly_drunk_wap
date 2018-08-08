@@ -21,7 +21,7 @@ import { banner } from './redux/banner.redux.js';
 import registerServiceWorker from './registerServiceWorker';
 
 const reducers = combineReducers({
-	userMsg : sign,
+	sign,
 	resData : getData,
 	drink,
 	banner,

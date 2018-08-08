@@ -49,18 +49,43 @@
 	.detail_stuffs{
         padding: 0 10px;
 		h2{
+			width: 100%;
 			font-size: 22px;
 			font-weight: bold;
 			height: 36px;
 			line-height: 36px;
+			padding: 4px 0;
 		}
-		p{
-			font-size: 20px;
-			line-height: 26px;
+
+
+
+
+
+		.materialWrap{
+
+			display: flex;
+			justify-content: space-around;
+			align-content: center;
+			flex-wrap:wrap;
+
+			.materialItem{
+				width: 45%;
+				
+				img{
+					width: 100%;
+				}
+				p{
+					font-size: 14px;
+					text-align: center;
+					line-height: 20px;
+					padding: 6px 0;
+				}
+			}
+
 		}
 	}
 	.detail_steps{
-        padding: 0 10px;
+        padding: 0 10px 40px;
 		h2{
 			font-size: 22px;
 			font-weight: bold;
@@ -72,5 +97,7 @@
 			line-height: 26px;
 		}
 	}
+
+
 
 }

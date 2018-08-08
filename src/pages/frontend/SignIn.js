@@ -41,14 +41,14 @@ class SignIn extends React.Component {
 	render () {
 		return (
             <div>
-            { this.props.userMsg.redirectTo ? <Redirect to={ this.props.userMsg.redirectTo }></Redirect> : null }
+            { this.props.sign.redirectTo ? <Redirect to={ this.props.sign.redirectTo }></Redirect> : null }
             <WhiteSpace></WhiteSpace>
             <WhiteSpace></WhiteSpace>
             <WhiteSpace></WhiteSpace>
             <WhiteSpace></WhiteSpace>
 	            <p className="sign_in_title">登陆账号</p>
 	            
-	            { this.props.userMsg.msg ? <div className="signUp_msg am-wingblank am-wingblank-lg">{this.props.userMsg.msg }</div> : null }
+	            { this.props.sign.msg ? <div className="signUp_msg am-wingblank am-wingblank-lg">{this.props.sign.msg }</div> : null }
 
 	            <WhiteSpace></WhiteSpace>
 	            <WingBlank>

@@ -5,6 +5,8 @@ import axios from 'axios';
 
 const GET_DRINK_LIST = 'GET_DRINK_LIST';
 const SEARCH_DRINK = 'SEARCH_DRINK';
+const CANCEL_SEARCH = 'CANCEL_SEARCH';
+const GET_SINGLE_DRINK = 'GET_SINGLE_DRINK';
 
 
 
@@ -26,8 +28,9 @@ var initState = {
 	cart: [],
 	drinkList: [],
 	searchDrink:[],
+	singleDrink:{},
 	msg:'',
-	code:6
+	code:0
 }
 
 
@@ -40,10 +43,18 @@ export function drink(state = initState,action){
 
 		case SEARCH_DRINK:
 
-			return { ...initState, isSignIn : true, searchDrink : action.payload }
+			return { ...initState,  ...action.payload }
 
+		case CANCEL_SEARCH:
 
-			
+			return { ...initState,...action.payload,code:6 }
+
+		case GET_SINGLE_DRINK:
+
+			return { ...initState, ...action.payload }
+
+		case GET_ERROR:
+			return { ...initState, isSignIn: false, ...action.payload,  redirectTo: redirectTo(action.payload.code) }
 
 
 
@@ -56,16 +67,11 @@ export function drink(state = initState,action){
 		    return {...state,...action.payload};
 		break;
 
-	    case ADD_ITEM: 
-		    return {...state,...action.payload};
-		break;
 
-		case GET_ERROR:
-			return { ...initState, 'code': action.payload.code, 'msg': action.payload.msg, isSignIn: false, redirectTo: redirectTo(action.payload.code) }
-			break;
-		case GET_ONE:
-			return { ...initState, 'code': action.payload.code, 'msg': action.payload.msg, 'drink': action.payload.drink }
-			break;
+
+
+
+
 		default:
 			return state;
 	    break;
@@ -84,6 +90,14 @@ export function createGetDrinkList(payload) {
 
 export function createSearchDrink(payload) {
 	return { type: SEARCH_DRINK, payload}
+}
+
+export function createCancelSearch(payload) {
+	return { type: CANCEL_SEARCH , payload}
+}
+
+export function createGetSingleDrink(payload) {
+	return { type: GET_SINGLE_DRINK , payload }
 }
 // ////////////////////
 
@@ -109,6 +123,18 @@ export function createGetOne(payload) {
 }
 
 
+
+// /////////////////////////
+// 同步dispach
+
+export function cancelSearchSync(payload){
+
+    return dispatch => (
+		dispatch(createCancelSearch(payload))
+	)
+	
+}
+/////////////////////////
 // /////////////////////////
 // 异步dispach
 export function getDrinkListAsync() {
@@ -128,19 +154,39 @@ export function getDrinkListAsync() {
 }
 
 
-export function searchDrinkAsync(value){
+export function searchDrinkAsync(value,payload){
 	return dispatch => (
-		axios.get(`/api/drinkList?search=${value}`).them((res)=>{
+
+		axios.get(`/api/drinkList?search=${value}`).then((res)=>{
 			if(res.status === 200){
-				if(res.data.code === 6){
-					dispatch(createSearchDrink(res.data))
+				if(res.data.code === 5){
+					dispatch(createSearchDrink({...payload,...res.data}))
 				}else{
+					dispatch(createGetError({ ...payload, ...res.data }))
+				}
+			}
+		})
+	)
+}
+
+export function getSingleDrinkAsync(_id) {
+	return dispatch => (
+
+		axios.get(`/api/drinkList?_id=${_id}`).then((res) => {
+			if (res.status === 200) {
+				if (res.data.code === 6) {
+					console.log(res.data)
+					dispatch(createSearchDrink(res.data))
+				} else {
 					dispatch(createGetError(res.data))
 				}
 			}
 		})
 	)
 }
+
+
+
 // ////////////////////////
 
 
@@ -192,6 +238,8 @@ export function getOneAsync(_id) {
 		})
 	)
 }
+
+
 
 
 

@@ -4,8 +4,8 @@ var drinkSchema = new mongoose.Schema({
 	"engName":{ type:'String', require:true},
 	"img_url":{ type:'String', require:true},
 	"describes":{ type:'String', require:true},
-	"steps":{ type:'Array'},
-	"stuffs":{ type:'Array'}
+	"steps":{},
+	"materials":{}
 });
 
 module.exports = drinkSchema;

@@ -6,16 +6,16 @@
         "engName": "Sakura",
         "describes": "2001年日本国际调酒师大赛获得最高奖项荣誉的保志雄一先生的作品。用鸡尾酒表现日本的国花“樱花”，获得了国外评审员的广泛好评。基酒为干式金酒，搭配桃子利口酒和樱花利口酒，调制出绝妙的和谐感。是一杯华丽且优雅，同时带有温馨感的长饮鸡尾酒。而且，淡雅的粉红色尤其高雅。装饰则使用葡萄柚皮、酸橙皮、苹果皮等装饰成红色的樱花印象。最后，再加上红色的樱桃点缀。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -26,16 +26,16 @@
         "engName": "Irish Coffee",
         "describes": "以爱尔兰威士忌为基底的热饮。能使寒冷的身体迅速暖和，最适合冬季饮用。而且，这款酒是很多热饮威士忌调制鸡尾酒的鼻祖。先放入浓香的咖啡，再飘上一层鲜奶。为了形成美观的效果，注入鲜奶油的动作一定要缓缓地进行。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -46,16 +46,16 @@
         "engName": "Manhattan",
         "describes": "自鸡尾酒诞生起，人们就一直喝着这款鸡尾酒，念念不忘它的味道，无论在哪一个酒吧，这款鸡尾酒总是客人的至爱，因而被称为“鸡尾酒王后”，这就是Manhattan(曼哈顿鸡尾酒)。传说Manhattan(曼哈顿鸡尾酒)的产生与美国纽约曼哈顿有关。英国前首相丘吉尔WinstonChurchill的母亲Jeany是纽约布鲁克林含有四分之一印第安血统的美国人，她还是纽约社交圈的知名人物。据说，她在曼哈顿俱乐部为自己支持的总统候选人举行宴会，用发明这款鸡尾酒来招待客人。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -66,16 +66,16 @@
         "engName": "Singapore Sling",
         "describes": "新加坡司令鸡尾酒诞生于著名的莱佛士酒店，这座酒店被西方人士称为“充满异国情调的东洋神秘之地”。新加坡司令(Singaporesling)是由华裔原籍海南岛的严崇文（NgiamTongBoon）酒保于1910年至1915年间所发明，当时他是为新加坡的莱佛士酒店工作。他应顾客要求改良琴汤尼这种调酒，调出了一种口感酸甜的酒，后来一炮而红。不过原创的食谱已经消失，现今莱佛士酒店的新加坡司令食谱是老酒保依照记忆还原出来的。所谓的“Sling”，指的是一种传统的、流传于美国的混合饮料，一般由烈酒(Spirits)、水和糖冲调而成。而Sling也被巧妙的按谐音被翻译为了“司令”。原来新加坡司令是一种专为女性而设计的调酒，但今日已无此区别。这款酒口感清爽，有消除疲劳的功效。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -86,16 +86,16 @@
         "engName": "Bloody Mary",
         "describes": "在16世纪中叶，英格兰的女王玛丽一世当政，她为了复兴天主教而迫害一大批新教教徒。人们就把她叫做“血玛丽”。这款鸡尾酒的酒名最有可能由此而来。看起来全是通红通红的“血样”，有点令人不安，喝起来却是用了足够番茄汁的有益健康的鸡尾酒。盐、黑胡椒粉、辣酱油、辣椒汁等调味料都加进去，就可以代替假日的早餐，正如享受色拉。其实，这正是BloodyMary(血玛丽鸡尾酒)",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -106,16 +106,16 @@
         "engName": "Long Island Iced Tea",
         "describes": "据说在二十世纪二十年代美国禁酒令期间，酒保将烈酒与可乐混成一杯看似茶的饮品。另一说是在1972年，由长岛橡树滩客栈的酒保发明了这种以四种基酒混制出来的饮料。调和此酒时所使用的酒基本上都是40°以上的烈酒，口味辛辣。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -126,16 +126,16 @@
         "engName": "Tequila Sunrise",
         "describes": "以龙舌兰的故乡墨西哥的“日出”为主题的长饮鸡尾酒。类似的鸡尾酒还有短饮“日出”鸡尾酒。在生长着星星点点仙人掌，但又荒凉到极点的墨西哥平原上，正升起鲜红的太阳，阳光把墨西哥平原照耀得一片灿烂。TequilaSunrise(特基拉日出)中浓烈的龙舌兰香味容易使人想起墨西哥的朝霞。橙子汁和石榴糖浆交织而成的色调，完美表现出日出的装饰效果。由黄色渐变成红色的装饰秘诀就是石榴糖浆的魅力。将石榴糖浆静静地注入龙舌兰及橙汁中，密度大的石榴糖浆自然沉降至底部，行程完美的色调搭配。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -146,16 +146,16 @@
         "engName": "Alexander",
         "describes": "19世纪中叶,为了纪念英国国王爱德华七世与皇后亚历山大的婚礼,所以调制了这种鸡尾酒作为对皇后的献礼.酒中加入咖啡利口酒和鲜奶油,口感很好,是一款名副其实的皇家鸡尾酒。就像向全世界宣告爱情的甜美，所以很适合于恋人共饮。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -166,16 +166,16 @@
         "engName": "Affinity",
         "describes": "这款鸡尾酒使用英国产的苏格兰威士忌、法国产的干味美思和意大利产的甜味美思加以调制，它象征着英法意这三个国家友好的交往。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -186,16 +186,16 @@
         "engName": "Ink Street",
         "describes": "黑麦威士忌搭配充足的橘子汁和柠檬汁，以口感清甜细腻为特征。因为是诞生于美国的鸡尾酒，因此基酒也只选择美国产的黑麦威士忌。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -206,16 +206,16 @@
         "engName": "Imperial Fizz",
         "describes": "以帝王冠名的霸气气泡饮料。威士忌和朗姆酒，两种烈酒混合而成。而且，威士忌的醇厚香味和柠檬汁的清爽口味不论男女都非常喜爱。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -226,16 +226,16 @@
         "engName": "Whisky Mist",
         "describes": "以威士忌为基底的雾状长饮酒。根据所使用的威士忌种类，可分为苏格兰之雾（苏格兰威士忌为基底）和波本之雾（波本威士忌为基底）。同碎冰块一起摇和，连同冰块一起倒入玻璃杯中，再挤入一些柠檬汁，最后将威士忌直接倒入装满冰块的杯中。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -246,16 +246,16 @@
         "engName": "Whisky Highball",
         "describes": "战后风靡一代人的鸡尾酒，以威士忌为基底的冰镇类型长饮酒，别名为“苏打威士忌”。根据所使用的威士忌的准确名称，这款鸡尾酒的名称也会随之改变，此款酒称作“威士忌苏打水”。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -266,16 +266,16 @@
         "engName": "Whisky Float",
         "describes": "通过矿泉水和威士忌的比例差调配出的琥珀色微妙的层级感，优美异常。而且，辛辣的口感适合全天饮用。注入威士忌时尽可能缓慢，以便形成完美的分层。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -286,16 +286,16 @@
         "engName": "Elk·s Own",
         "describes": "以黑麦威士忌为基底的优美色调威士忌。黑麦威士忌、波特酒和柠檬汁的相互溶合，实现润爽的口感。此外，材料中可使用蛋清，使调制应充分摇和。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -306,16 +306,16 @@
         "engName": "Old Pal",
         "describes": "这款酒很早就开始流行开来，并经久不衰，即使是当下的年轻人也非常喜爱。鲜艳的色调演绎出成熟的气质，还有火焰般的甜润及微苦恰好表达了经久不衰的友情。此外，这款酒最适合餐前饮用。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -326,16 +326,16 @@
         "engName": "Oriental",
         "describes": "橘子风味的白柑桂酒和酸橙汁溶合了两种柑橘的口味，口感清新柔和。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -346,16 +346,16 @@
         "engName": "Cowboy",
         "describes": "这是一款出现较早的鸡尾酒，但直到热带鸡尾酒兴起的年代才突然人气大增。辛辣的威士忌经鲜奶油调和，变得浓厚润滑，此款酒餐后饮用最佳。调制时必须充分摇和，而且有时会倒入大杯（非鸡尾酒杯）中饮用。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -366,16 +366,16 @@
         "engName": "Old Fashioned",
         "describes": "古典(oldfashioned)是19世纪中叶美国肯塔基州彭德尼斯俱乐部的一个调酒师专门为了狂爱赛马的粉丝们发明的鸡尾酒。现如今也是赛马迷们不可或缺的一部分。此款鸡尾酒无论是味道还是外观都与当时很流行的tody很相似，并且可以让人们回忆起来过去的岁月，因此起名叫做古典鸡尾酒。并且我们从这款酒有专用的鸡尾酒杯就可以看出此款鸡尾酒的人气之高。在专用的古典杯中加入一颗放糖，然后滴上一至两滴的安格斯杜拉苦精，再倒入少量苏打水之后加入一些冰块。想要酒味弱一些可以用普通美国威士忌，想要酒味强一些可以用波本威士忌。假如没有方糖的话糖浆或者砂糖也可以。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     },
@@ -386,16 +386,16 @@
         "engName": "California Lemonade",
         "describes": "此款鸡尾酒以美国西海岸的加利福尼亚州命名。恰到好处的柠檬和葡萄柚的酸味与苏打水调配，口感清爽宜人。可以同时享受到波本威士忌的芳香和柠檬水的酸甜口感，可谓奢侈至极。",
         "steps":["打开酒瓶倒酒。","倒完酒调制。","调制完喝酒。"],
-        "stuffs":[
+        "materials":[
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "绝对伏特加（Absolut Vodka）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "绝对伏特加（Absolut Vodka）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
             },
             {
-                "stuff_img_local_url" : "",
-                "stuff_name" : "波士樱桃（ BOL’ S）",
-                "stuff_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+                "material_img_local_url" : "",
+                "material_name" : "波士樱桃（ BOL’ S）",
+                "material_url" : "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
             }
         ]
     }
