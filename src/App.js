@@ -19,6 +19,7 @@ import ShopCart from './pages/frontend/ShopCart';
 import AddAddress from './pages/frontend/AddAddress';
 
 import MyAddress from './pages/frontend/MyAddress';
+import MyInfo from './pages/frontend/MyInfo';
 
 
 
@@ -38,6 +39,9 @@ class App extends Component {
 
           <Route  path='/index' component={ Index }></Route>
           <Route  path='/drink/:id' component={ DrinkDetail }></Route>
+
+          <Route path='/myInfo' component={MyInfo}></Route>
+
 
 
 

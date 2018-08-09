@@ -1,9 +1,17 @@
 
 import axios from 'axios';
 
+const GET_USER_INFO = 'GET_USER_INFO';
+const CHANGE_USER_INFO = 'CHANGE_USER_INFO';
+const CHANGE_USER_IMAGE = 'CHANGE_USER_IMAGE';
+
+
+
 const SIGN_UP = 'SIGN_UP';
 const SIGN_IN = 'SIGN_IN';
 const SIGN_OUT = 'SIGN_OUT';
+
+
 const ERROR_MSG = 'ERROR_MSG';
 
 
@@ -11,6 +19,9 @@ var initState = {
 	isSignIn:false,
 	userName:'',
 	password:'',
+	image: '',
+	cart:[],
+	order:[],
 	msg:'',
 	code:0
 }
@@ -19,24 +30,32 @@ var initState = {
 export function sign(state = initState,action){
 	switch (action.type){
 
+		case GET_USER_INFO:
+			return { ...state, isSignIn: true, ...action.payload, redirectTo: redirectTo(action.payload.code) };
+		case SIGN_OUT:
+			return { ...state, isSignIn: false, redirectTo: '/signIn' };
+		case CHANGE_USER_INFO:
+			return { ...state, isSignIn: true, ...action.payload, redirectTo: redirectTo(action.payload.code) };
 
+		case CHANGE_USER_IMAGE:
+			return { ...state, isSignIn: true, ...action.payload, redirectTo: redirectTo(action.payload.code) };
+			
 
 		
-	    case SIGN_UP: 
-		    return {...state,isSignIn:true,...action.payload.data,'code':action.payload.code,'msg':action.payload.msg,redirectTo:redirectTo(action.payload.code)};
-		break;
+			
 
-      case SIGN_IN: 
-    	    return {...state,isSignIn:true,...action.payload.data,'code':action.payload.code,'msg':action.payload.msg,redirectTo:redirectTo(action.payload.code)};;
-    	break;
+	    case SIGN_UP: 
+			return { ...state, isSignIn: true, ...action.payload.data, 'code': action.payload.code, 'msg': action.payload.msg, redirectTo: '/index'};
+
+        case SIGN_IN: 
+			return {
+				...state, isSignIn: true, ...action.payload.data, 'code': action.payload.code, 'msg': action.payload.msg, redirectTo:'/index'};
 
 	    case ERROR_MSG: 
-		    return {...state,isSignIn:false,...action.payload};;
-			break;
+			return {...state,isSignIn:false,...action.payload};
+			
 
-	    case SIGN_OUT: 
-			    return {...initState,redirectTo:redirectTo(0)};;
-			break;
+
 
 	    default:
 	        return state;
@@ -56,13 +75,34 @@ function redirectTo(code){
 			return '';
 		break;
 		case 6:
-			return '/index';
+			return '';
 		break;
 		default :
 			return '';
 		break;
 	}
 }
+
+
+// /////////////////////////
+// create action
+export function createGetUserInfo(payload) {
+	return { type: GET_USER_INFO, payload }
+}
+
+export function createChangeUserInfo(payload) {
+	return { type: CHANGE_USER_INFO, payload }
+}
+
+export function createChangeUserImage(payload) {
+	return { type: CHANGE_USER_IMAGE, payload }
+}
+
+// /////////////////////////
+
+
+
+
 
 
 
@@ -85,10 +125,66 @@ export function createErrorMsg(payload){
     return {type:ERROR_MSG,payload}
 }
 
+// /////////////////////////
+// 异步dispach
+export function getUserInfoAsync(_id) {
+
+	return dispatch => (
+		axios.get(`/user?_id=${_id}`).then((res) => {
+			if (res.status === 200) {
+				if (res.data.code === 6) {
+					console.log(res.data)
+					dispatch(createGetUserInfo(res.data))
+				} else {
+					// dispatch(createGetError(res.data))
+				}
+			}
+		})
+	)
+}
+export function changeUserInfoAsync(info) {
+
+	return dispatch => (
+		// 参数应该是对象
+		axios.post('/user', info).then((res) => {
+			if (res.status === 200) {
+
+					console.log(res.data)
+					dispatch(createChangeUserInfo(res.data))
+
+			}
+		})
+	)
+}
+
+export function changeUserImageAsync(image) {
+
+	console.log(image)
+
+	return dispatch => (
+		// 参数应该是对象
+		axios.post('/user/image', image).then((res) => {
+			if (res.status === 200) {
+
+				console.log(res.data)
+				dispatch(createChangeUserInfo(res.data))
+
+			}
+		})
+	)
+}
+
+// /////////////////////////
+
+
+
+
+
+
 
 export function createSignUpAsync(user){
 
-	if(!user.userName || !user.password ||!user.comfirmPassword){
+	if(!user.userName || !user.password || !user.comfirmPassword){
 	   return createErrorMsg({msg:'用户名和密码不可以为空！'});
 	}else if(user.password !== user.comfirmPassword){
 	   return createErrorMsg({msg:'两次密码不相同！'}) ;

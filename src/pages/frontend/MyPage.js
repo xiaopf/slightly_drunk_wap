@@ -1,20 +1,21 @@
 import React from 'react';
 import axios from 'axios';
-import { WhiteSpace, Button , WingBlank , Modal, Result, Icon,Toast, NavBar} from 'antd-mobile';
+import { WhiteSpace, Button, WingBlank, Modal, Result, Icon, List, NavBar} from 'antd-mobile';
 import { Link , Redirect} from 'react-router-dom';
 import browserCookies from 'browser-cookies';
 
-import { createSignOutAsync } from '../../redux/user.redux.js';
+import { createSignOutAsync, getUserInfoAsync} from '../../redux/user.redux.js';
 import { connect } from 'react-redux';
 
 
 
 import './MyPage.less';
 
+const Item = List.Item;
 
 @connect(
 	state => state,
-	{createSignOutAsync}
+	{ createSignOutAsync, getUserInfoAsync}
 )
 
 
@@ -29,7 +30,13 @@ class MyPage extends React.Component {
 
 	componentDidMount(){
 
+		let _id = browserCookies.get('userId')
+
+		if (_id && !this.props.sign.userName){
+			this.props.getUserInfoAsync(_id);
+		}
 	}
+
 
 	signOut(){
 
@@ -64,29 +71,28 @@ class MyPage extends React.Component {
 	render () {
 		const myImg = src => <img src={src} className="spe am-icon am-icon-lg" alt="" />;
 
-		const ResultExample = () => (<div className="result-example">
-		  <Result
-		    img={myImg(this.props.sign.image || this.props.drink.image)}
-		    title={this.props.sign.userName || this.props.drink.userName}
-		  />
-		</div>);
+		const ResultExample = () => (
+				<Link to={'/myInfo'} className="result-example">
+					<Result
+						img={myImg(this.props.sign.image || this.props.drink.image)}
+						title={this.props.sign.userName || this.props.drink.userName}
+					/>
+				</Link>
+		);
 
 
 
 		return (
-			<div className="myPage">
+			<div className="myPageWrap">
 
-				{ this.props.sign.isSignIn ?  null  : <Redirect to={ this.props.sign.redirectTo }></Redirect>}
+				{!this.props.sign.isSignIn ? <Redirect to={this.props.sign.redirectTo}></Redirect> : null}
 
 				<NavBar
 				  mode="light"
-				  icon={<Icon type="left" />}
-				  onLeftClick={() => console.log('onLeftClick')}
 				  rightContent={[
-				    <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
 				    <Icon key="1" type="ellipsis" />,
 				  ]}
-				>NavBar</NavBar>
+				>我的</NavBar>
 				<WhiteSpace></WhiteSpace>
 				<WhiteSpace></WhiteSpace>
 				<WhiteSpace></WhiteSpace>
@@ -95,6 +101,29 @@ class MyPage extends React.Component {
 
 				<ResultExample></ResultExample>
 				<WhiteSpace></WhiteSpace>
+
+				<List className="my-list">
+					<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>邀请好友</Link></Item>
+					<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的订单</Link></Item>
+					<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>优惠礼包</Link></Item>
+				</List>
+
+				<WhiteSpace></WhiteSpace>
+
+				<List className="my-list">
+					<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的作品</Link></Item>
+					<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我喜欢的</Link></Item>
+					<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的材料</Link></Item>
+
+				</List>
+
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+
+
 				<WingBlank>
 					<Button type="warning" onClick={this.signOut}>退出登录</Button>
 					<WhiteSpace></WhiteSpace>

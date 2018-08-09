@@ -49,14 +49,14 @@ class DrinkList extends React.Component {
   }
 
   submit() {
-    this.props.searchDrinkAsync(this.state.search, this.props.drink);
+    this.props.searchDrinkAsync(this.state.search);
   }
 
   cancel() {
     this.setState({
       search: ''
     })
-    this.props.cancelSearchSync(this.props.drink);
+    this.props.cancelSearchSync();
   }
 
 

@@ -39,22 +39,22 @@ export function drink(state = initState,action){
 	switch (action.type){
 		case GET_DRINK_LIST:
 
-			return { ...initState, isSignIn: true, ...action.payload }
+			return { ...state, isSignIn: true, ...action.payload }
 
 		case SEARCH_DRINK:
 
-			return { ...initState,  ...action.payload }
+			return { ...state,  ...action.payload }
 
 		case CANCEL_SEARCH:
 
-			return { ...initState,...action.payload,code:6 }
+			return { ...state,code:6 }
 
 		case GET_SINGLE_DRINK:
 
-			return { ...initState, ...action.payload }
+			return { ...state, ...action.payload }
 
 		case GET_ERROR:
-			return { ...initState, isSignIn: false, ...action.payload,  redirectTo: redirectTo(action.payload.code) }
+			return { ...state, isSignIn: false, ...action.payload,  redirectTo: redirectTo(action.payload.code) }
 
 
 
@@ -127,10 +127,10 @@ export function createGetOne(payload) {
 // /////////////////////////
 // 同步dispach
 
-export function cancelSearchSync(payload){
+export function cancelSearchSync(){
 
     return dispatch => (
-		dispatch(createCancelSearch(payload))
+		dispatch(createCancelSearch())
 	)
 	
 }
@@ -154,15 +154,15 @@ export function getDrinkListAsync() {
 }
 
 
-export function searchDrinkAsync(value,payload){
+export function searchDrinkAsync(value){
 	return dispatch => (
 
 		axios.get(`/api/drinkList?search=${value}`).then((res)=>{
 			if(res.status === 200){
 				if(res.data.code === 5){
-					dispatch(createSearchDrink({...payload,...res.data}))
+					dispatch(createSearchDrink(res.data))
 				}else{
-					dispatch(createGetError({ ...payload, ...res.data }))
+					dispatch(createGetError(res.data))
 				}
 			}
 		})

@@ -1,32 +1,44 @@
 
-.am-navbar-light{
-	background-color: #dedada;
-	border-bottom:1px solid #b2b0b0;
-}
 
-.am-result .am-result-pic {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
-    line-height: 80px;
-    background-size: 80px 80px;
-}
-.result-example{
-	padding-top: 10px;
-}
-.result-example .spe {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-}
-
-.myPage{
+.myPageWrap{
     position: relative;
     .am-navbar{
         width: 100%;
         position: fixed;
         top: 0;
         left: 0;
+        z-index: 9;
+    }
+    
+    .am-navbar-light{
+        background-color: #dedada;
+        border-bottom:1px solid #b2b0b0;
+    }
+
+    .am-result .am-result-pic {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+        line-height: 80px;
+        background-size: 80px 80px;
+    }
+    .result-example{
+        padding-top: 10px;
+    }
+    .result-example .spe {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+    }
+
+    .am-list-item {
+        font-size: 18px;
+        .am-list-line .am-list-content{
+            padding-left: 12px;
+            a{
+                display: block;
+            }
+        }
     }
 }
 
