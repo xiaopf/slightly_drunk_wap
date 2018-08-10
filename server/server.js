@@ -45,6 +45,8 @@ app.get('/api/drinkList', DrinkController.getDrinkList);
 // app.get('/detail/:id',DrinkController.getOne);
 
 
+// 静态资源托管
+app.use(express.static('public'))
 
 
 

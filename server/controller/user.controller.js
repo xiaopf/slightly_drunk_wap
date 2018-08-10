@@ -63,7 +63,7 @@ exports.UpdateUserImage = function (req, res, next) {
 	var dataBuffer = new Buffer(base64Data, 'base64');
 	var newPath = path.join(__dirname, '../../', '/upload/images/head/image.png');
 
-	var nPath = '../../upload/images/head/image.png';
+	var nPath = './upload/images/head/image.png';
 
 	fs.writeFile(newPath, dataBuffer, function (err) {
 		if (err) {console.log(err)};
