@@ -93,44 +93,58 @@ class MyPage extends React.Component {
 				    <Icon key="1" type="ellipsis" />,
 				  ]}
 				>我的</NavBar>
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
 
-				<ResultExample></ResultExample>
-				<WhiteSpace></WhiteSpace>
+                <div className="myContent">
 
-				<List className="my-list">
-					<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>邀请好友</Link></Item>
-					<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的订单</Link></Item>
-					<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>优惠礼包</Link></Item>
-				</List>
-
-				<WhiteSpace></WhiteSpace>
-
-				<List className="my-list">
-					<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的作品</Link></Item>
-					<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我喜欢的</Link></Item>
-					<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的材料</Link></Item>
-
-				</List>
-
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-
-
-				<WingBlank>
-					<Button type="warning" onClick={this.signOut}>退出登录</Button>
-					<WhiteSpace></WhiteSpace>
-					<Button type="primary" onClick = { this.entering }>录入数据</Button>
-				</WingBlank>
 
 				
+					<WhiteSpace></WhiteSpace>
+					<WhiteSpace></WhiteSpace>
+					<WhiteSpace></WhiteSpace>
+					<WhiteSpace></WhiteSpace>
+					<WhiteSpace></WhiteSpace>
+
+					<ResultExample></ResultExample>
+					<WhiteSpace></WhiteSpace>
+
+					<List className="my-list">
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>邀请好友</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的订单</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>优惠礼包</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>邀请好友</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的订单</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>优惠礼包</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>邀请好友</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的订单</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>优惠礼包</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>邀请好友</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的订单</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>优惠礼包</Link></Item>
+					</List>
+
+					<WhiteSpace></WhiteSpace>
+
+					<List className="my-list">
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的作品</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我喜欢的</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的材料</Link></Item>
+
+					</List>
+
+					<WhiteSpace></WhiteSpace>
+					<WhiteSpace></WhiteSpace>
+					<WhiteSpace></WhiteSpace>
+					<WhiteSpace></WhiteSpace>
+					<WhiteSpace></WhiteSpace>
+
+
+					<WingBlank>
+						<Button type="warning" onClick={this.signOut}>退出登录</Button>
+						<WhiteSpace></WhiteSpace>
+						<Button type="primary" onClick = { this.entering }>录入数据</Button>
+					</WingBlank>
+
+				</div>
 
 			</div>
 

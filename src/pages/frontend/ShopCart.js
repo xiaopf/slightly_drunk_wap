@@ -2,10 +2,16 @@ import React from 'react';
 import './ShopCart.less';
 import CartItem from '../../component/frontend/CartItem';
 
-
+import browserCookies from 'browser-cookies';
 import {WhiteSpace,NavBar, Icon} from 'antd-mobile';
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { changeUserInfoAsync, getUserInfoAsync } from '../../redux/user.redux.js';
 
+@connect(
+	state => state,
+	{ changeUserInfoAsync, getUserInfoAsync }
+)
 
 class ShopCart extends React.Component {
 	constructor(props){
@@ -17,6 +23,10 @@ class ShopCart extends React.Component {
 		this.payFor = this.payFor.bind(this)
 		this.goBack = this.goBack.bind(this);
 	}
+
+	// componentDidMount(){
+
+	// }
     
 	payFor() {
 
@@ -30,47 +40,76 @@ class ShopCart extends React.Component {
 
 		let wines = this.props.wines;
 
+
+		let _id = browserCookies.get('userId')
+		let that = this;
+		// let chooseAddr;
+
+		if (!this.props.sign.userName) {
+			(async function () {
+				await that.props.getUserInfoAsync(_id);
+				// chooseAddr = this.props.sign.chooseAddr;
+			})();
+		}else{
+			// chooseAddr = this.props.sign.chooseAddr;
+		}
+
+
+
         let CartItems = this.props.carts.map(function(cart,idx){
 			return (
-				<CartItem {...cart} wines={wines}></CartItem>
+				<CartItem {...cart} wines={wines} key={cart.choose_id}></CartItem>
 			)
 		})
+
+
+		let addrArea = this.props.sign.address[0] ? 
+		<div>
+				<p>{this.props.sign.address[this.props.sign.chooseAddr].receive_name + this.props.sign.address[this.props.sign.chooseAddr].receive_tel}</p>
+				<p><span>{this.props.sign.address[this.props.sign.chooseAddr].address}</span><span>{this.props.sign.address[this.props.sign.chooseAddr].detail_addr}</span></p>
+		</div> : '请添加地址';
 
 		
 
 
 		return ( 
-			<div className="shopCartPage">
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
+			<div className="shopCartWrap">
+
 
 				<NavBar
 					mode="light"
 					icon={<Icon type="left" />}
 					onLeftClick={this.goBack}
 				>我的购物车</NavBar>
-				<WhiteSpace></WhiteSpace>	
+
+                
+				<div className="shopCartContent">
+					<WhiteSpace></WhiteSpace>
+					<WhiteSpace></WhiteSpace>
+					<WhiteSpace></WhiteSpace>
+					<WhiteSpace></WhiteSpace>
+					<WhiteSpace></WhiteSpace>
+					<div className='cart_address'>
+
+						<Link to={'/address/myAddress'} className="toAddAddr">
+							{addrArea}
+						</Link>
+																	
+																	
+					</div>
 
 
-				<div className='cart_address'>
-					<p>{this.props.addr.address + this.props.addr.detail_add}</p>
-					<p><span>{this.props.addr.receive_name}</span><span>{this.props.addr.receive_tel}</span></p>
-					<Link to={'/address/myAddress'} className="toAddAddr">请添加地址</Link>
+					<div className="cartItems">
+						{CartItems}
+					</div>
+					<div className="calculate"><span>商品总计</span><span>{this.state.calculate}</span></div>
+
+					<div className="footerPay">
+						<p className="waitPay"><span>需要支付</span><span>{this.state.money}</span></p>
+						<p className="payActive" onClick={this.payFor}>确认支付</p>
+					</div>
 				</div>
 
-
-				<div className="cartItems">
-					{CartItems}
-				</div>
-				<div className="calculate"><span>商品总计</span><span>{this.state.calculate}</span></div>
-
-				<div className="footerPay">
-					<p className="waitPay"><span>需要支付</span><span>{this.state.money}</span></p>
-					<p className="payActive" onClick={this.payFor}>确认支付</p>
-				</div>
 
 			</div>
 
@@ -81,14 +120,7 @@ class ShopCart extends React.Component {
 }
 
 ShopCart.defaultProps = {
-	addr: 
-		{
-			receive_name: 'xiaopf',
-			receive_tel: '18522856492',
-			address: '天津市 天津市 河西区',
-			detail_add: '富力中心写字楼A座2006'
-		}
-	,
+
 	carts:[
 		{
 			choose_id:'001',

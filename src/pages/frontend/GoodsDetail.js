@@ -1,7 +1,7 @@
 import React from 'react';
 import './GoodsDetail.less';
-import axios from 'axios';
-
+import {connect} from 'react-redux';
+import { changeUserInfoAsync, getUserInfoAsync } from '../../redux/wine.redux.js';
 
 import { NavBar, Icon, WhiteSpace, Carousel, WingBlank} from 'antd-mobile';
 import Cart from '../../component/frontend/Cart';
@@ -50,7 +50,7 @@ class Detail extends React.Component {
 	
 
                  
-				<div className="detail_wrap">
+				<div className="detailWrap">
 					<NavBar
 						mode="light"
 						icon={<Icon type="left" />}
@@ -59,7 +59,13 @@ class Detail extends React.Component {
 							<Cart></Cart>
 						]}
 					>斯米诺红牌</NavBar>
+
 					<WingBlank>
+						<WhiteSpace></WhiteSpace>
+						<WhiteSpace></WhiteSpace>
+						<WhiteSpace></WhiteSpace>
+						<WhiteSpace></WhiteSpace>
+						<WhiteSpace></WhiteSpace>
 						<Carousel
 							autoplay={false}
 							infinite

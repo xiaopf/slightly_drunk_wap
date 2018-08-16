@@ -5,6 +5,7 @@ var wineSchema = new mongoose.Schema({
     "img_url": { type:'String', require:true},
 	"name": { type:'String', require:true},
 	"type": { type:'String', require:true},
+	"typeEn": { type: 'String', require: true },
 	"price": { type:'Number', require:true},
 	"stock": { type: 'Number', require: true },
 	"from": { type:'String', require:true},

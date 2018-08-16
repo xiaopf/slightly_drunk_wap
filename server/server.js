@@ -31,6 +31,7 @@ db.once('open', function() {console.log('数据库连接成功！')});
 // //////////////////////
 var userRouter = require('./route/userRouter');
 var drinkRouter = require('./route/drinkRouter');
+var wineRouter = require('./route/wineRouter');
 var pageRouter = require('./route/pageRouter');
 
 
@@ -42,7 +43,7 @@ app.get('/api/indexBannerList', BannerController.getIndexBannerList);
 app.get('/api/drinkList', DrinkController.getDrinkList);
 
 
-// app.get('/detail/:id',DrinkController.getOne);
+
 
 
 // 静态资源托管
@@ -50,7 +51,8 @@ app.use(express.static('public'))
 
 
 
-app.use('/user',userRouter);
+app.use('/user', userRouter);
+app.use('/wine',wineRouter);
 app.use('/edit',drinkRouter);
 app.use('/', pageRouter);
 

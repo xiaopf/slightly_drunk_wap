@@ -1,14 +1,22 @@
 
 
 .myPageWrap{
+    overflow: hidden;
+    height:100%;
     position: relative;
     .am-navbar{
         width: 100%;
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         z-index: 9;
     }
+
+    .myContent{
+        overflow-y: auto;
+        height:100%;
+    }
+    .myContent::-webkit-scrollbar {display: none;}
     
     .am-navbar-light{
         background-color: #dedada;

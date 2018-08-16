@@ -5,18 +5,100 @@ import {Picker, List, WhiteSpace, InputItem, TextareaItem, Button, WingBlank,Nav
 
 import {createForm} from 'rc-form';
 
-import {district,provinceLite} from 'antd-mobile-demo-data';
+import {district} from 'antd-mobile-demo-data';
 
+import { changeUserInfoAsync,getUserInfoAsync } from '../../redux/user.redux.js';
+import {connect} from 'react-redux';
+import browserCookies from 'browser-cookies';
+import { Redirect} from 'react-router-dom';
 
+@connect(
+	state => state,
+	{ changeUserInfoAsync,getUserInfoAsync }
+)
 class AddAddress extends React.Component {
 
 	constructor(props) {
 		super(props);
+
+		this.state={
+			receive_name: '',
+			receive_tel: '',
+			address: '',
+			detail_addr: ''
+		}
 		this.goBack = this.goBack.bind(this);
+		this.saveAddr = this.saveAddr.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+		this.handleChanges = this.handleChanges.bind(this);
+	}
+
+    componentDidMount(){
+		let id = this.props.match.params.id;
+		console.log(id)
+		let _id = browserCookies.get('userId');
+		let that = this;
+
+		if(id >= 0){
+			(async function () {
+				await that.props.getUserInfoAsync(_id);
+				let addr = that.props.sign.address[id]
+				that.setState({
+					receive_name: addr.receive_name,
+					receive_tel: addr.receive_tel,
+					address: addr.address,
+					detail_addr: addr.detail_addr
+				})
+			})();
+		}
 	}
 
 
 	goBack() {
+		this.props.history.goBack()
+	}
+
+	handleChange(name, value) {
+		this.setState({
+			[name]: value
+		});
+	}
+	handleChanges(name, value) {
+		console.log(name,value)
+	}
+
+
+	saveAddr (){
+		let id = this.props.match.params.id;
+		let _id = browserCookies.get('userId')
+		let that = this;
+		if (this.props.sign.userName){
+			let address = this.props.sign.address;
+			
+			if(id){
+				address.splice(id,1,this.state);
+			}else{
+                address.push(this.state);
+			}
+			
+			this.props.changeUserInfoAsync(address, 'addr');
+		}else{
+			
+			(async function(){
+				await that.props.getUserInfoAsync(_id);
+                console.log(that.props)
+				let address = that.props.sign.address;
+				
+				if(id){
+					address.splice(id,1,that.state);
+				}else{
+                    address.push(that.state);
+				}
+				
+				that.props.changeUserInfoAsync(address, 'addr');
+			})();
+		}
+
 		this.props.history.goBack()
 	}
 
@@ -25,7 +107,7 @@ class AddAddress extends React.Component {
 		return (
 
 
-			<div className="addAddPage">
+			<div className="addAddrWrap">
 				<WhiteSpace></WhiteSpace>
 				<WhiteSpace></WhiteSpace>
 				<WhiteSpace></WhiteSpace>
@@ -43,8 +125,8 @@ class AddAddress extends React.Component {
 
 
 				<WingBlank>
-					<InputItem name="userName" placeholder="请输入收件人姓名">收件人</InputItem>
-					<InputItem name="password" type="password" placeholder="请输入电话号码">电话</InputItem>
+					<InputItem value={this.state.receive_name} name='receive_name' onChange={ value => this.handleChange('receive_name', value)} placeholder="请输入收件人姓名">收件人</InputItem>
+					<InputItem value={this.state.receive_tel} name='receive_tel' onChange={ value => this.handleChange('receive_tel', value)} placeholder="请输入电话号码">电话</InputItem>
 
 					<Picker extra="请选择(可选)"
 						data={district}
@@ -59,12 +141,13 @@ class AddAddress extends React.Component {
 					</Picker>
 
 					<TextareaItem
+						value={this.state.detail_addr} name='detail_addr' onChange={value => this.handleChange('detail_addr', value)} 
 						title="详细地址"
 						placeholder="请输入详细地址"
 						autoHeight
 					/>
 					<WhiteSpace></WhiteSpace>	
-					<Button type="warning" onClick={this.signOut}>保存</Button>
+					<Button type="warning" onClick={this.saveAddr}>保存</Button>
 				</WingBlank>
 			</div>
 

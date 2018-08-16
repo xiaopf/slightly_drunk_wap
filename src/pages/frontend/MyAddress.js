@@ -1,21 +1,67 @@
 import React from 'react';
 import './MyAddress.less';
 
-import { Picker, List, WhiteSpace, InputItem, TextareaItem, Button, WingBlank, NavBar, Icon } from 'antd-mobile';
+import { SwipeAction, List, WhiteSpace, InputItem, TextareaItem, Button, WingBlank, NavBar, Icon } from 'antd-mobile';
 
 import { Link } from 'react-router-dom';
+import browserCookies from 'browser-cookies';
+import {connect} from 'react-redux';
+import { changeUserInfoAsync, getUserInfoAsync } from '../../redux/user.redux.js';
 
-
-
+@connect(
+	state => state,
+	{ changeUserInfoAsync, getUserInfoAsync }
+)
 class MyAddress extends React.Component {
 	constructor(props){
 		super(props);
 		this.goBack = this.goBack.bind(this);
+		this.deleteAddr = this.deleteAddr.bind(this);
+		this.chooseAddr = this.chooseAddr.bind(this);
 	}
 
 	
 	componentDidMount (){
-		console.log(this.props)
+
+		let _id = browserCookies.get('userId')
+		let that = this;
+		if (!this.props.sign.userName) {
+
+			(async function () {
+				await that.props.getUserInfoAsync(_id);
+				console.log(that.props)
+				
+			})();
+		}
+	}
+
+	chooseAddr(index){
+		this.props.changeUserInfoAsync({chooseAddr:Number(index)});
+	}
+
+	deleteAddr (index){
+		console.log(index)
+
+
+
+		let _id = browserCookies.get('userId')
+		let that = this;
+		if (this.props.sign.userName) {
+			let address = this.props.sign.address;
+			address.splice(index, 1);
+			this.props.changeUserInfoAsync(address, 'addr');
+			if (index === this.props.sign.chooseAddr) { this.props.changeUserInfoAsync({ chooseAddr: 0 }); }
+		} else {
+
+			(async function () {
+				await that.props.getUserInfoAsync(_id);
+				console.log(that.props)
+				let address = that.props.sign.address;
+				address.splice(index, 1);
+				that.props.changeUserInfoAsync(address, 'addr');
+				if (index === that.props.sign.chooseAddr) { that.props.changeUserInfoAsync({ chooseAddr: 0 }); }
+			})();
+		}
 	}
 
 	goBack() {
@@ -25,25 +71,40 @@ class MyAddress extends React.Component {
 	render () {
 
 
-
-
-
-		let addrs = this.props.addrs.map(function (addr,index){
+        let that = this;
+		let addrs = this.props.sign.address.map(function (addr,index){
 			return (
-				<WingBlank className="add_wrap">
-					
-					<div className="add_left">
-						<p><span>{addr.receive_name}</span><span>{addr.receive_tel}</span></p>
-						<p>{addr.address + addr.detail_add}</p>
-					</div>
-					<Link className="fa fa-edit add_right" to={'/myAddress/addAddress'} ></Link>
-				</WingBlank>
+
+					<SwipeAction
+					    className="swipeWrap"
+					    key={addr.detail_addr} index={index}
+						style={{ backgroundColor: 'gray' }}
+						autoClose
+						right={[
+							{
+								text: 'Delete',
+								onPress: () => that.deleteAddr(index),
+								style: { backgroundColor: '#F4333C', color: 'white' },
+							},
+						]}
+					>
+
+					<div className="add_wrap" onClick={() => that.chooseAddr(index)}>
+							<div className="add_left">
+								<p><span>{addr.receive_name}</span><span>{addr.receive_tel}</span></p>
+								<p>{addr.address + addr.detail_addr}</p>
+							</div>
+							<Link className="fa fa-edit add_right" to={`/myAddress/addAddress/${index}`} ></Link>							
+						</div>
+
+					</SwipeAction>
+
 			)
 		})
 
 
 		return ( 
-            <div className="myAddressPages">
+            <div className="myAddressWrap">
 				<WhiteSpace></WhiteSpace>	
 				<WhiteSpace></WhiteSpace>	
 				<WhiteSpace></WhiteSpace>	
@@ -53,12 +114,10 @@ class MyAddress extends React.Component {
 					mode="light"
 					icon={<Icon type="left" />}
 					onLeftClick={this.goBack}
-					rightContent={[
-						<Icon key="1" type="ellipsis" />,
-					]}
-				>我的收货地址</NavBar>
+				>我的地址</NavBar>
 				<WhiteSpace></WhiteSpace>	
 				
+
 				{addrs}
 
 				<WingBlank>
@@ -72,15 +131,5 @@ class MyAddress extends React.Component {
 	}
 }
 
-MyAddress.defaultProps = {
-	addrs:[
-		{
-			receive_name:'xiaopf',
-			receive_tel:'18522856492',
-			address:'天津市 天津市 河西区',
-			detail_add:'富力中心写字楼A座2006'
-		}
-	]
-}
 
 export default MyAddress;

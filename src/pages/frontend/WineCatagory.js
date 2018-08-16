@@ -1,11 +1,18 @@
 import React from 'react';
-import axios from 'axios';
+import './WineCatagory.less';
 import { Grid, NavBar, Icon,WhiteSpace} from 'antd-mobile';
 import { Link , Redirect} from 'react-router-dom';
+import { connect } from 'react-redux';
+import WineCatagoryItem from '../../component/frontend/WineCatagoryItem';
+import { getWineListAsync, changeWineInUserAsync} from '../../redux/wine.redux.js';
+import { getUserInfoAsync} from '../../redux/user.redux.js';
+@connect(
+	state => state,
+	{ getWineListAsync, changeWineInUserAsync, getUserInfoAsync}
+)
 
 
 
-import './WineCatagory.less';
 
 
 
@@ -13,67 +20,50 @@ import './WineCatagory.less';
 class WineCatagory extends React.Component {
 	constructor(props){
 		super(props);
-
+		
 		this.goBack = this.goBack.bind(this)
-
+		this.toggleWineOwn = this.toggleWineOwn.bind(this)
 	}
 
 	componentDidMount(){
+		
+		if (!this.props.wine.userName){
+			this.props.getWineListAsync();
+		}
 
+		if (!this.props.sign.userName) {
+			this.props.getUserInfoAsync();
+		}
+
+		
 	}
 
 	goBack () {
 		this.props.history.goBack()
 	}
 
+	toggleWineOwn(toggle,_id){
 
 
+		let own = this.props.sign.own;
+
+        if(!toggle){
+			own.push(_id);
+			this.props.changeWineInUserAsync({ own});
+		}else{
+			let newOwn = own.filter((o)=>(o!==_id))
+			this.props.changeWineInUserAsync({ own: newOwn });
+		}
 
 
-
+	}
 
 	render () {
 
+		let id = this.props.match.params.id;
 
-
-		const grids = this.props.material.map((m,idx) => {
-			return (
-					<div>
-						<div className="sub-title">{m.catagory}</div>
-						<Grid data={m.wine_imgs}
-								columnNum={3}
-								renderItem={dataItem => (
-									<div style={{ padding: '12.5px' }}>
-										<Link to={'/wines/1'}>
-											<img src={dataItem.icon} style={{ width: '75px', height: '75px' }} alt="" />
-											<div style={{ color: '#888', fontSize: '14px', marginTop: '12px' }}>
-												<span>I am title..</span>
-											</div>
-										</Link>
-									</div>
-								)}
-							/>		
-
-
-					</div>		
-							
-			)
-		});
-
-
-
-
-
-
-
-
-
-
-
-
-		
 		return (
-			<div className="wineCatagoryPage">
+			<div className="wineCatagoryWrap">
 
 				<WhiteSpace></WhiteSpace>
 				<WhiteSpace></WhiteSpace>
@@ -85,16 +75,20 @@ class WineCatagory extends React.Component {
 					mode="light"
 					icon={<Icon type="left" />}
 					onLeftClick={this.goBack}
-					rightContent={[
-						<Icon key="0" type="search" style={{ marginRight: '16px' }} />,
-						<Icon key="1" type="ellipsis" />,
-					]}
-				>斯米诺红牌</NavBar>
+				>{id}</NavBar>
+
+				<Grid data={this.props.wine.wineList.filter((item) => (item.type === id))}
+					columnNum={2}
+					renderItem={dataItem => (
+
+
+						<WineCatagoryItem dataItem={dataItem} onToggleWineOwn={this.toggleWineOwn}></WineCatagoryItem>
+						
+					)}
+				/>		
+
 
 				
-
-
-				{grids}
 
 
 
@@ -102,45 +96,6 @@ class WineCatagory extends React.Component {
 
 		)
 	}
-}
-
-
-WineCatagory.defaultProps={
-	material:[
-		{
-			catagory:'伏特加',
-			wine_imgs:[
-				{icon:'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg'},
-				{icon:'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg'},
-				{icon:'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg'},
-				{icon:'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg'},
-				{icon:'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg'},
-				{icon:'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg'}
-			]
-		},
-		{
-			catagory:'伏特加',
-			wine_imgs: [
-				{icon:'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg'},
-				{icon:'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg'},
-				{icon:'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg'},
-				{icon:'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg'},
-				{icon:'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg'},
-				{icon:'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg'}
-			]
-		},
-		{
-			catagory: '伏特加',
-			wine_imgs: [
-				{ icon: 'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg' },
-				{ icon: 'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg' },
-				{ icon: 'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg' },
-				{ icon: 'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg' },
-				{ icon: 'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg' },
-				{ icon: 'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg' }
-			]
-		}
-	]
 }
 
 

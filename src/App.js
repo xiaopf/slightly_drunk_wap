@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 
 import {
   BrowserRouter,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 
 import './App.less';
@@ -32,7 +33,7 @@ class App extends Component {
 
     return (
       <BrowserRouter>
-        <div>
+        <Switch>
 
           <Route exact path='/signin' component={ SignIn }></Route>
           <Route path='/signup' component={ SignUp }></Route>
@@ -47,7 +48,9 @@ class App extends Component {
 
 
           <Route path='/goods/:id' component={ GoodsDetail }></Route>
+
           <Route path='/wine/catagory/:id' component={WineCatagory}></Route>
+          
           <Route path='/wines/:id' component={ WineDetail }></Route>
 
           <Route path='/shop/ShopCart' component={ShopCart}></Route>
@@ -57,9 +60,10 @@ class App extends Component {
           <Route path ='/shopCart' component = {ShopCart}></Route>
 
           <Route path='/address/myAddress' component={MyAddress}></Route>
+          <Route path='/myaddress/addAddress/:id' component={ AddAddress }></Route>
+          <Route path='/myaddress/addAddress' component={AddAddress}></Route>
 
-          <Route path='/myaddress/addAddress' component={ AddAddress }></Route>
-        </div>
+        </Switch>
 
       </BrowserRouter>
     );

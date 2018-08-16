@@ -4,6 +4,7 @@ import axios from 'axios';
 const GET_USER_INFO = 'GET_USER_INFO';
 const CHANGE_USER_INFO = 'CHANGE_USER_INFO';
 const CHANGE_USER_IMAGE = 'CHANGE_USER_IMAGE';
+const CHANGE_USER_ADDR = 'CHANGE_USER_ADDR';
 
 
 
@@ -20,7 +21,9 @@ var initState = {
 	userName:'',
 	password:'',
 	image: '',
-	cart:[],
+	cart: [],
+	address:[],
+	chooseAddr:0,
 	order:[],
 	msg:'',
 	code:0
@@ -49,7 +52,7 @@ export function sign(state = initState,action){
 
         case SIGN_IN: 
 			return {
-				...state, isSignIn: true, ...action.payload.data, 'code': action.payload.code, 'msg': action.payload.msg, redirectTo:'/index'};
+				...state, isSignIn: true, ...action.payload.data, 'code': action.payload.code, 'msg': action.payload.msg, redirectTo: redirectTo(action.payload.code)};
 
 	    case ERROR_MSG: 
 			return {...state,isSignIn:false,...action.payload};
@@ -72,11 +75,16 @@ function redirectTo(code){
 			return '/signin';
 		break;
 		case 1:
-			return '';
+			return '/signin';
 		break;
 		case 6:
 			return '';
 		break;
+
+		case 7:
+			return '/address/myAddress';
+		break;
+
 		default :
 			return '';
 		break;
@@ -142,19 +150,37 @@ export function getUserInfoAsync(_id) {
 		})
 	)
 }
-export function changeUserInfoAsync(info) {
+export function changeUserInfoAsync(info,which) {
 
-	return dispatch => (
-		// 参数应该是对象
-		axios.post('/user', info).then((res) => {
-			if (res.status === 200) {
+	if(which === 'addr'){
+		console.log(info)
+		return dispatch => (
+			// 参数应该是对象
+			axios.post('/user/addr', info).then((res) => {
+				if (res.status === 200) {
 
 					console.log(res.data)
 					dispatch(createChangeUserInfo(res.data))
 
-			}
-		})
-	)
+				}
+			})
+		)
+	}else{
+		console.log(info)
+		return dispatch => (
+			// 参数应该是对象
+			axios.post('/user', info).then((res) => {
+				if (res.status === 200) {
+
+					console.log(res.data)
+					dispatch(createChangeUserInfo(res.data))
+
+				}
+			})
+		)
+	}
+	
+
 }
 
 export function changeUserImageAsync(image) {

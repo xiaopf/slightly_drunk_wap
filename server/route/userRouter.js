@@ -10,6 +10,9 @@ Router.get('/',UserController.getUserInfo)
 Router.post('/',UserController.UpdateUserInfo)
 
 Router.post('/image', multiparty,UserController.UpdateUserImage)
+Router.post('/addr', UserController.UpdateUserAddr)
+Router.post('/own', UserController.UpdateUserOwn)
+
 
 
 module.exports = Router;

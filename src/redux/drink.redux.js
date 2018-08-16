@@ -26,8 +26,12 @@ var initState = {
 	password:'',
 	image:'',
 	cart: [],
+	address: [],
+	chooseAddr: 0,
+	order: [],
 	drinkList: [],
-	searchDrink:[],
+	searchDrink: [],
+	searchWine:[],
 	singleDrink:{},
 	msg:'',
 	code:0

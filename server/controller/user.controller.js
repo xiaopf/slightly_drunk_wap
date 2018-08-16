@@ -8,7 +8,6 @@ var path = require('path');
 
 exports.getUserInfo = function (req,res,next){
 	var _id = req.cookies.userId;
-	console.log(_id)
 	if (_id) {
 		userModel.findOne({ _id }, function (err, user) {
 			if (err) { console.log(err); }
@@ -29,9 +28,16 @@ exports.getUserInfo = function (req,res,next){
 
 exports.UpdateUserInfo = function (req, res, next) {
 	var _id = req.cookies.userId;
+
+	var chooseAddr = req.body.chooseAddr;
 	var userName = req.body.userName;
 	var password = req.body.password ? addSalt(password) : '';	
-	var updateInfo = userName ? { userName } : { password};
+	var updateInfo;
+
+
+	if(chooseAddr>=0){updateInfo = {chooseAddr}}
+	if(userName){updateInfo = {userName}}
+	if(password){updateInfo = {password}}
 
 	if (_id) {
 
@@ -61,26 +67,61 @@ exports.UpdateUserImage = function (req, res, next) {
 	var imgData = req.body.image;
 	var base64Data = imgData.replace(/^data:image\/\w+;base64,/, "");
 	var dataBuffer = new Buffer(base64Data, 'base64');
-	var newPath = path.join(__dirname, '../../', '/upload/images/head/image.png');
+	var nPath = `/upload/images/head/${_id}.png`;
+	var newPath = path.join(__dirname, '../../', nPath);
 
-	var nPath = './upload/images/head/image.png';
+
 
 	fs.writeFile(newPath, dataBuffer, function (err) {
 		if (err) {console.log(err)};
-        res.send('保存成功')
+		console.log('保存成功');
+		
+		if (_id) {
+
+			userModel.update({ _id }, { image: nPath}, function (err, result) {
+				if (err) { console.log(err); }
+
+				if (result.ok) {
+					userModel.findOne({ _id }, function (err, user) {
+						if (err) { console.log(err); }
+						user = user.toObject();//修改mongoose返回值问题
+						res.json({ code: 6, msg: 'info更新完成', ...user, password: '', __v: '' })
+					})
+				}
+
+			})
+
+		} else {
+			res.json({ code: 0, msg: '未登录！' })
+		}
+
+
+
 	});
 
 
+
+
+}
+
+
+
+
+
+exports.UpdateUserAddr = function (req, res, next) {
+	var _id = req.cookies.userId;
+    var addr = req.body;
+
 	if (_id) {
 
-		userModel.update({ _id }, { image: nPath}, function (err, result) {
+		userModel.update({ _id }, {address:addr}, function (err, result) {
 			if (err) { console.log(err); }
 
 			if (result.ok) {
 				userModel.findOne({ _id }, function (err, user) {
 					if (err) { console.log(err); }
 					user = user.toObject();//修改mongoose返回值问题
-					res.json({ code: 6, msg: 'info更新完成', ...user, password: '', __v: '' })
+					res.json({ code: 7, msg: 'addr更新完成', ...user, password: '', __v: '' })
 				})
 			}
 
@@ -91,6 +132,48 @@ exports.UpdateUserImage = function (req, res, next) {
 	}
 
 }
+
+
+exports.UpdateUserOwn = function (req, res, next) {
+	var _id = req.cookies.userId;
+	var own = req.body.own;
+
+	if (_id) {
+
+		userModel.update({ _id }, { own }, function (err, result) {
+			if (err) { console.log(err); }
+
+			if (result.ok) {
+				userModel.findOne({ _id }, function (err, user) {
+					if (err) { console.log(err); }
+					user = user.toObject();//修改mongoose返回值问题
+					res.json({ code: 6, msg: 'own更新完成', ...user, password: '', __v: '' })
+				})
+			}
+
+		})
+
+	} else {
+		res.json({ code: 0, msg: '未登录！' })
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

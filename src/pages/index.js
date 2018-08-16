@@ -15,7 +15,7 @@ class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'yellowTab',
+      selectedTab: 'redTab',
       showList:false
     };
   }
@@ -89,7 +89,7 @@ class Index extends Component {
              >
 
 {/* 清单第二页 */}
-            {/* <Material></Material>  */}
+            <Material></Material> 
 
              </TabBar.Item>
 
@@ -121,7 +121,7 @@ class Index extends Component {
              >
 
 {/* 商店第三页 */}
-                {/* < Shop ></Shop>  */}
+              < Shop ></Shop> 
 
              </TabBar.Item>
              <TabBar.Item

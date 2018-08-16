@@ -1,7 +1,38 @@
+
+
+.name{
+  height: 18px;
+}
+
+.am-grid .am-flexbox .am-flexbox-item .am-grid-item-content{
+  height: auto!important;
+}
+
+.twoItem .am-grid.am-grid-square .am-grid-item:before{
+  padding-bottom: 66%!important;
+}
+
+
 .sub-title {
   color: #888;
-  font-size: 14px;
+  font-size: 16px;
   padding: 15px 0 9px 15px;
+  text-align:center;
+  font-size: 0;
+  background-color: #fff;
+  margin: 10px 0 0 0;
+
+  span{
+    vertical-align: middle;
+    display: inline-block;
+    margin:0 5px;
+  }
+
+  .hLine{
+    width: 50px;
+    height: 2px;
+    border-bottom: 1px solid #afafaf;
+  }
 }
 .not-square-grid .am-grid-icon {
   width: 40px;
@@ -10,13 +41,28 @@
 
 
 
-.materialPage{
-      position: relative;
-      .am-search{
+.materialWrap{
+    height:100%;
+    overflow: hidden;
+    position: relative;
+    .am-search{
         position: absolute!important;
         top:0;
         left:0;
         z-index: 99;
         width: 100%;
     }
+    .materialContent{
+        overflow-y: auto;
+        height:100%;
+        padding-bottom: 55px;
+    }
+
+	.unFindOut{
+		font-size: 18px;
+		line-height: 30px;
+		width:100%;
+		text-align: center;
+		padding-top: 10px;
+	}
 }

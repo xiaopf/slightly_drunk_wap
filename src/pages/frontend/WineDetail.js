@@ -1,29 +1,28 @@
 import React from 'react';
 import './WineDetail.less';
-import axios from 'axios';
+import { NavBar, Icon, WhiteSpace } from 'antd-mobile';
 import { connect } from 'react-redux';
 
-import { NavBar, Icon , WhiteSpace } from 'antd-mobile';
-
-
-
-
-
-
-
+import { getWineListAsync} from '../../redux/wine.redux.js';
+@connect(
+	state => state,
+	{ getWineListAsync}
+)
 
 
 class WineDetail extends React.Component {
 
 	constructor(props){
 		super(props);
-		this.state = {
-			drink:{}
-		}
 
 		this.goBack = this.goBack.bind(this)
 	}
 
+	componentDidMount(){
+		if (!this.props.wine.userName) {
+			this.props.getWineListAsync();
+		}
+	}
 
 
 	goBack () {
@@ -36,35 +35,46 @@ class WineDetail extends React.Component {
 
 	render () {
 
-		let drink = this.state.drink;
+		let id = this.props.match.params.id;
+		let drink = this.props.wine.wineList.filter((wine)=>(wine._id === id));
+		console.log(drink)
+
+
 		return ( 
-	
+                 <React.Fragment>
+					{drink[0] ? <div className="wineDetailWrap">
+									<WhiteSpace></WhiteSpace>
+									<WhiteSpace></WhiteSpace>
+									<WhiteSpace></WhiteSpace>
+									<WhiteSpace></WhiteSpace>
+									<WhiteSpace></WhiteSpace>
+										<NavBar
+											mode="light"
+											icon={<Icon type="left" />}
+											onLeftClick={this.goBack}
+										>{drink[0].name}</NavBar>
 
-                 
-				<div className="wineDetailWrap">
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-				<WhiteSpace></WhiteSpace>
-					<NavBar
-						mode="light"
-						icon={<Icon type="left" />}
-						onLeftClick={this.goBack}
-						rightContent={[
-							<Icon key="0" type="search" style={{ marginRight: '16px' }} />,
-							<Icon key="1" type="ellipsis" />,
-						]}
-					>斯米诺红牌</NavBar>
+										<img className="detail_img" src={drink[0].img_url} alt="" />
+										<div className="detail_text_wrap">
+											<p className="detail_name">{drink[0].name.split('（')[0]}</p>
+											<p className="detail_eng_name">{drink[0].name.split('（')[1].slice(0, -1)}</p>
+											<p className="detail_describes">{drink[0].describes}</p>
+										</div>	
 
-					<img className="detail_img" src={'http://img10.360buyimg.com/n2/jfs/t18322/148/780824310/233317/b224032c/5aa7a156N38ea9c51.jpg'} alt="" />
-					<div className="detail_text_wrap">
-						<p className="detail_name">绝对伏特加 Absolut Vodka 洋酒 原味 伏特加 700ml</p>
-						<p className="detail_eng_name">伏特加（俄语：Водка）是一种经蒸馏处理的酒精饮料。它是由水和经蒸馏净化的乙醇所合成的透明液体，</p>
-					</div>	
+									</div>:null
+					}
+				</React.Fragment>
 
-				</div>
-
+		// img_url
+		// name
+		// typeEn
+		// type
+		// price
+		// from
+		// stock
+		// capacity
+		// material
+		// proof
 
 
 	
