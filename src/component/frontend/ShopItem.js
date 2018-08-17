@@ -2,7 +2,14 @@ import React from 'react';
 import './ShopItem.less';
 import { Link } from 'react-router-dom';
 
-import LinesEllipsis from 'react-lines-ellipsis'
+import { connect } from 'react-redux';
+
+import { countWineToCartAsync } from '../../redux/shop.redux.js';
+
+@connect(
+	state => state,
+	{ countWineToCartAsync }
+)
 
 
 
@@ -17,8 +24,31 @@ class ShopItem extends React.Component {
 
 		}
 
-		buy(_id,e){
-			console.log(_id);
+		buy(_id,price,e){
+			let cart = this.props.sign.cart;
+
+			console.log(cart.some((c) => (c._id === _id)))
+
+			if(!cart.some((c)=>(c._id === _id))){
+
+                cart.push({_id,num:1,price})
+			}else{
+
+
+				let index;
+                let target = cart.filter((c,idx)=>{
+					index = idx;
+					return c._id === _id; 
+				})
+
+				console.log(target)
+
+				target[0].num ++;
+
+				cart[index] = target[0];
+			}
+
+			this.props.countWineToCartAsync({ cart })
 			e.stopPropagation();
 			e.preventDefault();
 		}
@@ -27,7 +57,7 @@ class ShopItem extends React.Component {
 			
 			let that = this;
 			
-			let Singles = this.props.wineList.map(function(wine,index){
+			let Singles = this.props.wineList.filter((wine) => (wine.type === this.props.catagory)).map(function(wine,index){
 				return (
 					<div className="toDetail" key={
 						wine._id
@@ -43,20 +73,12 @@ class ShopItem extends React.Component {
 							
 						}
 						alt = "" / >
-
-							<LinesEllipsis className="wineName"
-								text = {
-									wine.name
-								}
-								maxLine='3'
-								ellipsis='...'
-								trimRight
-								basedOn='letters'
-							/>
+							<p className="wineName">{wine.name.split('（')[0]}</p>
+							<p className="wineName">{wine.name.split('（')[1].slice(0, -1)}</p>
 						</Link >
 						<p className="shopItemFooter">
 							<span>{`￥${wine.price}元`}</span>
-							<span onClick = { e => that.buy('11',e) } className="fa fa-shopping-cart"></span>
+							<span onClick={e => that.buy(wine._id, wine.price,e) } className="fa fa-shopping-cart"></span>
 						</p>
 					</div>
 				)

@@ -15,7 +15,7 @@ class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: 'greenTab',
       showList:false
     };
   }

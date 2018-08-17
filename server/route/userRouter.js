@@ -12,6 +12,7 @@ Router.post('/',UserController.UpdateUserInfo)
 Router.post('/image', multiparty,UserController.UpdateUserImage)
 Router.post('/addr', UserController.UpdateUserAddr)
 Router.post('/own', UserController.UpdateUserOwn)
+Router.post('/cart', UserController.UpdateUserCart)
 
 
 

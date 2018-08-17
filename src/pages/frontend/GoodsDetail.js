@@ -97,6 +97,7 @@ class Detail extends React.Component {
 					<p className="wine_price">￥88</p>
 				    <p className="wine_info">伏特加（俄语：Водка）是一种经蒸馏处理的酒精饮料。它是由水和经蒸馏净化的乙醇所合成的透明液体，通常会经多重蒸馏从而达到更纯更美味的效果，市面上品质较好的伏特加一般是经过三重蒸馏的。在蒸馏过程中除水和乙醇外亦会加入马铃薯、菜糖浆及黑麦或小麦，如果是制作有味道的伏特加更会加入适量的调味料。</p>
 
+
 					<div className="footerBuy">
 						<p className="addToCart fa fa-shopping-cart" onClick={e => this.buyTo('11', e)} ></p>
 						<p>加入购物车</p>

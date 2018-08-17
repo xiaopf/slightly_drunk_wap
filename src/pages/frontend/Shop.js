@@ -10,9 +10,10 @@ import Cart from '../../component/frontend/Cart';
 import { connect } from 'react-redux';
 
 import { getWineListAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync } from '../../redux/wine.redux.js';
+import { getIndexBannerAsync } from '../../redux/banner.redux.js';
 @connect(
 	state => state,
-	{ getWineListAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync }
+	{ getWineListAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync, getIndexBannerAsync }
 )
 
 
@@ -24,6 +25,7 @@ class Shop extends React.Component {
 
     componentDidMount(){
 		this.props.getWineListAsync();
+		this.props.getIndexBannerAsync();
 	}
 
 
@@ -42,14 +44,14 @@ class Shop extends React.Component {
 				</div>
 
 				<div className="shopContent">
-					{/* <Carousel
+					<Carousel
 						autoplay
 						infinite
 						beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
 						afterChange={index => console.log('slide to', index)}
 						style={{ paddingTop: '50px', height: 'auto' }}
 					>
-						{this.props.banner.map(val => (
+						{this.props.banner.indexBannerList.map(val => (
 							<a
 								key={val}
 								href={val.banner_link}
@@ -67,7 +69,7 @@ class Shop extends React.Component {
 								/>
 							</a>
 						))}
-					</Carousel> */}
+					</Carousel>
 					
 					{ShopItems}
 				</div>
@@ -93,33 +95,19 @@ Shop.defaultProps = {
 		{
 			catagory: '金酒',
 		},
-
-	],
-
-
-	banner:[
 		{
-			"_id": "5b5a7b5552e7162afc98bc88",
-			"banner_image": "http://www.legacy.com.tw/uploads/banner/82948278366846233585.jpg",
-			"banner_link": "http://localhost:3000/drink/11",
-			"__v": 0
+			catagory: '白兰地',
+		},
+		{
+			catagory: '朗姆',
+		},
+		{
+			catagory: '威士忌',
+		},
+		{
+			catagory: '力娇酒',
 		},
 
-
-		{
-			"_id": "5b5a7b5652e7162afc98bc89",
-			"banner_image": "http://www.legacy.com.tw/uploads/banner/16619379388884103244.jpg",
-			"banner_link": "http://localhost:3000/drink/11",
-			"__v": 0
-		},
-
-
-		{
-			"_id" : "5b5a7b5652e7162afc98bc8a",
-			"banner_image" : "http://www.legacy.com.tw/uploads/banner/02085761131675905627.jpg",
-			"banner_link" : "http://localhost:3000/drink/11",
-			"__v" : 0
-		}
 	]
 }
 

@@ -160,6 +160,35 @@ exports.UpdateUserOwn = function (req, res, next) {
 }
 
 
+exports.UpdateUserCart = function (req, res, next) {
+	var _id = req.cookies.userId;
+	var cart = req.body.cart;
+
+	console.log(cart)
+
+	if (_id) {
+
+		userModel.update({ _id }, { cart }, function (err, result) {
+			if (err) { console.log(err); }
+
+			if (result.ok) {
+				userModel.findOne({ _id }, function (err, user) {
+					if (err) { console.log(err); }
+					user = user.toObject();//修改mongoose返回值问题
+					res.json({ code: 6, msg: 'cart更新完成', ...user, password: '', __v: '' })
+				})
+			}
+
+		})
+
+	} else {
+		res.json({ code: 0, msg: '未登录！' })
+	}
+
+}
+
+
+
 
 
 
