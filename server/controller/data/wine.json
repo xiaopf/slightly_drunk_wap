@@ -1,7 +1,11 @@
 {
     "wine0": {
         "id": 0,
-        "img_url": "https://img11.360buyimg.com/n7/jfs/t3244/238/5798265384/67771/be1a98ad/58881e16N9e888c1c.jpg",
+        "img_url":[
+            "https://img11.360buyimg.com/n7/jfs/t3244/238/5798265384/67771/be1a98ad/58881e16N9e888c1c.jpg",
+            "https://img11.360buyimg.com/n7/jfs/t3244/238/5798265384/67771/be1a98ad/58881e16N9e888c1c.jpg",
+            "https://img11.360buyimg.com/n7/jfs/t3244/238/5798265384/67771/be1a98ad/58881e16N9e888c1c.jpg"
+        ],
         "name": "灰雁（Grey Goose）",
         "typeEn":"Vodka",
         "type": "伏特加",
@@ -35,7 +39,11 @@
     },
     "wine1": {
         "id": 1,
-        "img_url": "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg",
+        "img_url":[
+            "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg",
+            "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg",
+            "https://img12.360buyimg.com/n7/jfs/t6562/271/140957721/62361/cf69ac23/593a2594N1a46ef60.jpg"
+        ],
         "name": "绝对伏特加（Absolut Vodka）",
         "typeEn":"Vodka",
         "type": "伏特加",
@@ -68,7 +76,11 @@
     },
     "wine2": {
         "id": 2,
-        "img_url": "https://img13.360buyimg.com/n7/jfs/t4567/271/2311379073/47429/e818793f/58eded4cNd213db27.jpg",
+        "img_url":[
+            "https://img13.360buyimg.com/n7/jfs/t4567/271/2311379073/47429/e818793f/58eded4cNd213db27.jpg",
+            "https://img13.360buyimg.com/n7/jfs/t4567/271/2311379073/47429/e818793f/58eded4cNd213db27.jpg",
+            "https://img13.360buyimg.com/n7/jfs/t4567/271/2311379073/47429/e818793f/58eded4cNd213db27.jpg"
+        ],
         "name": "斯米诺（SMIRNOFF Vodka）",
         "typeEn":"Vodka",
         "type": "伏特加",
@@ -102,7 +114,11 @@
     },
     "wine3": {
         "id": 3,
-        "img_url": "https://img13.360buyimg.com/n7/jfs/t619/147/1067955181/35142/67433e3d/54ac8905N4fee8104.jpg",
+        "img_url":[
+            "https://img13.360buyimg.com/n7/jfs/t619/147/1067955181/35142/67433e3d/54ac8905N4fee8104.jpg",
+            "https://img13.360buyimg.com/n7/jfs/t619/147/1067955181/35142/67433e3d/54ac8905N4fee8104.jpg",
+            "https://img13.360buyimg.com/n7/jfs/t619/147/1067955181/35142/67433e3d/54ac8905N4fee8104.jpg"
+        ],
         "name": "深蓝（Skyy Vodka）",
         "typeEn":"Vodka",
         "type": "伏特加",
@@ -137,7 +153,11 @@
     },
     "wine4": {
         "id": 4,
-        "img_url": "https://img10.360buyimg.com/n7/jfs/t340/354/1387103822/56096/3e9a758/5438ec3bNa187ce9a.jpg",
+        "img_url":[
+            "https://img10.360buyimg.com/n7/jfs/t340/354/1387103822/56096/3e9a758/5438ec3bNa187ce9a.jpg",
+            "https://img10.360buyimg.com/n7/jfs/t340/354/1387103822/56096/3e9a758/5438ec3bNa187ce9a.jpg",
+            "https://img10.360buyimg.com/n7/jfs/t340/354/1387103822/56096/3e9a758/5438ec3bNa187ce9a.jpg"
+        ],
         "name": "懒虫（ Camino）",
         "typeEn": "Tequila",
         "type": "龙舌兰",
@@ -171,7 +191,11 @@
     },
     "wine5": {
         "id": 5,
-        "img_url": "https://img14.360buyimg.com/n7/jfs/t13663/1/143985579/61715/10753d0b/5a042019N7c67d0d9.jpg",
+        "img_url":[
+            "https://img14.360buyimg.com/n7/jfs/t13663/1/143985579/61715/10753d0b/5a042019N7c67d0d9.jpg",
+            "https://img14.360buyimg.com/n7/jfs/t13663/1/143985579/61715/10753d0b/5a042019N7c67d0d9.jpg",
+            "https://img14.360buyimg.com/n7/jfs/t13663/1/143985579/61715/10753d0b/5a042019N7c67d0d9.jpg"
+        ],
         "name": "豪帅快活（ Jose Cuervo）",
         "typeEn": "Tequila",
         "type": "龙舌兰",
@@ -206,7 +230,11 @@
     },
     "wine6": {
         "id": 6,
-        "img_url": "https://img12.360buyimg.com/n7/jfs/t4885/52/77373900/57334/e5008480/58da2bb8Neea9dc3c.jpg",
+        "img_url":[
+            "https://img12.360buyimg.com/n7/jfs/t4885/52/77373900/57334/e5008480/58da2bb8Neea9dc3c.jpg",
+            "https://img12.360buyimg.com/n7/jfs/t4885/52/77373900/57334/e5008480/58da2bb8Neea9dc3c.jpg",
+            "https://img12.360buyimg.com/n7/jfs/t4885/52/77373900/57334/e5008480/58da2bb8Neea9dc3c.jpg"
+        ],
         "name": "哈瓦那（ Havana）",
         "typeEn": "Rum",
         "type": "朗姆",
@@ -241,7 +269,11 @@
     },
     "wine7": {
         "id": 7,
-        "img_url": "https://img14.360buyimg.com/n7/jfs/t17782/258/1386681176/169937/11360d93/5ac9784eN769833d1.jpg",
+        "img_url":[
+            "https://img14.360buyimg.com/n7/jfs/t17782/258/1386681176/169937/11360d93/5ac9784eN769833d1.jpg",
+            "https://img14.360buyimg.com/n7/jfs/t17782/258/1386681176/169937/11360d93/5ac9784eN769833d1.jpg",
+            "https://img14.360buyimg.com/n7/jfs/t17782/258/1386681176/169937/11360d93/5ac9784eN769833d1.jpg"
+        ],
         "name": "孟买（ Bombay） ",
         "typeEn":"Gin",
         "type": "金酒",
@@ -276,7 +308,11 @@
     },
     "wine8": {
         "id": 8,
-        "img_url": "https://img11.360buyimg.com/n7/jfs/t3871/341/1599579312/112945/cc972d5b/5888262eNbb6456e6.jpg",
+        "img_url":[
+            "https://img11.360buyimg.com/n7/jfs/t3871/341/1599579312/112945/cc972d5b/5888262eNbb6456e6.jpg",
+            "https://img11.360buyimg.com/n7/jfs/t3871/341/1599579312/112945/cc972d5b/5888262eNbb6456e6.jpg",
+            "https://img11.360buyimg.com/n7/jfs/t3871/341/1599579312/112945/cc972d5b/5888262eNbb6456e6.jpg"
+        ],
         "name": "哥顿（ Gordon’ s）",
         "typeEn":"Gin",
         "type": "金酒",
@@ -312,7 +348,11 @@
 
     "wine9": {
         "id": 9,
-        "img_url": "https://img10.360buyimg.com/n7/g14/M03/05/1A/rBEhVlHnU9EIAAAAAAE2r4wpw1oAABI_gJYRrIAATbH261.jpg",
+        "img_url":[
+            "https://img10.360buyimg.com/n7/g14/M03/05/1A/rBEhVlHnU9EIAAAAAAE2r4wpw1oAABI_gJYRrIAATbH261.jpg",
+            "https://img10.360buyimg.com/n7/g14/M03/05/1A/rBEhVlHnU9EIAAAAAAE2r4wpw1oAABI_gJYRrIAATbH261.jpg",
+            "https://img10.360buyimg.com/n7/g14/M03/05/1A/rBEhVlHnU9EIAAAAAAE2r4wpw1oAABI_gJYRrIAATbH261.jpg"
+        ],
         "name": "杰克丹尼（ Jack Daniel 's）",
         "typeEn": "Whiskey",
         "type": "威士忌",
@@ -348,7 +388,11 @@
 
     "wine10": {
         "id": 10,
-        "img_url": "https://img14.360buyimg.com/n7/jfs/t3397/135/1327085703/165301/dc03102/5822af47N73e60e55.jpg",
+        "img_url":[
+            "https://img14.360buyimg.com/n7/jfs/t3397/135/1327085703/165301/dc03102/5822af47N73e60e55.jpg",
+            "https://img14.360buyimg.com/n7/jfs/t3397/135/1327085703/165301/dc03102/5822af47N73e60e55.jpg",
+            "https://img14.360buyimg.com/n7/jfs/t3397/135/1327085703/165301/dc03102/5822af47N73e60e55.jpg"
+        ],
         "name": "金宾（ Jim Beam） ",
         "typeEn": "Whiskey",
         "type": "威士忌",
@@ -383,7 +427,11 @@
     },
     "wine11": {
         "id": 11,
-        "img_url": "https://img14.360buyimg.com/n7/jfs/t1990/39/952715806/182796/e43004ba/56387722N902aaa91.jpg",
+        "img_url":[
+            "https://img14.360buyimg.com/n7/jfs/t1990/39/952715806/182796/e43004ba/56387722N902aaa91.jpg",
+            "https://img14.360buyimg.com/n7/jfs/t1990/39/952715806/182796/e43004ba/56387722N902aaa91.jpg",
+            "https://img14.360buyimg.com/n7/jfs/t1990/39/952715806/182796/e43004ba/56387722N902aaa91.jpg"
+        ],
         "name": "轩尼诗（ Hennessy） ",
         "typeEn": "Brandy",
         "type": "白兰地",
@@ -418,7 +466,11 @@
     },
     "wine12": {
         "id": 12,
-        "img_url": "https://img14.360buyimg.com/n0/jfs/t16558/58/2560244314/239958/c1c5b82a/5abe1710N3220a9f0.png",
+        "img_url":[
+            "https://img14.360buyimg.com/n0/jfs/t16558/58/2560244314/239958/c1c5b82a/5abe1710N3220a9f0.png",
+            "https://img14.360buyimg.com/n0/jfs/t16558/58/2560244314/239958/c1c5b82a/5abe1710N3220a9f0.png",
+            "https://img14.360buyimg.com/n0/jfs/t16558/58/2560244314/239958/c1c5b82a/5abe1710N3220a9f0.png"
+        ],
         "name": "杜卡特（DUKAT BRANDY）",
         "typeEn": "Brandy",
         "type": "白兰地",
@@ -453,7 +505,11 @@
     },
     "wine13": {
         "id": 13,
-        "img_url": "https://img12.360buyimg.com/n7/jfs/t3253/241/5853258021/163783/e0c37e93/587f2cdeN97f085cb.jpg",
+        "img_url":[
+            "https://img12.360buyimg.com/n7/jfs/t3253/241/5853258021/163783/e0c37e93/587f2cdeN97f085cb.jpg",
+            "https://img12.360buyimg.com/n7/jfs/t3253/241/5853258021/163783/e0c37e93/587f2cdeN97f085cb.jpg",
+            "https://img12.360buyimg.com/n7/jfs/t3253/241/5853258021/163783/e0c37e93/587f2cdeN97f085cb.jpg"
+        ],
         "name": "波士蓝橙（ BOL’ S）",
         "typeEn": "Liqueur",
         "type": "力娇酒",
@@ -488,7 +544,11 @@
     },
     "wine13": {
         "id": 13,
-        "img_url": "https://img11.360buyimg.com/n7/jfs/t2674/147/3293971256/159271/7722a838/57887d56N50ea63bf.jpg",
+        "img_url":[
+            "https://img11.360buyimg.com/n7/jfs/t2674/147/3293971256/159271/7722a838/57887d56N50ea63bf.jpg",
+            "https://img11.360buyimg.com/n7/jfs/t2674/147/3293971256/159271/7722a838/57887d56N50ea63bf.jpg",
+            "https://img11.360buyimg.com/n7/jfs/t2674/147/3293971256/159271/7722a838/57887d56N50ea63bf.jpg"
+        ],
         "name": "波士绿薄荷（ BOL’ S）",
         "typeEn": "Liqueur",
         "type": "力娇酒",
@@ -523,7 +583,11 @@
     },
     "wine13": {
         "id": 13,
-        "img_url": "https://img11.360buyimg.com/n7/jfs/t2962/153/1582194184/179453/7fefe708/57883af8N18a8bd9e.jpg",
+        "img_url":[
+            "https://img11.360buyimg.com/n7/jfs/t2962/153/1582194184/179453/7fefe708/57883af8N18a8bd9e.jpg",
+            "https://img11.360buyimg.com/n7/jfs/t2962/153/1582194184/179453/7fefe708/57883af8N18a8bd9e.jpg",
+            "https://img11.360buyimg.com/n7/jfs/t2962/153/1582194184/179453/7fefe708/57883af8N18a8bd9e.jpg"
+        ],
         "name": "波士草莓（ BOL’ S）",
         "typeEn": "Liqueur",
         "type": "力娇酒",
@@ -558,7 +622,11 @@
     },
     "wine13": {
         "id": 13,
-        "img_url": "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg",
+        "img_url":[
+            "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg",
+            "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg",
+            "https://img12.360buyimg.com/n7/jfs/t2965/288/1564030038/162779/c8ac29b3/57883892Na2072e68.jpg"
+        ],
         "name": "波士樱桃（ BOL’ S）",
         "typeEn": "Liqueur",
         "type": "力娇酒",

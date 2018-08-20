@@ -21,6 +21,7 @@ import AddAddress from './pages/frontend/AddAddress';
 
 import MyAddress from './pages/frontend/MyAddress';
 import MyInfo from './pages/frontend/MyInfo';
+import ShopMore from './pages/frontend/ShopMore';
 
 
 
@@ -53,11 +54,12 @@ class App extends Component {
           
           <Route path='/wines/:id' component={ WineDetail }></Route>
 
-          <Route path='/shop/ShopCart' component={ShopCart}></Route>
+          {/* <Route path='/shop/ShopCart' component={ShopCart}></Route> */}
 
 
           <Route path='/edit' component={ BackPage }></Route>
-          <Route path ='/shopCart' component = {ShopCart}></Route>
+          <Route path='/shopCart' component={ShopCart}></Route>
+          <Route path ='/shopMore/:id' component = {ShopMore}></Route>
 
           <Route path='/address/myAddress' component={MyAddress}></Route>
           <Route path='/myaddress/addAddress/:id' component={ AddAddress }></Route>

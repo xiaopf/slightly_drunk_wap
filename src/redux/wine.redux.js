@@ -189,6 +189,7 @@ export function searchWineAsync(value) {
 }
 
 export function getSingleWineAsync(_id) {
+	console.log('进来了进来了')
 	return dispatch => (
 
 		axios.get(`/wine/wineList?_id=${_id}`).then((res) => {

@@ -56,8 +56,14 @@ class ShopCart extends React.Component {
 
 
 
-        let CartItems = this.props.wine.userName ? this.props.sign.cart.map(function(c,idx){
-			let wineArr = that.props.wine.wineList.filter((wine)=>(wine._id === c._id))
+        let CartItems = this.props.wine.userName ? this.props.wine.cart.map(function(c,idx){
+			console.log(c)
+			let wineArr = that.props.wine.wineList.filter((wine)=>{
+			    console.log(wine._id)	
+				return wine._id === c._id
+			})
+			
+			console.log(wineArr)
 			return (
 				<CartItem {...c} singlewine={wineArr[0]} key={c._id}></CartItem>
 			)

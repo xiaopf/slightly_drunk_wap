@@ -29,12 +29,12 @@ exports.getWineList = function (req, res, next) {
                     }
                 })
             } else if (!search && _id) {
-                wineModel.findById({ _id }).exec(function (err, singleDrink) {
+                wineModel.findById({ _id }).exec(function (err, singleWine) {
 
                     if (err) { console.log(err); }
 
-                    if (singleDrink._id) {
-                        res.json({ code: 6, msg: '拉取singledrink成功！', 'singleDrink': singleDrink, ...user, password: '', __v: '' })
+                    if (singleWine._id) {
+                        res.json({ code: 6, msg: '拉取singlewine成功！', 'singleWine': singleWine, ...user, password: '', __v: '' })
                     } else {
                         res.json({ code: 3, msg: '服务器出现故障...', password: '', __v: '' })
                     }

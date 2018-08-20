@@ -2,7 +2,7 @@ var mongoose = require ('mongoose');
 var wineSchema = new mongoose.Schema({
 
 
-    "img_url": { type:'String', require:true},
+    "img_url": {},
 	"name": { type:'String', require:true},
 	"type": { type:'String', require:true},
 	"typeEn": { type: 'String', require: true },
@@ -14,7 +14,7 @@ var wineSchema = new mongoose.Schema({
 	"proof": { type:'String', require:true},
 	"describes": { type:'String', require:true},
 	"evaluate": { type:'Array'},
-	"pics":{ type:'Array'}
+	"pics": {},
 
 });
 

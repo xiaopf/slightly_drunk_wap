@@ -69,7 +69,7 @@ class ShopItem extends React.Component {
 						< img className = "wineImg"
 						src = {
 							
-								wine.img_url
+								wine.img_url[0]
 							
 						}
 						alt = "" / >
@@ -89,7 +89,7 @@ class ShopItem extends React.Component {
 				<React.Fragment>
 					<div className = "shopItemTiteWrap" >
 						< h2 className = "shopItemTite" > {this.props.catagory} </h2>
-						< Link className = "linkToMore" to = { `/drink` }> 查看更多></Link>
+						< Link className="linkToMore" to={`/shopMore/${this.props.catagory}` }> 查看更多></Link>
 					</div>
 					<div className="singleWrap">
 						{Singles}

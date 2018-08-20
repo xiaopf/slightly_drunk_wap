@@ -80,7 +80,7 @@ class CartItem extends React.Component {
 
 				
 				<WingBlank className="cartItemWrap">
-					<Link className="wine_img" to={''}><img src={singlewine.img_url} alt='tp'/></Link>
+					<Link className="wine_img" to={''}><img src={singlewine.img_url[0]} alt='tp'/></Link>
 					<div className="text_wrap">
 						<p>{singlewine.name}</p>
 						<p>{`单价：￥${singlewine.price}`}</p>
