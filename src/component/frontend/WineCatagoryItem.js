@@ -51,7 +51,7 @@ class WineCatagoryItem extends React.Component {
 				<div style={{ padding: '12.5px', position: 'relative' }}>
 					<p className="ownOrNot">{this.state.toggle ? '√' : ''}</p>
 					<Link to={`/wines/${this.props.dataItem._id}`}>
-						<img src={this.props.dataItem.img_url} style={{ width: '90px', height: '90px' }} alt="" />
+						<img src={this.props.dataItem.img_url[0]} style={{ width: '90px', height: '90px' }} alt="123" />
 					</Link>
 					<div onClick={() => this.toggleWineOwn(this.props.dataItem._id)} style={{ color: '#888', fontSize: '14px', marginTop: '12px' }}>
 						<p className="name">{this.props.dataItem.name.split('（')[0]}</p>

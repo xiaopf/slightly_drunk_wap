@@ -1,0 +1,66 @@
+
+@shopSingleFooterH : 26px;
+@wineImgW:125px;
+@gapW:10px;
+@moreFS:12px;
+@wineNameFS:@moreFS;
+@priceFS:@moreFS+2px;
+@buyCarFS:@moreFS+4px;
+@itemTite:@buyCarFS;
+
+
+    .ShopSingleWrap{
+        margin:0 0 0 @gapW;
+        height:20%;
+        background-color: #fff;
+
+
+        .linkToDetail{
+            display: block;
+            width: 125px;
+            height: 125px;
+            height:auto;
+            margin: 0 auto;
+
+            .wineImg{
+                width: @wineImgW;
+                margin : @gapW/2 0;
+            }
+
+            .wineName{
+                width: 100%;
+                text-align:center;
+                font-size: @wineNameFS;
+                line-height:@buyCarFS;
+            }
+        }
+
+
+        .shopSingleFooter{
+            width:100%;
+            height: @shopSingleFooterH;
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+
+            span:first-child{
+                font-size: @priceFS;
+                color:red;
+                padding: @gapW/2;
+
+
+            }
+
+            span:last-child{
+                color:red;
+                font-size: @buyCarFS;
+                padding: @gapW/2 @gapW;
+            }
+        }
+    }
+
+
+
+
+
+

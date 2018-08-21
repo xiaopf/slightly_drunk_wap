@@ -9,7 +9,7 @@ var path = require('path');
 exports.getUserInfo = function (req,res,next){
 	var _id = req.cookies.userId;
 	if (_id) {
-		userModel.findOne({ _id }, function (err, user) {
+		userModel.findOne({ _id }).populate('own').exec(function (err, user) {
 			if (err) { console.log(err); }
 			user = user.toObject();//修改mongoose返回值问题
 

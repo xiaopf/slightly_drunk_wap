@@ -7,10 +7,15 @@ var userSchema = new mongoose.Schema({
 	'image': { type: 'String', default: 'https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg'},
 	'cart': {},
 	'order':{},
+	'like': [{
+		type: Schema.Types.ObjectId,
+		ref: 'drinkModel'
+	}],
+	'sale':[],
 	'address': [],
 	'own':[{
 		type: Schema.Types.ObjectId,
-		ref: 'wine'
+		ref: 'wineModel'
 	}],
 	'chooseAddr': { type: 'Number', require: true, default:0},
 });

@@ -97,9 +97,9 @@ class Detail extends React.Component {
 						mode="light"
 						icon={<Icon type="left" />}
 						onLeftClick={this.goBack}
-						rightContent={[
+						rightContent={
 							<Cart></Cart>
-						]}
+						}
 					>斯米诺红牌</NavBar>
 
 					<WingBlank>

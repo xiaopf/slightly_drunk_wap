@@ -5,7 +5,7 @@ import './ShopMore.less';
 
 import { Grid, NavBar, Icon, SearchBar, Button, WhiteSpace } from 'antd-mobile';
 
-import ShopItem from '../../component/frontend/ShopItem';
+import ShopSingle from '../../component/frontend/ShopSingle';
 import Cart from '../../component/frontend/Cart';
 import { connect } from 'react-redux';
 
@@ -20,7 +20,8 @@ import { getIndexBannerAsync } from '../../redux/banner.redux.js';
 class Shop extends React.Component {
 	
 	constructor(props){
-		super(props)
+		super(props);
+		this.goBack=this.goBack.bind(this);
 	}
 
     componentDidMount(){
@@ -28,27 +29,35 @@ class Shop extends React.Component {
 		this.props.getIndexBannerAsync();
 	}
 
+	goBack() {
+		this.props.history.goBack()
+	}
 
 	render () {
 
-
+        let type = this.props.match.params.id;
 		return ( 
 			<div className="shopMoreWrap">
-
 				<NavBar
 					mode="light"
 					icon={<Icon type="left" />}
 					onLeftClick={this.goBack}
+					rightContent={
+						<Cart></Cart>
+					}
 				>{this.props.match.params.id}</NavBar>
-					
+
+
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>
+				<WhiteSpace></WhiteSpace>	
 				<div className="shopMoreContent">
-						<Grid  data={this.props.wine.searchWine}
+						<Grid  data={this.props.wine.wineList.filter((wine)=>(wine.type === type))}
 							   columnNum={2}
 							   renderItem={dataItem => (
-
-
-								<ShopItem></ShopItem>
-
+								   <ShopSingle key={dataItem._id} good={dataItem}></ShopSingle>
 							)}
 						/>
 				</div>	

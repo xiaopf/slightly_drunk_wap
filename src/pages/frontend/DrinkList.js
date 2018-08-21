@@ -104,7 +104,7 @@ class DrinkList extends React.Component {
                   <img
                     src={val.banner_image}
                     alt=""
-                    style={{ width: '100%' ,verticalAlign: 'top' }}
+                    style={{ width: '100%' ,verticalAlign: 'top' ,height:'200px'}}
                     onLoad={() => {
                       // fire window resize event to change height
                       window.dispatchEvent(new Event('resize'));

@@ -108,26 +108,17 @@ class MyPage extends React.Component {
 					<WhiteSpace></WhiteSpace>
 
 					<List className="my-list">
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>邀请好友</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的订单</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>优惠礼包</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>邀请好友</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的订单</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>优惠礼包</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>邀请好友</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的订单</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>优惠礼包</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>邀请好友</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的订单</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>优惠礼包</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/invite'}>邀请好友</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'myOrder'}>我的订单</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/mySale'}>优惠礼包</Link></Item>
 					</List>
 
 					<WhiteSpace></WhiteSpace>
 
 					<List className="my-list">
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的作品</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我喜欢的</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/'}>我的材料</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/myProduction'}>我的作品</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/myLike'}>我喜欢的</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/myMaterial'}>我的材料</Link></Item>
 
 					</List>
 

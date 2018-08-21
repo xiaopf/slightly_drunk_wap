@@ -22,6 +22,7 @@ import AddAddress from './pages/frontend/AddAddress';
 import MyAddress from './pages/frontend/MyAddress';
 import MyInfo from './pages/frontend/MyInfo';
 import ShopMore from './pages/frontend/ShopMore';
+import My from './pages/frontend/My';
 
 
 
@@ -64,6 +65,9 @@ class App extends Component {
           <Route path='/address/myAddress' component={MyAddress}></Route>
           <Route path='/myaddress/addAddress/:id' component={ AddAddress }></Route>
           <Route path='/myaddress/addAddress' component={AddAddress}></Route>
+          <Route path='/myMaterial' component={My}></Route>
+          <Route path='/myLike' component={My}></Route>
+          <Route path='/myOrder' component={My}></Route>
 
         </Switch>
 
