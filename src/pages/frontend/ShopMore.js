@@ -10,10 +10,10 @@ import Cart from '../../component/frontend/Cart';
 import { connect } from 'react-redux';
 
 import { getWineListAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync } from '../../redux/wine.redux.js';
-import { getIndexBannerAsync } from '../../redux/banner.redux.js';
+import { getBannerAsync } from '../../redux/banner.redux.js';
 @connect(
 	state => state,
-	{ getWineListAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync, getIndexBannerAsync }
+	{ getWineListAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync, getBannerAsync }
 )
 
 
@@ -26,7 +26,7 @@ class Shop extends React.Component {
 
     componentDidMount(){
 		this.props.getWineListAsync();
-		this.props.getIndexBannerAsync();
+		this.props.getBannerAsync();
 	}
 
 	goBack() {

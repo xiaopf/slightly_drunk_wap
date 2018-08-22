@@ -1,29 +1,23 @@
 import axios from 'axios';
-
+const GET_BANNER = 'GET_BANNER';
 const UPDATE_BANNER = 'UPDATE_BANNER';
-const GET_INDEX_BANNER = 'GET_INDEX_BANNER';
-
 
 var initState = {
-	
 	indexBannerList: [],
+	shopBannerList: [],
 	msg: '',
 	code: 0
 }
 
-
 export function banner(state = initState,action){
 	switch (action.type){
 
-		case GET_INDEX_BANNER:
-			return { ...initState, ...action.payload, isSignIn: true, redirectTo: '/editWine' };
-
-
+		case GET_BANNER:
+			return { ...initState, ...action.payload ,redirectTo: ''};
 
 	    case UPDATE_BANNER: 
-		    return {...initState,...action.payload,redirectTo:'/editWine'};
-
-
+			return {...initState, ...action.payload, redirectTo:'/edit'};
+			
 	    default:
 	        return state;
 
@@ -32,41 +26,35 @@ export function banner(state = initState,action){
 }
 // ////////////////////
 // create action
-export function createGetIndexBanner(payload) {
-	return { type: GET_INDEX_BANNER, payload }
+export function createGetBanner(payload) {
+	return { type: GET_BANNER, payload }
+}
+export function createUpdateBanner(payload) {
+	return { type: UPDATE_BANNER, payload }
 }
 // //////////////////////
-
-
-
-
-
 // /////////////////////////
 // 异步dispach
-export function getIndexBannerAsync() {
+export function getBannerAsync() {
 
 	return dispatch => (
-		axios.get('/api/indexBannerList').then((res) => {
-			if (res.status == 200) {
+		axios.get('/api/Banner').then((res) => {
+			if (res.status === 200) {
 				dispatch(createUpdateBanner(res.data))
 			}
 		})
 	)
 }
-// //////////////////////
 
 
-export function createUpdateBanner(payload){
-	return {type:UPDATE_BANNER ,payload}
-}
-
-export function createUpdateBannerAsync(banner){
-	console.log(banner);
+export function updateBannerAsync(banners,which,_id){
+	console.log(banners);
     return dispatch => (
-	         axios.post('/edit/updateBanner',banner).then((res) => {
-	              if(res.status == 200){
+	         axios.post('/edit/updateBanner',{banners,which,_id}).then((res) => {
+	              if(res.status === 200){
 	              	dispatch(createUpdateBanner(res.data))
 	              }
 	         })
     )
 }
+// //////////////////////

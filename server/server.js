@@ -38,9 +38,9 @@ var pageRouter = require('./route/pageRouter');
 var DrinkController = require('./controller/drink.controller.js');
 var BannerController = require('./controller/banner.controller.js');
 
-app.get('/api/indexBannerList', BannerController.getIndexBannerList);
+app.get('/api/banner', BannerController.getBannerList);
 
-app.get('/api/drinkList', DrinkController.getDrinkList);
+app.get('/api/drink', DrinkController.getDrinkList);
 
 
 

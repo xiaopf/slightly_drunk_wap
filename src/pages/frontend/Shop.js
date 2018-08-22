@@ -10,10 +10,10 @@ import Cart from '../../component/frontend/Cart';
 import { connect } from 'react-redux';
 
 import { getWineListAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync } from '../../redux/wine.redux.js';
-import { getIndexBannerAsync } from '../../redux/banner.redux.js';
+import { getBannerAsync } from '../../redux/banner.redux.js';
 @connect(
 	state => state,
-	{ getWineListAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync, getIndexBannerAsync }
+	{ getWineListAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync, getBannerAsync }
 )
 
 
@@ -25,7 +25,11 @@ class Shop extends React.Component {
 
     componentDidMount(){
 		this.props.getWineListAsync();
-		this.props.getIndexBannerAsync();
+
+		if (!this.props.banner.indexBannerList[0]) {
+			this.props.getBannerAsync();
+		}
+		
 	}
 
 
@@ -51,24 +55,27 @@ class Shop extends React.Component {
 						afterChange={index => console.log('slide to', index)}
 						style={{ paddingTop: '50px', height: 'auto' }}
 					>
-						{this.props.banner.indexBannerList.map(val => (
-							<a
-								key={val}
-								href={val.banner_link}
-								style={{ display: 'inline-block', width: '100%', height: '200px' }}
-							>
-								<img
-									src={val.banner_image}
-									alt=""
-									style={{ width: '100%', height: '200px', verticalAlign: 'top' }}
-									onLoad={() => {
-										// fire window resize event to change height
-										window.dispatchEvent(new Event('resize'));
-										this.setState({ imgHeight: 'auto' });
-									}}
-								/>
-							</a>
-						))}
+						{this.props.banner.indexBannerList ? 					
+							this.props.banner.indexBannerList.map(val => (
+								<a
+									key={val}
+									href={val.banner_link}
+									style={{ display: 'inline-block', width: '100%', height: '200px' }}
+								>
+									<img
+										src={val.banner_image}
+										alt=""
+										style={{ width: '100%', height: '200px', verticalAlign: 'top' }}
+										onLoad={() => {
+											// fire window resize event to change height
+											window.dispatchEvent(new Event('resize'));
+											this.setState({ imgHeight: 'auto' });
+										}}
+									/>
+								</a>
+							))
+						:null}
+						
 					</Carousel>
 					
 					{ShopItems}

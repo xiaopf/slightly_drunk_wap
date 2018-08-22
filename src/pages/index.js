@@ -138,7 +138,7 @@ class Index extends Component {
              >
 {/* 我的第四页 */}
 
-             {/* <MyPage></MyPage> */}
+             <MyPage></MyPage>
 
              </TabBar.Item>
            </TabBar>

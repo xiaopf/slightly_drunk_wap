@@ -35,7 +35,8 @@ class BackPage extends React.Component {
 			<BrowserRouter>
 				<div>
 					<ul className="back_nav">
-					   <li><NavLink activeClassName="selected" to="/edit/editBanner">banner</NavLink></li>
+						<li><NavLink activeClassName="selected" to="/edit/editIndexBanner">indexBanner</NavLink></li>
+					   <li><NavLink activeClassName="selected" to="/edit/editShopBanner">shopBanner</NavLink></li>
 					   <li><NavLink activeClassName="selected" to="/edit/editDrinkList">鸡尾酒单</NavLink></li>
 					   <li><NavLink activeClassName="selected" to="/edit/editStuffList">原料清单</NavLink></li>
 					</ul>
@@ -43,7 +44,8 @@ class BackPage extends React.Component {
 				    <div className="back_edit_area">
 			
 						<Switch>
-					    	<Route exact path="/edit/editBanner" component={EditFirst}/>
+							<Route exact path="/edit/editIndexBanner" component={EditFirst} />
+					    	<Route exact path="/edit/editShopBanner" component={EditFirst}/>
 					    	<Route  path="/edit/editDrinkList" component={EditDrinkList}/>
 					    	<Route  path="/edit/editStuffList" component={EditStuffList}/>
 					    	<Route  path="/edit/:id" component={EditWine}/>

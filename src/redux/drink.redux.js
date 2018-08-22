@@ -1,9 +1,7 @@
 
 import axios from 'axios';
 
-
-
-const GET_DRINK_LIST = 'GET_DRINK_LIST';
+const GET_DRINK = 'GET_DRINK';
 const SEARCH_DRINK = 'SEARCH_DRINK';
 const CANCEL_SEARCH = 'CANCEL_SEARCH';
 const GET_SINGLE_DRINK = 'GET_SINGLE_DRINK';
@@ -20,18 +18,9 @@ const GET_ERROR = 'GET_ERROR';
 
 
 var initState = {
-	isSignIn: false,
 	_id:'',
-	userName:'',
-	password:'',
-	image:'',
-	cart: [],
-	address: [],
-	chooseAddr: 0,
-	order: [],
 	drinkList: [],
 	searchDrink: [],
-	searchWine:[],
 	singleDrink:{},
 	msg:'',
 	code:0
@@ -41,24 +30,24 @@ var initState = {
 
 export function drink(state = initState,action){
 	switch (action.type){
-		case GET_DRINK_LIST:
+		case GET_DRINK:
 
-			return { ...state, isSignIn: true, ...action.payload }
+			return { ...state, ...action.payload }
 
 		case SEARCH_DRINK:
-
-			return { ...state,  ...action.payload }
+       
+			return { ...state, ...action.payload }
 
 		case CANCEL_SEARCH:
 
-			return { ...state,code:6 }
+			return { ...state, code: 6, searchDrink:[]}
 
 		case GET_SINGLE_DRINK:
 
 			return { ...state, ...action.payload }
 
 		case GET_ERROR:
-			return { ...state, isSignIn: false, ...action.payload,  redirectTo: redirectTo(action.payload.code) }
+			return { ...state,  ...action.payload,  redirectTo: redirectTo(action.payload.code) }
 
 
 
@@ -88,8 +77,8 @@ export function drink(state = initState,action){
 // ////////////////////
 // create action
 
-export function createGetDrinkList(payload) {
-	return { type: GET_DRINK_LIST, payload }
+export function createGetDrink(payload) {
+	return { type: GET_DRINK, payload }
 }
 
 export function createSearchDrink(payload) {
@@ -141,14 +130,14 @@ export function cancelSearchSync(){
 /////////////////////////
 // /////////////////////////
 // 异步dispach
-export function getDrinkListAsync() {
+export function getDrinkAsync() {
 	return dispatch => (
 
-		axios.get('/api/drinkList').then((res) => {
+		axios.get('/api/drink').then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
 					console.log(res.data)
-					dispatch(createGetDrinkList(res.data))
+					dispatch(createGetDrink(res.data))
 				} else {
 					dispatch(createGetError(res.data))
 				}
@@ -161,7 +150,7 @@ export function getDrinkListAsync() {
 export function searchDrinkAsync(value){
 	return dispatch => (
 
-		axios.get(`/api/drinkList?search=${value}`).then((res)=>{
+		axios.get(`/api/drink?search=${value}`).then((res)=>{
 			if(res.status === 200){
 				if(res.data.code === 5){
 					dispatch(createSearchDrink(res.data))
@@ -176,7 +165,7 @@ export function searchDrinkAsync(value){
 export function getSingleDrinkAsync(_id) {
 	return dispatch => (
 
-		axios.get(`/api/drinkList?_id=${_id}`).then((res) => {
+		axios.get(`/api/drink?d_id=${_id}`).then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
 					console.log(res.data)
