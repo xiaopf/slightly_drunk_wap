@@ -6,7 +6,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 
 
 import { createUpdateItemAsync ,createDeleteItemAsync ,createAddItemAsync } from '../../redux/drink.redux.js'
-import { getDataAsync} from '../../redux/list.redux.js';
+import { getDrinkListAsync} from '../../redux/drink.redux.js';
 
 import { connect } from 'react-redux';
 
@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 
 @connect(
   state => state,
-  { createUpdateItemAsync ,createDeleteItemAsync ,createAddItemAsync,getDataAsync}
+  { createUpdateItemAsync ,createDeleteItemAsync ,createAddItemAsync,getDrinkListAsync}
 )
 
 
@@ -54,7 +54,7 @@ class EditDrinkList extends React.Component {
   
 	componentDidMount(){
 		if(!this.props.resData.drinkList[0]){
-		  this.props.getDataAsync();
+		  this.props.getDrinkListAsync();
 		} 
 
 		let that = this;

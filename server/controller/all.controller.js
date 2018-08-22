@@ -28,20 +28,20 @@ exports.allInDb = function(req,res,next){
 
 
 
-    // let bannerArray = Array.from([...Object.values(bannerList)])
-    // let b_len = bannerArray.length;
-    // for (let i = 0; i < b_len; i++) {
+    let bannerArray = Array.from([...Object.values(bannerList)])
+    let b_len = bannerArray.length;
+    for (let i = 0; i < b_len; i++) {
 
-    //     let banner = new bannerModel({ ...bannerArray[i] });
+        let banner = new bannerModel({ ...bannerArray[i] });
 
-    //     banner.save(function (err, data) {
-    //         if (err) { console.log(err) }
-    //     })
+        banner.save(function (err, data) {
+            if (err) { console.log(err) }
+        })
 
-    //     if (i == b_len - 1) {
-    //         msgArr.push('banner')
-    //     }
-    // }
+        if (i == b_len - 1) {
+            msgArr.push('banner')
+        }
+    }
 
 
     let drinkArray = Array.from([...Object.values(drinkList)])

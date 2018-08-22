@@ -5,13 +5,8 @@ const GET_INDEX_BANNER = 'GET_INDEX_BANNER';
 
 
 var initState = {
-	isSignIn: false,
+	
 	indexBannerList: [],
-	_id: '',
-	userName: '',
-	password: '',
-	image: '',
-	cart: [],
 	msg: '',
 	code: 0
 }

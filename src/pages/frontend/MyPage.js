@@ -85,7 +85,7 @@ class MyPage extends React.Component {
 		return (
 			<div className="myPageWrap">
 
-				{!this.props.sign.isSignIn ? <Redirect to={this.props.sign.redirectTo}></Redirect> : null}
+				{/* {!this.props.sign.isSignIn ? <Redirect to={this.props.sign.redirectTo}></Redirect> : null} */}
 
 				<NavBar
 				  mode="light"

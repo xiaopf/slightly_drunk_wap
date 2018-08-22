@@ -9,7 +9,7 @@ import {
 
 import './App.less';
 import Index from './pages/index';
-import DrinkDetail from './pages/frontend/DrinkDetail';
+import DrinkDetail from './pages/frontend/drinklist/DrinkDetail';
 import GoodsDetail from './pages/frontend/GoodsDetail';
 import WineCatagory from './pages/frontend/WineCatagory';
 import WineDetail from './pages/frontend/WineDetail';

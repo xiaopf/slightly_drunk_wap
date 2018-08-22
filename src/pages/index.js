@@ -5,7 +5,7 @@ import {Redirect} from 'react-router-dom'
 import { TabBar } from 'antd-mobile';
 
 
-import DrinkList from './frontend/DrinkList';
+import DrinkList from './frontend/drinklist/DrinkList';
 import Material from './frontend/Material';
 import Shop from './frontend/Shop';
 import MyPage from './frontend/MyPage';
@@ -15,10 +15,29 @@ class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'yellowTab',
-      showList:false
+      selectedTab: 'first'
     };
+    this.handlePress = this.handlePress.bind(this)
   }
+
+  componentDidMount(){
+
+    let hash = this.props.history.location.hash;   
+    if(hash){
+      this.setState({
+        selectedTab: hash.slice(1)
+      });
+    }
+  }
+  
+  handlePress(turn){
+    this.props.history.push(`#${turn}`)
+    this.setState({
+      selectedTab: turn,
+    });
+  }
+
+
 
   render() {
 
@@ -46,13 +65,8 @@ class Index extends Component {
                  background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
                />
                }
-               selected={this.state.selectedTab === 'blueTab'}
-               badge={1}
-               onPress={() => {
-                 this.setState({
-                   selectedTab: 'blueTab',
-                 });
-               }}
+               selected={this.state.selectedTab === 'first'}
+               onPress={() => {this.handlePress('first')}}
                data-seed="logId"
              >
 {/* 酒单首页 */}
@@ -78,18 +92,13 @@ class Index extends Component {
                }
                title="清单"
                key="清单"
-               badge={'new'}
-               selected={this.state.selectedTab === 'redTab'}
-               onPress={() => {
-                 this.setState({
-                   selectedTab: 'redTab',
-                 });
-               }}
+               selected={this.state.selectedTab === 'second'}
+               onPress={() => { this.handlePress('second') }}
                data-seed="logId1"
              >
 
 {/* 清单第二页 */}
-            <Material></Material> 
+            {/* <Material></Material>  */}
 
              </TabBar.Item>
 
@@ -111,17 +120,12 @@ class Index extends Component {
                }
                title="商城"
                key="商城"
-               dot
-               selected={this.state.selectedTab === 'greenTab'}
-               onPress={() => {
-                 this.setState({
-                   selectedTab: 'greenTab',
-                 });
-               }}
+               selected={this.state.selectedTab === 'third'}
+               onPress={() => { this.handlePress('third') }}
              >
 
 {/* 商店第三页 */}
-              < Shop ></Shop> 
+              {/* < Shop ></Shop>  */}
 
              </TabBar.Item>
              <TabBar.Item
@@ -129,16 +133,12 @@ class Index extends Component {
                selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
                title="我的"
                key="我的"
-               selected={this.state.selectedTab === 'yellowTab'}
-               onPress={() => {
-                 this.setState({
-                   selectedTab: 'yellowTab',
-                 });
-               }}
+               selected={this.state.selectedTab === 'fourth'}
+               onPress={() => { this.handlePress('fourth') }}
              >
 {/* 我的第四页 */}
 
-             <MyPage></MyPage>
+             {/* <MyPage></MyPage> */}
 
              </TabBar.Item>
            </TabBar>

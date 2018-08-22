@@ -2,7 +2,7 @@ import React from 'react';
 import './EditFirst.less';
 import EditBanner from './EditBanner';
 import { createUpdateBannerAsync } from '../../redux/banner.redux.js'
-import { getDataAsync} from '../../redux/list.redux.js';
+import { getDrinkListAsync} from '../../redux/drink.redux.js';
 
 import { connect } from 'react-redux';
 
@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 
 @connect(
   state => state,
-  { createUpdateBannerAsync,getDataAsync}
+  { createUpdateBannerAsync,getDrinkListAsync}
 )
 
 
@@ -38,7 +38,7 @@ class EditFirst extends React.Component {
 
 	componentDidMount(){
 		if(!this.props.resData.drinkList[0]){
-		  this.props.getDataAsync();
+		  this.props.getDrinkListAsync();
 		} 
 
 		let that = this;

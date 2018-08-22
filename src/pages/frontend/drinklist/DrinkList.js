@@ -1,10 +1,10 @@
 import React from 'react';
-import { List ,Carousel, WingBlank ,SearchBar, WhiteSpace} from 'antd-mobile';
+import { List, Carousel, WingBlank, SearchBar, WhiteSpace, Range, Slider} from 'antd-mobile';
 import './DrinkList.less';
 import { connect } from 'react-redux';
-import { getDrinkListAsync, searchDrinkAsync, cancelSearchSync } from '../../redux/drink.redux.js';
-import { getIndexBannerAsync } from '../../redux/banner.redux.js';
-import ItemList from '../../component/frontend/ItemList';
+import { getDrinkListAsync, searchDrinkAsync, cancelSearchSync } from '../../../redux/drink.redux.js';
+import { getIndexBannerAsync } from '../../../redux/banner.redux.js';
+import ItemList from '../../../component/frontend/ItemList';
 
 
 
@@ -18,7 +18,9 @@ class DrinkList extends React.Component {
 	constructor(props){
 		super(props);
     this.state={
-      search:''
+      search:'',
+      slider:false,
+      range:false
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -59,6 +61,24 @@ class DrinkList extends React.Component {
     this.props.cancelSearchSync();
   }
 
+  filter(slider,range){
+    console.log()
+    this.setState({
+      slider: slider,
+      range: range
+    })
+  }
+
+
+
+  log = (name) => {
+    return (value) => {
+      console.log(`${name}: ${value}`);
+    };
+  }
+
+
+
 
 
 	render () {
@@ -69,7 +89,7 @@ class DrinkList extends React.Component {
 
 		return (
       <div className="drinkListWrap">
-
+        {this.state.range || this.state.slider ? <div className="mask"></div> : null }}
         <SearchBar 
           className="top_search"
           placeholder="搜索鸡尾酒" 
@@ -114,8 +134,49 @@ class DrinkList extends React.Component {
                 </a>
               ))}
             </Carousel> : null }
-
+          <WhiteSpace></WhiteSpace>
             <WhiteSpace></WhiteSpace>
+
+            <div className="filterWrap">
+
+
+              <div className="filter">
+                <div onClick={()=>this.filter(!this.state.slider,false)} style={this.state.slider ? {color:'red'} : null}>酒精度</div>
+                <div onClick={() => this.filter(false, !this.state.range)} style={this.state.range ? {color:'red'} : null}>口味</div>
+                <div onClick={()=>this.filter(false,false)}>重置</div>
+              </div>
+
+              { this.state.range || this.state.slider ? 
+                <div className="listFilter">
+                <WhiteSpace></WhiteSpace>
+                  <WhiteSpace></WhiteSpace>
+                  <WhiteSpace></WhiteSpace>
+                    {this.state.slider ? <Slider
+                      style={{ marginLeft: 30, marginRight: 30 }}
+                      defaultValue={26}
+                      min={0}
+                      max={100}
+                      step={2}
+                      marks={{0:'淡',50:'甜',100:'重'}}
+                      onChange={this.log('change')}
+                      onAfterChange={this.log('afterChange')}
+                    /> : null}
+
+                    {this.state.range ?<Range
+                      style={{ marginLeft: 30, marginRight: 30 }}
+                      min={0}
+                      max={60}
+                      marks={{ 0: '0%', 15: '15%', 30: '30%', 45: '45%', 60: '60%' }}
+                      defaultValue={[0, 40]}
+                      onChange={this.log('change')}
+                      onAfterChange={this.log('afterChange')}
+                    /> : null}
+                </div> : null}
+
+            </div>
+
+
+          <WhiteSpace></WhiteSpace>
             <List>
             <ItemList items={this.props.drink.code === 6 ? drinkList : searchDrink}></ItemList>  
             </List>

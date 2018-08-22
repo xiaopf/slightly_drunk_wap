@@ -2,7 +2,7 @@ import React from 'react';
 import './DrinkDetail.less';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
-import { getSingleDrinkAsync } from '../../redux/drink.redux.js';
+import { getSingleDrinkAsync } from '../../../redux/drink.redux.js';
 import { NavBar, Icon , WhiteSpace ,Grid} from 'antd-mobile';
 
 

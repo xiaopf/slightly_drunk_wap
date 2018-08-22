@@ -2,8 +2,6 @@ let drinkModel = require('../model/drink.model.js');
 var userModel = require('../model/user.model.js');
 
 
-
-
 exports.getDrinkList = function (req,res,next){
     
     var cookies = req.cookies;
