@@ -8,7 +8,7 @@ var multiparty=require('connect-multiparty')();
 var Router = express.Router();
 
 Router.post('/updateItem',DrinkController.updateDrink)
-Router.post('/deleteItem',DrinkController.deleteDrink)
+Router.delete('/list',DrinkController.deleteDrink)
 Router.post('/addItem',DrinkController.addDrink)
 Router.post('/updateBanner',BannerController.updateBanner)
 

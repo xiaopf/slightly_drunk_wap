@@ -1,20 +1,20 @@
 import React from 'react';
-import './EditWine.less';
+import './EditSingleDrink.less';
 import Step from './Step';
-import Stuff from './Stuff';
+import DrinkInfo from './DrinkInfo';
 
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { createUpdateItemAsync ,createAddItemAsync} from '../../redux/drink.redux.js';
+import { updateItemAsync, addItemAsync, getDrinkAsync} from '../../redux/drink.redux.js';
 
 @connect(
    state => state,
-   { createUpdateItemAsync ,createAddItemAsync}
+	{ updateItemAsync, addItemAsync, getDrinkAsync}
 )
 
 
 
-class EditWine extends React.Component {
+class EditSingleDrink extends React.Component {
 	constructor(props){
 		super(props);
 
@@ -25,17 +25,17 @@ class EditWine extends React.Component {
 			img_url : '',
 			describes : '',
 			steps : [''],
-            stuffs : [{stuff_img_local_url:'',stuff_name:'',stuff_url:''}]
+			materials : [{material_img_local_url:'',material_name:'',material_url:''}]
 		};
 
 		this.stepPlus = this.stepPlus.bind(this);
 		this.onStepReduce = this.onStepReduce.bind(this);
-		this.stuffPlus = this.stuffPlus.bind(this);
-		this.onStuffReduce = this.onStuffReduce.bind(this);
+		this.materialPlus = this.materialPlus.bind(this);
+		this.onMaterialReduce = this.onMaterialReduce.bind(this);
 		this.saveData = this.saveData.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleStepChange = this.handleStepChange.bind(this)
-		this.handleStuffChange = this.handleStuffChange.bind(this)
+		this.handleMaterialChange = this.handleMaterialChange.bind(this)
 
 	}
 
@@ -44,29 +44,35 @@ class EditWine extends React.Component {
 
 		if(this.props.match.path !== '/addDrink'){
 
+			let that = this;
 	        let id = this.props.match.params.id;
-	        let drink = this.props.resData.drinkList[id];
-
-	        
-
-			this.setState({
-				_id: drink._id,
-				drinkName : drink.drinkName,
-				engName : drink.engName,
-				img_url : drink.img_url,
-				describes : drink.describes,
-				steps : drink.steps,
-	            stuffs : drink.stuffs
-			})
-
-	        let that = this;
-	        setTimeout(function(){
-	        	console.log(that.state)
-	        },1000)
+			if (!this.props.drink.drinkList[0]) {
+				(async function () {
+					await that.props.getDrinkAsync();
+					let drink = that.props.drink.drinkList.filter((drink)=>(drink._id === id))[0];
+					that.setState({
+						_id: drink._id,
+						drinkName: drink.drinkName,
+						engName: drink.engName,
+						img_url: drink.img_url,
+						describes: drink.describes,
+						steps: drink.steps,
+						materials: drink.materials
+					})
+				})()
+			}else{
+				let drink = this.props.drink.drinkList.filter((drink) => (drink._id === id))[0];
+				this.setState({
+					_id: drink._id,
+					drinkName: drink.drinkName,
+					engName: drink.engName,
+					img_url: drink.img_url,
+					describes: drink.describes,
+					steps: drink.steps,
+					materials: drink.materials
+				})
+			}
 		}
-
-
-
 	}
 
 
@@ -89,20 +95,20 @@ class EditWine extends React.Component {
 		}
 	}
 
-	stuffPlus () {
-		let stuffs = this.state.stuffs;
-		stuffs.push({stuff_img_local_url:'',stuff_name:'',stuff_url:''});
+	materialPlus () {
+		let materials = this.state.materials;
+		materials.push({material_img_local_url:'',material_name:'',material_url:''});
 		this.setState({
-			stuffs : stuffs
+			materials : materials
 		})
 	}
 
-	onStuffReduce(index){
-		let stuffs = this.state.stuffs;
-		if(stuffs.length > 1){
-			stuffs.splice(index,1);
+	onMaterialReduce(index){
+		let materials = this.state.materials;
+		if(materials.length > 1){
+			materials.splice(index,1);
 			this.setState({
-				stuffs : stuffs
+				materials : materials
 			})
 		}
 
@@ -110,9 +116,9 @@ class EditWine extends React.Component {
 
 	saveData(){
 		if(this.props.match.path !== '/addDrink'){
-			this.props.createUpdateItemAsync(this.state)
+			this.props.updateItemAsync(this.state)
 		}else{
-			this.props.createAddItemAsync(this.state)
+			this.props.addItemAsync(this.state)
 		}
 		
 		
@@ -134,13 +140,13 @@ class EditWine extends React.Component {
     	// })
     }
 
-    handleStuffChange (index,name,value,str_len) {
-    	let stuffs = this.state.stuffs;
+    handleMaterialChange (index,name,value,str_len) {
+    	let materials = this.state.materials;
 
-    	stuffs[index][name.slice(0, str_len)] = value;
+    	materials[index][name.slice(0, str_len)] = value;
 
     	// this.setState({
-    	// 	stuffs:stuffs
+    	// 	materials:materials
     	// })
 
     }
@@ -161,15 +167,15 @@ class EditWine extends React.Component {
 		                            ></Step>
 			        	});
 
-        const stuffs =  this.state.stuffs.map(function(stuff,index){
-                            return <Stuff 
-			                            key={ stuff.stuff_name + stuff.stuff_url + index } 
+        const materials =  this.state.materials.map(function(material,index){
+									return <DrinkInfo
+			                            key={ material.material_name + material.material_url + index } 
                                         index = { index } 
-				                        onStuffReduce = { that.onStuffReduce }  
-				                        stuff_msg = { stuff.stuff_name }
-				                        stuff_url = { stuff.stuff_url }
-				                        onHandleStuffChange = { that.handleStuffChange }
-		                            ></Stuff>
+				                        onMaterialReduce = { that.onMaterialReduce }  
+				                        material_msg = { material.material_name }
+				                        material_url = { material.material_url }
+				                        onHandleMaterialChange = { that.handleMaterialChange }
+		                            ></DrinkInfo>
 			        	});
 
 
@@ -179,7 +185,7 @@ class EditWine extends React.Component {
 
 		return (
 				<div className="edit_wrap">
-					{ this.props.drinks.payload ? <Redirect to = 'edit/editWine'></Redirect> : null}
+					{/* { this.props.drinks.payload ? <Redirect to = 'edit/editWine'></Redirect> : null} */}
 		            <label className="bTitle" htmlFor="">主图</label>
 
 	                <img className="main_img" src={this.state.img_url ? this.state.img_url : "https://img.tthunbohui.cn/zhuanti/20631/mainbg.png"} alt="" />
@@ -208,10 +214,10 @@ class EditWine extends React.Component {
 	                </div>
 
 
-	                <div className="stuffs">
+	                <div className="materials">
 		                <p className="bTitle">所需材料</p>
-		                {stuffs}
-		                <button className="add_input" onClick = { this.stuffPlus }>添加材料</button>
+		                {materials}
+		                <button className="add_input" onClick = { this.materialPlus }>添加材料</button>
 	                </div>
 
 	                <button className="saveData" onClick={ this.saveData }>保存设置</button>
@@ -221,4 +227,4 @@ class EditWine extends React.Component {
 	}
 }
 
-export default EditWine;
+export default EditSingleDrink;

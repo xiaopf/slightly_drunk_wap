@@ -6,9 +6,18 @@ import { TabBar } from 'antd-mobile';
 
 
 import DrinkList from './frontend/drinklist/DrinkList';
-import Material from './frontend/Material';
+import Material from './frontend/material/Material';
 import Shop from './frontend/Shop';
 import MyPage from './frontend/MyPage';
+
+import { connect } from 'react-redux';
+import { getUserInfoAsync } from '../redux/user.redux.js';
+
+
+@connect(
+  state => state,
+  { getUserInfoAsync }
+)
 
 class Index extends Component {
 
@@ -21,7 +30,9 @@ class Index extends Component {
   }
 
   componentDidMount(){
-
+    if (!this.props.sign.userName) {
+      this.props.getUserInfoAsync();
+    }
     let hash = this.props.history.location.hash;   
     if(hash){
       this.setState({
@@ -70,8 +81,8 @@ class Index extends Component {
                data-seed="logId"
              >
 {/* 酒单首页 */}
-             <DrinkList></DrinkList> 
-
+            <DrinkList></DrinkList> 
+            
              
              </TabBar.Item>
              
@@ -98,8 +109,8 @@ class Index extends Component {
              >
 
 {/* 清单第二页 */}
-            {/* <Material></Material>  */}
-
+            
+            <Material></Material> 
              </TabBar.Item>
 
 

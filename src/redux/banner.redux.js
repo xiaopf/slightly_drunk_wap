@@ -40,7 +40,7 @@ export function getBannerAsync() {
 	return dispatch => (
 		axios.get('/api/Banner').then((res) => {
 			if (res.status === 200) {
-				dispatch(createUpdateBanner(res.data))
+				dispatch(createGetBanner(res.data))
 			}
 		})
 	)

@@ -2,8 +2,11 @@ import React from 'react';
 import './WineCatagoryItem.less';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { getUserInfoAsync } from '../../redux/user.redux.js';
+
 @connect(
-	state => state
+	state => state,
+	{ getUserInfoAsync }
 )
 class WineCatagoryItem extends React.Component {
 
@@ -18,18 +21,26 @@ class WineCatagoryItem extends React.Component {
 
 	componentDidMount(){
 
-		let wine_id = this.props.dataItem._id;
+		let that = this;
 
-		if (this.props.wine.own.indexOf(wine_id) === -1) {
-			this.setState({
-				toggle: false
-			})
-		} else {
-			this.setState({
-				toggle: true
-			})
-		}
+		(async function(){
+			await that.props.getUserInfoAsync();
+			let wine_id = that.props.dataItem._id;
+			let own = that.props.sign.own;
 
+			if ( !own.find((item) => (item._id === wine_id))) {
+				that.setState({
+					toggle: false
+				})
+			} else {
+				that.setState({
+					toggle: true
+				})
+			}
+		})()
+		
+
+	
 	}
 
 

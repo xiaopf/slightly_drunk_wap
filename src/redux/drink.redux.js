@@ -5,14 +5,9 @@ const GET_DRINK = 'GET_DRINK';
 const SEARCH_DRINK = 'SEARCH_DRINK';
 const CANCEL_SEARCH = 'CANCEL_SEARCH';
 const GET_SINGLE_DRINK = 'GET_SINGLE_DRINK';
-
-
-
-
 const ADD_ITEM = 'ADD_ITEM';
 const UPDATE_ITEM = 'UPDATE_ITEM';
 const DELETE_ITEM = 'DELETE_ITEM';
-const GET_ONE = 'GET_ONE';
 const GET_ERROR = 'GET_ERROR';
 
 
@@ -31,48 +26,32 @@ var initState = {
 export function drink(state = initState,action){
 	switch (action.type){
 		case GET_DRINK:
-
 			return { ...state, ...action.payload }
 
 		case SEARCH_DRINK:
-       
 			return { ...state, ...action.payload }
 
 		case CANCEL_SEARCH:
-
 			return { ...state, code: 6, searchDrink:[]}
 
 		case GET_SINGLE_DRINK:
-
 			return { ...state, ...action.payload }
 
 		case GET_ERROR:
 			return { ...state,  ...action.payload,  redirectTo: redirectTo(action.payload.code) }
 
-
-
-
 	    case ADD_ITEM: 
 		    return {...state,...action.payload};
-		break;
-
+		
 	    case UPDATE_ITEM: 
-		    return {...state,...action.payload};
-		break;
-
-
-
-
-
-
+			return {...state,...action.payload};
+			
 		default:
 			return state;
-	    break;
-
+	    
 	}
 
 }
-
 
 // ////////////////////
 // create action
@@ -92,7 +71,6 @@ export function createCancelSearch(payload) {
 export function createGetSingleDrink(payload) {
 	return { type: GET_SINGLE_DRINK , payload }
 }
-// ////////////////////
 
 export function createAddItem(payload){
     return {type:ADD_ITEM ,payload}
@@ -111,10 +89,7 @@ export function createGetError(payload) {
 	return { type: GET_ERROR, payload }
 }
 
-export function createGetOne(payload) {
-	return { type: GET_ONE, payload }
-}
-
+// ////////////////////
 
 
 // /////////////////////////
@@ -169,7 +144,7 @@ export function getSingleDrinkAsync(_id) {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
 					console.log(res.data)
-					dispatch(createSearchDrink(res.data))
+					dispatch(createGetSingleDrink(res.data))
 				} else {
 					dispatch(createGetError(res.data))
 				}
@@ -178,55 +153,25 @@ export function getSingleDrinkAsync(_id) {
 	)
 }
 
-
-
-// ////////////////////////
-
-
-export function createUpdateItemAsync(item){
+export function deleteItemAsync(_id) {
 	return dispatch => (
-           axios.post('/edit/updateItem',item).then((res) => {
-                 if(res.status === 200){
-                 	console.log(res.data);
-               		dispatch(createUpdateItem(res.data))
-                 }
-           })
-	)
-}
-
-export function createDeleteItemAsync(_id){
-	return dispatch => (
-           axios.post('/edit/deleteItem',{_id}).then((res) => {
-                 if(res.status == 200){
-                 	console.log(res.data);
-               		dispatch(createDeleteItem(res.data))
-                 }
-           })
-	)
-}
-
-export function createAddItemAsync(item){
-	console.log(item);
-	return dispatch => (
-           axios.post('/edit/addItem',item).then((res) => {
-                 if(res.status == 200){
-                 	console.log(res.data);
-               		dispatch(createAddItem(res.data))
-                 }
-           })
-	)
-}
-
-
-
-
-
-export function getOneAsync(_id) {
-	return dispatch => (
-		axios.get(`/detail/${_id}`).then((res) => {
-			if (res.status == 200) {
+		axios.delete('/drink/list', {
+			data: {_id}
+			}).then((res) => {
+			if (res.status === 200) {
 				console.log(res.data);
-				createGetOne(res.data);
+				dispatch(createDeleteItem(res.data))
+			}
+		})
+	)
+}
+
+export function updateItemAsync(item) {
+	return dispatch => (
+		axios.post('/edit/updateItem', item).then((res) => {
+			if (res.status === 200) {
+				console.log(res.data);
+				dispatch(createUpdateItem(res.data))
 			}
 		})
 	)
@@ -234,6 +179,18 @@ export function getOneAsync(_id) {
 
 
 
+export function addItemAsync(item) {
+	console.log(item);
+	return dispatch => (
+		axios.post('/edit/addItem', item).then((res) => {
+			if (res.status === 200) {
+				console.log(res.data);
+				dispatch(createAddItem(res.data))
+			}
+		})
+	)
+}
+// ////////////////////////
 
 
 function redirectTo(code) {

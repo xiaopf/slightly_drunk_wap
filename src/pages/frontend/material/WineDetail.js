@@ -3,10 +3,10 @@ import './WineDetail.less';
 import { NavBar, Icon, WhiteSpace } from 'antd-mobile';
 import { connect } from 'react-redux';
 
-import { getWineListAsync} from '../../redux/wine.redux.js';
+import { getWineAsync} from '../../../redux/wine.redux.js';
 @connect(
 	state => state,
-	{ getWineListAsync}
+	{ getWineAsync}
 )
 
 
@@ -20,7 +20,7 @@ class WineDetail extends React.Component {
 
 	componentDidMount(){
 		if (!this.props.wine.userName) {
-			this.props.getWineListAsync();
+			this.props.getWineAsync();
 		}
 	}
 
@@ -37,8 +37,6 @@ class WineDetail extends React.Component {
 
 		let id = this.props.match.params.id;
 		let drink = this.props.wine.wineList.filter((wine)=>(wine._id === id));
-		console.log(drink)
-
 
 		return ( 
                  <React.Fragment>
@@ -54,7 +52,7 @@ class WineDetail extends React.Component {
 											onLeftClick={this.goBack}
 										>{drink[0].name}</NavBar>
 
-										<img className="detail_img" src={drink[0].img_url} alt="" />
+										<img className="detail_img" src={drink[0].img_url[0]} alt="" />
 										<div className="detail_text_wrap">
 											<p className="detail_name">{drink[0].name.split('（')[0]}</p>
 											<p className="detail_eng_name">{drink[0].name.split('（')[1].slice(0, -1)}</p>

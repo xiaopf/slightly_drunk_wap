@@ -9,11 +9,11 @@ import ShopSingle from '../../component/frontend/ShopSingle';
 import Cart from '../../component/frontend/Cart';
 import { connect } from 'react-redux';
 
-import { getWineListAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync } from '../../redux/wine.redux.js';
+import { getWineAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync } from '../../redux/wine.redux.js';
 import { getBannerAsync } from '../../redux/banner.redux.js';
 @connect(
 	state => state,
-	{ getWineListAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync, getBannerAsync }
+	{ getWineAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync, getBannerAsync }
 )
 
 
@@ -25,7 +25,7 @@ class Shop extends React.Component {
 	}
 
     componentDidMount(){
-		this.props.getWineListAsync();
+		this.props.getWineAsync();
 		this.props.getBannerAsync();
 	}
 

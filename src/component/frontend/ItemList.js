@@ -14,7 +14,7 @@ class ItemList extends React.Component {
 		let lists = items.map(function(item,index){
         return  <Item className="item" key = {item._id}>
 
-                  <Link className="drink_img" to={`/drink/${item._id + '_' + index}`}>
+                  <Link className="drink_img" to={`/drink/${item._id}`}>
                     <img src={item.img_url} alt=""/>
                   </Link>
                   

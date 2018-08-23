@@ -3,12 +3,12 @@ import './WineCatagory.less';
 import { Grid, NavBar, Icon,WhiteSpace} from 'antd-mobile';
 import { Link , Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
-import WineCatagoryItem from '../../component/frontend/WineCatagoryItem';
-import { getWineListAsync, changeWineInUserAsync} from '../../redux/wine.redux.js';
-import { getUserInfoAsync} from '../../redux/user.redux.js';
+import WineCatagoryItem from '../../../component/frontend/WineCatagoryItem';
+import { getWineAsync, changeWineInUserAsync} from '../../../redux/wine.redux.js';
+import { getUserInfoAsync} from '../../../redux/user.redux.js';
 @connect(
 	state => state,
-	{ getWineListAsync, changeWineInUserAsync, getUserInfoAsync}
+	{ getWineAsync, changeWineInUserAsync, getUserInfoAsync}
 )
 
 
@@ -28,12 +28,12 @@ class WineCatagory extends React.Component {
 	componentDidMount(){
 		
 		if (!this.props.wine.userName){
-			this.props.getWineListAsync();
+			this.props.getWineAsync();
 		}
 
-		if (!this.props.sign.userName) {
-			this.props.getUserInfoAsync();
-		}
+		// if (!this.props.sign.userName) {
+		// 	this.props.getUserInfoAsync();
+		// }
 
 		
 	}

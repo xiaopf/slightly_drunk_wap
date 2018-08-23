@@ -2,10 +2,12 @@ import React from 'react';
 import './BackPage.less';
 
 
-import EditDrinkList from '../../component/backend/EditDrinkList';
-import EditFirst from '../../component/backend/EditFirst';
-import EditStuffList from '../../component/backend/EditStuffList';
-import EditWine from '../../component/backend/EditWine';
+import EditDrink from '../../component/backend/EditDrink';
+import EditBanner from '../../component/backend/EditBanner';
+import EditMaterial from '../../component/backend/EditMaterial';
+import EditSingleDrink from '../../component/backend/EditSingleDrink';
+import EditSingleMaterial from '../../component/backend/EditSingleMaterial';
+
 
 
 
@@ -37,19 +39,21 @@ class BackPage extends React.Component {
 					<ul className="back_nav">
 						<li><NavLink activeClassName="selected" to="/edit/editIndexBanner">indexBanner</NavLink></li>
 					   <li><NavLink activeClassName="selected" to="/edit/editShopBanner">shopBanner</NavLink></li>
-					   <li><NavLink activeClassName="selected" to="/edit/editDrinkList">鸡尾酒单</NavLink></li>
-					   <li><NavLink activeClassName="selected" to="/edit/editStuffList">原料清单</NavLink></li>
+					   <li><NavLink activeClassName="selected" to="/edit/editDrink">鸡尾酒单</NavLink></li>
+					   <li><NavLink activeClassName="selected" to="/edit/editMaterial">原料清单</NavLink></li>
 					</ul>
 				    
 				    <div className="back_edit_area">
 			
 						<Switch>
-							<Route exact path="/edit/editIndexBanner" component={EditFirst} />
-					    	<Route exact path="/edit/editShopBanner" component={EditFirst}/>
-					    	<Route  path="/edit/editDrinkList" component={EditDrinkList}/>
-					    	<Route  path="/edit/editStuffList" component={EditStuffList}/>
-					    	<Route  path="/edit/:id" component={EditWine}/>
-					    	<Route  path="/addDrink" component={EditWine}/>
+							<Route exact path="/edit/editIndexBanner" component={EditBanner} />
+					    	<Route exact path="/edit/editShopBanner" component={EditBanner}/>
+					    	<Route path="/edit/editDrink" component={EditDrink}/>
+							<Route path="/edit/editMaterial" component={EditMaterial}/>
+							<Route path="/edit/drink/:id" component={EditSingleDrink}/>
+							<Route path="/addDrink" component={EditSingleDrink} />
+							<Route path="/edit/material/:id" component={EditSingleMaterial} />
+							<Route path="/addMaterial" component={EditSingleMaterial}/>
 						</Switch>			    	
 				
 				    </div>

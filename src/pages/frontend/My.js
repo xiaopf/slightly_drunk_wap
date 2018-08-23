@@ -9,13 +9,13 @@ import ShopSingle from '../../component/frontend/ShopSingle';
 import Cart from '../../component/frontend/Cart';
 import { connect } from 'react-redux';
 import LinesEllipsis from 'react-lines-ellipsis';
-import { getWineListAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync } from '../../redux/wine.redux.js';
+import { searchWineAsync, cancelSearchSync, changeWineInUserAsync } from '../../redux/wine.redux.js';
 import { getBannerAsync } from '../../redux/banner.redux.js';
 import { createSignOutAsync, getUserInfoAsync } from '../../redux/user.redux.js';
 const Item = List.Item;
 @connect(
 	state => state,
-	{ getWineListAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync, getBannerAsync, getUserInfoAsync }
+	{ searchWineAsync, cancelSearchSync, changeWineInUserAsync, getBannerAsync, getUserInfoAsync }
 )
 
 

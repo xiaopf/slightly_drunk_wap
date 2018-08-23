@@ -47,38 +47,24 @@ exports.getDrinkList = function (req,res,next){
 	}else{
 		res.json({code:0,msg:'未登录！'})
 	}
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
 
 exports.deleteDrink = function(req,res,next){
-
-
-    let { _id }  = req.body;
-    
-    console.log(_id);
-  
-    if(_id){
-
-   	    drinkModel.remove({_id},function(err,data){
-			if(err){console.log(err)};
-			res.json({code:6,msg:"酒单删除成功！"})
-		})
-
-    }
+	let u_id = req.cookies.userId;
+	let { _id }  = req.body; 
+	if(u_id){
+		if(_id){
+			drinkModel.remove({_id},function(err,data){
+				if(err){console.log(err)};
+				res.json({code:6,msg:"酒单删除成功！"})
+			})
+		}	
+    }else{
+		res.json({code:0,msg:'未登录！'})
+	}
 }
+
+
 
 
 

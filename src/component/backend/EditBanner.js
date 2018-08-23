@@ -1,109 +1,114 @@
 import React from 'react';
 import './EditBanner.less';
-import { Redirect ,WithRouter} from 'react-router-dom';
+import EditBannerItem from './EditBannerItem';
+import { connect } from 'react-redux';
+import { getBannerAsync, updateBannerAsync} from '../../redux/banner.redux.js';
 
-
-// @WithRouter
+@connect(
+  state => state,
+	{ getBannerAsync, updateBannerAsync}
+)
 
 class EditBanner extends React.Component {
-		constructor(props){
-			super(props);
+	constructor(props){
+		super(props);
+		this.state = {
+			banners: [{ banner_link: '', banner_image: '' }]
+		};
+		this.bannerPlus = this.bannerPlus.bind(this);
+		this.onBannerReduce = this.onBannerReduce.bind(this);
+		this.saveBanner = this.saveBanner.bind(this);
+		this.handleBannerChange = this.handleBannerChange.bind(this);
 
-			this.state = {
-				banner_link : '',
-				banner_image : ''
-			}
+	}
 
-			this.stuffReduce = this.stuffReduce.bind(this);
-			this.handleChange = this.handleChange.bind(this);
-			this.handleChange1 = this.handleChange1.bind(this);
+	componentDidMount(){
 
-		}
+		let path = this.props.match.path;
+		
+		
+		let that = this;
+		if (!this.props.banner.indexBannerList[0]){  
+          (async function(){
+			  await that.props.getBannerAsync();
+			  let bannerList = that.props.banner;
+			  let banners = path === "/edit/editIndexBanner" ? bannerList.indexBannerList : bannerList.shopBannerList;
+			  console.log(banners)
+			  that.setState({
+				  banners: banners
+			  })
+		  })()  
+		} 
+	}
 
+	bannerPlus () {
+		let banners = this.state.banners;
+		banners.push({banner_link:'',banner_image:''});
+		this.setState({
+			banners : banners
+		})
+	}
 
-		componentDidMount () {
-			
-			let banner_link = this.props.banner.banner_link;
-			let banner_image = this.props.banner.banner_image;
+	onBannerReduce(index){
+		let banners = this.state.banners;
 
+		if(banners.length > 1){
+			banners.splice(index,1);
 			this.setState({
-				banner_link : banner_link,
-				banner_image : banner_image
+				banners : banners
 			})
 		}
 
+	}
 
+	saveBanner () {
+		let path = this.props.match.path === "/edit/editIndexBanner" ? "indexBannerList" : "shopBannerList";
+		this.props.updateBannerAsync(this.state.banners, path,this.props.banner._id);
+		this.props.history.goBack();
+	}
+  
+	handleBannerChange (index,name,value,str_len) {
+		let banners = this.state.banners;
 
+		banners[index][name.slice(0, str_len)] = value;
+	}
 
-		stuffReduce(index,e){
-            this.props.onBannerReduce(index);
-		}
+	render () {
+        
+		let that = this;
+		let path = this.props.match.path;
+		let bannerList = this.props.banner;
+		let banners = path === "/edit/editIndexBanner" ? bannerList.indexBannerList : bannerList.shopBannerList;
 
-		handleChange(index,e){
-			this.setState({
-				banner_link : e.target.value
-			})
+		const bannerLists =  this.props.banner.indexBannerList[0] ?
+							banners.map(function(banner,index){
+								return  (<EditBannerItem 
+													key={banner.banner_link  + index} 
+													index = {index} banner = {banner} 
+													onHandleBannerChange = {that.handleBannerChange} 
+													onBannerReduce = {that.onBannerReduce}>
+										</EditBannerItem>)
+							}) 
+							: null;
 
-            this.props.onHandleBannerChange(index,e.target.name,e.target.value,11);
+		return (
+			<React.Fragment>
+				<h2>{this.props.match.path.slice(10)}</h2>
+				{this.props.banner.indexBannerList[0]? 
+					<div className="editBannerWrap">
 
-		}		
+						<div className="stuffs">
+							<p className="bTitle">编辑banner</p>
+							{bannerLists}
+							<button className="add_input" onClick = { this.bannerPlus }>添加材料</button>
+						</div>
+						<button className="submit" onClick = { this.saveBanner }>确认提交</button>
 
-		handleChange1(index,e){
-			this.setState({
-				banner_image : e.target.value
-			})
-            
-            let that = this;
-            setTimeout(function(){
-                console.log(that.state);
-            },1000)
-            this.props.onHandleBannerChange(index,e.target.name,e.target.value,12);
-
-		}
-
-
-		render () {
-
-			let index = this.props.index;
-
-			return (
-
-				<div className="editBanner_wrap">
-
-
-				      { this.props.banner.redirectTo ? <Redirect to={ this.props.banner.redirectTo }></Redirect> : null }
-
-		        	<label className="editBanner_f_title" htmlFor={'stuff_img_'+(index+1)}>banner {index + 1} :</label>
-
-		        	<div className="editBanner_img_wrap">
-			        	<img className="editBanner_img" src={this.state.banner_image ? this.state.banner_image : "https://img.tthunbohui.cn/zhuanti/20631/mainbg.png"} alt="" />
-			        	 {/* 注释内容 <input className="file_input editBanner_input_msg" id={'stuff_img_'+(index+1)} type="file"/>*/}
-		        	</div>
-
-                    
-                    <div className="editBanner_text_wrap">
-
-                        <div className="editBanner_text_input_s">
-            	        	<label className="editBanner_s_title" htmlFor={'banner_msg_'+(index+1)}>图像 : </label>
-                    		<input className='editBanner_msg_input' value = { this.state.banner_image } name = {'banner_image' +(index+1)} id={'banner_image_'+(index+1)} type="text" onChange = { e => this.handleChange1(index,e) }/>
-                        </div>
-
-                        <div className="editBanner_text_input_s">
-            	        	<label className="editBanner_s_title" htmlFor={'banner_link_'+(index+1)}>链接 : </label>
-                    		<input className='editBanner_link_input' value = { this.state.banner_link } name = {'banner_link' +(index+1)} id={'banner_link_'+(index+1)} type="text" onChange = { e => this.handleChange (index,e)}/>
-                        </div>
-
-
-
-                    </div>
-
-                    <div  className="editBanner_delete" onClick = {(e) => this.stuffReduce(index,e)}>X</div>
-
-				</div>
-
-			)
-		}
-
+					</div> 
+				: null}
+		   </React.Fragment>
+		)
+	}
 }
 
 export default EditBanner;

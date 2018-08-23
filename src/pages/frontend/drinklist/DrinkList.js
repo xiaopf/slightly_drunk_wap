@@ -4,6 +4,7 @@ import { List, Carousel, WingBlank, SearchBar, WhiteSpace, Range, Slider } from 
 import { connect } from 'react-redux';
 import { getDrinkAsync, searchDrinkAsync, cancelSearchSync } from '../../../redux/drink.redux.js';
 import { getBannerAsync } from '../../../redux/banner.redux.js';
+
 import ItemList from '../../../component/frontend/ItemList';
 
 @connect(
@@ -27,6 +28,7 @@ class DrinkList extends React.Component {
   }
   
   componentDidMount() {
+
     if (!this.props.drink.drinkList[0]) {
       this.props.getDrinkAsync();
     }
@@ -160,7 +162,7 @@ class DrinkList extends React.Component {
             : null }
 
             <List>
-              {this.props.drink.code === 404 ? null : <ItemList items={this.props.drink.code === 6 ? drinkList : searchDrink}></ItemList>  }
+              { this.props.drink.code === 404 ? null : <ItemList items={this.props.drink.code === 6 ? drinkList : searchDrink}></ItemList>  }
             </List>
         </WingBlank>
       </div>

@@ -2,18 +2,18 @@ import React from 'react';
 import './Cart.less';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getWineListAsync } from '../../redux/wine.redux.js';
+import { getWineAsync } from '../../redux/wine.redux.js';
 
 @connect(
 	state => state,
-	{  getWineListAsync }
+	{  getWineAsync }
 )
 
 
 class Cart extends React.Component {
 
 	componentDidMount(){
-		this.props.getWineListAsync();
+		this.props.getWineAsync();
 	}
 	render () {
 		var num = 0;

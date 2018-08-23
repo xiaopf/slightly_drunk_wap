@@ -1,53 +1,28 @@
 import React from 'react';
 import './DrinkDetail.less';
-import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
+import { NavBar, Icon , WhiteSpace} from 'antd-mobile';
+
+import { connect } from 'react-redux';
 import { getSingleDrinkAsync } from '../../../redux/drink.redux.js';
-import { NavBar, Icon , WhiteSpace ,Grid} from 'antd-mobile';
-
-
 @connect(
    state => state,
-   { getSingleDrinkAsync }
+   { getSingleDrinkAsync}
 )
 
 class Detail extends React.Component {
 
 	constructor(props){
 		super(props);
-
-		this.state = {
-			drink:{}
-		}
-
 		this.goBack = this.goBack.bind(this);
 	}
 
 	componentDidMount(){
 
-		let idArr = this.props.match.params.id.split('_');
-		let _id = idArr[0];
-		// 有 bug！！！！！！！！！！！！！！！！！！！！！！！！！！！
-		let index = idArr[1];
-		let that = this;
-
-		if (this.props.drink.drinkList[0]) {
-			let drink = this.props.drink.drinkList[index];
-			this.setState({
-				drink:drink
-			})
-		} else {
-
-			(async function waitData() {
-				await that.props.getSingleDrinkAsync(_id);
-				let drink = that.props.drink.singleDrink;
-				that.setState({
-					drink: drink
-				})
-			})();
-
+		let id = this.props.match.params.id;
+		if (!this.props.drink.drinkList[0]) {
+			this.props.getSingleDrinkAsync(id);
 		}
-
 		window.scrollTo(0,0);
 	}
 
@@ -56,14 +31,19 @@ class Detail extends React.Component {
 	}
 
 	render () {
+		let drink;
+		let id = this.props.match.params.id;
 
-
+		if (this.props.drink.drinkList[0]) {
+			drink = this.props.drink.drinkList.filter((drink)=>(drink._id === id))[0];
+		} else {
+			drink = this.props.drink.singleDrink._id ? this.props.drink.singleDrink : undefined;
+		}
 		
-
 		return ( 
 	      
 				<div className="detail_wrap">
-					{this.state.drink.drinkName ? 
+					{drink ? 
 					    
 					<React.Fragment>
 						
@@ -72,20 +52,20 @@ class Detail extends React.Component {
 								mode="light"
 								icon={<Icon type="left" />}
 								onLeftClick={() => this.goBack()}
-							>{this.state.drink.drinkName}</NavBar>
+							>{drink.drinkName}</NavBar>
 
-							<img className="detail_img" src={this.state.drink.img_url} alt=""/>
+							<img className="detail_img" src={drink.img_url} alt=""/>
 
 							<div className="detail_text_wrap">
-								<p className="detail_name">{this.state.drink.drinkName}</p>
-								<p className="detail_eng_name">{this.state.drink.engName}</p>
+								<p className="detail_name">{drink.drinkName}</p>
+								<p className="detail_eng_name">{drink.engName}</p>
 							</div>
 
 							<WhiteSpace></WhiteSpace>
 
 							<div className="detail_describe">
 								<h2>鸡尾酒介绍</h2>
-								<p>{this.state.drink.describes}</p>
+								<p>{drink.describes}</p>
 							</div>
 
 							<WhiteSpace></WhiteSpace>
@@ -93,7 +73,7 @@ class Detail extends React.Component {
 							<div className="detail_stuffs">
 								<h2>所需材料</h2>
 								<div className="materialWrap">
-									{this.state.drink.materials.map((material) => {
+									{drink.materials.map((material) => {
 										return (
 											<div className="materialItem" key={material.material_url}>
 												<img src={material.material_url} alt="图片"/>
@@ -102,23 +82,18 @@ class Detail extends React.Component {
 										)
 									})}
 								</div>
-				
-				
 							</div>
 
 							<WhiteSpace></WhiteSpace>
 
 							<div className="detail_steps">
 								<h2>操作步骤</h2>
-								{this.state.drink.steps.map((step, index) => <p key={step}>{(index+1) + '、' +step}</p>) }
+								{drink.steps.map((step, index) => <p key={step}>{(index+1) + '、' +step}</p>) }
 							</div>
 						</React.Fragment>
 					:null}
 
 				</div>
-
-
-
 	
 		)
 	}

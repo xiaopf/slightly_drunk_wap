@@ -7,11 +7,11 @@ import {WhiteSpace,NavBar, Icon} from 'antd-mobile';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { changeUserInfoAsync, getUserInfoAsync } from '../../redux/user.redux.js';
-import { getWineListAsync } from '../../redux/wine.redux.js';
+import { getWineAsync } from '../../redux/wine.redux.js';
 
 @connect(
 	state => state,
-	{ changeUserInfoAsync, getUserInfoAsync, getWineListAsync}
+	{ changeUserInfoAsync, getUserInfoAsync, getWineAsync}
 )
 
 class ShopCart extends React.Component {
@@ -25,7 +25,7 @@ class ShopCart extends React.Component {
 	}
 
 	componentDidMount(){
-		this.props.getWineListAsync();
+		this.props.getWineAsync();
 	}
     
 	payFor() {

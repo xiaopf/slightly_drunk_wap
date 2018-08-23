@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 
-const GET_WINE_LIST = 'GET_WINE_LIST';
+const GET_WINE = 'GET_WINE';
 const CHANGE_WINE_IN_USER = 'CHANGE_WINE_IN_USER';
 
 
@@ -25,15 +25,8 @@ const GET_ERROR = 'GET_ERROR';
 
 
 var initState = {
-	isSignIn: false,
-	_id: '',
-	userName: '',
-	password: '',
-	image: '',
-	cart: [],
-	address: [],
-	chooseAddr: 0,
-	order: [],
+	
+	_id: '', 
 	wineList: [],
 	searchWine: [],
 	singleWine: {},
@@ -44,9 +37,9 @@ var initState = {
 
 export function wine(state = initState, action) {
 	switch (action.type) {
-		case GET_WINE_LIST:
+		case GET_WINE:
 
-			return { ...state, isSignIn: true, ...action.payload }
+			return { ...state, ...action.payload }
 
 		case SEARCH_WINE:
 
@@ -61,10 +54,10 @@ export function wine(state = initState, action) {
 			return { ...state, ...action.payload }
 
 		case GET_ERROR:
-			return { ...state, isSignIn: false, ...action.payload, redirectTo: redirectTo(action.payload.code) }
+			return { ...state, ...action.payload, redirectTo: redirectTo(action.payload.code) }
 
 		case CHANGE_WINE_IN_USER:
-			return { ...state, isSignIn: true, ...action.payload }
+			return { ...state, ...action.payload }
 			
 
 
@@ -93,8 +86,8 @@ export function wine(state = initState, action) {
 // ////////////////////
 // create action
 
-export function createGetWineList(payload) {
-	return { type: GET_WINE_LIST, payload }
+export function createGetWine(payload) {
+	return { type: GET_WINE, payload }
 }
 
 export function createSearchWine(payload) {
@@ -155,18 +148,19 @@ export function cancelSearchSync() {
 /////////////////////////
 // /////////////////////////
 // 异步dispach
-export function getWineListAsync() {
-
+export function getWineAsync() {
+    console.log(1)
 	return dispatch => (
 
 		axios.get('/wine/wineList').then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
 					console.log(res.data)
-					dispatch(createGetWineList(res.data))
-				} else {
-					dispatch(createGetError(res.data))
-				}
+					dispatch(createGetWine(res.data))
+				} 
+				// else {
+				// 	dispatch(createGetError(res.data))
+				// }
 			}
 		})
 	)
@@ -212,7 +206,7 @@ export function changeWineInUserAsync(info) {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
 					console.log(res.data)
-					dispatch(createSearchWine(res.data))
+					dispatch(createChangeWineInUser(res.data))
 				} else {
 					dispatch(createGetError(res.data))
 				}
@@ -225,7 +219,7 @@ export function changeWineInUserAsync(info) {
 // ////////////////////////
 
 
-export function createUpdateItemAsync(item) {
+export function updateItemAsync(item) {
 	return dispatch => (
 		axios.post('/edit/updateItem', item).then((res) => {
 			if (res.status === 200) {
@@ -236,7 +230,7 @@ export function createUpdateItemAsync(item) {
 	)
 }
 
-export function createDeleteItemAsync(_id) {
+export function deleteItemAsync(_id) {
 	return dispatch => (
 		axios.post('/edit/deleteItem', { _id }).then((res) => {
 			if (res.status == 200) {
@@ -247,7 +241,7 @@ export function createDeleteItemAsync(_id) {
 	)
 }
 
-export function createAddItemAsync(item) {
+export function addItemAsync(item) {
 	console.log(item);
 	return dispatch => (
 		axios.post('/edit/addItem', item).then((res) => {

@@ -1,28 +1,18 @@
 import React from 'react';
-import './EditDrinkList.less';
-
+import './EditDrink.less';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
-
-
-import { createUpdateItemAsync ,createDeleteItemAsync ,createAddItemAsync } from '../../redux/drink.redux.js'
-import { getDrinkAsync} from '../../redux/drink.redux.js';
-
-import { connect } from 'react-redux';
-
 import { Link } from 'react-router-dom';
-
+import { deleteItemAsync, getDrinkAsync } from '../../redux/drink.redux.js'
+import { connect } from 'react-redux';
 
 @connect(
   state => state,
-  { createUpdateItemAsync ,createDeleteItemAsync ,createAddItemAsync,getDrinkAsync}
+  { deleteItemAsync ,getDrinkAsync}
 )
 
 
-
-
-
-class EditDrinkList extends React.Component {
+class EditDrink extends React.Component {
 	constructor(props){
 		super(props);
 	    this.state={
@@ -33,7 +23,7 @@ class EditDrinkList extends React.Component {
 		    		        ""
 		    		    ]
 		    		],
-		    		"stuffs" : [ 
+		    		"materials" : [ 
 		    		    [ 
 		    		        {
 		    		            "stuff_img_local_url" : "",
@@ -53,30 +43,27 @@ class EditDrinkList extends React.Component {
 	}
   
 	componentDidMount(){
-		if(!this.props.resData.drinkList[0]){
-		  this.props.getDrinkAsync();
-		} 
-
+		
 		let that = this;
-		let timer = setInterval(function(){
-			console.log("2");
-			if(that.props.resData.code){
-				let drinkList = that.props.resData.drinkList;
+		if (!this.props.drink.drinkList[0]) {
+			(async function () {
+				await that.props.getDrinkAsync();
+				let drinkList = that.props.drink.drinkList;
 				that.setState({
-					drinkList : drinkList
+					drinkList: drinkList
 				})
-			    clearInterval(timer);
-			}
-		},100);
-
-
+			})()
+		}else{
+			let drinkList = this.props.drink.drinkList;
+			this.setState({
+				drinkList: drinkList
+			})
+		}
 	}
 
 
 
 	deleteDrink (id,idx,e) {
-
-
        confirmAlert({
          title: '确认删除',
          message: '确认删除该款鸡尾酒么？',
@@ -84,16 +71,12 @@ class EditDrinkList extends React.Component {
            {
              label: '确定',
              onClick: () => {
-
      	        let drinkList = this.state.drinkList;
-
      	        drinkList.splice(idx,1);
-
      			this.setState({
      				drinkList : drinkList
      			})
-     			this.props.createDeleteItemAsync(id);
-
+     			this.props.deleteItemAsync(id);
              }
            },
            {
@@ -102,59 +85,50 @@ class EditDrinkList extends React.Component {
            }
          ]
        })
-
-
 	}
 
 
 	render () {
-        
         let that = this;
-
         let body = this.state.drinkList.map(function(drink,idx){
-
             return (
-	             <tr key={drink.drinkName}>
+	                <tr key={drink.drinkName}>
 		            <td>{drink.drinkName}</td>
 				    <td>{drink.engName}</td>
 				    <td><img className="table_image" src={drink.img_url} alt="" /></td>
 
                     <td> 
-                        <Link className="edit_link" to={`/edit/${idx}/${drink._id}`}>编辑</Link> 
+						<Link className="edit_link" to={`/edit/drink/${drink._id}`}>编辑</Link> 
                         <button className="delete_drink" onClick = { e => that.deleteDrink(drink._id,idx,e) }>删除</button>
                     </td>
 				</tr>
             )
-
         })         
              
 
-          
 
 		return (	
-		<div>
+			<div>
 
-		    <Link className="add_link" to={`/addDrink`}>添加新鸡尾酒 +</Link> 
+				<Link className="add_link" to={`/addDrink`}>添加新鸡尾酒 +</Link> 
 
- 			<table className="table_d_list">
- 				<thead>
- 				  <tr>
- 				    <td>中文名</td>
- 				    <td>英文名</td>
- 				    <td>图片</td>
- 				    <td>操作</td>
- 				  </tr>
- 				</thead>
- 				<tbody>
-                     {body}
- 				</tbody>
+				<table className="table_d_list">
+					<thead>
+					<tr>
+						<td>中文名</td>
+						<td>英文名</td>
+						<td>图片</td>
+						<td>操作</td>
+					</tr>
+					</thead>
+					<tbody>
+						{body}
+					</tbody>
 
- 			</table>   
-		</div>
-
-			
+				</table>   
+			</div>	
 		)
 	}
 }
 
-export default EditDrinkList;
+export default EditDrink;

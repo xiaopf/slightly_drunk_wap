@@ -53,7 +53,7 @@ app.use(express.static('public'))
 
 app.use('/user', userRouter);
 app.use('/wine',wineRouter);
-app.use('/edit',drinkRouter);
+app.use('/drink',drinkRouter);
 app.use('/', pageRouter);
 
 // 录入数据
