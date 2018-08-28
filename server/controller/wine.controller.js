@@ -1,5 +1,7 @@
 var wineModel = require('../model/wine.model.js');
 var userModel = require('../model/user.model.js');
+var fs = require('fs');
+var path = require('path');
 
 exports.getWineList = function (req, res, next) {
     
@@ -55,6 +57,42 @@ exports.getWineList = function (req, res, next) {
 
 
 }
+
+
+exports.test = function(req,res,next){
+    // {
+    //     upload:
+    //     {
+    //         fieldName: 'upload',
+    //         originalFilename: '1.jpg',
+    //         path: 'C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\K4MHLwei7ipq-r9_7q-gqwYI.jpg',
+    //         headers: {
+    //             'content-disposition': 'form-data; name="upload"; filename="1.jpg"',
+    //                 'content-type': 'image/jpeg'
+    //         },
+    //         size: 244304,
+    //         name: '1.jpg',
+    //         type: 'image/jpeg'
+    //     }
+    // }
+    
+    var upImg = req.files.upload;
+    var filePath = upImg.path;
+    var oriName = upImg.originalFilename;
+    var type = upImg.type.split('/')[1];
+    var sfile = req.body.timeNow + ".jpg";
+    var newPath = path.join(__dirname, '../../', '/public/upload/images/' + sfile);
+
+    fs.readFile(filePath, function (err, data) {
+
+        if (err) { console.log(err); };
+
+        fs.writeFile(newPath, data, function (err) {
+            if (err) { console.log(err); };
+            res.end();
+        });
+    });
+} 
 
 
 
