@@ -59,41 +59,91 @@ exports.getWineList = function (req, res, next) {
 }
 
 
-exports.test = function(req,res,next){
-    // {
-    //     upload:
-    //     {
-    //         fieldName: 'upload',
-    //         originalFilename: '1.jpg',
-    //         path: 'C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\K4MHLwei7ipq-r9_7q-gqwYI.jpg',
-    //         headers: {
-    //             'content-disposition': 'form-data; name="upload"; filename="1.jpg"',
-    //                 'content-type': 'image/jpeg'
-    //         },
-    //         size: 244304,
-    //         name: '1.jpg',
-    //         type: 'image/jpeg'
-    //     }
-    // }
-    
-    var upImg = req.files.upload;
-    var filePath = upImg.path;
-    var oriName = upImg.originalFilename;
-    var type = upImg.type.split('/')[1];
-    var sfile = req.body.timeNow + ".jpg";
-    var newPath = path.join(__dirname, '../../', '/public/upload/images/' + sfile);
+exports.saveImg = function(req,res,next){
 
-    fs.readFile(filePath, function (err, data) {
+    console.log(req.files)
+    var u_id = req.cookies.userId;
+    let upImg = req.files.uploads;
+    let len = upImg.length;
+    let nameArr=[];
 
-        if (err) { console.log(err); };
+    if (upImg instanceof Array){
+        upImg.map((img,index)=>{
+            let filePath = img.path;
+            let date = new Date();
+            let imgName = u_id + date.getTime() + index + ".jpg";
+            nameArr.push(imgName);
+            let newPath = path.join(__dirname, '../../', '/public/upload/images/upWine/' + imgName);
 
-        fs.writeFile(newPath, data, function (err) {
+            fs.readFile(filePath, function (err, data) {
+
+                if (err) { console.log(err); };
+
+                fs.writeFile(newPath, data, function (err) {
+                    if (err) { console.log(err); };
+                    
+                    if(index === len - 1){
+                        res.json({ nameArr });
+                    }
+                    
+                });
+            });
+        })
+
+
+    }else{
+
+        let filePath = upImg.path;
+        let date = new Date();
+        let imgName = u_id + date.getTime() + ".jpg";
+        nameArr.push(imgName);
+        let newPath = path.join(__dirname, '../../', '/public/upload/images/upWine/' + imgName);
+
+        fs.readFile(filePath, function (err, data) {
+
             if (err) { console.log(err); };
-            res.end();
+
+            fs.writeFile(newPath, data, function (err) {
+                if (err) { console.log(err); };
+                res.json({ nameArr});
+            });
         });
-    });
+    }
+
+
+    
 } 
 
 
 
+exports.updateWine = function (req, res, next) {
 
+
+    var u_id = req.cookies.userId;
+    let { _id } = req.body;
+
+
+    if (u_id) {
+        wineModel.update({ _id }, req.body , function (err, result) {
+            if (err) { console.log(err); }
+
+            if (result.ok) {
+                wineModel.find({}, function (err, data) {
+                    if (err) { console.log(err); }
+                    if (data) {
+                        let wineList = data[0];
+                        res.json({ code: 6, msg: '更新wine成功！', wineList })
+                    } else {
+                        res.json({ code: 500, msg: '服务器故障！' })
+                    }
+                })
+            }
+
+        })
+    } else {
+        res.json({ code: 0, msg: '未登录！' })
+    }
+
+
+
+}

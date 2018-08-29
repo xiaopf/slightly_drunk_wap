@@ -50,7 +50,7 @@ class BackPage extends React.Component {
 							<Route exact path="/edit/editIndexBanner" component={EditBanner} />
 					    	<Route exact path="/edit/editShopBanner" component={EditBanner}/>
 					    	<Route path="/edit/editDrink" component={EditDrink}/>
-							<Route path="/edit/editMaterial" component={EditSingleMaterial}/>
+							<Route path="/edit/editMaterial" component={EditMaterial}/>
 							<Route path="/edit/drink/:id" component={EditSingleDrink}/>
 							<Route path="/addDrink" component={EditSingleDrink} />
 							<Route path="/edit/material/:id" component={EditSingleMaterial} />

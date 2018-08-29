@@ -215,20 +215,73 @@ export function changeWineInUserAsync(info) {
 	)
 }
 
+export function updateItemAsync(state) {
 
-// ////////////////////////
+	let mainIndex = [];
+	let picIndex = [];
 
+    for(let i = 0; i < state.mainImgs.length;i ++){
+		if(state.mainImgs[i].file.name){
+			mainIndex.push(i)
+		}
+	}
+	for (let i = 0; i < state.picImgs.length; i++) {
+		if(state.picImgs[i].file.name){
+			picIndex.push(i)
+		}
+	}
 
-export function updateItemAsync(item) {
+	console.log(mainIndex, '/', picIndex)
+	let imgArr = state.mainImgs.concat(...state.picImgs);
+	let nImgArr = imgArr.filter((img)=>(img.file.name))
+	let len = nImgArr.length;
+	let formData = new FormData();
+
+    for(let i = 0;i<len;i++){
+		formData.append('uploads', nImgArr[i].file);
+	}
+
 	return dispatch => (
-		axios.post('/edit/updateItem', item).then((res) => {
+		axios.post('/wine/saveImg', formData).then((res) => {
 			if (res.status === 200) {
-				console.log(res.data);
-				dispatch(createUpdateItem(res.data))
+
+				for (let i = 0; i < res.data.nameArr.length ; i++){
+					if (i < mainIndex.length){
+						state.img_url[mainIndex[i]] = '/upload/images/upWine/'+res.data.nameArr[i]
+					}else{
+						state.pics[mainIndex[i]] = '/upload/images/upWine/'+res.data.nameArr[i]
+					}
+				}
+
+				delete state.mainImgs
+				delete state.picImgs
+
+				axios.post('/wine/updateWine', state).then((res) => {
+					if (res.status === 200) {
+						console.log(res.data);
+						// dispatch(createUpdateItem(res.data))
+					}
+				})
+
+
 			}
 		})
 	)
+
+
+
+	
+
+	
+
+
+
+
 }
+// ////////////////////////
+
+
+
 
 export function deleteItemAsync(_id) {
 	return dispatch => (

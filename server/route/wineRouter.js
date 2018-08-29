@@ -9,7 +9,8 @@ var Router = express.Router();
 
 
 Router.get('/wineList', WineController.getWineList)
-Router.post('/winner', multiparty, WineController.test)
+Router.post('/saveImg', multiparty, WineController.saveImg)
+Router.post('/updateWine', multiparty, WineController.updateWine)
 
 
 

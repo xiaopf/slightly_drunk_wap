@@ -1,12 +1,12 @@
 import React from 'react';
 import './Upload.less';
-
+import Input from './Input';
 class Upload extends React.Component {
 	constructor(props){
 		super(props);
 
 		this.state = {
-			imgs : []
+			imgs: []
 		}
 
 	
@@ -14,9 +14,24 @@ class Upload extends React.Component {
 		this.handler = this.handler.bind(this);
 		this.deleteImg = this.deleteImg.bind(this);
 
+
 	}
 
-	deleteImg(index,e){
+	componentDidMount(){
+		let imgs = this.props.srcs;
+		let n_imgs = imgs.map((img)=>{
+			return {
+				file: {},
+				src: img
+			}
+		})
+
+		this.setState({
+			imgs: n_imgs
+		})
+	}
+
+	deleteImg(index){
 
 		let imgs = this.state.imgs;
 		imgs.splice(index,1)
@@ -25,38 +40,50 @@ class Upload extends React.Component {
 		}) 
 	}
 
-    handler(){
-		let src = window.URL.createObjectURL(this.input.current.files[0])
-		let file = this.input.current.files[0];
+    handler(file,index){
+
+		let src = window.URL.createObjectURL(file)
 		let imgs = this.state.imgs;
-		imgs.push({
-					file: file,
-					src: src
-				});
+
+		if(index >= 0){
+			imgs.splice(index,1,{
+				file: file,
+				src: src
+			})
+		}else{
+			imgs.push({
+				file: file,
+				src: src
+			});
+		}
+
 		this.setState({
 			imgs: imgs
 		}) 
+
+		let that = this;
+		setTimeout(() => {
+			this.props.update(that.state);
+		}, 100);
 	}
 
-	componentDidUpdate(){
-		this.props.update(this.state);
-	}
-
-  
 
 	render () {
 		let that = this;
 		let imgs = this.state.imgs.map((img,index)=>{
-			return (
-				<React.Fragment key={index}>
-					{img.src ?   <div className="imgWrap" >
-								<span className="fa fa-close" onClick={(e) => that.deleteImg(index,e)}></span>
-								<img src={img.src} alt="img" />
-							</div> 
-					:null}
-				</React.Fragment>
-			)
-		});
+				return (
+					<React.Fragment key={index}>
+						{img.src ?   <div className="imgWrap" >
+									<span className="fa fa-close" onClick={(e) => that.deleteImg(index)}></span>
+									<img src={img.src} alt="img" />
+									<Input index={index} change={that.handler}></Input>
+								</div> 
+						:null}
+					</React.Fragment>
+				)
+			});
+
+
 
 		return (
 				<div className="uploadwrap">
@@ -65,7 +92,7 @@ class Upload extends React.Component {
 					
 					<div className="addFileWrap">
 						<p className="fa fa-plus"></p>
-						<input onChange={this.handler} onClick={this.addFile} ref={this.input} type="file" />
+						<Input change={this.handler} ></Input>
 					</div>
 				</div>
 

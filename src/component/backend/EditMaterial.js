@@ -100,7 +100,7 @@ class EditMaterial extends React.Component {
 					<td><img className="table_image" src={wine.img_url[0]} alt="" /></td>
 
 					<td>
-						<Link className="edit_link" to={`/edit/${wine._id}`}>编辑</Link>
+						<Link className="edit_link" to={`/edit/material/${wine._id}`}>编辑</Link>
 						<button className="delete_wine" onClick={e => that.deleteWine(wine._id, idx, e)}>删除</button>
 					</td>
 				</tr>
