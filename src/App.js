@@ -16,12 +16,12 @@ import WineDetail from './pages/frontend/material/WineDetail';
 import SignIn from './pages/frontend/SignIn';
 import SignUp from './pages/frontend/SignUp';
 import BackPage from './pages/backend/BackPage';
-import ShopCart from './pages/frontend/ShopCart';
+import ShopCart from './pages/frontend/shop/ShopCart';
 import AddAddress from './pages/frontend/AddAddress';
 
 import MyAddress from './pages/frontend/MyAddress';
 import MyInfo from './pages/frontend/MyInfo';
-import ShopMore from './pages/frontend/ShopMore';
+import ShopMore from './pages/frontend/shop/ShopMore';
 import My from './pages/frontend/My';
 
 

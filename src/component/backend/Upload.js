@@ -32,7 +32,7 @@ class Upload extends React.Component {
 	}
 
 	deleteImg(index){
-
+        // 删除pic
 		let imgs = this.state.imgs;
 		imgs.splice(index,1)
 		this.setState({

@@ -7,7 +7,7 @@ import { TabBar } from 'antd-mobile';
 
 import DrinkList from './frontend/drinklist/DrinkList';
 import Material from './frontend/material/Material';
-import Shop from './frontend/Shop';
+import Shop from './frontend/shop/Shop';
 import MyPage from './frontend/MyPage';
 
 import { connect } from 'react-redux';
@@ -136,7 +136,7 @@ class Index extends Component {
              >
 
 {/* 商店第三页 */}
-              {/* < Shop ></Shop>  */}
+              < Shop ></Shop> 
 
              </TabBar.Item>
              <TabBar.Item

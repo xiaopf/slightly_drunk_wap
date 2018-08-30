@@ -3,45 +3,30 @@ import './CartItem.less';
 import {Link} from 'react-router-dom';
 import { WingBlank } from 'antd-mobile';
 import { connect } from 'react-redux';
-import { countWineToCartAsync } from '../../redux/shop.redux.js';
+import { countWineToCartAsync } from '../../redux/user.redux.js';
 
 @connect(
 	state => state,
 	{ countWineToCartAsync }
 )
 
-
-
-
 class CartItem extends React.Component {
 		constructor(props){
 			super(props);
 
-			this.state={
-				num:3
-			}
-
 			this.countPlus = this.countPlus.bind(this);
 			this.countReduce = this.countReduce.bind(this);
-
 		}
 
 
 		countPlus(_id){
 			let cart = this.props.sign.cart;
-
-			let index;
-			let target = cart.filter((c, idx) => {
-				index = idx;
-				return c._id === _id;
-			})
-
-
-
-			target[0].num++;
-
-			cart[index] = target[0];
 			
+			for (let i = 0; i < cart.length; i++) {
+				if (cart[i]._id === _id) {
+					cart[i].num++;
+				}
+			}
 
 			this.props.countWineToCartAsync({ cart })
 		}
@@ -49,21 +34,15 @@ class CartItem extends React.Component {
 		countReduce(_id){
 			let cart = this.props.sign.cart;
 
-			let index;
-			let target = cart.filter((c, idx) => {
-				index = idx;
-				return c._id === _id;
-			})
-
-
-
-			target[0].num--;
-			
-			if (target[0].num === 0 ){
-				cart.splice(index,1)
-			}else{
-				cart[index] = target[0];
+			for (let i = 0; i < cart.length; i++) {
+				if (cart[i]._id === _id) {
+					cart[i].num--;
+					if (cart[i].num){
+						cart.splice(i, 1)
+					}
+				}
 			}
+			
 
 			this.props.countWineToCartAsync({ cart })
 		}
@@ -73,10 +52,7 @@ class CartItem extends React.Component {
 		render () {
 
 			let { _id, num, singlewine } = this.props;
-			console.log(singlewine)
 			return (
- 
-
 
 				
 				<WingBlank className="cartItemWrap">

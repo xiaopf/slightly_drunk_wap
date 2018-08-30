@@ -1,0 +1,43 @@
+
+
+.shopPage{
+	height:100%;
+	overflow: hidden;
+	position: relative;
+
+	.searchWrap{
+		display: flex;
+		justify-content: flex-start;
+		background-color: #efeff4;
+
+		width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+
+		.am-search{
+			flex:1 1;
+		}
+
+
+	}
+
+	.shopContent{
+        overflow-y: auto;
+        height:100%;
+	}
+	
+	.shopContent::-webkit-scrollbar {display: none;}
+	
+	.unFindOut{
+		font-size: 18px;
+		line-height: 30px;
+		width:100%;
+		text-align: center;
+		padding-top: 10px;
+	}
+
+}
+
+

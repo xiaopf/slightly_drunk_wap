@@ -52,7 +52,7 @@ class EditSingleMaterial extends React.Component {
 
 	componentDidMount() {
 
-		if (this.props.match.path !== '/addDrink') {
+		if (this.props.match.path !== "/addMaterial") {
 
 			let that = this;
 			let id = this.props.match.params.id;
@@ -80,7 +80,6 @@ class EditSingleMaterial extends React.Component {
 			} else {
 				let wine = that.props.wine.wineList.filter((wine) => (wine._id === id))[0];
 				this.setState({
-					"_id": wine._id,
 					"evaluate": wine.evaluate,
 					"img_url": wine.img_url,
 					"name": wine.name,
@@ -109,7 +108,7 @@ class EditSingleMaterial extends React.Component {
 	
 
 	updateMain(data){
-		  console.log(data)
+
 		  data.imgs.map((img)=>{
               if(img.file.name){
 				this.setState({
@@ -121,7 +120,7 @@ class EditSingleMaterial extends React.Component {
 
 	}
 	updatePics(data){
-		  console.log(data)
+
 		  data.imgs.map((img)=>{
               if(img.file.name){
 				this.setState({
@@ -143,8 +142,12 @@ class EditSingleMaterial extends React.Component {
 		return (
 			<div className="Materialwrap">
 				<div className="singleWrap">
-					<label className="bTitle" htmlFor="">数据ID</label>
-					<input name="name"  className=" name_input" value={this.state._id} type="text" />
+					{ this.state._id ? 
+					<React.Fragment>
+						<label className="bTitle" htmlFor="">数据ID</label>
+						<input name="name"  className=" name_input" value={this.state._id} type="text" />
+					</React.Fragment>
+					: null }
 				</div>
 				<div className="singleWrap">
 				    <label className="bTitle" htmlFor="">名字（包括英文）</label>

@@ -1,21 +1,14 @@
 import React from 'react';
 import './ShopMore.less';
-
-
-
-import { Grid, NavBar, Icon, SearchBar, Button, WhiteSpace } from 'antd-mobile';
-
-import ShopSingle from '../../component/frontend/ShopSingle';
-import Cart from '../../component/frontend/Cart';
+import { Grid, NavBar, Icon,WhiteSpace } from 'antd-mobile';
+import ShopSingle from '../../../component/frontend/ShopSingle';
+import Cart from '../../../component/frontend/Cart';
 import { connect } from 'react-redux';
-
-import { getWineAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync } from '../../redux/wine.redux.js';
-import { getBannerAsync } from '../../redux/banner.redux.js';
+import { getWineAsync, changeWineInUserAsync } from '../../../redux/wine.redux.js';
 @connect(
 	state => state,
-	{ getWineAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync, getBannerAsync }
+	{ getWineAsync,  changeWineInUserAsync }
 )
-
 
 class Shop extends React.Component {
 	
@@ -25,14 +18,14 @@ class Shop extends React.Component {
 	}
 
     componentDidMount(){
-		this.props.getWineAsync();
-		this.props.getBannerAsync();
-	}
+		if (!this.props.wine.wineList[0]) {
+			this.props.getWineAsync();
+		}
 
+	}
 	goBack() {
 		this.props.history.goBack()
 	}
-
 	render () {
 
         let type = this.props.match.params.id;
@@ -46,8 +39,6 @@ class Shop extends React.Component {
 						<Cart></Cart>
 					}
 				>{this.props.match.params.id}</NavBar>
-
-
 				<WhiteSpace></WhiteSpace>
 				<WhiteSpace></WhiteSpace>
 				<WhiteSpace></WhiteSpace>

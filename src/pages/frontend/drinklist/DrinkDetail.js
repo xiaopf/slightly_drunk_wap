@@ -4,10 +4,10 @@ import {Link} from 'react-router-dom';
 import { NavBar, Icon , WhiteSpace} from 'antd-mobile';
 
 import { connect } from 'react-redux';
-import { getSingleDrinkAsync } from '../../../redux/drink.redux.js';
+import { getSingleDrinkAsync,cancelSearchSync} from '../../../redux/drink.redux.js';
 @connect(
    state => state,
-   { getSingleDrinkAsync}
+   { getSingleDrinkAsync ,cancelSearchSync}
 )
 
 class Detail extends React.Component {
@@ -28,6 +28,7 @@ class Detail extends React.Component {
 
 	goBack () {
 		this.props.history.goBack()
+		this.props.cancelSearchSync();
 	}
 
 	render () {

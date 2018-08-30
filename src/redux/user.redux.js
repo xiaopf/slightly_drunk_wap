@@ -11,7 +11,7 @@ const CHANGE_USER_ADDR = 'CHANGE_USER_ADDR';
 const SIGN_UP = 'SIGN_UP';
 const SIGN_IN = 'SIGN_IN';
 const SIGN_OUT = 'SIGN_OUT';
-
+const COUNT_WINE_TO_CART = 'COUNT_WINE_TO_CART';
 
 const ERROR_MSG = 'ERROR_MSG';
 
@@ -43,7 +43,8 @@ export function sign(state = initState,action){
 		case CHANGE_USER_IMAGE:
 			return { ...state, isSignIn: true, ...action.payload, redirectTo: redirectTo(action.payload.code) };
 			
-
+		case COUNT_WINE_TO_CART:
+			return { ...state, ...action.payload, redirectTo: redirectTo(action.payload.code) };
 		
 			
 
@@ -106,7 +107,15 @@ export function createChangeUserImage(payload) {
 	return { type: CHANGE_USER_IMAGE, payload }
 }
 
+export function createCountWineToCart(payload) {
+	return { type: COUNT_WINE_TO_CART, payload }
+}
+
 // /////////////////////////
+
+
+
+
 
 
 
@@ -199,6 +208,21 @@ export function changeUserImageAsync(image) {
 		})
 	)
 }
+
+
+export function countWineToCartAsync(cart) {
+
+	console.log(cart)
+
+	return dispatch => (
+		axios.post('/user/cart', cart).then((res) => {
+			if (res.status === 200) {
+				dispatch(createCountWineToCart(res.data))
+			}
+		})
+	)
+}
+
 
 // /////////////////////////
 

@@ -9,28 +9,21 @@ import { getWineAsync } from '../../redux/wine.redux.js';
 	{  getWineAsync }
 )
 
-
 class Cart extends React.Component {
 
 	componentDidMount(){
-		this.props.getWineAsync();
+		if (!this.props.wine.wineList[0]) {
+			this.props.getWineAsync();
+		}
 	}
 	render () {
 		var num = 0;
 
-		if (this.props.shop.userName) {
-
-			for (let i = 0; i < this.props.shop.cart.length; i++) {
-				num += this.props.shop.cart[i].num;
+		if (this.props.sign.userName && this.props.sign.cart[0]) {
+			for (let i = 0; i < this.props.sign.cart.length; i++) {
+				num += this.props.sign.cart[i].num;
 			}
-		}else if(this.props.wine.userName){
-			
-			for(let i = 0 ; i < this.props.wine.cart.length ; i++){
-				num += this.props.wine.cart[i].num;
-			}
-
 		}
-
 
 		return (
 

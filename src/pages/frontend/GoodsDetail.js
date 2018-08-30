@@ -7,7 +7,7 @@ import { getSingleWineAsync } from '../../redux/wine.redux.js';
 import { NavBar, Icon, WhiteSpace, Carousel, WingBlank} from 'antd-mobile';
 import Cart from '../../component/frontend/Cart';
 import { getUserInfoAsync } from '../../redux/user.redux.js';
-import { countWineToCartAsync } from '../../redux/shop.redux.js';
+import { countWineToCartAsync } from '../../redux/user.redux.js';
 
 
 @connect(

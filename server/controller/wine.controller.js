@@ -17,7 +17,7 @@ exports.getWineList = function (req, res, next) {
             }).exec(function (err, wine) {
                 if (err) { console.log(err); }
                 if (wine[0]) {
-                    res.json({ code: 6, msg: '拉取wine成功！', 'searchWine': wine, })
+                    res.json({ code: 5, msg: '拉取wine成功！', 'searchWine': wine, })
                 } else {
                     res.json({ code: 404, msg: '未找到结果...' })
                 }

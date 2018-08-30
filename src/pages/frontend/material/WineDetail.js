@@ -63,16 +63,6 @@ class WineDetail extends React.Component {
 					}
 				</React.Fragment>
 
-		// img_url
-		// name
-		// typeEn
-		// type
-		// price
-		// from
-		// stock
-		// capacity
-		// material
-		// proof
 
 
 	

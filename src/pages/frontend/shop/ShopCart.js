@@ -1,13 +1,13 @@
 import React from 'react';
 import './ShopCart.less';
-import CartItem from '../../component/frontend/CartItem';
+import CartItem from '../../../component/frontend/CartItem';
 
 import browserCookies from 'browser-cookies';
 import {WhiteSpace,NavBar, Icon} from 'antd-mobile';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { changeUserInfoAsync, getUserInfoAsync } from '../../redux/user.redux.js';
-import { getWineAsync } from '../../redux/wine.redux.js';
+import { changeUserInfoAsync, getUserInfoAsync } from '../../../redux/user.redux.js';
+import { getWineAsync } from '../../../redux/wine.redux.js';
 
 @connect(
 	state => state,
@@ -25,7 +25,9 @@ class ShopCart extends React.Component {
 	}
 
 	componentDidMount(){
-		this.props.getWineAsync();
+		if (!this.props.wine.wineList[0]) {
+			this.props.getWineAsync();
+		}
 	}
     
 	payFor() {
@@ -38,12 +40,8 @@ class ShopCart extends React.Component {
 
 	render () {
 
-
-
-
 		let _id = browserCookies.get('userId')
 		let that = this;
-		// let chooseAddr;
 
 		if (!this.props.sign.userName) {
 			(async function () {
@@ -56,16 +54,12 @@ class ShopCart extends React.Component {
 
 
 
-        let CartItems = this.props.wine.userName ? this.props.wine.cart.map(function(c,idx){
-			console.log(c)
-			let wineArr = that.props.wine.wineList.filter((wine)=>{
-			    console.log(wine._id)	
-				return wine._id === c._id
-			})
-			
-			console.log(wineArr)
+        let CartItems = this.props.sign.userName ? this.props.sign.cart.map(function(cartWine,idx){
+
+			let wineArr = that.props.wine.wineList.filter((wine)=> (wine._id === cartWine._id))
+
 			return (
-				<CartItem {...c} singlewine={wineArr[0]} key={c._id}></CartItem>
+				<CartItem {...cartWine} singlewine={wineArr[0]} key={cartWine._id}></CartItem>
 			)
 		}) : null;
 
@@ -78,9 +72,10 @@ class ShopCart extends React.Component {
 
 
 		var calculate = 0;
-		if(this.props.shop.userName ){
-			for (let i = 0; i < this.props.shop.cart.length; i++) {
-				calculate += this.props.shop.cart[i].num * this.props.shop.cart[i].price;
+		if(this.props.sign.userName ){
+			console.log(this.props.sign.cart)
+			for (let i = 0; i < this.props.sign.cart.length; i++) {
+				calculate += this.props.sign.cart[i].num * this.props.sign.cart[i].price;
 			}
 		} else{
 			for (let i = 0; i < this.props.wine.cart.length; i++) {

@@ -41,7 +41,8 @@ class EditSingleDrink extends React.Component {
 
 
 	componentDidMount(){
-
+		
+		
 		if(this.props.match.path !== '/addDrink'){
 
 			let that = this;

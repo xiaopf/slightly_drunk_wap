@@ -149,18 +149,13 @@ export function cancelSearchSync() {
 // /////////////////////////
 // 异步dispach
 export function getWineAsync() {
-    console.log(1)
 	return dispatch => (
 
 		axios.get('/wine/wineList').then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
-					console.log(res.data)
 					dispatch(createGetWine(res.data))
 				} 
-				// else {
-				// 	dispatch(createGetError(res.data))
-				// }
 			}
 		})
 	)
@@ -310,16 +305,6 @@ export function addItemAsync(item) {
 
 
 
-export function getOneAsync(_id) {
-	return dispatch => (
-		axios.get(`/detail/${_id}`).then((res) => {
-			if (res.status == 200) {
-				console.log(res.data);
-				createGetOne(res.data);
-			}
-		})
-	)
-}
 
 
 

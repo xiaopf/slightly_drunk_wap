@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
-import { countWineToCartAsync } from '../../redux/shop.redux.js';
+import { countWineToCartAsync } from '../../redux/user.redux.js';
 
 @connect(
 	state => state,
 	{ countWineToCartAsync }
 )
-
 
 
 class ShopSingle extends React.Component {
@@ -20,32 +19,20 @@ class ShopSingle extends React.Component {
 		}
 
 
-		componentDidMount () {
-
-		}
-
 		buy(_id,price,e){
 			let cart = this.props.sign.cart;
-
-			console.log(cart.some((c) => (c._id === _id)))
 
 			if(!cart.some((c)=>(c._id === _id))){
 
                 cart.push({_id,num:1,price})
 			}else{
 
+				for(let i = 0; i < cart.length ; i++){
+					if (cart[i]._id === _id){
+						cart[i].num++;
+					}
+				}
 
-				let index;
-                let target = cart.filter((c,idx)=>{
-					index = idx;
-					return c._id === _id; 
-				})
-
-				console.log(target)
-
-				target[0].num ++;
-
-				cart[index] = target[0];
 			}
 
 			this.props.countWineToCartAsync({ cart })
@@ -60,17 +47,8 @@ class ShopSingle extends React.Component {
 				<div className="ShopSingleWrap" key={
 					good._id
 				}>
-					< Link className="linkToDetail" to={
-						`/goods/${good._id}`
-					}>
-
-						< img className="wineImg"
-							src={
-
-								good.img_url[0]
-
-							}
-							alt="" />
+					< Link className="linkToDetail" to={ `/goods/${good._id}` }>
+						<img className="wineImg" src={ good.img_url[0] } alt=""/>
 						<p className="wineName">{good.name.split('（')[0]}</p>
 						<p className="wineName">{good.name.split('（')[1].slice(0, -1)}</p>
 					</Link >
