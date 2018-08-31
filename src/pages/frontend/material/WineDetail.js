@@ -19,7 +19,7 @@ class WineDetail extends React.Component {
 	}
 
 	componentDidMount(){
-		if (!this.props.wine.userName) {
+		if (!this.props.wine.wineList[0]) {
 			this.props.getWineAsync();
 		}
 	}

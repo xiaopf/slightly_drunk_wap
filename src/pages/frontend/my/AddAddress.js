@@ -7,7 +7,7 @@ import {createForm} from 'rc-form';
 
 import {district} from 'antd-mobile-demo-data';
 
-import { changeUserInfoAsync,getUserInfoAsync } from '../../redux/user.redux.js';
+import { changeUserInfoAsync, getUserInfoAsync } from '../../../redux/user.redux.js';
 import {connect} from 'react-redux';
 import browserCookies from 'browser-cookies';
 import { Redirect} from 'react-router-dom';
@@ -128,7 +128,7 @@ class AddAddress extends React.Component {
 					<InputItem value={this.state.receive_name} name='receive_name' onChange={ value => this.handleChange('receive_name', value)} placeholder="请输入收件人姓名">收件人</InputItem>
 					<InputItem value={this.state.receive_tel} name='receive_tel' onChange={ value => this.handleChange('receive_tel', value)} placeholder="请输入电话号码">电话</InputItem>
 
-					<Picker extra="请选择(可选)"
+					<Picker
 						data={district}
 						title="请选地区"
 						{...getFieldProps('district', {

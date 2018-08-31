@@ -4,7 +4,7 @@ import './MyInfo.less';
 import { WhiteSpace, Button, WingBlank, ImagePicker, Result, Icon, List, NavBar, Modal, Toast} from 'antd-mobile';
 
 import { connect } from 'react-redux';
-import { changeUserInfoAsync , changeUserImageAsync } from '../../redux/user.redux.js';
+import { changeUserInfoAsync, changeUserImageAsync } from '../../../redux/user.redux.js';
 
 import { Link, Redirect } from 'react-router-dom';
 

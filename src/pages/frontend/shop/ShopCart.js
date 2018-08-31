@@ -28,6 +28,12 @@ class ShopCart extends React.Component {
 		if (!this.props.wine.wineList[0]) {
 			this.props.getWineAsync();
 		}
+
+		
+		if (!this.props.sign.userName) {
+			let _id = browserCookies.get('userId')
+			this.props.getUserInfoAsync(_id);
+		}
 	}
     
 	payFor() {
@@ -38,22 +44,8 @@ class ShopCart extends React.Component {
 		this.props.history.goBack()
 	}
 
-	render () {
-
-		let _id = browserCookies.get('userId')
+	render () {	
 		let that = this;
-
-		if (!this.props.sign.userName) {
-			(async function () {
-				await that.props.getUserInfoAsync(_id);
-				// chooseAddr = this.props.sign.chooseAddr;
-			})();
-		}else{
-			// chooseAddr = this.props.sign.chooseAddr;
-		}
-
-
-
         let CartItems = this.props.sign.userName ? this.props.sign.cart.map(function(cartWine,idx){
 
 			let wineArr = that.props.wine.wineList.filter((wine)=> (wine._id === cartWine._id))
@@ -65,6 +57,7 @@ class ShopCart extends React.Component {
 
 
 		let addrArea = this.props.sign.address[0] ? 
+		
 		<div>
 				<p>{this.props.sign.address[this.props.sign.chooseAddr].receive_name + this.props.sign.address[this.props.sign.chooseAddr].receive_tel}</p>
 				<p><span>{this.props.sign.address[this.props.sign.chooseAddr].address}</span><span>{this.props.sign.address[this.props.sign.chooseAddr].detail_addr}</span></p>
@@ -72,16 +65,12 @@ class ShopCart extends React.Component {
 
 
 		var calculate = 0;
-		if(this.props.sign.userName ){
-			console.log(this.props.sign.cart)
+
+		if (this.props.sign.userName && this.props.sign.cart[0]) {
 			for (let i = 0; i < this.props.sign.cart.length; i++) {
 				calculate += this.props.sign.cart[i].num * this.props.sign.cart[i].price;
 			}
-		} else{
-			for (let i = 0; i < this.props.wine.cart.length; i++) {
-				calculate += this.props.wine.cart[i].num * this.props.wine.cart[i].price;
-			}
-		} 
+		}
 
 		
 
@@ -122,7 +111,7 @@ class ShopCart extends React.Component {
 					</div>
 
 					<div className="footerPay">
-						<p className="waitPay"><span>需要支付</span><span>{calculate}</span></p>
+						<p className="waitPay"><span className="span1">需要支付</span><span className="span2">{calculate}</span><span className="span1">元</span></p>
 						<p className="payActive" onClick={this.payFor}>确认支付</p>
 					</div>
 				</div>

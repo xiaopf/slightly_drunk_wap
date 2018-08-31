@@ -6,7 +6,7 @@ import { SwipeAction, List, WhiteSpace, InputItem, TextareaItem, Button, WingBla
 import { Link } from 'react-router-dom';
 import browserCookies from 'browser-cookies';
 import {connect} from 'react-redux';
-import { changeUserInfoAsync, getUserInfoAsync } from '../../redux/user.redux.js';
+import { changeUserInfoAsync, getUserInfoAsync } from '../../../redux/user.redux.js';
 
 @connect(
 	state => state,

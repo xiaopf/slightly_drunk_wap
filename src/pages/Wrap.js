@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './index.css';
+import './Wrap.css';
 
 import {Redirect} from 'react-router-dom'
 import { TabBar } from 'antd-mobile';
@@ -8,7 +8,7 @@ import { TabBar } from 'antd-mobile';
 import DrinkList from './frontend/drinklist/DrinkList';
 import Material from './frontend/material/Material';
 import Shop from './frontend/shop/Shop';
-import MyPage from './frontend/MyPage';
+import MyPage from './frontend/my/MyPage';
 
 import { connect } from 'react-redux';
 import { getUserInfoAsync } from '../redux/user.redux.js';
@@ -19,7 +19,7 @@ import { getUserInfoAsync } from '../redux/user.redux.js';
   { getUserInfoAsync }
 )
 
-class Index extends Component {
+class Wrap extends Component {
 
   constructor(props) {
     super(props);
@@ -159,4 +159,4 @@ class Index extends Component {
   }
 }
 
-export default Index;
+export default Wrap;

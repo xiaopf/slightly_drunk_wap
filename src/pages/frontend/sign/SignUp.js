@@ -5,12 +5,12 @@ import axios from 'axios';
 
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { createSignUpAsync } from  '../../redux/user.redux.js';
+import { signUpAsync } from  '../../../redux/user.redux.js';
 
 
 @connect(
    state => state,
-   {createSignUpAsync}
+   {signUpAsync}
 )
 
 
@@ -43,7 +43,7 @@ class SignIn extends React.Component {
 
     signUp () {
     	var {userName,password,comfirmPassword} = this.state;
-    	this.props.createSignUpAsync({userName,password,comfirmPassword,image:''})
+    	this.props.signUpAsync({userName,password,comfirmPassword,image:''})
     }
 
 

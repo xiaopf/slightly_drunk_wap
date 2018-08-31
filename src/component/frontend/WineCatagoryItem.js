@@ -23,12 +23,28 @@ class WineCatagoryItem extends React.Component {
 
 		let that = this;
 
-		(async function(){
-			await that.props.getUserInfoAsync();
-			let wine_id = that.props.dataItem._id;
+		if (!this.props.sign.userName) {
+			console.log(11);
+			(async function () {
+				await that.props.getUserInfoAsync();
+				let wine_id = that.props.dataItem._id;
+				let own = that.props.sign.own;
+
+				if (!own.find((item) => (item._id === wine_id))) {
+					that.setState({
+						toggle: false
+					})
+				} else {
+					that.setState({
+						toggle: true
+					})
+				}
+			})()
+		}else{
+			let wine_id = this.props.dataItem._id;
 			let own = that.props.sign.own;
 
-			if ( !own.find((item) => (item._id === wine_id))) {
+			if (!own.find((item) => (item._id === wine_id))) {
 				that.setState({
 					toggle: false
 				})
@@ -37,7 +53,9 @@ class WineCatagoryItem extends React.Component {
 					toggle: true
 				})
 			}
-		})()
+		}
+
+		
 		
 
 	

@@ -4,7 +4,8 @@ import { Grid, SearchBar,WhiteSpace} from 'antd-mobile';
 import { Link } from 'react-router-dom';
 import WineCatagoryItem from '../../../component/frontend/WineCatagoryItem';
 import { connect } from 'react-redux';
-import { getWineAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync } from '../../../redux/wine.redux.js';
+import { getWineAsync, searchWineAsync, cancelSearchSync } from '../../../redux/wine.redux.js';
+import { changeWineInUserAsync } from '../../../redux/user.redux.js';
 
 @connect(
 	state => state,

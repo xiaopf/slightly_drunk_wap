@@ -2,12 +2,12 @@ import React from 'react';
 import './GoodsDetail.less';
 import { Redirect } from 'react-router-dom';
 import {connect} from 'react-redux';
-import { getSingleWineAsync } from '../../redux/wine.redux.js';
+import { getSingleWineAsync } from '../../../redux/wine.redux.js';
 
 import { NavBar, Icon, WhiteSpace, Carousel, WingBlank} from 'antd-mobile';
-import Cart from '../../component/frontend/Cart';
-import { getUserInfoAsync } from '../../redux/user.redux.js';
-import { countWineToCartAsync } from '../../redux/user.redux.js';
+import Cart from '../../../component/frontend/Cart';
+import { getUserInfoAsync } from '../../../redux/user.redux.js';
+import { countWineToCartAsync } from '../../../redux/user.redux.js';
 
 
 @connect(
@@ -36,43 +36,26 @@ class Detail extends React.Component {
 
 	}
 
-	buy(_id, price, path,e) {
+	buy(_id, price, e) {
 		let cart = this.props.sign.cart;
-
-		console.log(cart.some((c) => (c._id === _id)))
 
 		if (!cart.some((c) => (c._id === _id))) {
 
 			cart.push({ _id, num: 1, price })
 		} else {
 
+			for (let i = 0; i < cart.length; i++) {
+				if (cart[i]._id === _id) {
+					cart[i].num++;
+				}
+			}
 
-			let index;
-			let target = cart.filter((c, idx) => {
-				index = idx;
-				return c._id === _id;
-			})
-
-			console.log(target)
-
-			target[0].num++;
-
-			cart[index] = target[0];
 		}
 
 		this.props.countWineToCartAsync({ cart })
-		
-		console.log(path)
-		if(path){
-			console.log(this.props)
-			this.setState({
-				path:path
-			})
-		}
 		e.stopPropagation();
 		e.preventDefault();
 	}
-
 
 
 

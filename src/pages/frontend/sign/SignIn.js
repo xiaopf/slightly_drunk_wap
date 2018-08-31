@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import './SignIn.less'
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { createSignInAsync } from '../../redux/user.redux.js';
+import { signInAsync } from '../../../redux/user.redux.js';
 
 @connect(
 	state => state,
-	{ createSignInAsync }
+	{ signInAsync }
 )
 
 class SignIn extends React.Component {
@@ -35,7 +35,7 @@ class SignIn extends React.Component {
 
     signIn () {
     	let { userName,password } = this.state;
-    	this.props.createSignInAsync({ userName,password })
+    	this.props.signInAsync({ userName,password })
     }
    
 	render () {

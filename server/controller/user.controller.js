@@ -63,14 +63,15 @@ exports.UpdateUserInfo = function (req, res, next) {
 
 exports.UpdateUserImage = function (req, res, next) {
 	var _id = req.cookies.userId;
-
+    console.log(_id)
 	var imgData = req.body.image;
+	console.log(imgData)
 	var base64Data = imgData.replace(/^data:image\/\w+;base64,/, "");
 	var dataBuffer = new Buffer(base64Data, 'base64');
-	var nPath = `/upload/images/head/${_id}.png`;
+	var nPath = `/public/upload/images/head/${_id}.png`;
 	var newPath = path.join(__dirname, '../../', nPath);
 
-
+    console.log(nPath)
 
 	fs.writeFile(newPath, dataBuffer, function (err) {
 		if (err) {console.log(err)};

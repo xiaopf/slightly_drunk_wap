@@ -9,12 +9,12 @@ import Cart from '../../../component/frontend/Cart';
 
 import { connect } from 'react-redux';
 
-import { getWineAsync, changeWineInUserAsync, searchWineAsync, cancelSearchSync } from '../../../redux/wine.redux.js';
+import { getWineAsync, searchWineAsync, cancelSearchSync } from '../../../redux/wine.redux.js';
 import { getBannerAsync } from '../../../redux/banner.redux.js';
 
 @connect(
 	state => state,
-	{ getWineAsync, searchWineAsync, cancelSearchSync, changeWineInUserAsync, getBannerAsync }
+	{ getWineAsync, searchWineAsync, cancelSearchSync, getBannerAsync }
 )
 
 class Shop extends React.Component {
@@ -34,7 +34,7 @@ class Shop extends React.Component {
 			this.props.getWineAsync();
 		}
 		
-		if (!this.props.banner.indexBannerList[0]) {
+		if (!this.props.banner.shopBannerList[0]) {
 			this.props.getBannerAsync();
 		}
 		
@@ -72,7 +72,7 @@ class Shop extends React.Component {
 
 
 		return ( 
-			<div className="shopPage">
+			<div className="shopWrap">
 				<div className="searchWrap">
 					<SearchBar
 						className="top_search"
@@ -103,8 +103,8 @@ class Shop extends React.Component {
 							afterChange={index => console.log('slide to', index)}
 							style={{ height: 'auto' }}
 						>
-							{this.props.banner.indexBannerList ?
-								this.props.banner.indexBannerList.map(val => (
+							{this.props.banner.shopBannerList ?
+								this.props.banner.shopBannerList.map(val => (
 									<a
 										key={val}
 										href={val.banner_link}

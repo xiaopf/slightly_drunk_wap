@@ -3,21 +3,15 @@ import axios from 'axios';
 import { WhiteSpace, Button, WingBlank, Modal, Result, Icon, List, NavBar} from 'antd-mobile';
 import { Link , Redirect} from 'react-router-dom';
 import browserCookies from 'browser-cookies';
-
-import { createSignOutAsync, getUserInfoAsync} from '../../redux/user.redux.js';
+import './MyPage.less';
+import { signOutAsync } from '../../../redux/user.redux.js';
 import { connect } from 'react-redux';
 
-
-
-import './MyPage.less';
-
 const Item = List.Item;
-
 @connect(
 	state => state,
-	{ createSignOutAsync, getUserInfoAsync}
+	{ signOutAsync}
 )
-
 
 class MyPage extends React.Component {
 	constructor(props){
@@ -25,27 +19,15 @@ class MyPage extends React.Component {
 
 		this.signOut = this.signOut.bind(this)
 		this.entering = this.entering.bind(this)
-
 	}
-
-	componentDidMount(){
-
-		let _id = browserCookies.get('userId')
-
-		if (_id && !this.props.sign.userName){
-			this.props.getUserInfoAsync(_id);
-		}
-	}
-
 
 	signOut(){
-
 		const alert = Modal.alert;
 		alert('注销', '确认退出登录？', [
 		  { text: '取消', onPress: () => console.log('取消') },
 		  { text: '确定', onPress: () => {
              browserCookies.erase('userId');
-             this.props.createSignOutAsync()
+             this.props.signOutAsync()
 		  } },
 		])
 	}
@@ -61,25 +43,17 @@ class MyPage extends React.Component {
 
 
 
-
-
-
-
-
-
-
 	render () {
 		const myImg = src => <img src={src} className="spe am-icon am-icon-lg" alt="" />;
 
 		const ResultExample = () => (
 				<Link to={'/myInfo'} className="result-example">
 					<Result
-						img={myImg(this.props.sign.image || this.props.drink.image)}
-						title={this.props.sign.userName || this.props.drink.userName}
+						img={myImg(this.props.sign.image)}
+						title={this.props.sign.userName }
 					/>
 				</Link>
 		);
-
 
 
 		return (
@@ -96,8 +70,6 @@ class MyPage extends React.Component {
 
                 <div className="myContent">
 
-
-				
 					<WhiteSpace></WhiteSpace>
 					<WhiteSpace></WhiteSpace>
 					<WhiteSpace></WhiteSpace>
@@ -109,7 +81,7 @@ class MyPage extends React.Component {
 
 					<List className="my-list">
 						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/invite'}>邀请好友</Link></Item>
-						<Item extra={'>'} className="fa fa-heart-o"><Link to={'myOrder'}>我的订单</Link></Item>
+						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/myOrder'}>我的订单</Link></Item>
 						<Item extra={'>'} className="fa fa-heart-o"><Link to={'/mySale'}>优惠礼包</Link></Item>
 					</List>
 

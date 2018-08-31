@@ -5,7 +5,7 @@ const GET_USER_INFO = 'GET_USER_INFO';
 const CHANGE_USER_INFO = 'CHANGE_USER_INFO';
 const CHANGE_USER_IMAGE = 'CHANGE_USER_IMAGE';
 const CHANGE_USER_ADDR = 'CHANGE_USER_ADDR';
-
+const CHANGE_WINE_IN_USER = 'CHANGE_WINE_IN_USER';
 
 
 const SIGN_UP = 'SIGN_UP';
@@ -45,7 +45,9 @@ export function sign(state = initState,action){
 			
 		case COUNT_WINE_TO_CART:
 			return { ...state, ...action.payload, redirectTo: redirectTo(action.payload.code) };
-		
+
+		case CHANGE_WINE_IN_USER:
+			return { ...state, ...action.payload }
 			
 
 	    case SIGN_UP: 
@@ -110,7 +112,9 @@ export function createChangeUserImage(payload) {
 export function createCountWineToCart(payload) {
 	return { type: COUNT_WINE_TO_CART, payload }
 }
-
+export function createChangeWineInUser(payload) {
+	return { type: CHANGE_WINE_IN_USER, payload }
+}
 // /////////////////////////
 
 
@@ -223,7 +227,61 @@ export function countWineToCartAsync(cart) {
 	)
 }
 
+export function signUpAsync(user) {
 
+	if (!user.userName || !user.password || !user.comfirmPassword) {
+		return createErrorMsg({ msg: '用户名和密码不可以为空！' });
+	} else if (user.password !== user.comfirmPassword) {
+		return createErrorMsg({ msg: '两次密码不相同！' });
+	}
+
+	return dispatch => (
+
+		axios.post('/user/signup', user).then((res) => {
+			if (res.status == 200) {
+				console.log(res.data);
+				dispatch(createSignUp(res.data))
+			}
+		})
+	)
+}
+
+
+
+export function signInAsync(user) {
+
+	if (!user.userName || !user.password) {
+		return createErrorMsg({ msg: '用户名和密码不可以为空！' });
+	}
+
+
+	return dispatch => (
+		axios.post('/user/signin', user).then((res) => {
+			if (res.status === 200) {
+				dispatch(createSignIn(res.data))
+			}
+		})
+	)
+}
+
+export function signOutAsync() {
+	return createSignOut()
+}
+
+
+export function changeWineInUserAsync(info) {
+	return dispatch => (
+
+		axios.post('/user/own', info).then((res) => {
+			if (res.status === 200) {
+				if (res.data.code === 6) {
+					console.log(res.data)
+					dispatch(createChangeWineInUser(res.data))
+				} 
+			}
+		})
+	)
+}
 // /////////////////////////
 
 
@@ -232,43 +290,3 @@ export function countWineToCartAsync(cart) {
 
 
 
-export function createSignUpAsync(user){
-
-	if(!user.userName || !user.password || !user.comfirmPassword){
-	   return createErrorMsg({msg:'用户名和密码不可以为空！'});
-	}else if(user.password !== user.comfirmPassword){
-	   return createErrorMsg({msg:'两次密码不相同！'}) ;
-	}
-
-	return dispatch => (
-
-       axios.post('/user/signup',user).then((res) => {
-             if(res.status == 200){
-             	console.log(res.data);
-           		dispatch(createSignUp(res.data))
-             }
-       })
-	)
-}
-
-
-
-export function createSignInAsync(user){
-
-	if(!user.userName || !user.password){
-	   return createErrorMsg({msg:'用户名和密码不可以为空！'});
-	}
-
-
-	return dispatch => (
-           axios.post('/user/signin',user).then((res) => {
-                 if(res.status == 200){
-               		dispatch(createSignIn(res.data))
-                 }
-           })
-	)
-}
-
-export function createSignOutAsync(){
-	return createSignOut()
-}

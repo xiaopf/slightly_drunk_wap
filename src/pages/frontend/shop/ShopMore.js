@@ -4,10 +4,10 @@ import { Grid, NavBar, Icon,WhiteSpace } from 'antd-mobile';
 import ShopSingle from '../../../component/frontend/ShopSingle';
 import Cart from '../../../component/frontend/Cart';
 import { connect } from 'react-redux';
-import { getWineAsync, changeWineInUserAsync } from '../../../redux/wine.redux.js';
+import { getWineAsync } from '../../../redux/wine.redux.js';
 @connect(
 	state => state,
-	{ getWineAsync,  changeWineInUserAsync }
+	{ getWineAsync }
 )
 
 class Shop extends React.Component {

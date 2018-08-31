@@ -19,19 +19,19 @@
 
     "shopBannerList":[{
 
-            "banner_image": "/upload/images/banner/20180822100707.png",
+            "banner_image": "/upload/images/banner/5b868453Neecca177.png",
             "banner_link": "http://localhost:3000/drink/11"
         },
 
         {
 
-            "banner_image": "/upload/images/banner/20180822100714.png",
+            "banner_image": "/upload/images/banner/5b87b2c4Nff33c54c.jpg",
             "banner_link": "http://localhost:3000/drink/11"
         },
 
         {
 
-            "banner_image": "/upload/images/banner/20180822100718.png",
+            "banner_image": "/upload/images/banner/5b3c6635N6d1ed98b.jpg",
             "banner_link": "http://localhost:3000/drink/11"
         }
     ]}

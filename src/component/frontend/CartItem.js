@@ -51,20 +51,20 @@ class CartItem extends React.Component {
 
 		render () {
 
-			let { _id, num, singlewine } = this.props;
+
 			return (
 
 				
 				<WingBlank className="cartItemWrap">
-					<Link className="wine_img" to={''}><img src={singlewine.img_url[0]} alt='tp'/></Link>
+					<Link className="wine_img" to={''}><img src={this.props.singlewine.img_url[0]} alt='tp'/></Link>
 					<div className="text_wrap">
-						<p>{singlewine.name}</p>
-						<p>{`单价：￥${singlewine.price}`}</p>
+						<p>{this.props.singlewine.name}</p>
+						<p>{`单价：￥${this.props.singlewine.price}`}</p>
 					</div>
 					<div className="countBtn">
-						<p className="myButton" onClick={() => this.countPlus(singlewine._id)}>+</p>
-						<p>{num}</p>
-						<p className="myButton" onClick={() => this.countReduce(singlewine._id)}>-</p>
+						<p className="myButton" onClick={() => this.countPlus(this.props.singlewine._id)}>+</p>
+						<p>{this.props.num}</p>
+						<p className="myButton" onClick={() => this.countReduce(this.props.singlewine._id)}>-</p>
 					</div>
 				</WingBlank>
 

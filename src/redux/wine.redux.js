@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 const GET_WINE = 'GET_WINE';
-const CHANGE_WINE_IN_USER = 'CHANGE_WINE_IN_USER';
+
 
 
 const SEARCH_WINE = 'SEARCH_WINE';
@@ -56,8 +56,7 @@ export function wine(state = initState, action) {
 		case GET_ERROR:
 			return { ...state, ...action.payload, redirectTo: redirectTo(action.payload.code) }
 
-		case CHANGE_WINE_IN_USER:
-			return { ...state, ...action.payload }
+
 			
 
 
@@ -103,9 +102,7 @@ export function createGetSingleWine(payload) {
 }
 
 
-export function createChangeWineInUser(payload) {
-	return { type: CHANGE_WINE_IN_USER, payload }
-}
+
 
 
 
@@ -194,21 +191,7 @@ export function getSingleWineAsync(_id) {
 	)
 }
 
-export function changeWineInUserAsync(info) {
-	return dispatch => (
 
-		axios.post('/user/own',info).then((res) => {
-			if (res.status === 200) {
-				if (res.data.code === 6) {
-					console.log(res.data)
-					dispatch(createChangeWineInUser(res.data))
-				} else {
-					dispatch(createGetError(res.data))
-				}
-			}
-		})
-	)
-}
 
 export function updateItemAsync(state) {
 
