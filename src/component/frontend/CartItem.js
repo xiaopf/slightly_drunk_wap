@@ -37,7 +37,7 @@ class CartItem extends React.Component {
 			for (let i = 0; i < cart.length; i++) {
 				if (cart[i]._id === _id) {
 					cart[i].num--;
-					if (cart[i].num){
+					if (cart[i].num === 0 ){
 						cart.splice(i, 1)
 					}
 				}
