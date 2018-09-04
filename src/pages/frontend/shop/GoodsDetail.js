@@ -36,7 +36,7 @@ class Detail extends React.Component {
 
 	}
 
-	buy(_id, price, e) {
+	buy(_id, price) {
 		let cart = this.props.sign.cart;
 
 		if (!cart.some((c) => (c._id === _id))) {
@@ -53,8 +53,6 @@ class Detail extends React.Component {
 		}
 
 		this.props.countWineToCartAsync({ cart })
-		e.stopPropagation();
-		e.preventDefault();
 	}
 
 
@@ -134,7 +132,7 @@ class Detail extends React.Component {
 
 
 					<div className="footerBuy">
-					<p className="addToCart fa fa-shopping-cart" onClick={e => this.buy(this.props.wine.singleWine._id, this.props.wine.singleWine.price, '',e)} ></p>
+					<p className="addToCart fa fa-shopping-cart" onClick={e => this.buy(this.props.wine.singleWine._id, this.props.wine.singleWine.price, '')} ></p>
 						<p>加入购物车</p>
 					<p className="buyActive" onClick={e => this.buy(this.props.wine.singleWine._id, this.props.wine.singleWine.price,'/shopCart', e)}>立即购买</p>
 					</div>

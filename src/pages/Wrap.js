@@ -58,7 +58,7 @@ class Wrap extends Component {
            {/* { this.props.resData.redirectTo ? <Redirect to={ this.props.resData.redirectTo }></Redirect> : null } */}
            <TabBar
              unselectedTintColor="#949494"
-             tintColor="#33A3F4"
+             tintColor="#e94f4f"
              barTintColor="white"
            >
              <TabBar.Item
@@ -67,13 +67,13 @@ class Wrap extends Component {
                icon={<div style={{
                  width: '22px',
                  height: '22px',
-                 background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
+                 background: 'url(/icon/list.png) center center /  21px 21px no-repeat' }}
                />
                }
                selectedIcon={<div style={{
                  width: '22px',
                  height: '22px',
-                 background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
+                 background: 'url(/icon/list_active.png) center center /  21px 21px no-repeat' }}
                />
                }
                selected={this.state.selectedTab === 'first'}
@@ -91,14 +91,14 @@ class Wrap extends Component {
                  <div style={{
                    width: '22px',
                    height: '22px',
-                   background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
+                   background: 'url(/icon/material.png) center center /  21px 21px no-repeat' }}
                  />
                }
                selectedIcon={
                  <div style={{
                    width: '22px',
                    height: '22px',
-                   background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
+                   background: 'url(/icon/material_active.png) center center /  21px 21px no-repeat' }}
                  />
                }
                title="清单"
@@ -119,14 +119,14 @@ class Wrap extends Component {
                  <div style={{
                    width: '22px',
                    height: '22px',
-                   background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
+                   background: 'url(/icon/shop.png) center center /  21px 21px no-repeat' }}
                  />
                }
                selectedIcon={
                  <div style={{
                    width: '22px',
                    height: '22px',
-                   background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
+                   background: 'url(/icon/shop_active.png) center center /  21px 21px no-repeat' }}
                  />
                }
                title="商城"
@@ -140,8 +140,22 @@ class Wrap extends Component {
 
              </TabBar.Item>
              <TabBar.Item
-               icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-               selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
+                icon={
+                  <div style={{
+                    width: '22px',
+                    height: '22px',
+                    background: 'url(/icon/mine.png) center center /  21px 21px no-repeat'
+                  }}
+                  />
+                }
+                selectedIcon={
+                  <div style={{
+                    width: '22px',
+                    height: '22px',
+                    background: 'url(/icon/mine_active.png) center center /  21px 21px no-repeat'
+                  }}
+                  />
+                }
                title="我的"
                key="我的"
                selected={this.state.selectedTab === 'fourth'}
