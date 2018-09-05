@@ -3,6 +3,9 @@ import './Material.less';
 import { Grid, SearchBar,WhiteSpace} from 'antd-mobile';
 import { Link } from 'react-router-dom';
 import WineCatagoryItem from '../../../component/frontend/WineCatagoryItem';
+import { Redirect } from 'react-router-dom'
+import browserCookies from 'browser-cookies';
+
 import { connect } from 'react-redux';
 import { getWineAsync, searchWineAsync, cancelSearchSync } from '../../../redux/wine.redux.js';
 import { changeWineInUserAsync } from '../../../redux/user.redux.js';
@@ -95,7 +98,7 @@ class Material extends React.Component {
 
 		return (
 			<div className="materialWrap">
-
+				{ !browserCookies.get('userId') ? <Redirect to="/signin" ></Redirect> : null }
 				<WhiteSpace></WhiteSpace>
 				<WhiteSpace></WhiteSpace>
 				<WhiteSpace></WhiteSpace>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 import {
   BrowserRouter,
   Route,
@@ -38,48 +37,37 @@ class App extends Component {
 
     return (
       <BrowserRouter>
+
         <Switch>
+
+          
 
           <Route exact path='/signin' component={ SignIn }></Route>
           <Route path='/signup' component={ SignUp }></Route>
-
-
-          <Route  path='/index' component={ Wrap }></Route>
+          
+          <Route path='/index' component={Wrap}></Route>
+        
           <Route  path='/drink/:id' component={ DrinkDetail }></Route>
 
-          
-
-
-
-
-
-          <Route path='/goods/:id' component={ GoodsDetail }></Route>
-
           <Route path='/wine/catagory/:id' component={WineCatagory}></Route>
-          
-          <Route path='/wines/:id' component={ WineDetail }></Route>
+          <Route path='/wines/:id' component={WineDetail}></Route>
 
-          {/* <Route path='/shop/ShopCart' component={ShopCart}></Route> */}
-
-
-          <Route path='/edit' component={ BackPage }></Route>
           <Route path='/shopCart' component={ShopCart}></Route>
-          <Route path ='/shopMore/:id' component = {ShopMore}></Route>
-
+          <Route path='/goods/:id' component={ GoodsDetail }></Route>
+          <Route path='/shopMore/:id' component={ShopMore}></Route>
+ 
           <Route path='/myInfo' component={MyInfo}></Route>
           <Route path='/myMaterial' component={MyComponent}></Route>
           <Route path='/myLike' component={MyComponent}></Route>
           <Route path='/address/myAddress' component={MyAddress}></Route>
           <Route path='/myaddress/addAddress/:id' component={AddAddress}></Route>
           <Route path='/myaddress/addAddress' component={AddAddress}></Route>
-
           <Route path='/myOrder' component={ComingSoon}></Route>
           <Route path='/invite' component={ComingSoon}></Route>
           <Route path='/mySale' component={ComingSoon}></Route>
           <Route path='/myProduction' component={ComingSoon}></Route>
 
-
-
+          <Route path='/edit' component={BackPage}></Route>
 
         </Switch>
 

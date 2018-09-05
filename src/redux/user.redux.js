@@ -26,17 +26,25 @@ var initState = {
 	chooseAddr:0,
 	order:[],
 	msg:'',
+	warn:'',
 	code:0
 }
 
 
 export function sign(state = initState,action){
 	switch (action.type){
+		case SIGN_IN:
+			return { ...state, ...action.payload, ...redirectTo(action.payload.code)};
+		case SIGN_OUT:
+			return { ...initState, redirectTo: '/signIn' };
+		case SIGN_UP:
+			return { ...state, ...action.payload , ...redirectTo(action.payload.code)};
+
+
 
 		case GET_USER_INFO:
 			return { ...state, isSignIn: true, ...action.payload, redirectTo: redirectTo(action.payload.code) };
-		case SIGN_OUT:
-			return { ...state, isSignIn: false, redirectTo: '/signIn' };
+
 		case CHANGE_USER_INFO:
 			return { ...state, isSignIn: true, ...action.payload, redirectTo: redirectTo(action.payload.code) };
 
@@ -50,12 +58,8 @@ export function sign(state = initState,action){
 			return { ...state, ...action.payload }
 			
 
-	    case SIGN_UP: 
-			return { ...state, isSignIn: true, ...action.payload.data, 'code': action.payload.code, 'msg': action.payload.msg, redirectTo: '/index'};
+	    
 
-        case SIGN_IN: 
-			return {
-				...state, isSignIn: true, ...action.payload.data, 'code': action.payload.code, 'msg': action.payload.msg, redirectTo: redirectTo(action.payload.code)};
 
 	    case ERROR_MSG: 
 			return {...state,isSignIn:false,...action.payload};
@@ -74,23 +78,25 @@ export function sign(state = initState,action){
 
 function redirectTo(code){
 	switch (code){
-		case 0:
-			return '/signin';
-		break;
-		case 1:
-			return '/signin';
-		break;
+		// 登陆密码错误，用户不存在；注册用户名已存在不跳转
+		case 401:
+			return { redirectTo: "", isSignIn: false};
+		// 注册，登陆成功，跳转/index
+		case 201:
+			return { redirectTo: '/index', isSignIn: true};
+		
 		case 6:
 			return '';
-		break;
-
+		
+		case 808:
+			return '/index';
 		case 7:
 			return '/address/myAddress';
-		break;
+		
 
 		default :
 			return '';
-		break;
+		
 	}
 }
 
@@ -138,13 +144,67 @@ export function createSignIn(payload){
     return {type:SIGN_IN,payload}
 }
 
-export function createSignOut(){
-    return {type:SIGN_OUT}
-}
+
 
 export function createErrorMsg(payload){
     return {type:ERROR_MSG,payload}
 }
+
+
+
+export function signInAsync(user) {
+
+	if (!user.userName || !user.password) {
+		return createErrorMsg({ warn: '用户名和密码不可以为空！' });
+	}
+
+	return dispatch => (
+		axios.post('/user/signin', user).then((res) => {
+			if (res.status === 200) {
+				dispatch(createSignIn(res.data))
+			}
+		})
+	)
+}
+
+export function signOut() {
+	return { type: SIGN_OUT }
+}
+
+export function signUpAsync(user) {
+
+	if (!user.userName || !user.password || !user.comfirmPassword) {
+		return createErrorMsg({ warn: '用户名和密码不可以为空！' });
+	} else if (user.password !== user.comfirmPassword) {
+		return createErrorMsg({ warn: '两次密码不相同！' });
+	}
+
+	return dispatch => (
+
+		axios.post('/user/signup', user).then((res) => {
+			if (res.status === 200) {
+				console.log(res.data);
+				dispatch(createSignUp(res.data))
+			}
+		})
+	)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // /////////////////////////
 // 异步dispach
@@ -227,46 +287,8 @@ export function countWineToCartAsync(cart) {
 	)
 }
 
-export function signUpAsync(user) {
-
-	if (!user.userName || !user.password || !user.comfirmPassword) {
-		return createErrorMsg({ msg: '用户名和密码不可以为空！' });
-	} else if (user.password !== user.comfirmPassword) {
-		return createErrorMsg({ msg: '两次密码不相同！' });
-	}
-
-	return dispatch => (
-
-		axios.post('/user/signup', user).then((res) => {
-			if (res.status == 200) {
-				console.log(res.data);
-				dispatch(createSignUp(res.data))
-			}
-		})
-	)
-}
 
 
-
-export function signInAsync(user) {
-
-	if (!user.userName || !user.password) {
-		return createErrorMsg({ msg: '用户名和密码不可以为空！' });
-	}
-
-
-	return dispatch => (
-		axios.post('/user/signin', user).then((res) => {
-			if (res.status === 200) {
-				dispatch(createSignIn(res.data))
-			}
-		})
-	)
-}
-
-export function signOutAsync() {
-	return createSignOut()
-}
 
 
 export function changeWineInUserAsync(info) {

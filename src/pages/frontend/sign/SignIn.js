@@ -2,6 +2,7 @@ import React from 'react';
 import {List, InputItem, WhiteSpace, WingBlank,Button } from 'antd-mobile';
 import { Link } from 'react-router-dom';
 import './SignIn.less'
+import browserCookies from 'browser-cookies';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signInAsync } from '../../../redux/user.redux.js';
@@ -41,14 +42,15 @@ class SignIn extends React.Component {
 	render () {
 		return (
             <div>
-            { this.props.sign.redirectTo ? <Redirect to={ this.props.sign.redirectTo }></Redirect> : null }
+			{this.props.sign.isSignIn ? <Redirect to={ this.props.sign.redirectTo }></Redirect> : null }
+			{browserCookies.get('userId')  ? <Redirect to="/index" ></Redirect> : null}
             <WhiteSpace></WhiteSpace>
             <WhiteSpace></WhiteSpace>
             <WhiteSpace></WhiteSpace>
             <WhiteSpace></WhiteSpace>
 	            <p className="sign_in_title">登陆账号</p>
 	            
-	            { this.props.sign.msg ? <div className="signUp_msg am-wingblank am-wingblank-lg">{this.props.sign.msg }</div> : null }
+	            { this.props.sign.warn ? <div className="signUp_msg am-wingblank am-wingblank-lg">{this.props.sign.warn }</div> : null }
 
 	            <WhiteSpace></WhiteSpace>
 	            <WingBlank>

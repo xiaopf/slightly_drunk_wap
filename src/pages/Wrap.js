@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './Wrap.css';
 
-import {Redirect} from 'react-router-dom'
+
 import { TabBar } from 'antd-mobile';
+
 
 
 import DrinkList from './frontend/drinklist/DrinkList';
@@ -56,6 +57,7 @@ class Wrap extends Component {
  
        <div style={{ position: 'fixed', height: '100%', width: '100%', bottom: 0 }}>
            {/* { this.props.resData.redirectTo ? <Redirect to={ this.props.resData.redirectTo }></Redirect> : null } */}
+            
            <TabBar
              unselectedTintColor="#949494"
              tintColor="#e94f4f"

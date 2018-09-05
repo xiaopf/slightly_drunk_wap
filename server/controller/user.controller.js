@@ -12,11 +12,12 @@ exports.getUserInfo = function (req,res,next){
 		userModel.findOne({ _id }).populate('own').exec(function (err, user) {
 			if (err) { console.log(err); }
 			user = user.toObject();//修改mongoose返回值问题
-
+			delete user.password;
+			delete user.__v;
 			if (user.userName) {
-				res.json({ code: 6, msg: '拉取userinfo成功！', ...user, password: '', __v: '' })
+				res.json({ code: 6, msg: '拉取userinfo成功！', ...user })
 			} else {
-				res.json({ code: 3, msg: '服务器出现故障...', password: '', __v: '' })
+				res.json({ code: 3, msg: '服务器出现故障...' })
 			}
 
 		})
@@ -45,10 +46,10 @@ exports.UpdateUserInfo = function (req, res, next) {
 			if (err) { console.log(err); }
 			
 			if(result.ok){
-				userModel.findOne({ _id }, function (err, user) {
+				userModel.findOne({ _id }, { password: 0, __v: 0}, function (err, user) {
 					if (err) { console.log(err); }
 					user = user.toObject();//修改mongoose返回值问题
-					res.json({ code: 6, msg: 'info更新完成', ...user, password: '', __v: '' })
+					res.json({ code: 6, msg: 'info更新完成', ...user })
 				})
 			}
 
@@ -119,10 +120,10 @@ exports.UpdateUserAddr = function (req, res, next) {
 			if (err) { console.log(err); }
 
 			if (result.ok) {
-				userModel.findOne({ _id }, function (err, user) {
+				userModel.findOne({ _id }, { password: 0, __v: 0 },function (err, user) {
 					if (err) { console.log(err); }
 					user = user.toObject();//修改mongoose返回值问题
-					res.json({ code: 7, msg: 'addr更新完成', ...user, password: '', __v: '' })
+					res.json({ code: 7, msg: 'addr更新完成', ...user })
 				})
 			}
 
@@ -145,10 +146,10 @@ exports.UpdateUserOwn = function (req, res, next) {
 			if (err) { console.log(err); }
 
 			if (result.ok) {
-				userModel.findOne({ _id }, function (err, user) {
+				userModel.findOne({ _id },{ password: 0, __v: 0 }, function (err, user) {
 					if (err) { console.log(err); }
 					user = user.toObject();//修改mongoose返回值问题
-					res.json({ code: 6, msg: 'own更新完成', ...user, password: '', __v: '' })
+					res.json({ code: 6, msg: 'own更新完成', ...user })
 				})
 			}
 
@@ -173,10 +174,10 @@ exports.UpdateUserCart = function (req, res, next) {
 			if (err) { console.log(err); }
 
 			if (result.ok) {
-				userModel.findOne({ _id }, function (err, user) {
+				userModel.findOne({ _id },{ password: 0, __v: 0 }, function (err, user) {
 					if (err) { console.log(err); }
 					user = user.toObject();//修改mongoose返回值问题
-					res.json({ code: 6, msg: 'cart更新完成', ...user, password: '', __v: '' })
+					res.json({ code: 6, msg: 'cart更新完成', ...user })
 				})
 			}
 
@@ -220,56 +221,56 @@ exports.UpdateUserCart = function (req, res, next) {
 
 exports.signUp = function(req,res,next){
 
-	var {userName,password,image} = req.body;
-
+	let {userName,password,image} = req.body;
 	password = addSalt(password);//哈希加盐
+	image = image === '' ? 'upload/images/head/no_login.jpg' : image;
 
-	image = image === '' ? 'http://misc.360buyimg.com/mtd/pc/common/img/no_login.jpg' : image;
-
-    userModel.findOne({userName},function(err,data){
+    userModel.findOne({userName},function(err,user){
     	if(err){console.log(err);}
 
-    	if(!data){
-    		var user = new userModel({userName,password,image});
-    		user.save(function(err,data){
+    	if(!user){
+    		let user = new userModel({userName,password,image});
+    		user.save(function(err,user){
 		    	if(err){console.log(err);}
-                res.cookie('userId',data._id);
-		    	res.json({ code:6, msg:'恭喜您注册成功！', data})
+				res.cookie('userId', user._id, { maxAge: 90000000});
+				user = user.toObject();//修改mongoose返回值问题
+				delete user.password;
+				delete user.__v;
+		    	res.json({ code:201, warn:'恭喜您注册成功！', ...user})
     		});
     	}else{
-    		res.json({ code:0, msg:'该用户名已被注册，请更改！'})
+    		res.json({ code:401, warn:'该用户名已被注册，请更改！'})
     	}
     	
     })
 }
 
 
+exports.signIn = function(req,res){
 
-function addSalt(password){
-	var salt = 'xiaopfaddsomesalt！'
-	return utility.md5(utility.md5(password + salt))
-}
-
-
-exports.signIn = function(req,res,next){
-
-	var {userName,password} = req.body;
+	let {userName,password} = req.body;
     password = addSalt(password);//哈希加盐
 
-
-    userModel.findOne({userName},function(err,data){
+    userModel.findOne({userName},function(err,user){
     	if(err){console.log(err);}
 
-    	if(!data){
-            res.json({ code:1, msg:'用户不存在！'})
-    	}else if(data.password === password){
-            res.cookie('userId',data._id);
-            data.password = "";
-            console.log(data)
-    		res.json({ code:6, msg:'', data})
+    	if(!user){
+            res.json({ code:401, warn:'用户不存在！'})
+    	}else if(user.password === password){
+			res.cookie('userId', user._id, { maxAge: 90000000});
+			user = user.toObject();//修改mongoose返回值问题
+			delete user.password;
+			delete user.__v;
+    		res.json({ code:201, msg:"登陆成功!", ...user})
     	}else{
-            res.json({ code:1, msg:'密码错误！'})
+            res.json({ code:401, warn:'密码错误！'})
         }
     	
     })
+}
+
+
+function addSalt(password) {
+	var salt = 'xiaopfaddsomesalt！'
+	return utility.md5(utility.md5(password + salt))
 }

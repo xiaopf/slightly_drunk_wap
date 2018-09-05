@@ -2,15 +2,17 @@ import React from 'react';
 import axios from 'axios';
 import { WhiteSpace, Button, WingBlank, Modal, Result, Icon, List, NavBar} from 'antd-mobile';
 import { Link , Redirect} from 'react-router-dom';
+
 import browserCookies from 'browser-cookies';
+ 
 import './MyPage.less';
-import { signOutAsync } from '../../../redux/user.redux.js';
+import { signOut } from '../../../redux/user.redux.js';
 import { connect } from 'react-redux';
 
 const Item = List.Item;
 @connect(
 	state => state,
-	{ signOutAsync}
+	{ signOut}
 )
 
 class MyPage extends React.Component {
@@ -27,7 +29,7 @@ class MyPage extends React.Component {
 		  { text: '取消', onPress: () => console.log('取消') },
 		  { text: '确定', onPress: () => {
              browserCookies.erase('userId');
-             this.props.signOutAsync()
+             this.props.signOut()
 		  } },
 		])
 	}
@@ -59,8 +61,8 @@ class MyPage extends React.Component {
 		return (
 			<div className="myPageWrap">
 
-				{/* {!this.props.sign.isSignIn ? <Redirect to={this.props.sign.redirectTo}></Redirect> : null} */}
-
+				{!this.props.sign.isSignIn ? <Redirect to={this.props.sign.redirectTo}></Redirect> : null}
+				{ !browserCookies.get('userId') ? <Redirect to="/signin" ></Redirect> : null }
 				<NavBar
 				  mode="light"
 				  rightContent={[
