@@ -15,7 +15,6 @@ import EditSingleMaterial from '../../component/backend/EditSingleMaterial';
 import {
   BrowserRouter,
   Route,
-  Link,
   Switch,
   NavLink
 } from 'react-router-dom'
@@ -23,14 +22,6 @@ import {
 
 
 class BackPage extends React.Component {
-	constructor(props){
-		super(props);
-
-	}
-
-
-
-
 
 	render () {
 		return ( 

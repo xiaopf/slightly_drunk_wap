@@ -2,8 +2,8 @@ import React from 'react';
 import './ComingSoon.less';
 
 
-import { NavBar, Icon, WhiteSpace } from 'antd-mobile';
-import { Link } from 'react-router-dom';
+import { NavBar, Icon} from 'antd-mobile';
+
 
 
 class ComingSoon extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react';
 import './WineCatagory.less';
 import { Grid, NavBar, Icon,WhiteSpace} from 'antd-mobile';
-import { Link , Redirect} from 'react-router-dom';
+
 import { connect } from 'react-redux';
 import WineCatagoryItem from '../../../component/frontend/WineCatagoryItem';
 import { changeWineInUserAsync, getUserInfoAsync} from '../../../redux/user.redux.js';
@@ -37,8 +37,7 @@ class WineCatagory extends React.Component {
 
 		let own = this.props.sign.own;
 		
-		console.log(own)
-		console.log(toggle)
+
 
         if(!toggle){
 			own.push(_id);

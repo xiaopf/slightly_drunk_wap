@@ -108,12 +108,12 @@ exports.updateDrink = function(req,res,next){
 
 
     let drink = req.body;
-    console.log(drink)
+    
     let { _id } = req.body;
     
     delete drink._id;
 
-    console.log(drink);
+    
     if(_id){
 
    	    drinkModel.update({_id},drink,function(err,data){

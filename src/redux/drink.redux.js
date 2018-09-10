@@ -111,7 +111,7 @@ export function getDrinkAsync() {
 		axios.get('/api/drink').then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
-					console.log(res.data)
+					
 					dispatch(createGetDrink(res.data))
 				} else {
 					dispatch(createGetError(res.data))
@@ -143,7 +143,7 @@ export function getSingleDrinkAsync(_id) {
 		axios.get(`/api/drink?d_id=${_id}`).then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
-					console.log(res.data)
+					
 					dispatch(createGetSingleDrink(res.data))
 				} else {
 					dispatch(createGetError(res.data))
@@ -159,7 +159,7 @@ export function deleteItemAsync(_id) {
 			data: {_id}
 			}).then((res) => {
 			if (res.status === 200) {
-				console.log(res.data);
+				;
 				dispatch(createDeleteItem(res.data))
 			}
 		})
@@ -170,7 +170,7 @@ export function updateItemAsync(item) {
 	return dispatch => (
 		axios.post('/edit/updateItem', item).then((res) => {
 			if (res.status === 200) {
-				console.log(res.data);
+				;
 				dispatch(createUpdateItem(res.data))
 			}
 		})
@@ -180,11 +180,11 @@ export function updateItemAsync(item) {
 
 
 export function addItemAsync(item) {
-	console.log(item);
+
 	return dispatch => (
 		axios.post('/edit/addItem', item).then((res) => {
 			if (res.status === 200) {
-				console.log(res.data);
+				;
 				dispatch(createAddItem(res.data))
 			}
 		})
@@ -197,15 +197,15 @@ function redirectTo(code) {
 	switch (code) {
 		case 0:
 			return '/signin';
-			break;
+			
 		case 1:
 			return '';
-			break;
+			
 		case 6:
 			return '';
-			break;
+			
 		default:
 			return '';
-			break;
+			
 	}
 }

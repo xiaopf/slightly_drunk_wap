@@ -3,6 +3,7 @@ import { List } from 'antd-mobile';
 import { Link } from 'react-router-dom';
 import LinesEllipsis from 'react-lines-ellipsis';
 import './ItemList.less';
+import QueueAnim from 'rc-queue-anim';
 const Item = List.Item;
 
 class ItemList extends React.Component {
@@ -35,9 +36,9 @@ class ItemList extends React.Component {
 		})
 
 		return (
-      <React.Fragment>
+      <QueueAnim delay={100}>
         {lists}
-      </React.Fragment>
+      </QueueAnim>
 		)
 	}
 }

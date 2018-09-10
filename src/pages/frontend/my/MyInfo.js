@@ -1,12 +1,12 @@
 import React from 'react';
 import './MyInfo.less';
 
-import { WhiteSpace, Button, WingBlank, ImagePicker, Result, Icon, List, NavBar, Modal, Toast} from 'antd-mobile';
+import { WhiteSpace, Button, ImagePicker, Icon, List, NavBar, Modal, Toast} from 'antd-mobile';
 
 import { connect } from 'react-redux';
 import { changeUserInfoAsync, changeUserImageAsync } from '../../../redux/user.redux.js';
 
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const Item = List.Item;
@@ -52,7 +52,7 @@ class AddAddress extends React.Component {
 	onChange = (files) => {
 		
 		files.shift();
-		console.log(files)
+
 		this.setState({
 			files,
 		});

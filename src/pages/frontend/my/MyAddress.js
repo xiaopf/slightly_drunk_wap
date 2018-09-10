@@ -1,7 +1,7 @@
 import React from 'react';
 import './MyAddress.less';
 
-import { SwipeAction, List, WhiteSpace, InputItem, TextareaItem, Button, WingBlank, NavBar, Icon } from 'antd-mobile';
+import { SwipeAction, WhiteSpace, WingBlank, NavBar, Icon } from 'antd-mobile';
 
 import { Link } from 'react-router-dom';
 import browserCookies from 'browser-cookies';
@@ -28,9 +28,7 @@ class MyAddress extends React.Component {
 		if (!this.props.sign.userName) {
 
 			(async function () {
-				await that.props.getUserInfoAsync(_id);
-				console.log(that.props)
-				
+				await that.props.getUserInfoAsync(_id);			
 			})();
 		}
 	}
@@ -40,9 +38,6 @@ class MyAddress extends React.Component {
 	}
 
 	deleteAddr (index){
-		console.log(index)
-
-
 
 		let _id = browserCookies.get('userId')
 		let that = this;
@@ -55,7 +50,6 @@ class MyAddress extends React.Component {
 
 			(async function () {
 				await that.props.getUserInfoAsync(_id);
-				console.log(that.props)
 				let address = that.props.sign.address;
 				address.splice(index, 1);
 				that.props.changeUserInfoAsync(address, 'addr');

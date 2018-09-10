@@ -1,10 +1,12 @@
 import React from 'react';
 import './DrinkDetail.less';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import { NavBar, Icon , WhiteSpace} from 'antd-mobile';
+// import createSelector from 'reselect';
 
 import { connect } from 'react-redux';
 import { getSingleDrinkAsync,cancelSearchSync} from '../../../redux/drink.redux.js';
+
 @connect(
    state => state,
    { getSingleDrinkAsync ,cancelSearchSync}

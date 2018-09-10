@@ -33,7 +33,6 @@ class EditBanner extends React.Component {
 			  await that.props.getBannerAsync();
 			  let bannerList = that.props.banner;
 			  let banners = path === "/edit/editIndexBanner" ? bannerList.indexBannerList : bannerList.shopBannerList;
-			  console.log(banners)
 			  that.setState({
 				  banners: banners
 			  })

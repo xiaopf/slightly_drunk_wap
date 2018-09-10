@@ -48,7 +48,7 @@ export function getBannerAsync() {
 
 
 export function updateBannerAsync(banners,which,_id){
-	console.log(banners);
+
     return dispatch => (
 	         axios.post('/edit/updateBanner',{banners,which,_id}).then((res) => {
 	              if(res.status === 200){

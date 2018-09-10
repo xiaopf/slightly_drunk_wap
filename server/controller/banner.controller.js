@@ -24,7 +24,6 @@ exports.updateBanner = function(req,res,next){
 	var u_id = req.cookies.userId;
 	let {_id ,banners,which} = req.body;
 
-	console.log({ [which]: banners })
    
 
 	if (u_id) {

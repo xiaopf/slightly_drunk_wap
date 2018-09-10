@@ -92,8 +92,7 @@ class Detail extends React.Component {
 					{this.props.wine.singleWine.name ? <Carousel
 							autoplay={false}
 							infinite
-							beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-							afterChange={index => console.log('slide to', index)}
+
 						>
 						 {this.props.wine.singleWine.img_url.map(val => (
 								<a

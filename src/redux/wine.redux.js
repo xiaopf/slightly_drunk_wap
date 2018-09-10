@@ -66,16 +66,13 @@ export function wine(state = initState, action) {
 
 		case ADD_ITEM:
 			return { ...state, ...action.payload };
-			break;
 
 		case UPDATE_ITEM:
 			return { ...state, ...action.payload };
-			break;
 
 
 		default:
 			return state;
-			break;
 
 	}
 
@@ -175,13 +172,13 @@ export function searchWineAsync(value) {
 }
 
 export function getSingleWineAsync(_id) {
-	console.log('进来了进来了')
+	
 	return dispatch => (
 
 		axios.get(`/wine/wineList?_id=${_id}`).then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
-					console.log(res.data)
+					
 					dispatch(createSearchWine(res.data))
 				} else {
 					dispatch(createGetError(res.data))
@@ -209,7 +206,6 @@ export function updateItemAsync(state) {
 		}
 	}
 
-	console.log(mainIndex, '/', picIndex)
 	let imgArr = state.mainImgs.concat(...state.picImgs);
 	let nImgArr = imgArr.filter((img)=>(img.file.name))
 	let len = nImgArr.length;
@@ -264,8 +260,8 @@ export function updateItemAsync(state) {
 export function deleteItemAsync(_id) {
 	return dispatch => (
 		axios.post('/edit/deleteItem', { _id }).then((res) => {
-			if (res.status == 200) {
-				console.log(res.data);
+			if (res.status === 200) {
+
 				dispatch(createDeleteItem(res.data))
 			}
 		})
@@ -273,11 +269,11 @@ export function deleteItemAsync(_id) {
 }
 
 export function addItemAsync(item) {
-	console.log(item);
+
 	return dispatch => (
 		axios.post('/edit/addItem', item).then((res) => {
-			if (res.status == 200) {
-				console.log(res.data);
+			if (res.status === 200) {
+
 				dispatch(createAddItem(res.data))
 			}
 		})
@@ -297,15 +293,11 @@ function redirectTo(code) {
 	switch (code) {
 		case 0:
 			return '/signin';
-			break;
 		case 1:
 			return '';
-			break;
 		case 6:
 			return '';
-			break;
 		default:
 			return '';
-			break;
 	}
 }

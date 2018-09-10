@@ -6,9 +6,7 @@ import ShopSingle from './ShopSingle';
 class ShopItem extends React.Component {
 
 	render () {
-		
-		let that = this;
-		
+
 		let Singles = this.props.wineList.filter((wine) => (wine.type === this.props.catagory)).map(function(good,index){
 			return (
 				<ShopSingle key={good._id} good = {good}></ShopSingle>

@@ -24,7 +24,7 @@ class WineCatagoryItem extends React.Component {
 		let that = this;
 
 		if (!this.props.sign.userName) {
-			console.log(11);
+
 			(async function () {
 				await that.props.getUserInfoAsync();
 				let wine_id = that.props.dataItem._id;

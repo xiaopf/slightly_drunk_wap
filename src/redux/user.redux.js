@@ -4,7 +4,6 @@ import axios from 'axios';
 const GET_USER_INFO = 'GET_USER_INFO';
 const CHANGE_USER_INFO = 'CHANGE_USER_INFO';
 const CHANGE_USER_IMAGE = 'CHANGE_USER_IMAGE';
-const CHANGE_USER_ADDR = 'CHANGE_USER_ADDR';
 const CHANGE_WINE_IN_USER = 'CHANGE_WINE_IN_USER';
 
 
@@ -57,19 +56,12 @@ export function sign(state = initState,action){
 		case CHANGE_WINE_IN_USER:
 			return { ...state, ...action.payload }
 			
-
-	    
-
-
 	    case ERROR_MSG: 
 			return {...state,isSignIn:false,...action.payload};
 			
-
-
-
 	    default:
 	        return state;
-	    break;
+
 
 	}
 
@@ -183,7 +175,7 @@ export function signUpAsync(user) {
 
 		axios.post('/user/signup', user).then((res) => {
 			if (res.status === 200) {
-				console.log(res.data);
+
 				dispatch(createSignUp(res.data))
 			}
 		})
@@ -214,7 +206,7 @@ export function getUserInfoAsync(_id) {
 		axios.get(`/user?_id=${_id}`).then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
-					console.log(res.data)
+
 					dispatch(createGetUserInfo(res.data))
 				} else {
 					// dispatch(createGetError(res.data))
@@ -226,26 +218,25 @@ export function getUserInfoAsync(_id) {
 export function changeUserInfoAsync(info,which) {
 
 	if(which === 'addr'){
-		console.log(info)
+
 		return dispatch => (
 			// 参数应该是对象
 			axios.post('/user/addr', info).then((res) => {
 				if (res.status === 200) {
 
-					console.log(res.data)
 					dispatch(createChangeUserInfo(res.data))
 
 				}
 			})
 		)
 	}else{
-		console.log(info)
+
 		return dispatch => (
 			// 参数应该是对象
 			axios.post('/user', info).then((res) => {
 				if (res.status === 200) {
 
-					console.log(res.data)
+
 					dispatch(createChangeUserInfo(res.data))
 
 				}
@@ -258,14 +249,13 @@ export function changeUserInfoAsync(info,which) {
 
 export function changeUserImageAsync(image) {
 
-	console.log(image)
+
 
 	return dispatch => (
 		// 参数应该是对象
 		axios.post('/user/image', image).then((res) => {
 			if (res.status === 200) {
 
-				console.log(res.data)
 				dispatch(createChangeUserInfo(res.data))
 
 			}
@@ -275,8 +265,6 @@ export function changeUserImageAsync(image) {
 
 
 export function countWineToCartAsync(cart) {
-
-	console.log(cart)
 
 	return dispatch => (
 		axios.post('/user/cart', cart).then((res) => {
@@ -297,7 +285,7 @@ export function changeWineInUserAsync(info) {
 		axios.post('/user/own', info).then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
-					console.log(res.data)
+
 					dispatch(createChangeWineInUser(res.data))
 				} 
 			}

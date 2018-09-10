@@ -10,7 +10,7 @@ import {district} from 'antd-mobile-demo-data';
 import { changeUserInfoAsync, getUserInfoAsync } from '../../../redux/user.redux.js';
 import {connect} from 'react-redux';
 import browserCookies from 'browser-cookies';
-import { Redirect} from 'react-router-dom';
+// import { Redirect} from 'react-router-dom';
 
 @connect(
 	state => state,
@@ -30,12 +30,12 @@ class AddAddress extends React.Component {
 		this.goBack = this.goBack.bind(this);
 		this.saveAddr = this.saveAddr.bind(this);
 		this.handleChange = this.handleChange.bind(this);
-		this.handleChanges = this.handleChanges.bind(this);
+
 	}
 
     componentDidMount(){
 		let id = this.props.match.params.id;
-		console.log(id)
+
 		let _id = browserCookies.get('userId');
 		let that = this;
 
@@ -63,9 +63,6 @@ class AddAddress extends React.Component {
 			[name]: value
 		});
 	}
-	handleChanges(name, value) {
-		console.log(name,value)
-	}
 
 
 	saveAddr (){
@@ -86,7 +83,6 @@ class AddAddress extends React.Component {
 			
 			(async function(){
 				await that.props.getUserInfoAsync(_id);
-                console.log(that.props)
 				let address = that.props.sign.address;
 				
 				if(id){

@@ -1,9 +1,9 @@
 import React from 'react';
 import './EditBannerItem.less';
-import { Redirect ,WithRouter} from 'react-router-dom';
+import { Redirect  } from 'react-router-dom';
 
 
-// @WithRouter
+ 
 
 class EditBannerItem extends React.Component {
 		constructor(props){

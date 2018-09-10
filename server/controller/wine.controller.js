@@ -8,7 +8,7 @@ exports.getWineList = function (req, res, next) {
     var u_id = req.cookies.userId;
     var search = req.query.search;
     var _id = req.query._id;
-    console.log(u_id)
+
     if (u_id) { 
        
         if (search && !_id) {
@@ -36,7 +36,7 @@ exports.getWineList = function (req, res, next) {
             })
         } else if (!search && !_id) {
             wineModel.find({}).exec(function (err, data) {
-                console.log(11)
+
                 if (err) { console.log(err); }
                 if (data[0]) {
                     res.json({ code: 6, msg: '拉取winelist成功！', 'wineList': data, })
@@ -61,7 +61,7 @@ exports.getWineList = function (req, res, next) {
 
 exports.saveImg = function(req,res,next){
 
-    console.log(req.files)
+
     var u_id = req.cookies.userId;
     let upImg = req.files.uploads;
     let len = upImg.length;

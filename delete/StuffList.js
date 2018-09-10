@@ -69,8 +69,6 @@ class DrinkList extends React.Component {
             <Carousel
               autoplay
               infinite
-              beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-              afterChange={index => console.log('slide to', index)}
               style={{paddingTop:'50px',height: '`${this.state.imgHeight + 50 }px`'}}
             >
               {this.state.data.map(val => (

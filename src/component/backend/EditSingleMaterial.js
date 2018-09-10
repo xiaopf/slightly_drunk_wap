@@ -1,11 +1,9 @@
 import React from 'react';
 import './EditSingleMaterial.less';
 import Upload from './Upload';
-
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import { updateItemAsync, addItemAsync, getWineAsync} from '../../redux/wine.redux.js';
-import axios from 'axios';
+
 
 
 @connect(
@@ -115,6 +113,7 @@ class EditSingleMaterial extends React.Component {
 					mainImgs:data.imgs
 				})
 			  }
+			  return true;
 		  })
 
 
@@ -127,6 +126,7 @@ class EditSingleMaterial extends React.Component {
 					picImgs:data.imgs
 				})
 			  }
+			  return true;
 		  })
 
 		

@@ -4,7 +4,7 @@ import Step from './Step';
 import DrinkInfo from './DrinkInfo';
 
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import { updateItemAsync, addItemAsync, getDrinkAsync} from '../../redux/drink.redux.js';
 
 @connect(
