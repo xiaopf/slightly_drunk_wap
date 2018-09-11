@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore ,applyMiddleware,compose ,combineReducers} from 'redux';
+import { createStore ,applyMiddleware,compose} from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import axios from "axios";
@@ -9,11 +9,9 @@ import './index.css';
 import './reset.css';
 
 import App from './App';
+import reducers from './reducers';
+import { BrowserRouter } from 'react-router-dom';
 
-import { wine } from './redux/wine.redux.js';
-import { sign } from './redux/user.redux.js';
-import { drink } from './redux/drink.redux.js';
-import { banner } from './redux/banner.redux.js';
 import registerServiceWorker from './registerServiceWorker';
 
 // 拦截器~
@@ -27,12 +25,7 @@ axios.interceptors.response.use(function (config) {
 	return config;
 })
 
-const reducers = combineReducers({
-	sign,
-	wine,
-	drink,
-	banner
-})
+
 
 
 const store = createStore(reducers,compose(
@@ -44,7 +37,9 @@ const store = createStore(reducers,compose(
 
 ReactDOM.render(
 	<Provider store={store}>
-		<App/>
+		<BrowserRouter>
+				<App />
+		</BrowserRouter>
 	</Provider>, 
 	document.getElementById('root')
 );

@@ -11,20 +11,20 @@ exports.allInDb = function(req,res,next){
 
     let msgArr = [];
    
-    // let wineArray = Array.from([...Object.values(wineList)])
-    // let w_len = wineArray.length;
-    // for( let i = 0; i < w_len ;i ++){
+    let wineArray = Array.from([...Object.values(wineList)])
+    let w_len = wineArray.length;
+    for( let i = 0; i < w_len ;i ++){
 
-    //     let drink = new wineModel({ ...wineArray[i]});
+        let drink = new wineModel({ ...wineArray[i]});
 
-    //     drink.save(function(err,data){
-    //         if(err){console.log(err)}
-    //     })
+        drink.save(function(err,data){
+            if(err){console.log(err)}
+        })
 
-    //     if (i == w_len-1) {
-    //         msgArr.push('wine')
-    //     }
-    // }
+        if (i == w_len-1) {
+            msgArr.push('wine')
+        }
+    }
 
 
 

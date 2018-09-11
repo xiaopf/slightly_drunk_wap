@@ -145,7 +145,7 @@ export function cancelSearchSync() {
 export function getWineAsync() {
 	return dispatch => (
 
-		axios.get('/wine/wineList').then((res) => {
+		axios.get('/api/wine').then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
 					dispatch(createGetWine(res.data))
@@ -159,7 +159,7 @@ export function getWineAsync() {
 export function searchWineAsync(value) {
 	return dispatch => (
 
-		axios.get(`/wine/wineList?search=${value}`).then((res) => {
+		axios.get(`/api/wine?search=${value}`).then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 5) {
 					dispatch(createSearchWine(res.data))
@@ -175,7 +175,7 @@ export function getSingleWineAsync(_id) {
 	
 	return dispatch => (
 
-		axios.get(`/wine/wineList?_id=${_id}`).then((res) => {
+		axios.get(`/api/wine?_id=${_id}`).then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
 					
@@ -216,7 +216,7 @@ export function updateItemAsync(state) {
 	}
 
 	return dispatch => (
-		axios.post('/wine/saveImg', formData).then((res) => {
+		axios.post('/api/wine/saveImg', formData).then((res) => {
 			if (res.status === 200) {
 
 				for (let i = 0; i < res.data.nameArr.length ; i++){
@@ -230,7 +230,7 @@ export function updateItemAsync(state) {
 				delete state.mainImgs
 				delete state.picImgs
 
-				axios.post('/wine/updateWine', state).then((res) => {
+				axios.post('/api/wine/updateWine', state).then((res) => {
 					if (res.status === 200) {
 						console.log(res.data);
 						// dispatch(createUpdateItem(res.data))
@@ -259,7 +259,7 @@ export function updateItemAsync(state) {
 
 export function deleteItemAsync(_id) {
 	return dispatch => (
-		axios.post('/edit/deleteItem', { _id }).then((res) => {
+		axios.post('/api/edit/deleteItem', { _id }).then((res) => {
 			if (res.status === 200) {
 
 				dispatch(createDeleteItem(res.data))
@@ -271,7 +271,7 @@ export function deleteItemAsync(_id) {
 export function addItemAsync(item) {
 
 	return dispatch => (
-		axios.post('/edit/addItem', item).then((res) => {
+		axios.post('/api/edit/addItem', item).then((res) => {
 			if (res.status === 200) {
 
 				dispatch(createAddItem(res.data))

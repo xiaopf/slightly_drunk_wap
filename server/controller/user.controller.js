@@ -69,14 +69,15 @@ exports.UpdateUserImage = function (req, res, next) {
 	
 	var base64Data = imgData.replace(/^data:image\/\w+;base64,/, "");
 	var dataBuffer = new Buffer(base64Data, 'base64');
-	var nPath = `/upload/images/head/${_id}.png`;
-	var newPath = path.join(__dirname, '../../', nPath);
+	let date = new Date();
+	var nPath = `/upload/images/head/${_id + date.getTime()}.png`;
+	var newPath = path.join(__dirname, '../../public/', nPath);
 
-   
+	console.log(newPath)
 
 	fs.writeFile(newPath, dataBuffer, function (err) {
 		if (err) {console.log(err)};
-
+      
 		
 		if (_id) {
 

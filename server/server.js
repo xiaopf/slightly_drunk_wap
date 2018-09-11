@@ -1,77 +1,72 @@
-var express = require('express');
-var app = express();
+import express from 'express';
+import path from 'path';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import mongoose from 'mongoose';
+
+import APIRouter from './route/APIRouter';
+import SignRouter from './route/SignRouter';
+
+import csshook from 'css-modules-require-hook/preset';
+
+import assethook from 'asset-require-hook';
+assethook({
+	extensions: ['png', 'jpg']
+})
+
+
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+import { StaticRouter } from 'react-router-dom';
+import App from '../src/App';
+import reducers from '../src/reducers';
 
 
 
 
 
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var utility = require('utility');
-
+const app = express();
 app.use(cookieParser());
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
 
-
-var mongoose = require('mongoose');
-var dbUrl = 'mongodb://localhost/dk';
+const dbUrl = 'mongodb://localhost/dk';
 mongoose.connect(dbUrl);
 
-var db = mongoose.connection;
+const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {console.log('数据库连接成功！')});
 
 
+// //路由拦截，如果是http请求,直接移交给下一个中间件，否则执行静态页面
+app.use(function (req, res, next) {
+
+    console.log(req.url)
+	if (req.url.startsWith('/api') || req.url.startsWith('/sign/') ) {
+		return next();
+	}
+
+	const store = createStore(reducers, compose(
+		applyMiddleware(thunk)
+	));
+	let context = {};
+	const markup = renderToString(  (<Provider store={store}>
+										<StaticRouter location={req.url } context={context}>
+											<App></App>
+										</StaticRouter>
+									</Provider>)  )
+
+	return res.send(markup)
+})
 
 
+app.use('/',express.static(path.resolve('build')))
 
-
-
-// //////////////////////
-var userRouter = require('./route/userRouter');
-var drinkRouter = require('./route/drinkRouter');
-var wineRouter = require('./route/wineRouter');
-var pageRouter = require('./route/pageRouter');
-
-
-var DrinkController = require('./controller/drink.controller.js');
-var BannerController = require('./controller/banner.controller.js');
-
-app.get('/api/banner', BannerController.getBannerList);
-
-app.get('/api/drink', DrinkController.getDrinkList);
-
-
-
-
-
-// 静态资源托管
-app.use(express.static('public'))
-
-
-
-app.use('/user', userRouter);
-app.use('/wine',wineRouter);
-app.use('/drink',drinkRouter);
-app.use('/', pageRouter);
-
-// 录入数据
-var allRouter = require('./route/allRouter');
-app.use('/', allRouter);
-
-
-
+app.use('/api', APIRouter);
+app.use('/sign', SignRouter);
 // /////////////////////
-
-
-
-
-
-
-
-
-
 
 app.listen(8080,function(){
 	console.log("后端挂载8080端口");

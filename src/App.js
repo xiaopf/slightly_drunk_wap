@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 
 import {
-  BrowserRouter,
   Route,
   Switch
 } from 'react-router-dom';
 
-import './App.less';
-import Wrap from './pages/Wrap';
+import TableBar from './pages/TableBar';
 import SignIn from './pages/frontend/sign/SignIn';
 import SignUp from './pages/frontend/sign/SignUp';
 import BackPage from './pages/backend/BackPage';
@@ -36,7 +34,7 @@ class App extends Component {
 
 
     return (
-      <BrowserRouter>
+      <React.Fragment>
 
         <Switch>
 
@@ -45,7 +43,7 @@ class App extends Component {
           <Route exact path='/signin' component={ SignIn }></Route>
           <Route path='/signup' component={ SignUp }></Route>
           
-          <Route path='/index' component={Wrap}></Route>
+          <Route path='/index' component={TableBar}></Route>
         
           <Route  path='/drink/:id' component={ DrinkDetail }></Route>
 
@@ -71,7 +69,7 @@ class App extends Component {
 
         </Switch>
 
-      </BrowserRouter>
+      </React.Fragment>
     );
   }
 

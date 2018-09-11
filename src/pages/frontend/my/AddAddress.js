@@ -1,11 +1,12 @@
 import React from 'react';
 import './AddAddress.less';
 
-import {Picker, List, WhiteSpace, InputItem, TextareaItem, Button, WingBlank,NavBar,Icon} from 'antd-mobile';
+// import { Picker, List, WhiteSpace, InputItem, TextareaItem, Button, WingBlank, NavBar, Icon } from 'antd-mobile';
+import { WhiteSpace, InputItem, TextareaItem, Button, WingBlank,NavBar,Icon} from 'antd-mobile';
 
 import {createForm} from 'rc-form';
 
-import {district} from 'antd-mobile-demo-data';
+// import {district} from 'antd-mobile-demo-data';
 
 import { changeUserInfoAsync, getUserInfoAsync } from '../../../redux/user.redux.js';
 import {connect} from 'react-redux';
@@ -124,7 +125,7 @@ class AddAddress extends React.Component {
 					<InputItem value={this.state.receive_name} name='receive_name' onChange={ value => this.handleChange('receive_name', value)} placeholder="请输入收件人姓名">收件人</InputItem>
 					<InputItem value={this.state.receive_tel} name='receive_tel' onChange={ value => this.handleChange('receive_tel', value)} placeholder="请输入电话号码">电话</InputItem>
 
-					<Picker
+					{/* <Picker
 						data={district}
 						title="请选地区"
 						{...getFieldProps('district', {
@@ -134,7 +135,7 @@ class AddAddress extends React.Component {
 						onDismiss={e => console.log('dismiss', e)}
 					>
 						<List.Item arrow="horizontal">地区</List.Item>
-					</Picker>
+					</Picker> */}
 
 					<TextareaItem
 						value={this.state.detail_addr} name='detail_addr' onChange={value => this.handleChange('detail_addr', value)} 

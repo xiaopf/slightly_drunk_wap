@@ -36,7 +36,7 @@ class MyPage extends React.Component {
 
 
 	entering(){
-		axios.post('/entering').then(function (res) {
+		axios.post('/api/entering').then(function (res) {
 			if (res.status === 200) {
 				console.log(res.data)
 			}
@@ -46,12 +46,12 @@ class MyPage extends React.Component {
 
 
 	render () {
-		const myImg = src => <img src={src} className="spe am-icon am-icon-lg" alt="" />;
+
 
 		const ResultExample = () => (
 				<Link to={'/myInfo'} className="result-example">
 					<Result
-						img={myImg(this.props.sign.image)}
+					img={<img src={this.props.sign.image} className="spe am-icon am-icon-lg" alt="" />}
 						title={this.props.sign.userName }
 					/>
 				</Link>

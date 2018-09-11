@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Wrap.css';
+import './TableBar.css';
 
 
 import { TabBar } from 'antd-mobile';
@@ -20,7 +20,7 @@ import { getUserInfoAsync } from '../redux/user.redux.js';
   { getUserInfoAsync }
 )
 
-class Wrap extends Component {
+class TableBar extends Component {
 
   constructor(props) {
     super(props);
@@ -113,6 +113,7 @@ class Wrap extends Component {
 {/* 清单第二页 */}
             
             <Material></Material> 
+            
              </TabBar.Item>
 
 
@@ -175,4 +176,4 @@ class Wrap extends Component {
   }
 }
 
-export default Wrap;
+export default TableBar;

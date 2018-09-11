@@ -155,7 +155,7 @@ export function getSingleDrinkAsync(_id) {
 
 export function deleteItemAsync(_id) {
 	return dispatch => (
-		axios.delete('/drink/list', {
+		axios.delete('/api/drink/list', {
 			data: {_id}
 			}).then((res) => {
 			if (res.status === 200) {
@@ -168,7 +168,7 @@ export function deleteItemAsync(_id) {
 
 export function updateItemAsync(item) {
 	return dispatch => (
-		axios.post('/edit/updateItem', item).then((res) => {
+		axios.post('/api/edit/updateItem', item).then((res) => {
 			if (res.status === 200) {
 				;
 				dispatch(createUpdateItem(res.data))
@@ -182,7 +182,7 @@ export function updateItemAsync(item) {
 export function addItemAsync(item) {
 
 	return dispatch => (
-		axios.post('/edit/addItem', item).then((res) => {
+		axios.post('/api/edit/addItem', item).then((res) => {
 			if (res.status === 200) {
 				;
 				dispatch(createAddItem(res.data))

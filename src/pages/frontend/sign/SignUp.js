@@ -72,9 +72,9 @@ class SignIn extends React.Component {
 
 	            <WingBlank>
 	            	<List>
-	            	   <InputItem name="userName" onChange = { v => this.handleChange('userName',v) } placeholder="请输入账户名">昵称</InputItem>
-	            	   <InputItem name="password" onChange = { v => this.handleChange('password',v) } type="password" placeholder="请输入密码">密码</InputItem>
-	            	   <InputItem name="comfirmPassword" onChange = { v => this.handleChange('comfirmPassword',v) } type="password" placeholder="请再次输入密码">确认密码</InputItem>
+	            	   <InputItem clear name="userName" onChange = { v => this.handleChange('userName',v) } placeholder="请输入账户名">昵称</InputItem>
+	            	   <InputItem clear name="password" onChange = { v => this.handleChange('password',v) } type="password" placeholder="请输入密码">密码</InputItem>
+	            	   <InputItem clear name="comfirmPassword" onChange = { v => this.handleChange('comfirmPassword',v) } type="password" placeholder="请再次输入密码">确认密码</InputItem>
 	            	</List>
 	            	<WhiteSpace></WhiteSpace>
 	            	<WhiteSpace></WhiteSpace>

@@ -151,7 +151,7 @@ export function signInAsync(user) {
 	}
 
 	return dispatch => (
-		axios.post('/user/signin', user).then((res) => {
+		axios.post('/sign/signin', user).then((res) => {
 			if (res.status === 200) {
 				dispatch(createSignIn(res.data))
 			}
@@ -173,7 +173,7 @@ export function signUpAsync(user) {
 
 	return dispatch => (
 
-		axios.post('/user/signup', user).then((res) => {
+		axios.post('/sign/signup', user).then((res) => {
 			if (res.status === 200) {
 
 				dispatch(createSignUp(res.data))
@@ -200,10 +200,11 @@ export function signUpAsync(user) {
 
 // /////////////////////////
 // 异步dispach
-export function getUserInfoAsync(_id) {
-
+export function getUserInfoAsync() {
+	
+	
 	return dispatch => (
-		axios.get(`/user?_id=${_id}`).then((res) => {
+		axios.get('/api/user/info').then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
 
@@ -221,7 +222,7 @@ export function changeUserInfoAsync(info,which) {
 
 		return dispatch => (
 			// 参数应该是对象
-			axios.post('/user/addr', info).then((res) => {
+			axios.post('/api/user/addr', info).then((res) => {
 				if (res.status === 200) {
 
 					dispatch(createChangeUserInfo(res.data))
@@ -233,7 +234,7 @@ export function changeUserInfoAsync(info,which) {
 
 		return dispatch => (
 			// 参数应该是对象
-			axios.post('/user', info).then((res) => {
+			axios.post('/api/user/imfo', info).then((res) => {
 				if (res.status === 200) {
 
 
@@ -253,7 +254,7 @@ export function changeUserImageAsync(image) {
 
 	return dispatch => (
 		// 参数应该是对象
-		axios.post('/user/image', image).then((res) => {
+		axios.post('/api/user/image', image).then((res) => {
 			if (res.status === 200) {
 
 				dispatch(createChangeUserInfo(res.data))
@@ -267,7 +268,7 @@ export function changeUserImageAsync(image) {
 export function countWineToCartAsync(cart) {
 
 	return dispatch => (
-		axios.post('/user/cart', cart).then((res) => {
+		axios.post('/api/user/cart', cart).then((res) => {
 			if (res.status === 200) {
 				dispatch(createCountWineToCart(res.data))
 			}
@@ -282,7 +283,7 @@ export function countWineToCartAsync(cart) {
 export function changeWineInUserAsync(info) {
 	return dispatch => (
 
-		axios.post('/user/own', info).then((res) => {
+		axios.post('/api/user/own', info).then((res) => {
 			if (res.status === 200) {
 				if (res.data.code === 6) {
 
