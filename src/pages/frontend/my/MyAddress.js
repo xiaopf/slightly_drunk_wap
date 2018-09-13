@@ -1,10 +1,10 @@
 import React from 'react';
-import './MyAddress.less';
+import './MyAddress.css';
 
 import { SwipeAction, WhiteSpace, WingBlank, NavBar, Icon } from 'antd-mobile';
 
 import { Link } from 'react-router-dom';
-import browserCookies from 'browser-cookies';
+
 import {connect} from 'react-redux';
 import { changeUserInfoAsync, getUserInfoAsync } from '../../../redux/user.redux.js';
 
@@ -23,12 +23,11 @@ class MyAddress extends React.Component {
 	
 	componentDidMount (){
 
-		let _id = browserCookies.get('userId')
 		let that = this;
 		if (!this.props.sign.userName) {
 
 			(async function () {
-				await that.props.getUserInfoAsync(_id);			
+				await that.props.getUserInfoAsync();			
 			})();
 		}
 	}
@@ -39,7 +38,6 @@ class MyAddress extends React.Component {
 
 	deleteAddr (index){
 
-		let _id = browserCookies.get('userId')
 		let that = this;
 		if (this.props.sign.userName) {
 			let address = this.props.sign.address;
@@ -49,7 +47,7 @@ class MyAddress extends React.Component {
 		} else {
 
 			(async function () {
-				await that.props.getUserInfoAsync(_id);
+				await that.props.getUserInfoAsync();
 				let address = that.props.sign.address;
 				address.splice(index, 1);
 				that.props.changeUserInfoAsync(address, 'addr');

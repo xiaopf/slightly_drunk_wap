@@ -1,5 +1,5 @@
 import React from 'react';
-import './ShopMore.less';
+import './ShopMore.css';
 import { Grid, NavBar, Icon,WhiteSpace } from 'antd-mobile';
 import ShopSingle from '../../../component/frontend/ShopSingle';
 import Cart from '../../../component/frontend/Cart';

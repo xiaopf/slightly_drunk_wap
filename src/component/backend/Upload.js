@@ -1,5 +1,5 @@
 import React from 'react';
-import './Upload.less';
+import './Upload.css';
 import Input from './Input';
 class Upload extends React.Component {
 	constructor(props){

@@ -1,5 +1,5 @@
 import React from 'react';
-import './EditDrink.less';
+import './EditDrink.css';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 import { Link } from 'react-router-dom';

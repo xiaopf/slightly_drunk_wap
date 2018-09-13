@@ -1,5 +1,5 @@
 import React from 'react';
-import './EditSingleDrink.less';
+import './EditSingleDrink.css';
 import Step from './Step';
 import DrinkInfo from './DrinkInfo';
 

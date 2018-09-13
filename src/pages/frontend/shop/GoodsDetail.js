@@ -1,5 +1,5 @@
 import React from 'react';
-import './GoodsDetail.less';
+import './GoodsDetail.css';
 import { Redirect } from 'react-router-dom';
 import {connect} from 'react-redux';
 import { getSingleWineAsync } from '../../../redux/wine.redux.js';

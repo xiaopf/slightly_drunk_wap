@@ -1,5 +1,5 @@
 import React from 'react';
-import './ShopItem.less';
+import './ShopItem.css';
 import { Link } from 'react-router-dom';
 import ShopSingle from './ShopSingle';
 

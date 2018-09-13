@@ -1,13 +1,12 @@
 import React from 'react';
-import './Shop.less';
+import './Shop.css';
 
 import { Carousel, SearchBar, Grid, WhiteSpace} from 'antd-mobile';
 
 import ShopItem from '../../../component/frontend/ShopItem';
 import ShopSingle from '../../../component/frontend/ShopSingle';
 import Cart from '../../../component/frontend/Cart';
-import { Redirect } from 'react-router-dom'
-import browserCookies from 'browser-cookies';
+
 
 import { connect } from 'react-redux';
 
@@ -75,7 +74,6 @@ class Shop extends React.Component {
 
 		return ( 
 			<div className="shopWrap">
-				{ !browserCookies.get('userId') ? <Redirect to="/signin" ></Redirect> : null }
 				<div className="searchWrap">
 					<SearchBar
 						className="top_search"

@@ -1,5 +1,5 @@
 import React from 'react';
-import './EditBannerItem.less';
+import './EditBannerItem.css';
 import { Redirect  } from 'react-router-dom';
 
 

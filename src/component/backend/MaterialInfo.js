@@ -1,5 +1,5 @@
 import React from 'react';
-import './MaterialInfo.less';
+import './MaterialInfo.css';
 
 class MaterialInfo extends React.Component {
 		constructor(props){

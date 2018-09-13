@@ -1,5 +1,5 @@
 import React from 'react';
-import './ComingSoon.less';
+import './ComingSoon.css';
 
 
 import { NavBar, Icon} from 'antd-mobile';

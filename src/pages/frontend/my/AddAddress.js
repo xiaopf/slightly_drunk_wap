@@ -1,5 +1,5 @@
 import React from 'react';
-import './AddAddress.less';
+import './AddAddress.css';
 
 // import { Picker, List, WhiteSpace, InputItem, TextareaItem, Button, WingBlank, NavBar, Icon } from 'antd-mobile';
 import { WhiteSpace, InputItem, TextareaItem, Button, WingBlank,NavBar,Icon} from 'antd-mobile';
@@ -10,7 +10,7 @@ import {createForm} from 'rc-form';
 
 import { changeUserInfoAsync, getUserInfoAsync } from '../../../redux/user.redux.js';
 import {connect} from 'react-redux';
-import browserCookies from 'browser-cookies';
+
 // import { Redirect} from 'react-router-dom';
 
 @connect(
@@ -37,12 +37,11 @@ class AddAddress extends React.Component {
     componentDidMount(){
 		let id = this.props.match.params.id;
 
-		let _id = browserCookies.get('userId');
 		let that = this;
 
 		if(id >= 0){
 			(async function () {
-				await that.props.getUserInfoAsync(_id);
+				await that.props.getUserInfoAsync();
 				let addr = that.props.sign.address[id]
 				that.setState({
 					receive_name: addr.receive_name,
@@ -68,7 +67,6 @@ class AddAddress extends React.Component {
 
 	saveAddr (){
 		let id = this.props.match.params.id;
-		let _id = browserCookies.get('userId')
 		let that = this;
 		if (this.props.sign.userName){
 			let address = this.props.sign.address;
@@ -83,7 +81,7 @@ class AddAddress extends React.Component {
 		}else{
 			
 			(async function(){
-				await that.props.getUserInfoAsync(_id);
+				await that.props.getUserInfoAsync();
 				let address = that.props.sign.address;
 				
 				if(id){

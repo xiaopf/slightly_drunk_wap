@@ -1,9 +1,9 @@
 import React from 'react';
-import './DrinkList.less';
+import './DrinkList.css';
 import { List, Carousel, WingBlank, SearchBar, WhiteSpace, Range, Slider } from 'antd-mobile';
 
 import { Redirect } from 'react-router-dom'
-import browserCookies from 'browser-cookies';
+
 
 import { connect } from 'react-redux';
 import { getDrinkAsync, searchDrinkAsync, cancelSearchSync } from '../../../redux/drink.redux.js';
@@ -80,8 +80,7 @@ class DrinkList extends React.Component {
 
 		return (
       <div className="drinkListWrap">
-        {this.state.range || this.state.slider ? <div className="mask"></div> : null }}
-        { !browserCookies.get('userId') ? <Redirect to="/signin" ></Redirect> : null }
+        {this.state.range || this.state.slider ? <div className="mask"></div> : null }
         <SearchBar 
           className="top_search"
           placeholder="搜索鸡尾酒" 

@@ -2,7 +2,7 @@ import React from 'react';
 import { List } from 'antd-mobile';
 import { Link } from 'react-router-dom';
 import LinesEllipsis from 'react-lines-ellipsis';
-import './ItemList.less';
+import './ItemList.css';
 import QueueAnim from 'rc-queue-anim';
 const Item = List.Item;
 

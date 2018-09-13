@@ -1,5 +1,5 @@
 import React from 'react';
-import './DrinkInfo.less';
+import './DrinkInfo.css';
 
 class DrinkInfo extends React.Component {
 		constructor(props){

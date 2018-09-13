@@ -1,5 +1,5 @@
 import React from 'react';
-import './ShopSingle.less';
+import './ShopSingle.css';
 import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';

@@ -1,5 +1,5 @@
 import React from 'react';
-import './MyInfo.less';
+import './MyInfo.css';
 
 import { WhiteSpace, Button, ImagePicker, Icon, List, NavBar, Modal, Toast} from 'antd-mobile';
 

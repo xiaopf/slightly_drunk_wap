@@ -1,5 +1,5 @@
 import React from 'react';
-import './EditBanner.less';
+import './EditBanner.css';
 import EditBannerItem from './EditBannerItem';
 import { connect } from 'react-redux';
 import { getBannerAsync, updateBannerAsync} from '../../redux/banner.redux.js';

@@ -27,13 +27,31 @@ import ComingSoon from './pages/ComingSoon';
 
 
 class App extends Component {
+  
+  constructor(props){
+     super(props);
+     this.state={
+       hasErr : false
+     }
+  }
 
+  componentDidCatch(){
+    this.setState({
+      hasErr:true
+    })
+  }
 
   render() {
 
 
 
     return (
+      this.hasErr ? 
+      
+      <p>页面出错！！！</p>
+      
+      :
+
       <React.Fragment>
 
         <Switch>

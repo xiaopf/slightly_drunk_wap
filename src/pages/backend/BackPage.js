@@ -1,5 +1,5 @@
 import React from 'react';
-import './BackPage.less';
+import './BackPage.css';
 
 
 import EditDrink from '../../component/backend/EditDrink';

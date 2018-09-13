@@ -1,8 +1,7 @@
 import React from 'react';
 import { List, InputItem, WhiteSpace, WingBlank,Button ,Icon } from 'antd-mobile';
-import './SignUp.less';
+import './SignUp.css';
 
-import browserCookies from 'browser-cookies';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { signUpAsync } from  '../../../redux/user.redux.js';
@@ -49,11 +48,10 @@ class SignIn extends React.Component {
 
 	render () {
 		return (
-            <div>
+            <div className="signWrap">
 
 			{this.props.sign.isSignIn ? <Redirect to={this.props.sign.redirectTo}></Redirect> : null}
 
-			{browserCookies.get('userId') ? <Redirect to="/index" ></Redirect> : null }
 
             <WhiteSpace></WhiteSpace>
             <WhiteSpace></WhiteSpace>

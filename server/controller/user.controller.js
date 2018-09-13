@@ -71,7 +71,7 @@ exports.UpdateUserImage = function (req, res, next) {
 	var dataBuffer = new Buffer(base64Data, 'base64');
 	let date = new Date();
 	var nPath = `/upload/images/head/${_id + date.getTime()}.png`;
-	var newPath = path.join(__dirname, '../../public/', nPath);
+	var newPath = path.join(__dirname, '../../build/', nPath);
 
 	console.log(newPath)
 

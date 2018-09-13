@@ -1,5 +1,5 @@
 import React from 'react';
-import './EditSingleMaterial.less';
+import './EditSingleMaterial.css';
 import Upload from './Upload';
 import { connect } from 'react-redux';
 import { updateItemAsync, addItemAsync, getWineAsync} from '../../redux/wine.redux.js';

@@ -5,7 +5,7 @@ import { Link , Redirect} from 'react-router-dom';
 
 import browserCookies from 'browser-cookies';
  
-import './MyPage.less';
+import './MyPage.css';
 import { signOut } from '../../../redux/user.redux.js';
 import { connect } from 'react-redux';
 
@@ -62,7 +62,6 @@ class MyPage extends React.Component {
 			<div className="myPageWrap">
 
 				{!this.props.sign.isSignIn ? <Redirect to={this.props.sign.redirectTo}></Redirect> : null}
-				{ !browserCookies.get('userId') ? <Redirect to="/signin" ></Redirect> : null }
 				<NavBar
 				  mode="light"
 				  rightContent={[

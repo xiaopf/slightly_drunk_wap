@@ -1,5 +1,5 @@
 import React from 'react';
-import './MyComponent.less';
+import './MyComponent.css';
 
 import {  NavBar, Icon, List,  WhiteSpace } from 'antd-mobile';
 import { Link} from 'react-router-dom';

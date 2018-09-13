@@ -1,5 +1,5 @@
 import React from 'react';
-import './WineCatagory.less';
+import './WineCatagory.css';
 import { Grid, NavBar, Icon,WhiteSpace} from 'antd-mobile';
 
 import { connect } from 'react-redux';

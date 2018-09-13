@@ -1,5 +1,5 @@
 import React from 'react';
-import './DrinkDetail.less';
+import './DrinkDetail.css';
 // import {Link} from 'react-router-dom';
 import { NavBar, Icon , WhiteSpace} from 'antd-mobile';
 // import createSelector from 'reselect';

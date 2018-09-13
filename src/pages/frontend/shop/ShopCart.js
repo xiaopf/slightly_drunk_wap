@@ -1,8 +1,7 @@
 import React from 'react';
-import './ShopCart.less';
+import './ShopCart.css';
 import CartItem from '../../../component/frontend/CartItem';
 
-import browserCookies from 'browser-cookies';
 import {WhiteSpace,NavBar, Icon} from 'antd-mobile';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -31,8 +30,8 @@ class ShopCart extends React.Component {
 
 		
 		if (!this.props.sign.userName) {
-			let _id = browserCookies.get('userId')
-			this.props.getUserInfoAsync(_id);
+
+			this.props.getUserInfoAsync();
 		}
 	}
     

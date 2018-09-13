@@ -1,5 +1,5 @@
 import React from 'react';
-import './CartItem.less';
+import './CartItem.css';
 import {Link} from 'react-router-dom';
 import { WingBlank } from 'antd-mobile';
 import { connect } from 'react-redux';
