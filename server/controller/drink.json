@@ -1,0 +1,1207 @@
+{
+
+    "drink0": {
+        "id": 0,
+        "img_url": "https: //images.smarthito.com/recipe/r_sakura.jpg",
+        "nameCn": "樱花",
+        "nameEng": "Sakura",
+        "describes": "2001年日本国际调酒师大赛获得最高奖项荣誉的保志雄一先生的作品。用鸡尾酒表现日本的国花“樱花”，获得了国外评审员的广泛好评。基酒为干式金酒，搭配桃子利口酒和樱花利口酒，调制出绝妙的和谐感。是一杯华丽且优雅，同时带有温馨感的长饮鸡尾酒。而且，淡雅的粉红色尤其高雅。装饰则使用葡萄柚皮、酸橙皮、苹果皮等装饰成红色的樱花印象。最后，再加上红色的樱桃点缀。"
+    },
+    "drink1": {
+        "id": 1,
+        "img_url": "https: //images.smarthito.com/recipe/150520222506604.jpg",
+        "nameCn": "爱尔兰咖啡",
+        "nameEng": "Irish Coffee",
+        "describes": "以爱尔兰威士忌为基底的热饮。能使寒冷的身体迅速暖和，最适合冬季饮用。而且，这款酒是很多热饮威士忌调制鸡尾酒的鼻祖。先放入浓香的咖啡，再飘上一层鲜奶。为了形成美观的效果，注入鲜奶油的动作一定要缓缓地进行。"
+    },
+    "drink2": {
+        "id": 2,
+        "img_url": "https: //images.smarthito.com/recipe/150803175210930.jpg",
+        "nameCn": "曼哈顿",
+        "nameEng": "Manhattan",
+        "describes": "自鸡尾酒诞生起，人们就一直喝着这款鸡尾酒，念念不忘它的味道，无论在哪一个酒吧，这款鸡尾酒总是客人的至爱，因而被称为“鸡尾酒王后”，这就是Manhattan(曼哈顿鸡尾酒)。传说Manhattan(曼哈顿鸡尾酒)的产生与美国纽约曼哈顿有关。英国前首相丘吉尔WinstonChurchill的母亲Jeany是纽约布鲁克林含有四分之一印第安血统的美国人，她还是纽约社交圈的知名人物。据说，她在曼哈顿俱乐部为自己支持的总统候选人举行宴会，用发明这款鸡尾酒来招待客人。"
+    },
+    "drink3": {
+        "id": 3,
+        "img_url": "https: //images.smarthito.com/recipe/150518224326113.jpg",
+        "nameCn": "新加坡司令",
+        "nameEng": "Singapore Sling",
+        "describes": "新加坡司令鸡尾酒诞生于著名的莱佛士酒店，这座酒店被西方人士称为“充满异国情调的东洋神秘之地”。新加坡司令(Singaporesling)是由华裔原籍海南岛的严崇文（NgiamTongBoon）酒保于1910年至1915年间所发明，当时他是为新加坡的莱佛士酒店工作。他应顾客要求改良琴汤尼这种调酒，调出了一种口感酸甜的酒，后来一炮而红。不过原创的食谱已经消失，现今莱佛士酒店的新加坡司令食谱是老酒保依照记忆还原出来的。所谓的“Sling”，指的是一种传统的、流传于美国的混合饮料，一般由烈酒(Spirits)、水和糖冲调而成。而Sling也被巧妙的按谐音被翻译为了“司令”。原来新加坡司令是一种专为女性而设计的调酒，但今日已无此区别。这款酒口感清爽，有消除疲劳的功效。"
+    },
+    "drink4": {
+        "id": 4,
+        "img_url": "https: //images.smarthito.com/recipe/150619140932640.jpg",
+        "nameCn": "血腥玛丽",
+        "nameEng": "Bloody Mary",
+        "describes": "在16世纪中叶，英格兰的女王玛丽一世当政，她为了复兴天主教而迫害一大批新教教徒。人们就把她叫做“血玛丽”。这款鸡尾酒的酒名最有可能由此而来。看起来全是通红通红的“血样”，有点令人不安，喝起来却是用了足够番茄汁的有益健康的鸡尾酒。盐、黑胡椒粉、辣酱油、辣椒汁等调味料都加进去，就可以代替假日的早餐，正如享受色拉。其实，这正是BloodyMary(血玛丽鸡尾酒)"
+    },
+    "drink5": {
+        "id": 5,
+        "img_url": "https: //images.smarthito.com/recipe/r_long_island_iced_tea.jpg",
+        "nameCn": "长岛冰茶",
+        "nameEng": "Long Island Iced Tea",
+        "describes": "据说在二十世纪二十年代美国禁酒令期间，酒保将烈酒与可乐混成一杯看似茶的饮品。另一说是在1972年，由长岛橡树滩客栈的酒保发明了这种以四种基酒混制出来的饮料。调和此酒时所使用的酒基本上都是40°以上的烈酒，口味辛辣。"
+    },
+    "drink6": {
+        "id": 6,
+        "img_url": "https: //images.smarthito.com/recipe/150602170335981.jpg",
+        "nameCn": "龙舌兰日出",
+        "nameEng": "Tequila Sunrise",
+        "describes": "以龙舌兰的故乡墨西哥的“日出”为主题的长饮鸡尾酒。类似的鸡尾酒还有短饮“日出”鸡尾酒。在生长着星星点点仙人掌，但又荒凉到极点的墨西哥平原上，正升起鲜红的太阳，阳光把墨西哥平原照耀得一片灿烂。TequilaSunrise(特基拉日出)中浓烈的龙舌兰香味容易使人想起墨西哥的朝霞。橙子汁和石榴糖浆交织而成的色调，完美表现出日出的装饰效果。由黄色渐变成红色的装饰秘诀就是石榴糖浆的魅力。将石榴糖浆静静地注入龙舌兰及橙汁中，密度大的石榴糖浆自然沉降至底部，行程完美的色调搭配。"
+    },
+    "drink7": {
+        "id": 7,
+        "img_url": "https: //images.smarthito.com/recipe/150523233155951.jpg",
+        "nameCn": "亚历山大",
+        "nameEng": "Alexander",
+        "describes": "19世纪中叶,为了纪念英国国王爱德华七世与皇后亚历山大的婚礼,所以调制了这种鸡尾酒作为对皇后的献礼.酒中加入咖啡利口酒和鲜奶油,口感很好,是一款名副其实的皇家鸡尾酒。就像向全世界宣告爱情的甜美，所以很适合于恋人共饮。"
+    },
+    "drink8": {
+        "id": 8,
+        "img_url": "https: //images.smarthito.com/recipe/r_affinity.jpg",
+        "nameCn": "亲密关系",
+        "nameEng": "Affinity",
+        "describes": "这款鸡尾酒使用英国产的苏格兰威士忌、法国产的干味美思和意大利产的甜味美思加以调制，它象征着英法意这三个国家友好的交往。"
+    },
+    "drink9": {
+        "id": 9,
+        "img_url": "https: //images.smarthito.com/recipe/r_ink_street.jpg",
+        "nameCn": "墨水大街",
+        "nameEng": "Ink Street",
+        "describes": "黑麦威士忌搭配充足的橘子汁和柠檬汁，以口感清甜细腻为特征。因为是诞生于美国的鸡尾酒，因此基酒也只选择美国产的黑麦威士忌。"
+    },
+    "drink10": {
+        "id": 10,
+        "img_url": "https: //images.smarthito.com/recipe/r_imperial_fizz.jpg",
+        "nameCn": "帝王菲士",
+        "nameEng": "Imperial Fizz",
+        "describes": "以帝王冠名的霸气气泡饮料。威士忌和朗姆酒，两种烈酒混合而成。而且，威士忌的醇厚香味和柠檬汁的清爽口味不论男女都非常喜爱。"
+    },
+    "drink11": {
+        "id": 11,
+        "img_url": "https: //images.smarthito.com/recipe/r_whisky_mist.jpg",
+        "nameCn": "威士忌之雾",
+        "nameEng": "Whisky Mist",
+        "describes": "以威士忌为基底的雾状长饮酒。根据所使用的威士忌种类，可分为苏格兰之雾（苏格兰威士忌为基底）和波本之雾（波本威士忌为基底）。同碎冰块一起摇和，连同冰块一起倒入玻璃杯中，再挤入一些柠檬汁，最后将威士忌直接倒入装满冰块的杯中。"
+    },
+    "drink12": {
+        "id": 12,
+        "img_url": "https: //images.smarthito.com/recipe/150523125645585.jpg",
+        "nameCn": "威士忌海波",
+        "nameEng": "Whisky Highball",
+        "describes": "战后风靡一代人的鸡尾酒，以威士忌为基底的冰镇类型长饮酒，别名为“苏打威士忌”。根据所使用的威士忌的准确名称，这款鸡尾酒的名称也会随之改变，此款酒称作“威士忌苏打水”。"
+    },
+    "drink13": {
+        "id": 13,
+        "img_url": "https: //images.smarthito.com/recipe/150804235908965.jpg",
+        "nameCn": "悬浮式威士忌",
+        "nameEng": "Whisky Float",
+        "describes": "通过矿泉水和威士忌的比例差调配出的琥珀色微妙的层级感，优美异常。而且，辛辣的口感适合全天饮用。注入威士忌时尽可能缓慢，以便形成完美的分层。"
+    },
+    "drink14": {
+        "id": 14,
+        "img_url": "https: //images.smarthito.com/recipe/150117133411875.jpg",
+        "nameCn": "独特麋鹿",
+        "nameEng": "Elk·s Own",
+        "describes": "以黑麦威士忌为基底的优美色调威士忌。黑麦威士忌、波特酒和柠檬汁的相互溶合，实现润爽的口感。此外，材料中可使用蛋清，使调制应充分摇和。"
+    },
+    "drink15": {
+        "id": 15,
+        "img_url": "https: //images.smarthito.com/recipe/r_old_pal.jpg",
+        "nameCn": "老朋友",
+        "nameEng": "Old Pal",
+        "describes": "这款酒很早就开始流行开来，并经久不衰，即使是当下的年轻人也非常喜爱。鲜艳的色调演绎出成熟的气质，还有火焰般的甜润及微苦恰好表达了经久不衰的友情。此外，这款酒最适合餐前饮用。"
+    },
+    "drink16": {
+        "id": 16,
+        "img_url": "https: //images.smarthito.com/recipe/150523123248274.jpg",
+        "nameCn": "东方",
+        "nameEng": "Oriental",
+        "describes": "橘子风味的白柑桂酒和酸橙汁溶合了两种柑橘的口味，口感清新柔和。"
+    },
+    "drink17": {
+        "id": 17,
+        "img_url": "https: //images.smarthito.com/recipe/r_cowboy.jpg",
+        "nameCn": "牛仔",
+        "nameEng": "Cowboy",
+        "describes": "这是一款出现较早的鸡尾酒，但直到热带鸡尾酒兴起的年代才突然人气大增。辛辣的威士忌经鲜奶油调和，变得浓厚润滑，此款酒餐后饮用最佳。调制时必须充分摇和，而且有时会倒入大杯（非鸡尾酒杯）中饮用。"
+    },
+    "drink18": {
+        "id": 18,
+        "img_url": "https: //images.smarthito.com/recipe/150804234126412.jpg",
+        "nameCn": "古典酒",
+        "nameEng": "Old Fashioned",
+        "describes": "古典(oldfashioned)是19世纪中叶美国肯塔基州彭德尼斯俱乐部的一个调酒师专门为了狂爱赛马的粉丝们发明的鸡尾酒。现如今也是赛马迷们不可或缺的一部分。此款鸡尾酒无论是味道还是外观都与当时很流行的tody很相似，并且可以让人们回忆起来过去的岁月，因此起名叫做古典鸡尾酒。并且我们从这款酒有专用的鸡尾酒杯就可以看出此款鸡尾酒的人气之高。在专用的古典杯中加入一颗放糖，然后滴上一至两滴的安格斯杜拉苦精，再倒入少量苏打水之后加入一些冰块。想要酒味弱一些可以用普通美国威士忌，想要酒味强一些可以用波本威士忌。假如没有方糖的话糖浆或者砂糖也可以。"
+    },
+    "drink19": {
+        "id": 19,
+        "img_url": "https: //images.smarthito.com/recipe/150117142653681.jpg",
+        "nameCn": "加州柠檬",
+        "nameEng": "California Lemonade",
+        "describes": "此款鸡尾酒以美国西海岸的加利福尼亚州命名。恰到好处的柠檬和葡萄柚的酸味与苏打水调配，口感清爽宜人。可以同时享受到波本威士忌的芳香和柠檬水的酸甜口感，可谓奢侈至极。"
+    },
+    "drink20": {
+        "id": 20,
+        "img_url": "https: //images.smarthito.com/recipe/r_klondike_cooler.jpg",
+        "nameCn": "北极冰",
+        "nameEng": "Klondike Cooler",
+        "describes": "北极冰(Klondike Cooler)， “Klodike” 是19世纪末淘金热时代加拿大一座有名的金山的名字。本款鸡尾酒，入喉清淡爽快，十分美味可口。"
+    },
+    "drink21": {
+        "id": 21,
+        "img_url": "https: //images.smarthito.com/recipe/150117122558867.jpg",
+        "nameCn": "海外电报",
+        "nameEng": "Cablegram",
+        "describes": "“Cablegram”是“海底电线”的意思，也有海外电报的意思。通过调整姜汁汽水的加入量，即使平时不喝酒的人，或者刚开始学喝威士忌的人都会很容易适应。"
+    },
+    "drink22": {
+        "id": 22,
+        "img_url": "https: //images.smarthito.com/recipe/r_god_father.jpg",
+        "nameCn": "教父",
+        "nameEng": "GodFather",
+        "describes": "教父是指基督教洗礼时给孩子起名字的代父，也有地位显赫的人或幕后操纵者的意思。因为使用意大利的著名利口酒芳津杏仁利口酒（Amaretto）作为基酒，口感非常好，适合作为餐后酒。如果使用其他的烈性酒作为基酒，名称也会随之改变。以白兰地为基酒则称为霹雳神探，以伏特加为基酒则称为教母。"
+    },
+    "drink23": {
+        "id": 23,
+        "img_url": "https: //images.smarthito.com/recipe/150804224935229.jpg",
+        "nameCn": "船长",
+        "nameEng": "Commodore",
+        "describes": "此款酒是以美式威士忌之一黑麦威士忌作为基酒，并冠以海军将校的名称的辣味鸡尾酒。作为基酒的黑麦威士忌虽稍有些辛辣，不过可以通过橙皮苦酒来提味。加入酸橙汁，使口感变得清爽。"
+    },
+    "drink24": {
+        "id": 24,
+        "img_url": "https: //images.smarthito.com/recipe/r_shamrock.jpg",
+        "nameCn": "白三叶草",
+        "nameEng": "Shamrock",
+        "describes": "酒名为爱尔兰的国花白三叶草，一款体现爱尔兰灵魂的鸡尾酒。以爱尔兰威士忌为基酒，再通过干味美思和荨麻酒提炼出特殊口感。如果不添加干味美思，替换成橄榄装饰的话，就会成为一杯“大众爱尔兰”。"
+    },
+    "drink25": {
+        "id": 25,
+        "img_url": "https: //images.smarthito.com/recipe/160115155422953.jpg",
+        "nameCn": "约翰柯林斯",
+        "nameEng": "John Collins",
+        "describes": "此款酒别名为威士忌柯林。以前以杜松子风味浓厚的荷兰金酒为基酒。但是20世纪30年代后，开始以欧洲为中心用干式金酒作为基酒进行调制。直到今日，以威士忌为基酒的才称为约翰柯林斯。而以前以金酒作为基酒的则称为汤姆柯林斯。此外，就中使用了柠檬汁，口感较为清爽。"
+    },
+    "drink26": {
+        "id": 26,
+        "img_url": "https: //images.smarthito.com/recipe/r_scotch_kit.jpg",
+        "nameCn": "苏格兰短裙",
+        "nameEng": "Scotch Kit",
+        "describes": "“ScotchKit”是苏格兰的代表性民族服装，一种搭配男性礼服的短裙。所以，只有以苏格兰土生土长的威士忌作为基酒。这是一款类似于“锈铁钉”的鸡尾酒。但是，使用搅拌杯搅和及橙皮利口酒的使用方面却有所不同。"
+    },
+    "drink27": {
+        "id": 27,
+        "img_url": "https: //images.smarthito.com/recipe/150523114624752.jpg",
+        "nameCn": "德贝菲士",
+        "nameEng": "Derby Fizz",
+        "describes": "酒名来自于赛马的发源地英国的赛马场，是一款气泡性长饮酒。从赛马的疯狂恢复到平静，怀着这样的心思调制出的鸡尾酒。鸡蛋的润滑，柠檬汁的酸味，苏打水的刺激性等，综合酝酿出独特的口感。此外，因为材料中包含鸡蛋，所以充分摇和是调制的关键。"
+    },
+    "drink28": {
+        "id": 28,
+        "img_url": "https: //images.smarthito.com/recipe/r_churchill.jpg",
+        "nameCn": "丘吉尔",
+        "nameEng": "Churchill",
+        "describes": "20世纪英国伟大的政治家及文学家，并且极其钟爱苏格兰威士忌和雪茄的温斯顿·丘吉尔。仅凭这个拥有爵士头衔的名字，就能表现出此款酒的威严霸气。但是，在这个威严的酒名背后，是一款兼具易于入口的柔润口感和清香的美酒。此外，也是一款适合全天饮用的鸡尾酒。"
+    },
+    "drink29": {
+        "id": 29,
+        "img_url": "https: //images.smarthito.com/recipe/150804003406684.jpg",
+        "nameCn": "大礼帽",
+        "nameEng": "High Hat",
+        "describes": "“HighHat”是指礼帽，欧洲很久以前，穿礼服，戴礼帽，手拿手杖是绅士的着装典范。此款是为爱打扮的绅士量身定做的、口感适中的鸡尾酒。"
+    },
+    "drink30": {
+        "id": 30,
+        "img_url": "https: //images.smarthito.com/recipe/r_highland_cooler.jpg",
+        "nameCn": "高地酷乐",
+        "nameEng": "Highland Cooler",
+        "describes": "此款为冰镇长饮鸡尾酒，以展示苏格兰威士忌的故乡苏格兰北部高地风格为主题，该酒口感清爽，宛如苏格兰高地上飘过的凉爽的风。安哥斯特拉苦酒是采用多种草药和香料制作而成的利口酒，有健胃强身之功效。"
+    },
+    "drink31": {
+        "id": 31,
+        "img_url": "https: //images.smarthito.com/recipe/150117144822850.jpg",
+        "nameCn": "飓风",
+        "nameEng": "Hurricane",
+        "describes": "在亚洲一些国家，这款酒也成之为“台风”。使用两种烈酒，饮用后让人遭遇飓风般头晕目眩，可谓名副其实。实际上，这款酒并没有酒名那般强烈。同时，这款酒带着薄荷香味的全天饮用酒。"
+    },
+    "drink32": {
+        "id": 32,
+        "img_url": "https: //images.smarthito.com/recipe/150804003349729.jpg",
+        "nameCn": "猎人",
+        "nameEng": "Hunter",
+        "describes": "这是一款出现较早的鸡尾酒，黑麦威士忌的浓郁和樱桃白兰地的甘甜达到了完美的和谐，适合任何人饮用。"
+    },
+    "drink33": {
+        "id": 33,
+        "img_url": "https: //images.smarthito.com/recipe/r_blood_and_sand.jpg",
+        "nameCn": "血与砂",
+        "nameEng": "Blood and Sand",
+        "describes": "“BloodandSand”是西班牙小说家布拉斯科·伊巴涅斯以斗牛士兴衰为主题的知名小说的标题，此款鸡尾酒就是借用此名。酒名强烈，此酒的口感却很温和，色泽也非常鲜艳。并且是一款全天饮用的鸡尾酒。"
+    },
+    "drink34": {
+        "id": 34,
+        "img_url": "https: //images.smarthito.com/recipe/r_brooklyn.jpg",
+        "nameCn": "布鲁克林",
+        "nameEng": "Brooklyn",
+        "describes": "此酒以美国纽约著名的布鲁克林街道命名，充溢着放入药草的苦味酒和樱桃利口酒的风味。"
+    },
+    "drink35": {
+        "id": 35,
+        "img_url": "https: //images.smarthito.com/recipe/150803223506506.jpg",
+        "nameCn": "狗毛",
+        "nameEng": "Hair of the Dog",
+        "describes": "这款酒使用了大量蜂蜜，是有利于缓解疲劳及美容养颜的健康饮料。此外，同碎冰块一起放入搅拌机内搅匀，还可品味不同的口感"
+    },
+    "drink36": {
+        "id": 36,
+        "img_url": "https: //images.smarthito.com/recipe/150117141453701.jpg",
+        "nameCn": "一杆进洞",
+        "nameEng": "Hole in one",
+        "describes": "任何一位高尔夫爱好者都想感受一杆进洞的快感。这款酒就包含这种激动人心的心情。以威士忌为基酒的曼哈顿(干饮)中添加柠檬汁及橙子汁调制而成的鸡尾酒，酒性较烈。"
+    },
+    "drink37": {
+        "id": 37,
+        "img_url": "https: //images.smarthito.com/recipe/150805222944783.jpg",
+        "nameCn": "波士顿翻转",
+        "nameEng": "Boston Flip",
+        "describes": "这是一款以美国学术之都“波士顿”命名的翻转式长饮鸡尾酒。将砂糖、蛋黄添加于黑麦威士忌和马德拉葡萄酒调制而成的鸡尾酒内，是一款含酒精的健康饮料。还可以根据个人喜好，在表面撒上碾磨过的肉豆蔻粉。"
+    },
+    "drink38": {
+        "id": 38,
+        "img_url": "https: //images.smarthito.com/recipe/150523100501373.jpg",
+        "nameCn": "热威士忌托地",
+        "nameEng": "Hot Whisky Toddy",
+        "describes": "以威士忌为基底的托地热饮酒，最适合寒冷季节饮用。还有增味的丁香属于汉方香料，有消除口气、杀菌、健胃、强身的功效。还可以根据个人喜好加入桂皮等。"
+    },
+    "drink39": {
+        "id": 39,
+        "img_url": "https: //images.smarthito.com/recipe/150523094654111.jpg",
+        "nameCn": "鲍比伯恩斯",
+        "nameEng": "Bobby Burns",
+        "describes": "此酒以苏格兰最具代表性的民族诗人鲍比·伯恩斯命名，他非常喜爱苏格兰威士忌，留下了许多赞美威士忌的诗词。"
+    },
+    "drink40": {
+        "id": 40,
+        "img_url": "https: //images.smarthito.com/recipe/r_mountain.jpg",
+        "nameCn": "山脉",
+        "nameEng": "Mountain",
+        "describes": "以黑麦威士忌为基酒，并加入蛋清，调制出这款口感绵柔的鸡尾酒。辣味和甜味两种味美思的独特风味，加上柠檬汁的酸香味道，形成同黑麦威士忌完美溶合的口感。此外，事先将蛋清搅拌发泡口感更佳。"
+    },
+    "drink41": {
+        "id": 41,
+        "img_url": "https: //images.smarthito.com/recipe/r_mamie_taylor.jpg",
+        "nameCn": "玛密泰勒",
+        "nameEng": "Mamie Taylor",
+        "describes": "这是一款极具清凉口感，口感温柔，喝不够的长饮鸡尾酒，柠檬汁的浓烈酸味释放出苏格兰威士忌的风味，又别名为“苏格兰霸克”。"
+    },
+    "drink42": {
+        "id": 42,
+        "img_url": "https: //images.smarthito.com/recipe/150803175640071.jpg",
+        "nameCn": "曼哈顿(干式)",
+        "nameEng": "Manhattan(Dry)",
+        "describes": "将之前的曼哈顿中的甜味美思换成干味美思。较多放入黑麦威士忌，还使用辣味的味美思。抑制过甜的口感，更加清爽。如不使用安哥斯特拉苦酒，用柠檬挤汁即可。"
+    },
+    "drink43": {
+        "id": 43,
+        "img_url": "https: //images.smarthito.com/recipe/150803180502368.png",
+        "nameCn": "曼哈顿(中级)",
+        "nameEng": "Manhattan(Medium)",
+        "describes": "介于曼哈顿与干式曼哈顿之间口感的中级鸡尾酒，也称“完美曼哈顿”。甜味和干味两种味美思，再加上黑麦威士忌调制出充分融合的口感。此外，也可不使用安哥斯特拉苦酒，用柠檬挤汁。"
+    },
+    "drink44": {
+        "id": 44,
+        "img_url": "https: //images.smarthito.com/recipe/150523092017677.jpg",
+        "nameCn": "薄荷酷乐",
+        "nameEng": "Mint Cooler",
+        "describes": "楔形薄荷中和了威士忌的苦味，调制出清爽的口感，但如果薄荷放入过量，则会淡化威士忌的口感。这是一款适合夏季、运动后、餐后饮用的薄荷鸡尾酒。"
+    },
+    "drink45": {
+        "id": 45,
+        "img_url": "https: //images.smarthito.com/recipe/r_morning_glory_fizz.jpg",
+        "nameCn": "牵牛花菲士",
+        "nameEng": "Morning Glory Fizz",
+        "describes": "从酒名来看，这原本应该用作解酒之用。鸡尾酒呈现出白色的原因有两点，一是使用了蛋清，而是茴香利口酒中加水形成的乳白色。此外，蛋清应事先搅拌至发泡。"
+    },
+    "drink46": {
+        "id": 46,
+        "img_url": "https: //images.smarthito.com/recipe/150802232804299.jpg",
+        "nameCn": "蒙特卡洛",
+        "nameEng": "Monte Carlo",
+        "describes": "以摩纳哥王国最美丽的城市蒙特卡洛命名的鸡尾酒。加拿大威士忌为基底，并添加称之为利口酒之王的“甜露酒”，调制出醇厚口感。还可以根据个人喜好，添加橙子皮或柠檬皮，实现口感及香味的丰富变化。"
+    },
+    "drink47": {
+        "id": 47,
+        "img_url": "https: //images.smarthito.com/recipe/150802230013489.jpg",
+        "nameCn": "锈钉",
+        "nameEng": "Rusty Nail",
+        "describes": "“RustyNail”是生锈的钉子，也寓意其历史悠久。此款鸡尾酒最大特点是使用了苏格兰利口酒中最具历史的“杜林标利口酒”。对于威士忌爱好者来说，威士忌和杜林标利口酒是最佳搭档。"
+    },
+    "drink48": {
+        "id": 48,
+        "img_url": "https: //images.smarthito.com/recipe/r_ladys_cocktail.jpg",
+        "nameCn": "女士鸡尾酒",
+        "nameEng": "Lady's Cocktail",
+        "describes": "鲜艳的颜色搭配刺激的口感，调制出此款鸡尾酒。此酒酒精度较高，口感非常辛辣。如果只凭甜润的外观判断，可能会吃苦头。如此表现洒脱女性的鸡尾酒只此一款。"
+    },
+    "drink49": {
+        "id": 49,
+        "img_url": "https: //images.smarthito.com/recipe/r_los_angeles.jpg",
+        "nameCn": "洛杉矶",
+        "nameEng": "Los Angeles",
+        "describes": "成品的温暖色调让人联想到洛杉矶的广袤天空散发出的温馨气息。口感适中，可根据个人喜好酌量添加砂糖。事先将鸡蛋搅拌至发泡是成品关键。"
+    },
+    "drink50": {
+        "id": 50,
+        "img_url": "https: //images.smarthito.com/recipe/150117235756314.jpg",
+        "nameCn": "美国丽人",
+        "nameEng": "American Beauty",
+        "describes": "美国丽人（AmericanBeauty）一款适合女性朋友饮用的鸡尾酒，其名字是美国华盛顿的一种蔷薇花的名字，该花颜色鲜红，与此酒的颜色相似，所以该酒又叫做美国红蔷薇。先将其他材料摇晃后倒入酒杯，最后轻轻倒入波特红酒，表现出蔷薇印象。"
+    },
+    "drink51": {
+        "id": 51,
+        "img_url": "https: //images.smarthito.com/recipe/150524122106679.jpg",
+        "nameCn": "东印度",
+        "nameEng": "East India",
+        "describes": "由干味美思、干味雪利酒、柳橙苦精酒等调制的“东印度安”同此款酒名称类似，请区分。该酒酒精较强，口感适中，最后用酒味樱桃的彩色进行装饰。"
+    },
+    "drink52": {
+        "id": 52,
+        "img_url": "https: //images.smarthito.com/recipe/r_egg_sour.jpg",
+        "nameCn": "鸡蛋酸味鸡尾酒",
+        "nameEng": "Egg Sour",
+        "describes": "酸味鸡尾酒是长饮酒的一种，酸味是其特点，因使用鸡蛋为原料，也称为鸡蛋酸味鸡尾酒。使用一整个鸡蛋，可以起到缓解疲劳的作用。此款酒还是散发着橘子清香的全天饮用鸡尾酒。事先将鸡蛋搅拌均匀是调制关键。"
+    },
+    "drink53": {
+        "id": 53,
+        "img_url": "https: //images.smarthito.com/recipe/150523233323585.jpg",
+        "nameCn": "奥林匹克",
+        "nameEng": "Olympic",
+        "describes": "据说此酒是为了纪念1900年举办的巴黎奥运会特意调制的，也是一款跨世纪的法兰西鸡尾酒。配合酒名的柔美色调象征着世界和平及友善。橘子柑桂酒的风味衬托着白兰地的浓郁，恰到好处地抑制了甜味，再加上橘子汁，口感更佳。"
+    },
+    "drink54": {
+        "id": 54,
+        "img_url": "https: //images.smarthito.com/recipe/150216152150510.jpg",
+        "nameCn": "苹果鸡尾酒",
+        "nameEng": "Calvados Cocktail",
+        "describes": "“Calvados”是指法国北部卡尔瓦多斯省产的苹果白兰地，在美国称为“AppleJack”。芳香浓郁的苹果白兰地，深受人们喜爱，此款鸡尾酒也因此而得名。以苹果白兰地作为基酒，使用柔和的材料，口感清爽。橘子苦饮淡淡的苦味，起到很好的提味效果。"
+    },
+    "drink55": {
+        "id": 55,
+        "img_url": "https: //images.smarthito.com/recipe/150812192158702.jpg",
+        "nameCn": "赞歌",
+        "nameEng": "Carol",
+        "describes": "稳重的色彩营造出成熟氛围，甜味美思烘托白兰地的浓厚口味。插在鸡尾酒杯上的酒味樱桃让人印象深刻。"
+    },
+    "drink56": {
+        "id": 56,
+        "img_url": "https: //images.smarthito.com/recipe/150812190907650.jpg",
+        "nameCn": "古巴白兰地鸡尾酒",
+        "nameEng": "Cuban Brandy Cocktail        ",
+        "describes": "这是一款展示加勒比海风格的鸡尾酒。将自由古巴中的基酒朗姆酒换成了白兰地。"
+    },
+    "drink57": {
+        "id": 57,
+        "img_url": "https: //images.smarthito.com/recipe/r_queen_elizabeth.jpg",
+        "nameCn": "伊丽莎白女王",
+        "nameEng": "Queen Elizabeth",
+        "describes": "这是一款为了赞美伊丽莎白女王的鸡尾酒，也有一款同名的金酒鸡尾酒。甜味美思的香甜口感和稳重色彩，营造出成熟的氛围。这款鸡尾酒仿佛在世界顶级豪华邮轮“伊丽莎白女王二世号”的酒吧内一般，既享受奢华，又放松畅怀"
+    },
+    "drink58": {
+        "id": 58,
+        "img_url": "https: //images.smarthito.com/recipe/150117154912877.jpg",
+        "nameCn": "贵格会鸡尾酒",
+        "nameEng": "Quaker's Cocktail",
+        "describes": "这是鸡尾酒的名字来源于17世纪爆发的清教徒革命时形成的新教派之一———贵格会。该酒使用两种烈性酒调制而成，变成前所未有的复杂味感。但是，通过柠檬汁及覆盆子糖浆提味，口感顿感清爽。"
+    },
+    "drink59": {
+        "id": 59,
+        "img_url": "https: //images.smarthito.com/recipe/150117181224903.jpg",
+        "nameCn": "经典",
+        "nameEng": "Classic",
+        "describes": "以砂糖装饰冰霜效果，正如经典的名字一样，让人情不自禁联想历史上辉煌的时代。因为使用橘子柑桂酒和樱桃利口酒，所以口感多少有些偏甜。可以根据个人喜好，不采用砂糖装饰冰霜效果，用柠檬丝进行装点。"
+    },
+    "drink60": {
+        "id": 60,
+        "img_url": "https: //images.smarthito.com/recipe/150811232736101.jpg",
+        "nameCn": "复活",
+        "nameEng": "Corpse Reviver",
+        "describes": "以白兰地为基底的风味充分散发，还有苹果白兰地及甜味美思调配出的独特风味。最后，加上柠檬皮的汁液，起到提味的效果。"
+    },
+    "drink61": {
+        "id": 61,
+        "img_url": "https: //images.smarthito.com/recipe/r_side_car.jpg",
+        "nameCn": "边车",
+        "nameEng": "Side Car",
+        "describes": "这款酒以广泛活跃在第一次世界大战的三轮摩托车命名。根据基酒的变化，还能调制其他不同款的鸡尾酒。如基酒为金酒，则是“白色佳人”；为伏特加则是“巴拉莱卡”。"
+    },
+    "drink62": {
+        "id": 62,
+        "img_url": "https: //images.smarthito.com/recipe/150118000402890.jpg",
+        "nameCn": "芝加哥",
+        "nameEng": "Chicago",
+        "describes": "这款鸡尾酒以美国中部大城市“芝加哥”命名，能让人联想到布鲁斯及爵士乐。这是一款添加了香槟的鸡尾酒，但口感比白兰地鸡尾酒略甜。香槟杯的杯口事先用砂糖装饰出冰霜效果。该酒一定要趁起跑消失前饮用。"
+    },
+    "drink63": {
+        "id": 63,
+        "img_url": "https: //images.smarthito.com/recipe/150811225734544.jpg",
+        "nameCn": "香榭丽舍大街",
+        "nameEng": "Champs Elysees",
+        "describes": "这款鸡尾酒以享誉全世界的繁华街道香榭丽舍大街命名，此款酒采用了极具法国代表性的干邑，表现出高贵气质的鸡尾酒。干邑的醇香、荨麻酒的独特药草风味、柠檬汁的酸味，综合酝酿出不同的韵味。饮用这杯酒让人沉静在巴黎的氛围中。"
+    },
+    "drink64": {
+        "id": 64,
+        "img_url": "https: //images.smarthito.com/recipe/150811224553960.jpg",
+        "nameCn": "杰克玫瑰",
+        "nameEng": "Jack Rose",
+        "describes": "“JackRose”中的“Jack”是指产自美国的苹果白兰地“AppleJack”。正如其名，一款表现每一的艳丽色彩及浓郁芬芳的主流鸡尾酒。"
+    },
+    "drink65": {
+        "id": 65,
+        "img_url": "https: //images.smarthito.com/recipe/150216152309808.jpg",
+        "nameCn": "佐治亚薄荷茱莉普",
+        "nameEng": "Georgia Mint Julep",
+        "describes": "这款鸡尾酒调制的关键是将薄荷叶充分捣碎至深绿色，将砂糖搅拌至起霜状态。以威士忌为基底的冰镇薄荷酒固然有名，但以白兰地为基酒也能品尝到独特风味。"
+    },
+    "drink66": {
+        "id": 66,
+        "img_url": "https: //images.smarthito.com/recipe/150811222640035.jpg",
+        "nameCn": "拍打翅膀的蜜蜂",
+        "nameEng": "Zoom Cocktail",
+        "describes": "“Zoom”是指物体在突然上升过程中发出的象声词。因为使用蜂蜜，再次就用指蜜蜂拍打翅膀的声音。浓厚香甜的口感，适于餐后酒。"
+    },
+    "drink67": {
+        "id": 67,
+        "img_url": "https: //images.smarthito.com/recipe/150524004256220.jpg",
+        "nameCn": " 史丁格",
+        "nameEng": "Stinger",
+        "describes": "该酒由纽约一家餐厅的调酒师创意的来，正如酒名，薄荷独有的辛辣味感衬托出白兰地的芬芳。口感清爽，最适合餐后饮用。"
+    },
+    "drink68": {
+        "id": 68,
+        "img_url": "https: //images.smarthito.com/recipe/150524111456057.jpg",
+        "nameCn": "三个磨坊主",
+        "nameEng": "Three Millers",
+        "describes": "使用浓郁的白兰地和清淡的透明朗姆酒搭配的鸡尾酒。品味这款酒时，就像阅读一本意境冰冷的小说。"
+    },
+    "drink69": {
+        "id": 69,
+        "img_url": "https: //images.smarthito.com/recipe/150117184034395.jpg",
+        "nameCn": "迪克迪克",
+        "nameEng": "Diki Diki",
+        "describes": "葡萄柚的酸味及微苦味激发出这款鸡尾酒的清爽口感。再搭配瑞典潘趣酒，使口感更加清新。此外，还有使用干式金酒代替瑞典潘趣酒的酒单"
+    },
+    "drink70": {
+        "id": 70,
+        "img_url": "https: //images.smarthito.com/recipe/150811214538594.jpg",
+        "nameCn": "深水炸弹",
+        "nameEng": "Depth Bomb",
+        "describes": "正如其爆裂的酒名，此款酒最适合硬汉饮用。白兰地及苹果白兰地中稍加酸味及甜味的修饰。此外，还有类似以高酒精度命名的酒，如以金酒为基酒的“地震”和“击倒”。"
+    },
+    "drink71": {
+        "id": 71,
+        "img_url": "https: //images.smarthito.com/recipe/150806195927913.jpg",
+        "nameCn": "尼古拉斯加",
+        "nameEng": "Nikolaschka",
+        "describes": "据说出自德国汉堡的独特风格鸡尾酒，又名“尼古拉斯基”。此款酒最独特之处就是其饮用方法。首先，在柠檬皮上堆放砂糖，再用柠檬皮包裹住砂糖放入口中，并轻轻咀嚼，使砂糖和柠檬的味道在口中散开。在酸甜味散发的同时，将白兰地送入口中，此时，口腔内发挥着搅拌杯的作用。"
+    },
+    "drink72": {
+        "id": 72,
+        "img_url": "https: //images.smarthito.com/recipe/r_dream.jpg",
+        "nameCn": "梦想",
+        "nameEng": "Dream",
+        "describes": "白兰地的芳醇和橘子柑桂酒适度的甜味，加上潘诺茴香酒的草药风味调和在一起营造的和谐口感，让人心旷神怡。此酒演绎出的浪漫氛围，尤其受到女性的青睐，这是一款适合夜晚失眠女性的鸡尾酒。"
+    },
+    "drink73": {
+        "id": 73,
+        "img_url": "https: //images.smarthito.com/recipe/r_night_cap.jpg",
+        "nameCn": "睡帽",
+        "nameEng": "Night Cap",
+        "describes": "这是一款以橘子风味的清爽口感为特点的舒畅饮品。使用蛋黄为材料，含有消除疲劳及滋补养颜的效果，在睡前饮用可保证舒适睡眠的一款鸡尾酒。此外，还有同一酒名使用朗姆酒为基底的热饮方式，但材料要使用对应朗姆酒及砂糖温性的牛奶。"
+    },
+    "drink74": {
+        "id": 74,
+        "img_url": "https: //images.smarthito.com/recipe/150805235444840.jpg",
+        "nameCn": "哈佛",
+        "nameEng": "Harvard",
+        "describes": "这是一款以沉稳色调及浓烈口感为特点的鸡尾酒，正因此又名“月光”。此酒使用草药红酒类的甜味美思，味美思有增进食欲的效果，最适合作为开胃酒。调制时不能摇晃，只有充分搅拌才能激发出材料的风味。"
+    },
+    "drink75": {
+        "id": 75,
+        "img_url": "https: //images.smarthito.com/recipe/150216152330638.jpg",
+        "nameCn": "哈佛酷乐",
+        "nameEng": "Harvard Cooler",
+        "describes": "这是一款使用苏打水的清凉鸡尾酒，还有柠檬汁的微醺及砂糖的甜味调剂的丰富口感适合任何人饮用，口感极其爽口。再将苏打水以外的材料搅拌后放入杯中。最后，按照顺序放入冰块及苏打水，这样能够激发更佳的味感。"
+    },
+    "drink76": {
+        "id": 76,
+        "img_url": "https: //images.smarthito.com/recipe/150524115448542.jpg",
+        "nameCn": "新婚旅行",
+        "nameEng": "Honeymoon",
+        "describes": "这是一款以“新婚旅行”命名的鸡尾酒，也有称“农夫的女儿”。香甜、润滑、清爽、醉人的氛围，四种元素综合一体。此外，还有白兰地本身的甘甜味感，最适合新婚的甜蜜氛围。"
+    },
+    "drink77": {
+        "id": 77,
+        "img_url": "https: //images.smarthito.com/recipe/150805195602459.jpg",
+        "nameCn": "B & B",
+        "nameEng": "B & B",
+        "describes": "“B&B”是白兰地（Brandy）和甜露酒（Bened-ictine）的组合。以白兰地为基酒，使用干邑（Cognac）的鸡尾酒为“B&C”。将甜露酒倒入后，轻轻倒入白兰地，使材料混合即可。"
+    },
+    "drink78": {
+        "id": 78,
+        "img_url": "https: //images.smarthito.com/recipe/150805234122260.jpg",
+        "nameCn": "就寝",
+        "nameEng": "Between the Sheets",
+        "describes": "这款酒口感适中、顺滑，还有橙子口味的白柑桂酒，激发出睡前酒不可或缺的甘香口感。"
+    },
+    "drink79": {
+        "id": 79,
+        "img_url": "https: //images.smarthito.com/recipe/150805233703624.jpg",
+        "nameCn": "爱心",
+        "nameEng": "Bosom Caresser",
+        "describes": "“BosomCaresser”有“悄悄拥抱”的意思。这款酒口以白兰地为基酒，使用蛋黄为材料，醇厚、易饮用。调制时充分搅拌，使其口感更佳。"
+    },
+    "drink80": {
+        "id": 80,
+        "img_url": "https: //images.smarthito.com/recipe/150216152030363.jpg",
+        "nameCn": "白兰地奶露",
+        "nameEng": "Brandy Eggnog",
+        "describes": "此款白兰地蛋饮长饮鸡尾酒以白兰地作为基酒，使用鸡蛋和牛奶，营养价值极高，适合作为滋补饮品。牛奶的浓厚和白兰地的芳香掩盖了鸡蛋的腥味，并且口感绵柔。最后加满牛奶，加上豆蔻粉即可。"
+    },
+    "drink81": {
+        "id": 81,
+        "img_url": "https: //images.smarthito.com/recipe/150216151747224.jpg",
+        "nameCn": "白兰地鸡尾酒",
+        "nameEng": "Brandy Cocktail",
+        "describes": "完美激发白兰地原有的味感及清香，非常有质感的一款鸡尾酒。酒精度高、口感辛辣，但却充溢着清香。"
+    },
+    "drink82": {
+        "id": 82,
+        "img_url": "https: //images.smarthito.com/recipe/150524005255415.jpg",
+        "nameCn": "白兰地克鲁斯塔",
+        "nameEng": "Brandy Crusta",
+        "describes": "“Crusta”是长饮风格鸡尾酒的一种，同时用砂糖做的冰霜及螺旋状的果皮装饰出独特的效果。"
+    },
+    "drink83": {
+        "id": 83,
+        "img_url": "https: //images.smarthito.com/recipe/150117233924695.jpg",
+        "nameCn": "白兰地考比勒",
+        "nameEng": "Brandy Cobbler",
+        "describes": "感觉如同直饮白兰地一般，其辛辣的口感及浓烈的酒精最适合硬汉饮用。如果替换基酒烈性酒，可以是朗姆考比勒、金酒考比勒等。"
+    },
+    "drink84": {
+        "id": 84,
+        "img_url": "https: //images.smarthito.com/recipe/150805225841364.jpg",
+        "nameCn": "白兰地酸味鸡尾酒",
+        "nameEng": "Brandy Sour",
+        "describes": "白兰地的芬芳及柠檬汁的微酸，营造出顺口、清香的口感。现在还越来越流行在其中加入苏打水。此外还有使用其他烈性基酒的酸味鸡尾酒，如威士忌酸味鸡尾酒、金酒酸味鸡尾酒、朗姆酸味鸡尾酒、龙舌兰酸味鸡尾酒等。"
+    },
+    "drink85": {
+        "id": 85,
+        "img_url": "https: //images.smarthito.com/recipe/150117193736591.jpg",
+        "nameCn": "白兰地萨卡法",
+        "nameEng": "Brandy Scaffa",
+        "describes": "樱桃利口酒烘托白兰地的浓厚口味，发挥白兰地的风味。首先用安哥斯特拉苦酒沿玻璃杯内侧倒入，然后按照白兰地、樱桃利口酒的顺序倒入是制作的关键，要特别注意顺序不要错了。"
+    },
+    "drink86": {
+        "id": 86,
+        "img_url": "https: //images.smarthito.com/recipe/r_brandy_smash.jpg",
+        "nameCn": "撞击白兰地",
+        "nameEng": "Brandy Smash",
+        "describes": "在发挥白兰地原有风味的同时，薄荷的芳香烘托白兰地浓醇的口感。关键是在大玻璃杯中要把薄荷叶捣碎，然后加入细冰或冰块。"
+    },
+    "drink87": {
+        "id": 87,
+        "img_url": "https: //images.smarthito.com/recipe/150216151906825.jpg",
+        "nameCn": "白兰地费克斯",
+        "nameEng": "Brandy Fix",
+        "describes": "这是一款以白兰地为基酒的菲克斯风格的长饮酒，也是一款温和口感的热带风格鸡尾酒。雪利白兰地及白兰地搭配出色彩鲜艳的效果。柠檬汁及碎冰调制出清爽口感，全天任何时刻都可享用。"
+    },
+    "drink88": {
+        "id": 88,
+        "img_url": "https: //images.smarthito.com/recipe/150805223254380.jpg",
+        "nameCn": "白兰地菲利普",
+        "nameEng": "Brandy Flip",
+        "describes": "这是一款以白兰地为基酒的菲利普风格混合饮品。使用蛋黄、砂糖等为材料，调制出口感温润的全天饮品。不仅可以使用白兰地，还可以用其他烈性酒作为基酒，有用波特红酒为基底的波特菲利普，用雪利酒为基底的雪利菲利普。"
+    },
+    "drink89": {
+        "id": 89,
+        "img_url": "https: //images.smarthito.com/recipe/150805191643166.jpg",
+        "nameCn": "白兰地焰光",
+        "nameEng": "Brandy Blazer",
+        "describes": "调制时，将橘子、柠檬的果皮倒入宽口杯中，充分搅拌材料，点燃火焰，待火焰熄灭后再将白兰地移至鸡尾酒杯中。火焰燃烧时间过长可能会导致玻璃杯爆裂，一定要注意安全。"
+    },
+    "drink90": {
+        "id": 90,
+        "img_url": "https: //images.smarthito.com/recipe/150523234246521.jpg",
+        "nameCn": "白兰地牛奶宾治",
+        "nameEng": "Brandy Milk Punch",
+        "describes": "以白兰地为基酒，大量使用牛奶的长饮酒，口感润滑，适合全天饮用。该酒口感基本适中，可通过加减砂糖用量，调制出适合自己的甜味。因其使用牛奶和砂糖，调制时需要充分搅拌。此外，还可以根据喜好撒上肉豆蔻粉。"
+    },
+    "drink91": {
+        "id": 91,
+        "img_url": "https: //images.smarthito.com/recipe/150117234631091.jpg",
+        "nameCn": "白兰地蛋酒",
+        "nameEng": "Breakfast Eggnog",
+        "describes": "这是一款称之为“早起滋补饮品”的蛋酒风格的长饮酒，也是一款使用鸡蛋及牛奶的健康鸡尾酒。牛奶和鸡蛋均不加热，应准备新鲜的材料。事先将鸡蛋搅拌均匀，撒入肉豆蔻粉，是调制这款酒的关键。通过调制白兰地的用量，还可调制成适合自己的口感。"
+    },
+    "drink92": {
+        "id": 92,
+        "img_url": "https: //images.smarthito.com/recipe/r_french_connection.jpg",
+        "nameCn": "法国情怀",
+        "nameEng": "French Connection",
+        "describes": "这是一款以纽约上映的舞台剧《法国情怀》命名的鸡尾酒。使用意大利名酒“芳津杏仁利口酒”，口感甘甜，最适合睡前饮用。按照世界调酒师协会标准酒单，易半江白兰地及杏仁酒等量搭配调制。"
+    },
+    "drink93": {
+        "id": 93,
+        "img_url": "https: //images.smarthito.com/recipe/150117194842443.jpg",
+        "nameCn": "滑道与绳索",
+        "nameEng": "Block & Fall",
+        "describes": "这是一款使用潘诺茴香酒，散发着浓郁香料和药草清香的鸡尾酒。通常用白兰地作为基酒，也有使用杏白兰地的。"
+    },
+    "drink94": {
+        "id": 94,
+        "img_url": "https: //images.smarthito.com/recipe/150805185353515.jpg",
+        "nameCn": "马脖子",
+        "nameEng": "Horse's Neck",
+        "describes": "这是一款适合节日庆祝的鸡尾酒。用柠檬皮制作成螺旋状，装饰出马脖子的效果。用姜汁汽水和白兰地简单搭配的鸡尾酒，也可以用其他烈酒作基酒，如“威士忌马脖子”、“金酒马脖子”。"
+    },
+    "drink95": {
+        "id": 95,
+        "img_url": "https: //images.smarthito.com/recipe/150117235017894.jpg",
+        "nameCn": "热白兰地奶露",
+        "nameEng": "Hot Brandy Eggnog",
+        "describes": "这是一款称之为“西式蛋酒”的长饮酒，最适合严寒中饮用的热饮酒。以鸡蛋、牛奶为材料，营养价值较高，还有缓解疲劳的作用。此外，通过调整白兰地及朗姆酒的分量，可调制出自己喜好的口感。在相同材料中添加冰块的冷饮也很受欢迎。"
+    },
+    "drink96": {
+        "id": 96,
+        "img_url": "https: //images.smarthito.com/recipe/150117203516407.jpg",
+        "nameCn": "孟买",
+        "nameEng": "Bombay",
+        "describes": "这是一款以印度城市“孟买”命名。白兰地和味美思混合出沉稳的茶色，同时营造出宁静的氛围。"
+    },
+    "drink97": {
+        "id": 97,
+        "img_url": "https: //images.smarthito.com/recipe/150216151816586.jpg",
+        "nameCn": "清晨鸡尾酒",
+        "nameEng": "Morning Cocktail",
+        "describes": "这是一款称为“清醒一杯”的鸡尾酒。“只要喝了这款鸡尾酒，不仅可以消除前一晚的宿醉，还能恢复活力”，或许正是有这样的希望所以得名的一款鸡尾酒。"
+    },
+    "drink98": {
+        "id": 98,
+        "img_url": "https: //images.smarthito.com/recipe/r_young_man.jpg",
+        "nameCn": "年轻人",
+        "nameEng": "Young Man",
+        "describes": "这是一款也称为“白兰地为基酒的马丁尼”的鸡尾酒。同金酒基底的马丁尼一样，酒精度数较高。但是，辛辣的干味美思和甘甜的橘子柑桂酒却营造出不同于马丁尼的独特风味。而且，还有深入心田的安哥斯特拉苦酒的味道。"
+    },
+    "drink99": {
+        "id": 99,
+        "img_url": "https: //images.smarthito.com/recipe/150116201354340.jpg",
+        "nameCn": "地震",
+        "nameEng": "Earthquake",
+        "describes": "使用金酒、威士忌、潘诺茴香酒酒精强烈的三种材料，饮用后身体产生摇晃感，从而得名“地震”。因使用了苦艾酒、金酒、威士忌，所以又称“苦艾金威士”。"
+    },
+    "drink100": {
+        "id": 100,
+        "img_url": "https: //images.smarthito.com/recipe/150115182838569.jpg",
+        "nameCn": "理想",
+        "nameEng": "Ideal",
+        "describes": "使用干式金酒马天尼进行改良的鸡尾酒。酒精度较高，但外观及口感都非常温润。通过葡萄柚汁及樱桃利口酒激发出辛辣的金酒和干味美思的风味，有层次丰富的香味飘然其间。"
+    },
+    "drink101": {
+        "id": 101,
+        "img_url": "https: //images.smarthito.com/recipe/r_acacia.jpg",
+        "nameCn": "合家欢",
+        "nameEng": "Acacia",
+        "describes": "这款酒以“合家欢”这种常绿植物，开花期会长出黄色的花朵为主题的鸡尾酒。以干式金酒为基酒，搭配利口酒中的国王“甜露酒”，成为了一款酒精浓烈的硬饮料。最后，再添加樱桃白兰地丰富味感。"
+    },
+    "drink102": {
+        "id": 102,
+        "img_url": "https: //images.smarthito.com/recipe/r_aviation.jpg",
+        "nameCn": "飞行",
+        "nameEng": "Aviation",
+        "describes": "这款酒让人联想到飞行感觉，仿佛在空中飞舞般的酸味鸡尾酒。辛辣中带酸味的鸡尾酒，酒精度数也比较高。樱桃利口酒和柠檬汁的酸味激发出金酒的风味。纯净的干味及清爽的外观是其魅力所在，适合全天饮用。"
+    },
+    "drink103": {
+        "id": 103,
+        "img_url": "https: //images.smarthito.com/recipe/150116201918668.jpg",
+        "nameCn": "开胃酒",
+        "nameEng": "Appetizer",
+        "describes": "这款酒的特点是使用了杜宝内酒，并同橘子搭配成温润的口感，成品的颜色也较为鲜艳。此外，还可以将干式金酒或橘子汁省去。"
+    },
+    "drink104": {
+        "id": 104,
+        "img_url": "https: //images.smarthito.com/recipe/150520220121161.jpg",
+        "nameCn": "阿拉斯加",
+        "nameEng": "Alaska",
+        "describes": "这是一款以美国最大的州阿拉斯加命名的鸡尾酒，创意来自伦敦一处酒店的哈里·库拉多滋库先生。使用了被誉为“鸡尾酒女王”的荨麻酒，且酒精度数较高。在某些国家，人们喜欢饮用黄绿色的荨麻酒调制的“绿色阿拉斯加”。"
+    },
+    "drink105": {
+        "id": 105,
+        "img_url": "https: //images.smarthito.com/recipe/150520215653676.jpg",
+        "nameCn": "亚历山大姐妹",
+        "nameEng": "Alexander's Sister",
+        "describes": "这是一款以白兰地为基酒的“亚历山大”的姐妹款鸡尾酒。运用鲜奶油的甜味调制而成的鸡尾酒，薄荷的清香完美的中和了鲜奶油独特的味感。还让人联想到清爽口感及青草气息的优美色彩，适合女性饮用。"
+    },
+    "drink106": {
+        "id": 106,
+        "img_url": "https: //images.smarthito.com/recipe/r_angels_face.jpg",
+        "nameCn": "天使之颜",
+        "nameEng": "Angel Face",
+        "describes": "这是一款呈现出天使面容般柔和色调的鸡尾酒。清爽的外观，口感也很柔和，是一款对酒精有一定抵抗力的女性饮用的鸡尾酒。"
+    },
+    "drink107": {
+        "id": 107,
+        "img_url": "https: //images.smarthito.com/recipe/150520212235986.jpg",
+        "nameCn": "橙子菲士",
+        "nameEng": "Orange Fizz",
+        "describes": "这是一款大量使用了橘子汁味感丰厚、充盈着清香的菲士风格长饮鸡尾酒。果汁的酸味及砂糖甜味调制出恰到好处的口感，适合任何人群饮用。"
+    },
+    "drink108": {
+        "id": 108,
+        "img_url": "https: //images.smarthito.com/recipe/150115180404513.jpg",
+        "nameCn": "橘花",
+        "nameEng": "Orange Blossom",
+        "describes": "柑橘在花语中代表着“纯洁”，常用于婚纱的装饰物等。所以，这款鸡尾酒通常用于婚宴的餐前酒。"
+    },
+    "drink109": {
+        "id": 109,
+        "img_url": "https: //images.smarthito.com/recipe/150520212642775.jpg",
+        "nameCn": "赌场",
+        "nameEng": "Casino",
+        "describes": "此酒以赌场取名，使用了整杯金酒，使其口感辛辣且酒精度数极高。樱桃力娇酒、柳橙苦精酒、酸味的柠檬汁等刺激发出金酒的风味。"
+    },
+    "drink110": {
+        "id": 110,
+        "img_url": "https: //images.smarthito.com/recipe/150520214842054.jpg",
+        "nameCn": "巴黎咖啡",
+        "nameEng": "Cafe de Paris",
+        "describes": "此酒表现出优雅的气质，而且鲜奶油及蛋白也表现出醇厚的口感，还可以根据自己的喜好加入肉豆蔻粉等。此酒因散发着茴香的气味，又名“茴香鸡尾酒”。"
+    },
+    "drink111": {
+        "id": 111,
+        "img_url": "https: //images.smarthito.com/recipe/150520213922936.jpg",
+        "nameCn": "卡鲁索",
+        "nameEng": "Caruso",
+        "describes": "这款酒是由南洋殖民地时期的英国人调制而成，如同其名般锋利的口感，受到很多人喜爱。"
+    },
+    "drink112": {
+        "id": 112,
+        "img_url": "https: //images.smarthito.com/recipe/151117140716256.jpg",
+        "nameCn": "占列酒",
+        "nameEng": "Gimlet",
+        "describes": "这款酒是由南洋殖民地时期的英国人调制而成，如同其名般锋利的口感，受到很多人喜爱。"
+    },
+    "drink113": {
+        "id": 113,
+        "img_url": "https: //images.smarthito.com/recipe/r_queen_elizabeth.jpg",
+        "nameCn": "伊丽莎白女王",
+        "nameEng": "Queen Elizabeth",
+        "describes": "以享誉世界的英国豪华游轮“伊丽莎白女王号”命名的鸡尾酒，还有同名以白兰地为基酒的鸡尾酒。"
+    },
+    "drink114": {
+        "id": 114,
+        "img_url": "https: //images.smarthito.com/recipe/150520213640287.jpg",
+        "nameCn": "皇后鸡尾酒",
+        "nameEng": "Queen's Cocktail",
+        "describes": "高贵香气及口感完全呼应这款“皇后鸡尾酒”。辣味和甜味两种味美思调制的色调也非常适合女性。"
+    },
+    "drink115": {
+        "id": 115,
+        "img_url": "https: //images.smarthito.com/recipe/r_claridge.jpg",
+        "nameCn": "库勒里基",
+        "nameEng": "Claridge",
+        "describes": "巴黎有名酒店独有的鸡尾酒，适合一边观赏美丽外观，一边享受的餐后酒。"
+    },
+    "drink116": {
+        "id": 116,
+        "img_url": "https: //images.smarthito.com/recipe/150802104110621.jpg",
+        "nameCn": "三叶草俱乐部",
+        "nameEng": "Clover Club",
+        "describes": "俱乐部鸡尾酒的代表款，鲜艳的色调，甜味及酸味恰到好处的调和，口感易于饮用，整体的柔和非常适合女性。相同材料，再添加薄荷叶就是“三叶草”；如果蛋黄代替蛋白，就是“四叶草俱乐部”。"
+    },
+    "drink117": {
+        "id": 117,
+        "img_url": "https: //images.smarthito.com/recipe/150518225726815.jpg",
+        "nameCn": "莎莎",
+        "nameEng": "Dubonnet(or Zaza)",
+        "describes": "辣味的干式金酒和杜宝内完美搭配，调制出独特的口感和香味。而安哥斯特拉苦酒的口感也恰到好处。"
+    },
+    "drink118": {
+        "id": 118,
+        "img_url": "https: //images.smarthito.com/recipe/150520212930979.jpg",
+        "nameCn": "萨迪格鲁夫",
+        "nameEng": "Shady Grove",
+        "describes": "这是一款最大程度发挥姜汁汽水特点的清凉长饮鸡尾酒，最适合酷暑天气饮用。家庭调制时如果没有姜汁汽水，可以用姜麦酒（干式）代替。"
+    },
+    "drink119": {
+        "id": 119,
+        "img_url": "https: //images.smarthito.com/recipe/150116200209057.jpg",
+        "nameCn": "银色子弹",
+        "nameEng": "Silver Bullet",
+        "describes": "这是一款为数不多的使用莳萝利口酒的鸡尾酒，最适合驱魔辟邪，口感浓重。与此相似的还有“银带”鸡尾酒，由各1/2量的干式金酒和莳萝利口酒调制而成。"
+    },
+    "drink120": {
+        "id": 120,
+        "img_url": "https: //images.smarthito.com/recipe/150518215235613.jpg",
+        "nameCn": "金和义",
+        "nameEng": "Gin and It",
+        "describes": "又名金酒意大利。It是意大利味美思（ItalianCermouth）的缩写。使用干式金酒和主要产自意大利的甜味美思，不加冰块是这款酒的风格。此外，如果使用产自法国的干味美思，则是另一款“金酒法国”。"
+    },
+    "drink121": {
+        "id": 121,
+        "img_url": "https: //images.smarthito.com/recipe/150518170247646.jpg",
+        "nameCn": "金汤力",
+        "nameEng": "Gin and Tonic",
+        "describes": "这是以金酒为基酒的长饮鸡尾酒，这款鸡尾酒最受广大饮酒爱好者的欢迎，适合所有季节饮用。在这款金汤力中添加少量苏打水的调制方式也很受欢迎，口感则更加清冽。"
+    },
+    "drink122": {
+        "id": 122,
+        "img_url": "https: //images.smarthito.com/recipe/150117095042819.jpg",
+        "nameCn": "特别款马天尼",
+        "nameEng": "Extra Dry Martini",
+        "describes": "这款鸡尾酒是多种马天尼中口感超辣的一款鸡尾酒，其金酒的比例最高，酒精浓度也最强。除此酒单外，还有仅用约1ml的干味美思，其余都是干式金酒，更烈性口感的鸡尾酒，这种口感的马天尼备受英国首相丘吉尔的喜爱。"
+    },
+    "drink123": {
+        "id": 123,
+        "img_url": "https: //images.smarthito.com/recipe/150419153510101.jpg",
+        "nameCn": "马天尼",
+        "nameEng": "Martini",
+        "describes": "此款酒是数千种鸡尾酒中的王者，“鸡尾酒生于马天尼，最后死于马天尼”。其酒名的由来各自有其说，其中最有说服力的是诞生于意大利马天尼·罗西公司在为公司生产的味美思进行广告宣传。此外，同其由来一样，马天尼的调制方法也多种多样，这也可以说是马天尼的又一特点。"
+    },
+    "drink124": {
+        "id": 124,
+        "img_url": "https: //images.smarthito.com/recipe/150802001321187.jpg",
+        "nameCn": "甜味马天尼",
+        "nameEng": "Sweet Martini",
+        "describes": "正如酒名中附带的“甜味”，马天尼中的甜味类型尤为特别。用甘甜的甜味美思代替辛辣的干味美思，激发出就中的甜味。该酒的成品颜色呈现出马天尼特有的褐色。"
+    },
+    "drink125": {
+        "id": 125,
+        "img_url": "https: //images.smarthito.com/recipe/150515201731342.jpg",
+        "nameCn": "干式马天尼",
+        "nameEng": "Dry Martini",
+        "describes": "干式马天尼是一款经典的鸡尾酒，就像是一套经典款的西装，干的马天尼凭借他的简单易操作和变化多端在鸡尾酒历史上一直占据一席之地。"
+    },
+    "drink126": {
+        "id": 126,
+        "img_url": "https: //images.smarthito.com/recipe/r_martini_medium.jpg",
+        "nameCn": "中性马天尼",
+        "nameEng": "Medium Martini",
+        "describes": "这是一款介于辣味和甜味之间的马天尼鸡尾酒，又名“完美”马天尼。使用辣味和甜味这两种味美思，口感轻柔顺滑。而且，味美思具有促进食欲的作用，最适合餐前饮用。将这款鸡尾酒的材料等分成散发，可谓“三位一体”的完美鸡尾酒"
+    },
+    "drink127": {
+        "id": 127,
+        "img_url": "https: //images.smarthito.com/recipe/150524125412117.jpg",
+        "nameCn": "自由古巴",
+        "nameEng": "Cuba Libre",
+        "describes": "起源于1900年，是用郎姆酒为基酒并兑上适量的可乐而成。自由古巴(CubaLibre)是古巴从西班牙手中独立时，用当时市民口中常用的词来命名的酒。1902年，古巴人民进行了反对西班牙的独立战争，在这场战争中他们使用“Cubalibre”（即自由的古巴万岁）作为纲领性口号，于是便有了这款名为“自由古巴”的鸡尾酒。加入可乐后这款鸡尾酒口感轻柔，很适合在海滩酒吧饮用。"
+    },
+    "drink128": {
+        "id": 128,
+        "img_url": "https: //images.smarthito.com/recipe/150726170809752.jpg",
+        "nameCn": "螺丝刀",
+        "nameEng": "Screwdriver",
+        "describes": "这是一种杯中洋溢着柳橙汁香味的鸡尾酒。在伊朗油田工作的美国工人以螺丝起子将伏特加及柳橙汁搅匀后饮用，故而取名为螺丝起子。这种酒素以勾引女子鸡尾酒闻名。如果将螺丝起子中的伏特加基酒换成琴酒，则变成橘子花鸡尾酒，美国禁酒法时期，这种鸡尾酒非常流行。螺丝起子的配方中如果多加一种叫加里安诺(Galliano)的黄色甜味利口酒，就变成哈维．沃鲁班卡伏特加(HARVEY WALLBANGE)鸡尾酒。"
+    },
+    "drink129": {
+        "id": 129,
+        "img_url": "https: //images.smarthito.com/recipe/r_white_russian.jpg",
+        "nameCn": "白色俄罗斯",
+        "nameEng": "White Russian",
+        "describes": "黑色俄罗斯的上方飘上一层鲜奶油的鸡尾酒。使用咖啡利口酒及鲜奶油，调制出奶油冰咖啡的口味。甘润、易于入口，最适合餐后饮用。此外，按照顺序将冰块、伏特加、咖啡利口酒倒入玻璃杯中，且慢慢注入鲜奶油，成形效果更好"
+    },
+    "drink130": {
+        "id": 130,
+        "img_url": "https: //images.smarthito.com/recipe/r_black_russian.jpg",
+        "nameCn": "黑色俄罗斯",
+        "nameEng": "Black Russian",
+        "describes": "这种鸡尾酒的特征是口感平滑、润口，它所散发出的高雅香气，酒精浓度虽高，但却容易入口。这种鸡尾酒以产自俄罗斯的伏特加为基酒，加上它的色泽因而得名。"
+    },
+    "drink131": {
+        "id": 131,
+        "img_url": "https: //images.smarthito.com/recipe/150117101135337.jpg",
+        "nameCn": "红粉佳人",
+        "nameEng": "Pink Lady",
+        "describes": "这是为了纪念1912年伦敦的热门舞台剧“红粉佳人”而创作的鸡尾酒。在公演的发布会中，特意为该剧的女主角海泽尔·多斯献上的一款鸡尾酒。成品效果如同其酒名般粉红诱人。石榴糖浆的风味柔和地包围着浓烈的金酒。"
+    },
+    "drink132": {
+        "id": 132,
+        "img_url": "https: //images.smarthito.com/recipe/150726130921679.jpg",
+        "nameCn": "薄荷茱莉普",
+        "nameEng": "Mint Julep",
+        "describes": "薄荷茱莉普其语源是来自阿拉伯语。它诞生在美国南方，属于夏季饮用的鸡尾酒。要使薄荷茱莉普喝起来更可口，可将酒杯放在冰箱中冰镇至杯子泛白。这层白霜遇上清爽的薄荷茱莉普，自然而然散发出一种无法言语的爽快感。薄荷的刺激香味能增添威士忌的味道，让鸡尾酒喝起来倍觉清凉，是一种消除口中苦味的甘甜饮料。"
+    },
+    "drink133": {
+        "id": 133,
+        "img_url": "https: //images.smarthito.com/recipe/150726232025723.jpg",
+        "nameCn": "金瑞基",
+        "nameEng": "Gin Rickey",
+        "describes": "这是由华盛顿的议会记者约翰·利奇在自己最中意的餐馆中发明的鸡尾酒，这是橘皮鸡尾酒中的常用款，口味辛辣却清凉。事先挤榨橘皮和沉入榨干的橘皮是调制的关键，推荐给喜爱清爽口感的人饮用。"
+    },
+    "drink134": {
+        "id": 134,
+        "img_url": "https: //images.smarthito.com/recipe/150515194713972.jpg",
+        "nameCn": "汤姆柯林斯",
+        "nameEng": "Tom Collins",
+        "describes": "这是一款以干式金酒为基酒的柯林斯风格的长饮酒，也是一款19世纪初便被饮用的古典鸡尾酒。之前称之为“约翰柯林斯”，自从英国产的老汤姆金酒代替了荷兰产的金酒，也就改名了。"
+    },
+    "drink135": {
+        "id": 135,
+        "img_url": "https: //images.smarthito.com/recipe/150801234415271.jpg",
+        "nameCn": "尼格罗尼",
+        "nameEng": "Negroni",
+        "describes": "尼格罗尼是意大利一位伯爵的名字，他是一位有名的美食家。这款酒是由佛罗伦萨餐厅的调酒师调制而成的，是尼格罗尼最喜爱的餐前酒。1962年经过伯爵许可命名该酒为“尼格罗尼”，该酒拥有金巴利的苦涩特征。"
+    },
+    "drink136": {
+        "id": 136,
+        "img_url": "https: //images.smarthito.com/recipe/r_grog.jpg",
+        "nameCn": "格罗格",
+        "nameEng": "Grog",
+        "describes": "以朗姆酒为基底的热干饮酒很久，而这是一款加上糖浆实现的更加完美的鸡尾酒。格罗格也可以说是一款放入了大量朗姆酒的热柠檬汁。这款酒适合寒冷的季节饮用。糖浆本身就包含一定的酒性，也是一种热水中和的酒。柠檬和砂糖的甜味感恰到好处得抑制了浓烈的朗姆酒。此外，添香的肉桂条和丁香也激发了整体的味感"
+    },
+    "drink137": {
+        "id": 137,
+        "img_url": "https: //images.smarthito.com/recipe/r_shanghai.jpg",
+        "nameCn": "上海",
+        "nameEng": "Shanghai",
+        "describes": "以长久以来就作为中国贸易港口而繁华异常的大都市“上海”为名的鸡尾酒。通过这款酒的色香味表达这座东方都市的魅力。使用个性口味的牙买加朗姆酒和茴香酒（茴香利口酒），调制出独特的风味。还添加石榴糖浆和柠檬汁组合成的适度酸甜度，饮用顺口"
+    },
+    "drink138": {
+        "id": 138,
+        "img_url": "https: //images.smarthito.com/recipe/r_scorpion.jpg",
+        "nameCn": "天蝎座",
+        "nameEng": "Scorpion",
+        "describes": "“蝎子”这种稍显忌讳的鸡尾酒，取名自优越口感中隐藏的浓烈酒，是一款产自夏威夷的热带饮料。颜色看似鲜艳，却是全天饮用的爽口饮料。但是，朗姆酒和白兰地的浓烈酒也不可回避。最后，用橙子等进行装饰。"
+    },
+    "drink139": {
+        "id": 139,
+        "img_url": "https: //images.smarthito.com/recipe/150813222107568.jpg",
+        "nameCn": "戴吉利",
+        "nameEng": "Daiquiri",
+        "describes": "“Daiquiri”是古巴城市圣地亚哥郊外的矿山名称。据说是1896年酷暑天气工作的矿工技师们调制的鸡尾酒。在一些国家通常用石榴糖浆代替砂糖，成品会呈现出红色。"
+    },
+    "drink140": {
+        "id": 140,
+        "img_url": "https: //images.smarthito.com/recipe/150119212400306.jpg",
+        "nameCn": "百加得",
+        "nameEng": "Bacardi",
+        "describes": "1933年美国废除敬酒令开始，古巴的百加得公司为了促销本公司生产的朗姆酒而设计的一款鸡尾酒，也是“戴吉利”的改进鸡尾酒。据说有的酒吧采用其他的朗姆酒代替百加得调制这款鸡尾酒，最后甚至受到诉讼。第二年，高等法院裁定“调制百加得鸡尾酒时，必须使用百加得朗姆酒”。"
+    },
+    "drink141": {
+        "id": 141,
+        "img_url": "https: //images.smarthito.com/recipe/150524124442532.jpg",
+        "nameCn": "蓝色夏威夷",
+        "nameEng": "Blue Hawaii",
+        "describes": "这是一款让人有夏季氛围的热带鸡尾酒，给人以夏威夷美丽的蓝色海洋的印象。白色朗姆酒和蓝色柑桂酒再现了夏威夷的蓝色天空及海洋。再用菠萝汁和柠檬汁调制出清爽口感也令人畅快。最后，有切片的菠萝和时令鲜花进行装饰。"
+    },
+    "drink142": {
+        "id": 142,
+        "img_url": "https: //images.smarthito.com/recipe/150524130743981.jpg",
+        "nameCn": "庄园主宾治",
+        "nameEng": "Planter's Punch",
+        "describes": "“Planter's”意为“庄园主”或者“在庄园工作的农民”。“Punch”是将利口酒和果汁加入烈酒内调制的长饮鸡尾酒。庄园主宾治诞生于南国牙买加的个性朗姆酒和橘子口味的白柑桂酒激发出热带氛围。最后用水果切片、薄荷叶进行装饰。"
+    },
+    "drink143": {
+        "id": 143,
+        "img_url": "https: //images.smarthito.com/recipe/150524123615948.jpg",
+        "nameCn": "莫吉托",
+        "nameEng": "Mojito",
+        "describes": "莫吉托诞生于古巴革命时期的浪漫旧时代，或者更早。莫吉托确切的来源已无从考证，我们相信它起源于德拉盖Draque，据说是一种海盗饮品。英国海盗佛朗西斯.德雷克爵士（他被西班牙人称为“龙”）发明了这款饮料。德雷克确实去过古巴。但是以评估海盗的抢劫和破坏后果的传统标准来看，他在那里并没有造成非常大的破坏，也许他在当时正忙着开Party。1830年，关于莫吉托原型的第一个典故正式了其古巴血统，在RamondePaima的小说‘海贼王’中，一个角色说到：“每天早上11点我都要喝一点德拉盖使我的精力充沛。这不但诠释了这种酒的海盗血统，同时也显然说明莫吉托是早上饮用的酒品。随着鸡尾酒文化的复兴，对使用新鲜材料兴趣的增加，拉丁美食潮的兴起和古巴音乐风靡，莫吉托在美国获得了普遍欢迎。它以全新面貌出现，原料包括挤过的青柠，碎冰和切碎的薄荷这个新的改良版本从美国开始席卷全球。通过加入青柠汁以之外的水果，莫吉托仍然在朝口味清新的方向进一步演变。"
+    },
+    "drink144": {
+        "id": 144,
+        "img_url": "https: //images.smarthito.com/recipe/r_vodka_and_apple_juice.jpg",
+        "nameCn": "伏特加苹果",
+        "nameEng": "Vodka and Apple Juice",
+        "describes": "采用“螺丝刀”相同的伏特加基底，只是将橙子汁替换成苹果汁。如同酒名，伏特加和苹果汁的简单调配方法，但是，就是这种苹果汁恰到好处的酸味激发出清爽的口感。而且，成品的口感比“螺丝刀”微甜。"
+    },
+    "drink145": {
+        "id": 145,
+        "img_url": "https: //images.smarthito.com/recipe/r_vodka_gibson.jpg",
+        "nameCn": "伏特加吉普森",
+        "nameEng": "Vodka Gibson",
+        "describes": "以金酒为基酒的吉普森从1890年开始广受欢迎，这款酒诞生于1940年伏特加广为流行的时期。这款酒因其简单的味感，广受鸡尾酒爱好者的拥戴。该酒使用了增加食欲的干味美思，是最适合晚餐时饮用的一款鸡尾酒。最后，可将珍珠圆葱放入酒中，营造出优雅的质感。"
+    },
+    "drink146": {
+        "id": 146,
+        "img_url": "https: //images.smarthito.com/recipe/r_vodka_stinger.jpg",
+        "nameCn": "伏特加史丁格",
+        "nameEng": "Vodka Stinger ",
+        "describes": "将史丁格中的白兰地基酒替换成伏特加，调制出一款创新的鸡尾酒，又名“白色蜘蛛”。伏特加本身就是很新的酒类，以伏特加为基酒的鸡尾酒也不会有很长的历史。这是一款成品精美的鸡尾酒，薄荷酒的香味四溢。"
+    },
+    "drink147": {
+        "id": 147,
+        "img_url": "https: //images.smarthito.com/recipe/150726152722798.jpg",
+        "nameCn": "神风敢死队",
+        "nameEng": "Kamikaze",
+        "describes": "“KamiKaze”取自第二次世界大战中原日本海军特种攻击队“神风”。但是，这款鸡尾酒诞生于美国，而不是日本。这款酒的口感刺激，犹如“神风敢死队”。喜欢直饮或仅仅喜爱伏特加风味的人都适宜享用，一款口感极其辛辣的干式鸡尾酒。白柑桂酒发挥作用，调制出醇香的鸡尾酒。也可以根据个人喜好，用君度利口酒替换白柑桂酒。"
+    },
+    "drink148": {
+        "id": 148,
+        "img_url": "https: //images.smarthito.com/recipe/r_vodka_martini.jpg",
+        "nameCn": "伏特加马天尼",
+        "nameEng": "Vodka Martini",
+        "describes": "一款将马天尼的金酒基酒替换成伏特加的鸡尾酒，又名“伏特加天尼”或者“袋鼠”。味美思的药草发挥作用，激发出伏特加的淳朴香味。调制完成后挤入柠檬汁，最后用添加装饰。"
+    },
+    "drink149": {
+        "id": 149,
+        "img_url": "https: //images.smarthito.com/recipe/r_kiss_of_fire.jpg",
+        "nameCn": "热吻",
+        "nameEng": "Kiss of Fire",
+        "describes": "获得1955年举办的第五次全日本饮料大赛冠军作品的荣耀鸡尾酒，石冈贤司先生的作品。鲜艳的色彩及砂糖的冰霜风格极其优美。口感较甜，黑刺李金酒（黑刺李利口酒）和干味美思（药草红酒）激发出个性风味。"
+    },
+    "drink150": {
+        "id": 150,
+        "img_url": "https: //images.smarthito.com/recipe/r_gypsy.jpg",
+        "nameCn": "吉普赛",
+        "nameEng": "Gypsy",
+        "describes": "“吉普赛”是一个集团性散落分布于欧洲各地的流浪民族，这正是一款表现吉普赛人神秘性的鸡尾酒，又名“吉普赛女皇”。这款酒药草和香草类的利口酒激发出了独特的风味。伏特加和甜露酒的酒精度都很高，口感浓烈。"
+    },
+    "drink151": {
+        "id": 151,
+        "img_url": "https: //images.smarthito.com/recipe/r_sledge_hammer.jpg",
+        "nameCn": "大锤",
+        "nameEng": "Sledge Hammer",
+        "describes": "“SledgeHammer”是一种将石头敲碎、打桩时所用的“大型铁质锤具”，含有强力的意思。如同酒名一样，这是一款酒精度高的辛辣口感鸡尾酒。如果将加糖酸橙汁替换成普通酸橙汁，再添加砂糖糖浆，就是一款“伏特加吉姆莱特”"
+    },
+    "drink152": {
+        "id": 152,
+        "img_url": "https: //images.smarthito.com/recipe/150524181913333.jpg",
+        "nameCn": "咸狗",
+        "nameEng": "Salty Dog",
+        "describes": "“SaltyDog”意为“咸狗”，比喻英国船上的甲板船员的俚语。这是一款用冰霜装饰的夏季鸡尾酒。葡萄柚的酸味和盐激发出伏特加的风味。将不用盐的鸡尾酒称作“无尾狗”或“灰狗”（跑动时后腿夹着尾巴的狗）"
+    },
+    "drink153": {
+        "id": 153,
+        "img_url": "https: //images.smarthito.com/recipe/r_chi_chi.jpg",
+        "nameCn": "奇奇",
+        "nameEng": "Chi-Chi",
+        "describes": "“Chi-Chi”在美式俚语中意为“精华”和“时尚”，法语中意为“举止高雅”。这是一款产自夏威夷的热带鸡尾酒。大量使用菠萝汁和椰奶，口感润滑。如果将伏特加替换成白朗姆酒，就是一款“椰林飘香”鸡尾酒。"
+    },
+    "drink154": {
+        "id": 154,
+        "img_url": "https: //images.smarthito.com/recipe/150524133304406.jpg",
+        "nameCn": "高眼",
+        "nameEng": "Eye Opener",
+        "describes": "“EyeOpener”意为“醒来”或者“觉醒的一杯”。该酒的名称看似是醒酒的酒，但酒精度较高，并不适合用作提神酒，更适合用于睡前酒。该酒使用烈性酒中具有浓厚风味的朗姆酒为基底，材料中还有一个鸡蛋，口感醇厚，且营养价值甚高。"
+    },
+    "drink155": {
+        "id": 155,
+        "img_url": "https: //images.smarthito.com/recipe/150524125605629.jpg",
+        "nameCn": "总统",
+        "nameEng": "EL Presidente",
+        "describes": "“ELPresidente”在西班牙语中意为“总统”或“总经理”，是一款让人感受“总统”或“总经理”威严的鸡尾酒。除此之外，还有不用干味美思的，搅拌制作而成的鸡尾酒名为“领袖”。干味美思的药草清香和橘子柑桂酒的香味轻柔地包容着朗姆酒的浓郁酒精。"
+    },
+    "drink156": {
+        "id": 156,
+        "img_url": "https: //images.smarthito.com/recipe/150524133934001.jpg",
+        "nameCn": "乡村姑娘",
+        "nameEng": "Caipirinha",
+        "describes": "“Caipirinha”在葡萄牙语中的意思是“乡村姑娘”。这款鸡尾酒最初使用巴西特产的甘蔗酒。盛夏已经降临，一杯清新的乡村姑娘一定会让你瞬间抛去燥热的心情。还有一种比较流行的喝法是用2盎司白朗姆酒代替甘蔗酒。巴西甘蔗酒是以纯甘蔗为原料，经过发酵、蒸馏后得到朗姆酒，口感偏甜。常见的甘蔗酒有Caipirinha，是巴西国饮。"
+    },
+    "drink157": {
+        "id": 157,
+        "img_url": "https: //images.smarthito.com/recipe/150201212741764.jpg",
+        "nameCn": "杏仁鸡尾酒",
+        "nameEng": "Apricot Cocktail",
+        "describes": "这是一款将杏仁、橘子、柠檬口味混为一起，清爽、顺口，色香味集聚一体的鸡尾酒。"
+    },
+    "drink158": {
+        "id": 158,
+        "img_url": "https: //images.smarthito.com/recipe/r_angels_tip.jpg",
+        "nameCn": "天使之心",
+        "nameEng": "Angel's Tip",
+        "describes": "这是一款以“天使之心”命名的甜味餐后鸡尾酒。可可甜酒和鲜奶油的组合搭配，调制出和谐的温润口感。此外，鲜奶油应漂浮于上方，不能混入可可中。最后，再用酒味樱桃在鲜奶油上方点缀成心"
+    },
+    "drink159": {
+        "id": 159,
+        "img_url": "https: //images.smarthito.com/recipe/r_grasshopper.jpg",
+        "nameCn": "绿色蚱蜢",
+        "nameEng": "Grasshopper",
+        "describes": "由于该酒成品颜色为绿色，酒名绿色蚱蜢可能由此而来。可可利口酒和绿薄荷酒散发出清凉的口感。材料中有鲜奶油，入口至喉咙后感到顺滑可口。这是一款甜点风格的餐后鸡尾酒。"
+    },
+    "drink160": {
+        "id": 160,
+        "img_url": "https: //images.smarthito.com/recipe/r_golden_cadillac.jpg",
+        "nameCn": "金色凯迪拉克",
+        "nameEng": "Golden Cadillac",
+        "describes": "“Cadillac”是最具美国代表性的高级轿车车名。带着“金色”的前缀，喝过这杯酒后体验成为富豪般的感觉。润爽甘甜的口感适合餐后饮用。此外，材料中使用鲜奶油，调制时需要充分搅拌。"
+    },
+    "drink161": {
+        "id": 161,
+        "img_url": "https: //images.smarthito.com/recipe/150814213613469.jpg",
+        "nameCn": "红宝  石菲士",
+        "nameEng": "Ruby Fizz",
+        "describes": "以红宝石为主题调制的菲士风格鸡尾酒。黑刺杜松子酒的口感得以最大程度的激发是这款酒的特点。虽然使用了柠檬汁，但石榴糖浆及蛋清恰到好处地中和出柔和的口感。此外，因为材料中使用了蛋清，调制时需要充分摇匀。"
+    },
+    "drink162": {
+        "id": 162,
+        "img_url": "https: //images.smarthito.com/recipe/r_velvet_hammer.jpg",
+        "nameCn": "万维汉莫",
+        "nameEng": "Velvet Hammer",
+        "describes": "让人联想到天鹅绒般的柔顺口感，瞬间又让人感受“当头棒喝”般眩晕醉感的鸡尾酒。橙子口味的白柑桂酒，产自牙买加的蓝山咖啡，大量使用的鲜奶油等，调制出甘甜爽口的味感。所以，最适合餐后饮用。"
+    },
+    "drink163": {
+        "id": 163,
+        "img_url": "https: //images.smarthito.com/recipe/r_bulldog.jpg",
+        "nameCn": "斗牛犬",
+        "nameEng": "Bulldog",
+        "describes": "以原产自应该的猛犬“斗牛犬”为名的鸡尾酒。适合全天饮用，但餐后饮用最佳。雪利白兰地的甘甜和清香调制出完美的口感。在欧洲，人们通常将以干式金酒为基底的长饮酒作为“斗牛犬”。"
+    },
+    "drink164": {
+        "id": 164,
+        "img_url": "https: //images.smarthito.com/recipe/r_ambassador.jpg",
+        "nameCn": "大使",
+        "nameEng": "Ambassador",
+        "describes": "“Ambassador”意为“大使”，这是一款将“螺丝刀”的基底伏特加替换成龙舌兰酒制成的鸡尾酒。作为一种大量使用橙子汁的爽口长饮鸡尾酒，外观及口感都十分清凉。而且，橙子汁和砂糖糖浆的酸甜味轻柔包裹着浓烈的龙舌兰酒。"
+    },
+    "drink165": {
+        "id": 165,
+        "img_url": "https: //images.smarthito.com/recipe/150817224451219.jpg",
+        "nameCn": "丝袜",
+        "nameEng": "Silk Stockings",
+        "describes": "这是一款以“丝袜”为名的性感鸡尾酒，甘甜口感，适合餐后饮用。使用可可利口酒及鲜奶油，口感醇厚。成品的色调及樱桃的装饰营造出独特的氛围。材料中含有鲜奶油，需要充分摇和调制。"
+    },
+    "drink166": {
+        "id": 166,
+        "img_url": "https: //images.smarthito.com/recipe/r_tequila_sunset.jpg",
+        "nameCn": "龙舌兰日落",
+        "nameEng": "Tequila Sunset",
+        "describes": "这是一款将“龙舌兰日出”的橙子汁替换成柠檬汁的鸡尾酒。也是一款表现墨西哥魅力日落的长饮酒。使用搅拌机调制的冰霜风格，石榴糖浆表现出鲜艳的质感。此外，还有柠檬的酸味激发出的清爽感。"
+    },
+    "drink167": {
+        "id": 167,
+        "img_url": "https: //images.smarthito.com/recipe/r_brave_bull.jpg",
+        "nameCn": "勇敢的公牛",
+        "nameEng": "Brave Bull",
+        "describes": "“BraveBull”意为“勇敢的公牛”或“经历充沛的公牛”，正如其勇猛的酒名、外观和味感也都如此。这是一款将“黑色俄罗斯”的威士忌基底替换成龙舌兰的鸡尾酒，材料的分量则完全相同。而且，酒精度也同黑色俄罗斯一样浓烈。沉静的氛围中喝上一杯，这是一款具有成熟风格的鸡尾酒。"
+    },
+    "drink168": {
+        "id": 168,
+        "img_url": "https: //images.smarthito.com/recipe/r_tequila_manhattan.jpg",
+        "nameCn": "龙舌兰曼哈顿",
+        "nameEng": "Tequila Manhattan",
+        "describes": "这是将曼哈顿的威士忌基酒替换成龙舌兰酒的一款鸡尾酒，其他材料分量都完全相同。沉静的色调演绎出成熟氛围。甜味美思激发出适度的甜味及独特的口感。用苦味酒之一的安哥斯特拉苦酒和柠檬汁中和整体的味感。"
+    },
+    "drink169": {
+        "id": 169,
+        "img_url": "https: //images.smarthito.com/recipe/151116152333200.jpg",
+        "nameCn": "玛格丽特",
+        "nameEng": "Margarita",
+        "describes": "1949年召开的美国国民鸡尾酒大赛的入选作品，由约翰·迪莱莎设计调制。为了纪念他不幸去世的恋人玛格丽特而取名的一款鸡尾酒。被子用盐装饰出冰霜风格。如果将白柑桂酒替换成蓝柑桂酒，就是一款“蓝色玛格丽特”。"
+    },
+    "drink170": {
+        "id": 170,
+        "img_url": "https: //images.smarthito.com/recipe/r_mockingbird.jpg",
+        "nameCn": "八哥",
+        "nameEng": "Mockingbird",
+        "describes": "“Mockingbird”是原产墨西哥栖息于美国西部的“八哥”。用代表墨西哥的龙舌兰酒为基酒，并由此而得名。薄荷酒调制出的翡翠色调闪亮夺目，是一款让人陶醉其中的女性鸡尾酒"
+    },
+    "drink171": {
+        "id": 171,
+        "img_url": "https: //images.smarthito.com/recipe/150815002018960.png",
+        "nameCn": "斗牛士",
+        "nameEng": "Matador",
+        "describes": "“Matador”是在斗牛比赛最后登场，刺杀斗牛的“斗牛场主角”。同此勇猛的酒名成对比，成品的柔和色调最适合女性饮用。菠萝汁的甘甜和酸橙汁适度的酸味的搭配，调制出爽口的果味鸡尾酒。"
+    }
+}

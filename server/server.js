@@ -33,7 +33,9 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 const server = require('http').Server(app)
 
-const dbUrl = 'mongodb://localhost/dk';
+// const dbUrl = 'mongodb://localhost/dk';
+const dbUrl = 'mongodb://47.93.234.165:27017/dk';
+
 mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
