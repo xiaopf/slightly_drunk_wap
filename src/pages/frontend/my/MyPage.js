@@ -105,7 +105,7 @@ class MyPage extends React.Component {
 					<WingBlank>
 						<Button type="warning" onClick={this.signOut}>退出登录</Button>
 						<WhiteSpace></WhiteSpace>
-						<Button type="primary" onClick = { this.entering }>录入数据</Button>
+						{/*<Button type="primary" onClick = { this.entering }>录入数据</Button>*/}
 					</WingBlank>
 
 				</div>
