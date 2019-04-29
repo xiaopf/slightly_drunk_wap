@@ -26,7 +26,6 @@ class ComingSoon extends React.Component {
           icon={<Icon type="left" />}
           onLeftClick={this.goBack}
         >Msg</NavBar>
-
         <div className="comingSoon">coming soon 123456789!!!</div>
       </div>
 
